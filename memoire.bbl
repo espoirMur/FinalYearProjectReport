@@ -75,7 +75,7 @@
     \field{labeltitlesource}{title}
     \field{title}{Méthodologie de mise en place du processus de data mining}
     \verb{url}
-    \verb http://www.rithme.eu/?m=resources&p=dmmethod&lang=fr
+    \verb http://www.rithme.eu/?m=resources\&p=dmmethod\&lang=fr
     \endverb
     \field{year}{2017}
     \field{urlday}{29}
@@ -415,6 +415,153 @@
     \field{volume}{45}
     \field{journaltitle}{Machine learning}
     \field{year}{2001}
+  \endentry
+
+  \entry{OrBk1}{book}{}
+    \name{author}{1}{}{%
+      {{hash=JL}{%
+         family={J.},
+         familyi={J\bibinitperiod},
+         given={Laure},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JL1}
+    \strng{fullhash}{JL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{10}
+    \field{title}{Guide Pratique Parents}
+    \list{location}{1}{%
+      {Paris}%
+    }
+    \field{year}{2015}
+  \endentry
+
+  \entry{OrBk2}{book}{}
+    \name{author}{1}{}{%
+      {{hash=easBR}{%
+         prefix={et\bibnamedelima al},
+         prefixi={e\bibinitperiod\bibinitdelim a\bibinitperiod},
+         family={s},
+         familyi={s},
+         given={Bruno\bibnamedelima Racine.},
+         giveni={B\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {inédit}%
+    }
+    \strng{namehash}{sBRea1}
+    \strng{fullhash}{sBRea1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Rapport haut conseil d’éducation}
+    \list{location}{1}{%
+      {Paris}%
+    }
+    \field{year}{2008}
+  \endentry
+
+  \entry{OrBk3}{book}{}
+    \name{author}{1}{}{%
+      {{hash=TA}{%
+         family={TARDIF},
+         familyi={T\bibinitperiod},
+         given={ANNIE},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {inédit}%
+    }
+    \strng{namehash}{TA1}
+    \strng{fullhash}{TA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{L’orientation scolaire et professionnelle pour la réussite
+  des élèves handicapés ou en difficulté}
+    \list{location}{1}{%
+      {Québec}%
+    }
+    \field{year}{2008}
+  \endentry
+
+  \entry{OrBk4}{book}{}
+    \name{author}{1}{}{%
+      {{hash=eMHJG}{%
+         prefix={et},
+         prefixi={e\bibinitperiod},
+         family={M.\bibnamedelima Huteau},
+         familyi={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+         given={J.\bibnamedelima Guichard},
+         giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Dunod}%
+    }
+    \strng{namehash}{MHJGe1}
+    \strng{fullhash}{MHJGe1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Psychologie de l’orientation}
+    \list{location}{1}{%
+      {Paris}%
+    }
+    \field{year}{2009}
+  \endentry
+
+  \entry{OrBk5}{book}{}
+    \name{author}{1}{}{%
+      {{hash=APFeL}{%
+         family={ANDREANI},
+         familyi={A\bibinitperiod},
+         suffix={F.\bibnamedelima et\bibnamedelima LARTIQUE},
+         suffixi={F\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim
+  L\bibinitperiod},
+         given={P},
+         giveni={P},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {A. Colin}%
+    }
+    \strng{namehash}{AFeLP1}
+    \strng{fullhash}{AFeLP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{L’Orientation des élèves}
+    \list{location}{1}{%
+      {Paris}%
+    }
+    \field{year}{2006}
+  \endentry
+
+  \entry{OrBk6}{book}{}
+    \name{author}{1}{}{%
+      {{hash=DAJeB}{%
+         family={DELVAUX},
+         familyi={D\bibinitperiod},
+         suffix={J.P. et\bibnamedelima BRUYNEEL},
+         suffixi={J\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim
+  B\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Univ. de Kinshasa}%
+    }
+    \strng{namehash}{DJeBA1}
+    \strng{fullhash}{DJeBA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{L’orientation à l’entrée des universités congolaises}
+    \list{location}{1}{%
+      {Kinshasa}%
+    }
+    \field{year}{1971}
   \endentry
 \endsortlist
 \endinput

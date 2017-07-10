@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  10 JUL 2017 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  10 JUL 2017 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -815,6 +815,14 @@ Package: suffix 2006/07/15 1.5a Variant command support
 )
 \AC@clearlist=\toks29
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip73
+\enit@outerparindent=\dimen125
+\enit@toks=\toks30
+\enit@inbox=\box30
+\enitdp@description=\count312
+)
 Package biblatex Info: Trying to load language 'french'...
 Package biblatex Info: ... file 'french.lbx' found.
 
@@ -825,40 +833,46 @@ File: french.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count312
-\@quotereset=\count313
+\@quotelevel=\count313
+\@quotereset=\count314
 (./memoire.aux)
 \openout1 = `memoire.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Info: Redefining \degres on input line 21.
-LaTeX Info: Redefining \dots on input line 21.
-LaTeX Info: Redefining \up on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Info: Redefining \degres on input line 23.
+LaTeX Info: Redefining \dots on input line 23.
+Package frenchb.ldf Info: Setting StandardItemizeEnv=true for
+(frenchb.ldf)             compatibility with enumitem package,
+(frenchb.ldf)             reported on input line 23.
+Package frenchb.ldf Info: Setting StandardEnumerateEnv=true for
+(frenchb.ldf)             compatibility with enumitem package,
+(frenchb.ldf)             reported on input line 23.
+LaTeX Info: Redefining \up on input line 23.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count314
-\scratchdimen=\dimen125
-\scratchbox=\box30
-\nofMPsegments=\count315
-\nofMParguments=\count316
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count317
-\MPscratchDim=\dimen126
-\MPnumerator=\count318
-\makeMPintoPDFobject=\count319
-\everyMPtoPDFconversion=\toks31
+\scratchcounter=\count315
+\scratchdimen=\dimen126
+\scratchbox=\box31
+\nofMPsegments=\count316
+\nofMParguments=\count317
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count318
+\MPscratchDim=\dimen127
+\MPnumerator=\count319
+\makeMPintoPDFobject=\count320
+\everyMPtoPDFconversion=\toks32
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -908,8 +922,8 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Invalid format of field 'date'.
 
 )
-Package biblatex Info: Reference section=0 on input line 21.
-Package biblatex Info: Reference segment=0 on input line 21.
+Package biblatex Info: Reference section=0 on input line 23.
+Package biblatex Info: Reference segment=0 on input line 23.
  (./text/abreviation.tex) [1
 
 
@@ -1032,7 +1046,7 @@ File: fig/OverfiittingLogistic.png Graphic file (type png)
 Package pdftex.def Info: fig/OverfiittingLogistic.png used on input line 135.
 (pdftex.def)             Requested size: 195.0pt x 77.5794pt.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 156--25
+Underfull \hbox (badness 10000) in paragraph at lines 156--28
 
  []
 
@@ -1237,34 +1251,103 @@ Package pdftex.def Info: fig/CRISP_tb.png used on input line 5.
 
 [34
 
- <./fig/CRISP_tb.png>]) [35]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 31.
+ <./fig/CRISP_tb.png>]
+Overfull \hbox (3.38838pt too wide) in paragraph at lines 18--19
+[]\T1/cmr/m/it/12 Le dé-ploie-ment \T1/cmr/m/n/12 : est l'étape fi-nale du pro-
+ces-sus de dé-cou-verte de connais-
+ []
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
+) [35] (./text/secondChapiter.tex
+Chapitre 2.
+Package acronym Info: Label `acro:UNAF' newly defined as it shall be overridden
+
+although it is yet undefined on input line 4.
+[36
+
+
+]
+Package acronym Info: Label `acro:RDC' newly defined as it shall be overridden
+although it is yet undefined on input line 16.
+ [37]
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+
+ []
+
+[38] [39]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 46.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+Package acronym Info: Label `acro:RIP' newly defined as it shall be overridden
+although it is yet undefined on input line 57.
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 74--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--89
+
+ []
+
+
+Overfull \hbox (7.72092pt too wide) in paragraph at lines 93--96
+\T1/cmr/m/n/12 teurs spé-ci-fiques..,), ap-ti-tudes par-ti-cu-lières (scien-ti-
+fiques, lit-té-raires,
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 100--102
+
+ []
+
+Package acronym Info: Label `acro:ULPGL' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 116.
+[42]
+Package acronym Info: Label `acro:INAPS' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 123.
+) [43]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 35.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Overfull \hbox (170.94351pt too wide) in paragraph at lines 32--32
+Overfull \hbox (170.94351pt too wide) in paragraph at lines 36--36
 \T1/cmtt/m/n/12 http : / / www . sharpsightlabs . com / differenceÂ­machineÂ­le
 arningÂ­statisticsÂ­dataÂ­mining /
  []
 
 
-Overfull \hbox (4.61922pt too wide) in paragraph at lines 32--32
+Overfull \hbox (4.61922pt too wide) in paragraph at lines 36--36
 \T1/cmr/m/n/12 Sta-ckEx-change Ques-tion. \T1/cmr/m/sc/12 url \T1/cmr/m/n/12 : 
 $\T1/cmtt/m/n/12 \url{https : / / stats . stackexchange .
  []
 
-[36
+[44
 
 
 ]
-Overfull \hbox (9.21944pt too wide) in paragraph at lines 32--32
+Overfull \hbox (9.21944pt too wide) in paragraph at lines 36--36
 []\T1/cmr/m/n/12 Alexandre \T1/cmr/m/sc/12 KO-WALC-ZYK\T1/cmr/m/n/12 . \T1/cmr/
 m/it/12 SVM Tu-to-rial\T1/cmr/m/n/12 . $\T1/cmtt/m/n/12 http : / / www . svm -[
 ] tutorial .
  []
 
-[37] (./memoire.aux)
+
+Overfull \hbox (1.11081pt too wide) in paragraph at lines 36--36
+[]\T1/cmr/m/n/12 ANNIE \T1/cmr/m/sc/12 TAR-DIF\T1/cmr/m/n/12 . \T1/cmr/m/it/12 
+L'orien-ta-tion sco-laire et pro-fes-sion-nelle pour la réus-
+ []
+
+[45] (./memoire.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1278,13 +1361,13 @@ Package logreq Info: Writing requests to 'memoire.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12539 strings out of 492995
- 206902 string characters out of 6132704
- 467518 words of memory out of 5000000
- 15873 multiletter control sequences out of 15000+600000
+ 12885 strings out of 492995
+ 212737 string characters out of 6132704
+ 473895 words of memory out of 5000000
+ 16209 multiletter control sequences out of 15000+600000
  19063 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,11n,49p,816b,1591s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,11n,49p,1289b,1591s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
@@ -1313,10 +1396,10 @@ e1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
 /public/cm-super/sfrm2074.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
 ublic/cm-super/sfti1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
 lic/cm-super/sftt1200.pfb>
-Output written on memoire.pdf (37 pages, 1269621 bytes).
+Output written on memoire.pdf (45 pages, 1294659 bytes).
 PDF statistics:
- 267 PDF objects out of 1000 (max. 8388607)
- 168 compressed objects within 2 object streams
+ 292 PDF objects out of 1000 (max. 8388607)
+ 185 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
