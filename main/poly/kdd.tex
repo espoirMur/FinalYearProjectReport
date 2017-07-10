@@ -1,0 +1,536 @@
+%       $Id: kdd.tex,v 1.2 2000/04/17 10:24:14 gilleron Exp tommasi $    
+
+\chapter{Processus de découverte d'information}
+\label{sec:kdd}
+\index{KDD} 
+
+Nous présentons dans ce chapitre le processus complet d'extraction de
+connaissances.\index{Extraction de connaissances!Processus} Nous nous limitons
+au traitement de données structurées. Il n'est pas question ici de
+recherche dans des textes ou des images, mais uniquement à partir de
+données. S'il est possible d'extraire de l'information à partir de
+toute source de données, l'existence d'un entrepôt diminue le temps de
+réalisation d'un projet.
+
+
+Le processus que nous présentons maintenant est découpé en six parties
+: préparation, nettoyage, enrichissement, codage, fouille et
+validation. L'enchaînement des différentes étapes est présenté dans la
+figure~\ref{fig:ECD}. \index{Préparation}\index{Données!préparation}
+\index{Nettoyage}\index{Données!nettoyage}
+\index{Enrichissement}\index{Données!enrichissement}
+\index{Codage}\index{Données!codage}
+\index{Fouille}\index{Données!fouille}\index{Validation}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+%BEGIN IMAGE
+    \epsfig{file=kdd.eps,width=\textwidth}
+%END IMAGE
+%HEVEA \imageflush
+    \caption{Les étapes du processus d'extraction de connaissances à
+      partir de données}
+    \label{fig:ECD}
+  \end{center}
+\end{figure}
+
+Le déroulement d'un projet n'est pas linéaire. On peut constater dans
+l'étape de validation que les performances obtenues ne sont pas
+suffisantes ou que les utilisateurs du domaine jugent l'information
+inexploitable, il s'agira alors de choisir une autre méthode de
+fouille, ou de remettre en cause les codages, ou de chercher à
+enrichir les données. On évalue dans un projet le temps passé à
+l'étape de fouille de données (qui est l'étape de découverte
+d'informations proprement dite) à moins de 20\% du temps. Par
+conséquent, plus de 80\% du temps est dédié aux opérations de
+sélection, nettoyage, enrichissement et codage.
+
+Nous présentons maintenant l'exemple qui nous servira pour illustrer
+chaque étape du processus. Cet exemple est issu du livre de
+P.~Adriaans et D.~Zantige \cite{AdriaansZantinge96}.
+
+
+\begin{quote}
+  Un éditeur vend 5 sortes de magazines : sport, voiture, maison,
+  musique et BD. Il souhaite mieux étudier ses clients pour découvrir
+  de nouveaux marchés ou vendre plus de magazines à ses clients
+  habituels. Les questions qu'il se pose sont : 
+
+  \begin{enumerate}
+  \item \emph{<< Combien de personnes ont pris un abonnement à un
+      magazine de sport cette année ? >>}
+  \item \emph{<< A-t-on vendu plus d'abonnements de magazines de
+      sport cette année que l'année dernière ? >>}
+  \item \emph{<< Est-ce que les acheteurs de magazines de BD sont
+      aussi amateurs de sport ? >>}
+  \item \emph{<< Quelles sont les caractéristiques principales de mes
+      lecteurs de magazines de voiture ? >>}
+  \item \emph{<< Peut-on prévoir les pertes de clients et prévoir des
+      mesures pour les diminuer ? >>}
+  \end{enumerate}
+\end{quote}
+
+Les questions qui sont proposées ici sont de natures différentes et
+mettent en jeu des processus différents. 
+
+De simples requêtes SQL sont suffisantes pour répondre aux deux
+premières questions. Les données recherchées dans ce cas ne sont que
+le résultat d'un calcul simple sur un ou des groupes
+d'enregistrements. Ce qui distingue ces deux premières questions,
+c'est la notion de temps et la comparaison. Pour établir cette
+comparaison, les données doivent être présentes dans la base, ce qui
+n'est pas toujours le cas pour les bases opérationnelles.  Nous
+pouvons donc supposer que la requête 1 est réalisable sans technique
+particulière à partir des données opérationnelles sous réserve
+d'indexations suffisantes des tables concernées. La seule difficulté
+est de ne pas pénaliser le serveur transactionnel par des requêtes
+trop longues.
+
+La requête 2 nécessite de conserver toutes les dates de souscription
+même pour les abonnements résiliés. Nous pouvons imaginer aussi que
+l'utilisateur émettra une grande variété de requêtes de ce type. Nous
+supposons alors que ces questions seront résolues à l'aide d'outils de
+création de requêtes multidimensionnelles de type OLAP.
+
+La question 3 est un exemple  simplifié de problème où l'on demande si
+les données vérifient une règle. La réponse pourrait se formuler par
+une valeur estimant la probabilité que la règle soit vraie. Souvent,
+des outils statistiques sont utilisés. Cette question peut être
+généralisée. On pourrait chercher des associations fréquentes entre
+acheteurs de magazine pour effectuer des actions promotionnelles. On
+pourrait également introduire une composante temporelle pour chercher
+si le fait d'être lecteur d'un magazine implique d'être, plus tard,  lecteur d'un
+autre magazine.
+
+La  question 4 est beaucoup plus ouverte. La
+problématique  ici est de \emph{trouver} une règle et non plus de la
+vérifier ou de l'utiliser. C'est pour ce type de question que l'on met
+en \oe uvre des outils de fouille de données et donc le processus
+décrit ci-dessous.
+
+La question 5 est également une question ouverte. Il faut pour la
+résoudre disposer d'indicateurs qui pourraient sur notre exemple être
+: les durées d'abonnement, les délais de paiement, ... Ce type de
+question a une forte composante temporelle. Elle nécessite des données
+historiques. Elle a de nombreuses applications dans le domaine
+bancaire, par exemple.
+
+
+Le processus de KDD utilise des outils de  création de requêtes, des outils
+statistiques et des outils de fouille de données. Là encore, nous nous
+apercevons qu'une très grande partie des problèmes de décision se
+traite avec des outils simples. La fouille de données quand elle est
+nécessaire, suit souvent une analyse des données simple (OLAP) ou
+statistique. 
+
+\section{Préparation des données}\index{Préparation}\index{Données!préparation}
+\label{sec:preparation}
+
+Dans notre exemple, nous avons identifié quelques objectifs précis,
+exprimés sous forme de questions.
+
+La préparation des données consiste dans un premier temps à obtenir
+des données en accord avec les objectifs que l'on s'impose. Ces
+données proviennent le plus souvent de bases de production ou
+d'entrepôts.  Les données sont structurées en champs typés (dans un
+domaine de définition).
+
+Dans  l'exemple, nous partons d'une liste des souscriptions
+d'abonnements avec cinq champs (voir figure \ref{fig:prep}).
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+    \begin{tabular}{|l|l|l|l|l|}\hline
+      \Numero client & Nom & Adresse & Date d'abonnement & Magazine \\
+      \hline
+      23134& Bemol & Rue du moulin, Paris & 7/10/96 & Voiture \\ 
+      23134& Bemol & Rue du moulin, Paris  & 12/5/96 & Musique \\
+      23134& Bemol & Rue du moulin, Paris & 25/7/95 & BD \\
+      31435& Bodinoz & Rue verte, Nancy & 11/11/11 & BD\\
+      43342& Airinaire& Rue de la source, Brest& 30/5/95 & Sport\\
+      25312& Talonion& Rue du marché, Paris&25/02/98& NULL\\
+      43241& Manvussa& NULL& 14/04/96& Sport\\
+      23130& Bemolle&  Rue du moulin, Paris & 11/11/11 & Maison\\ \hline
+    \end{tabular}
+    \caption{Obtention des données}
+    \label{fig:prep}
+  \end{center}
+\end{figure}
+
+Ces données sont tout d'abord copiées sur une machine adéquate, pour
+des questions de performance, mais surtout parce qu'elles seront
+modifiées. 
+
+L'obtention des données est souvent réalisée à l'aide d'outils de
+requêtage (OLAP, SQL,...).
+
+Il faut, dès a présent, noter que l'on ne peut résoudre des problèmes
+que si l'on dispose des données nécessaires. Il semble, par exemple,
+impossible de s'attaquer à la question 5 de notre exemple avec les
+données dont nous disposons.
+
+
+\section{Nettoyage}\index{Nettoyage}\index{Données!nettoyage}
+
+\label{sec:nettoyage}
+
+
+Il y a évidemment de nombreux points communs entre nettoyage avant
+l'alimentation des entrepôts (\ref{sec:alimentation}) et avant la
+fouille. Bien sûr, lorsque les données proviennent d'un entrepôt, le
+travail est simplifié mais reste néanmoins nécessaire : nous avons
+maintenant un projet bien défini, précis et les données doivent être
+les plus adaptées possibles.
+ 
+Reprenons quelques remarques citées dans le chapitre précédent. 
+\begin{description}
+\item[Doublons, erreurs de saisie] \index{Doublons}Les doublons peuvent se révéler
+  gênants parce qu'ils vont donner plus d'importance aux valeur
+  répétées. Une erreur de saisie pourra à l'inverse occulter une
+  répétition. 
+
+  Dans notre exemple, les clients numéro 23134 et 23130 sont
+  certainement un seul et même client, malgré la légère différence
+  d'orthographe. 
+
+\item[Intégrité de domaine] \index{Intégrité}Un contrôle sur les domaines des valeurs
+  permet de retrouver des valeurs aberrantes. 
+
+  Dans notre exemple, la date de naissance du client 23130 (11/11/11)
+  semble plutôt correspondre à une erreur de saisie ou encore à une
+  valeur par défaut en remplacement d'une valeur manquante.
+
+\item[Informations manquantes] \index{Données!manquantes}\index{Manquantes}C'est le terme utilisé pour désigner
+  le cas où des champs ne contiennent aucune donnée. Parfois, il est
+  intéressant de conserver ces enregistrements car l'absence
+  d'information peut être une information (ex: détection de
+  fraudes). D'autre part, les valeurs contenues dans les autres champs
+  risquent  aussi d'être utiles. 
+
+  Dans notre exemple, nous n'avons pas le type de magazine pour le
+  client 25312. Il sera écarté de notre ensemble. L'enregistrement du
+  client 43241 sera conservé bien que l'adresse ne soit pas connue. 
+\end{description}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+    \begin{tabular}{|l|l|l|l|l|}\hline
+      \Numero client & Nom & Adresse & Date d'abonnement & Magazine \\
+      \hline
+      23134& Bemol         & Rue du moulin, Paris & 7/10/96 & Voiture     \\ 
+      23134& Bemol         & Rue du moulin, Paris  & 12/5/96 & Musique       \\
+      23134& Bemol         & Rue du moulin, Paris  & 25/7/95 & BD            \\
+      31435& Bodinoz       & Rue verte, Nancy & NULL & BD                    \\
+      43342& Airinaire     & Rue de la source, Brest& 30/5/95 & Sport      \\
+      43241& Manvussa      & NULL& 14/04/96& Sport                  \\
+      23130& Bemol         &  Rue du moulin, Paris & NULL & Maison        \\ \hline
+    \end{tabular}
+    \caption{Après nettoyage}
+    \label{fig:nettoyage}
+  \end{center}
+\end{figure}
+
+
+Là encore, le langage SQL est utilisé pour la recherche de doublons et
+des informations manquantes.
+
+\section{Enrichissement}\index{Enrichissement}\index{Données!enrichissement}
+
+\label{sec:enrich}
+
+On peut avoir recours à d'autres bases, achetées ou produites en un
+autre lieu, pour enrichir nos données. L'opération va se traduire par
+l'ajout de nouveaux champs en conservant souvent le même nombre
+d'enregistrements. 
+
+Une première difficulté  ici est de pouvoir relier des données qui parfois
+sont hétérogènes. Des problèmes de format de données apparaissent et
+des conversions sont souvent nécessaires. Une deuxième difficulté est
+l'introduction de nouvelles valeurs manquantes ou aberrantes et la
+phase de nettoyage sera certainement de nouveau utile. 
+
+Dans l'exemple, supposons que nous ayons accès à des informations sur
+les clients (voir figure \ref{fig:riche}). 
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+    \begin{tabular}{|l|l|l|l|l|}\hline
+       client  & Date de naissance & Revenus & Propriétaire & Voiture \\ \hline
+      Bemol    & 13/1/50& 20 000 F & Oui & Oui \\ 
+      Bodinoz  & 21/5/70 & 12 000 F & Non & Oui\\
+      Airinaire& 15/06/63& \:  9 000 F & Non & Non\\
+      Manvussa & 27/03/47& 15 000 F& Non & Oui\\ \hline
+    \end{tabular}
+    \caption{Enrichissment}
+    \label{fig:riche}
+  \end{center}
+\end{figure}
+
+
+\section{Codage, normalisation} \index{Codage}\index{Données!codage}\index{Normalisation}\index{Données!normalisation}
+
+\label{sec:code}
+
+À ce stade du processus, les choix sont particulièrement guidés par
+l'algorithme de fouille utilisé et des ajustements des choix de
+codage sont souvent nécessaires.   
+
+\begin{description}
+\item[Regroupements] \index{Regroupement}
+
+  Certains attributs prennent un très grand nombre de valeurs
+  discrètes. C'est typiquement le cas des adresses. Lorsqu'il est
+  important de considérer ces attributs pour la fouille de données il
+  est obligatoire d'opérer des regroupements et ainsi obtenir un
+  nombre de valeurs raisonnable. 
+
+  Dans l'exemple, nous regroupons les adresses en 2 régions : Paris,
+  province.  
+ 
+\item[Attributs discrets] \index{Type!discret}Les attributs discrets prennent leurs
+  valeurs (souvent textuelles) dans un ensemble fini donné.
+  C'est le cas de la colonne \emph{magazine} dans notre exemple qui
+  peut prendre les valeurs \emph{Sport, BD, Voiture, Maison, Musique.}
+
+  Deux représentations sont possibles pour ces données : une
+  représentation verticale\index{Représentation!verticale}\index{Représentation!horizontale} telle qu'elle est présentée en figure
+  \ref{fig:nettoyage} ou une représentation horizontale ou éclatée
+  (figure \ref{fig:horizon}). 
+
+  \begin{figure}[htbp]
+    \begin{center}
+      \leavevmode
+      \begin{tabular}{|l|l|l|l|l|l|}
+        \hline
+        \Numero & Sport & BD & Voiture & Maison & Musique \\ \hline 
+        23134   &  0    &  1 &    1    &   0     &    1    \\ 
+        31435   &  0    &  1 &    0    &   0     &    0    \\ 
+        43342   &  1    &  0 &    0    &   0     &    0    \\ 
+        43241   &  1    &  0 &    0    &   0     &    0    \\ \hline 
+      \end{tabular}
+      \caption{Codage des attributs discrets}
+      \label{fig:horizon}
+    \end{center}
+  \end{figure}
+
+
+  
+  La représentation horizontale est plus adaptée à la fouille de
+  données et certains calculs sont simplifiés. Par exemple, la somme
+  de la colonne sport que divise le nombre d'enregistrements calcule
+  le pourcentage de clients ayant souscrit un abonnement à un magazine
+  de sport. Notons que la date d'abonnement dépend du type de
+  magazine.  De façon générale, la modification présentée en figure
+  \ref{fig:horizon} peut induire une perte d'information pour tous les
+  champs en dépendance fonctionnelle avec le champ transformé. Nous
+  choisissons de transformer le champ \emph{date d'abonnement} en
+  \emph{date du plus vieil abonnement}. Il est à noter que cette
+  transformation ne nous permet plus espérer générer des règles de la
+  forme : un acheteur de BD s'abonne à un magazine de musique dans les
+  deux ans qui suivent.
+  
+  
+  Dans notre exemple, le même codage en deux valeurs 0 et 1 sera
+  réalisé avec les champs Oui/Non issus de l'enrichissement.
+  
+\item[Changements de type] \index{Types} Pour certaines manipulations, comme des
+  calculs de distance, des calculs de moyenne, il est préférable de
+  modifier les types de certains attributs. Dans notre exemple, la
+  date de naissance et  la date d'abonnement ne permettent  pas
+  d'effectuer simplement des comparaisons, des différences. Nous
+  pouvons les convertir en âge ou en durée.  
+
+  
+\item[Uniformisation d'échelle]\index{Uniformisation}\index{Echelle} Certains algorithmes, comme la méthode
+  des plus proches voisins, sont basés sur des calculs de distance
+  entre enregistrements. Des variations d'échelle selon les attributs
+  sont autant de perturbations possibles pour ces algorithmes. Des
+  échelles très << étirées >> vont artificiellement rendre des
+  dimensions trop << vides >>.
+  
+  C'est typiquement le cas pour le champ \emph{Revenus} dans notre
+  exemple. Les centaines de francs ne sont pas significatives ici.
+  Nous convertissons donc les revenus en les divisant par
+  mille. L'intervalle de valeurs est alors dans la même échelle que
+  les dates de naissance et les durées d'abonnement.
+
+  \begin{figure}[htbp]
+    \begin{center}
+      \leavevmode
+      {\tiny     
+        \begin{tabular}{|l|l|l|l|l|l|p{1cm}|l|l|l|l|p{1cm}|l|l|}
+          \hline
+          \Numero & Sport & BD & Voiture & Maison & Musique & 
+          Date de naissance
+          & Revenus & Propriétaire & Voiture& Paris? & Durée d'abonnement \\ \hline  
+          23134   &  0    &  1 &    1    &   0     &    1    & 50 & 20
+          & Oui        & Oui    & 1 & 4   \\ 
+          31435   &  0    &  1 &    0    &   0     &    0    & 30 & 12
+          & Non        & Oui    & 0 & NULL   \\ 
+          43342   &  1    &  0 &    0    &   0     &    0    & 37&\: 9
+          & Non        & Non    & 0 & 5 \\ 
+          43241   &  1    &  0 &    0    &   0     &    0    & 53& 15  & Non        & Oui    & NULL& 4 \\ \hline 
+        \end{tabular}}
+      \caption{Codage des attributs discrets et normalisation.} 
+      \label{fig:discret}
+    \end{center}
+  \end{figure}
+
+\end{description}  
+
+
+\section{Fouille}\index{Fouille}\index{Données!Fouille}
+\label{sec:fouille}
+La fouille de données est  le c\oe ur du processus car elle permet
+d'extraire de l'information des données.
+Néanmoins, c'est souvent une étape difficile à mettre en \oe uvre,
+coûteuse et dont les résultats doivent être interprétés et
+relativisés. Il faut aussi noter qu'en situation réelle, pour l'aide à
+la décision, une très grande majorité des résultats recherchés
+s'obtient uniquement par requêtes, par analyse multi-dimensionnelle ou
+grâce aux outils de visualisation.
+
+Une approche traditionnelle pour découvrir ou expliquer un phénomène
+est de 
+\begin{enumerate}
+\item regarder, explorer, 
+\item établir un modèle ou une hypothèse, 
+\item essayer de
+  le contredire ou le vérifier comme en 1 ; recommencer le point 2 jusqu'à
+  obtenir une réponse de qualité satisfaisante.
+\end{enumerate}
+
+La partie 1 est traditionnellement réalisée avec des outils de
+reporting ou d'analyse multidimensionnelle. La partie 2 est une
+hypothèse émise par l'uilisateur. On peut voir
+les outils de fouille de données comme des procédures qui permettent
+de faciliter ou encore d'automatiser ce processus.
+
+La qualité du  modèle 
+obtenu se mesure selon les critères suivants : 
+\begin{itemize}
+\item Rapide à créer ;
+\item rapide à utiliser ;
+\item compréhensible pour l'utilisateur ;
+\item les performances sont bonnes ; Le modèle est fiable ;
+\item les performances ne se dégradent pas dans le temps ;
+\item Il évolue facilement.
+\end{itemize}
+
+Il va de soit qu'aucun modèle n'aura toutes ces qualités. Il n'existe
+pas de meilleure méthode de fouille. Il faudra faire des compromis
+selon les besoins dégagés et les caractéristiques connues des outils.
+Dans le chapitre \ref{sec:fouille} nous en présentons quelques unes
+avec leurs avantages et inconvénients, des indications pour mieux les
+choisir. Pour une utilisation optimale, une combinaison de méthodes
+est recommandée. On peut rapidement donner 3 catégories :
+\begin{description}
+\item [Classification, régression, prédiction] \index{Classification}\index{Régression}\index{Prédiction}
+  Il s'agit de trouver une classe  ou une valeur selon un ensemble de
+  descriptions. Ce sont des outils très utilisés. Les algorithmes 
+   reposent  sur des arbres de décision, des réseaux de neurones, la
+   règle de Bayes, les $k$ plus proches voisins. 
+\item [Association, sequencing]\index{Association}\index{Sequencing}
+  Il s'agit de trouver des similarités ou des associations. Le
+  sequencing est le terme anglais utilisé pour préciser que
+  l'association se fera dans le temps. Par exemple, \emph{si j'achète un
+  couffin  aujourd'hui, j'ai trois fois plus de chance dans 3 mois
+  d'acheter un
+  lit bébé} (sequencing) ou encore  \emph{Si j'achète des pâtes et de
+  la purée de tomates, j'ai deux fois plus de chance d'acheter aussi
+  du parmesan} (association).  
+\item [Segmentation]\index{Segmentation}
+  La problématique est de trouver des groupes homogènes dans une
+  population. On utilise souvent les algorithmes des $k$-moyennes ou
+  de Kohonen. La difficulté essentielle dans ce type de construction
+  est la validation qui nécessite l'intervention d'experts humains.
+\end{description}
+
+
+
+\section{Validation}\index{Validation}
+\label{sec:valid}
+
+Les méthodes de validation vont déprendre de la nature de la tâche et
+du problème considéré. Nous distinguerons deux modes de validation :
+statistique et par expertise.
+
+Pour certains domaines d'application (le diagnostic médical, par
+exemple), il est essentiel que le modèle produit soit compréhensible.
+Il y a donc une première validation du modèle produit par l'expert,
+celle-ci peut être complétée par une validation statistique sur des
+bases de cas existantes.
+
+Pour les problèmes d'apprentissage non supervisé (segmentation,
+association), la validation est essentiellement du ressort de
+l'expert. Pour la segmentation, le programme construit des groupes
+homogènes, un expert peut juger de la pertinence des groupes
+constitués. La encore, on peut combiner avec une validation
+statistique sur un problème précis utilisant cette segmentation. Pour
+la recherche des règles d'association, c'est l'expert du domaine qui
+jugera de la pertinence des règles, en effet, l'algorithme, s'il
+fournit des règles porteuses d'information, produit également des
+règles triviales et sans intérêt.
+
+Pour la validation statistique, la première tâche à réaliser consiste
+à utiliser les méthodes de base de statistique descriptive. L'objectif
+est d'obtenir des informations qui permettront de juger le résultat
+obtenu, ou d'estimer la qualité ou les biais des données
+d'apprentissage.
+\begin{enumerate}
+\item Calculer les moyennes et variances des attributs.
+\item Si possible, calculer la corrélation entre certains champs. 
+\item Déterminer la classe majoritaire dans le cas de la
+  classification.
+\end{enumerate}
+
+Pour la classification supervisée, la deuxième tâche consiste à
+décomposer les données en plusieurs ensembles disjoints. L'objectif
+est de garder des données pour estimer les erreurs des modèles ou de
+les comparer. Il est souvent recommandé de constituer:
+\begin{itemize}
+\item Un ensemble d'apprentissage.\index{Apprentissage!ensemble}
+\item Un ensemble de test.\index{Test!ensemble}
+\item Un ensemble de validation.\index{Validation!ensemble}
+\end{itemize}
+
+Au moins deux ensembles sont nécessaires : l'ensemble d'apprentissage
+permet de générer le modèle, l'ensemble
+test permet d'évaluer l'erreur réelle du modèle sur un ensemble indépendant
+évitant ainsi un biais d'apprentissage. Lorsqu'il s'agit de tester
+plusieurs modèles et de les comparer, on peut sélectionner le meilleur
+modèle selon ses performances sur l'ensemble test et ensuite évaluer
+son erreur réelle sur l'ensemble de validation. 
+
+Lorsqu'on ne dispose pas de suffisamment d'exemples on peut se
+permettre d'apprendre et d'estimer les erreurs avec un même ensemble
+par la technique de \emph{validation croisée}. \index{Validation
+  croisée}. 
+La validation croisée ne construit pas de modèle utilisable mais ne
+sert qu'à estimer l'erreur réelle d'un modèle selon l'algorithme
+suivant : 
+
+\begin{tabbing}
+  \textbf{Validation croisée $(S,x)$}\\
+  // $S$ est un ensemble $x$ est un entier
+  \\
+  \textbf{Découper} $S$ en $x$ parties égales $\{S_1,\dots,S_x\}$\\
+  \textbf{Pour}\=\ $i$ de $1$ à $x$\+\\
+    \textbf{Construire} un modèle $M$ avec l'ensemble $S-S_i$\\
+    \textbf{Evaluer} l'erreur $e_i$ de $M$ avec $S_i$\-\\
+  \textbf{Fin Pour}\\
+  \textbf{Retourner}  la moyenne des $e_i=\frac{\sum_{i=1}^{x} e_i}{x}$
+\end{tabbing}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% ispell-local-dictionary: "francais"
+%%% ispell-local-pdict: "~/.ispell_francais"
+%%% End: 
+% LocalWords:  sequencing Bayes Kohonen

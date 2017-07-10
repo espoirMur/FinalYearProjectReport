@@ -1,0 +1,83 @@
+\subsection{Arbres des Decisons \cite{TreeBk1} \cite{TreeAV}}
+\subsubsection{Définitions}
+Une arbre de décision est un ensemble des règles de classification et de régression basant leurs décisions sur des tests associé aux attributs ,organisées de manière arborescente .\\
+C'est une représentation d'une procédure d'apprentissage.\\
+Voici quelques termes ou notions liées aux arbres de décisions:
+\\
+\emph{Noeud Principale ou Root Node} : c'est l'attribut qui se situe au premier niveau et sur base de celui- ci s'effectue notre prédiction.\\
+\emph{Spliting ou segmentation}: c'est un processus consistant à diviser un nœud en 2 ou plusieurs sous nœuds sur base d'un test sur un attribue.\\
+\emph{Nœud Interne ou Nœud de décision : } c'est un nœud étiqueté par un test qui peut être appliqué à toute description d'un individu de la population.\\
+\emph{Une feuille :}
+c'est le nœud où on ne peut plus diviser  ou segmenter l'arbre , il est étiqueté par une classe.
+\subsubsection{Construction de l'arbre et Algorithme}
+\paragraph{Mesure de la pureté des feuilles}
+Pour Construire les nœuds de l'arbre,les  choix des « questions les plus discriminantes »  peuvent  se faire selon plusieurs critères : l’algorithme CART utilise l’indice de Gini, l’algorithme C4.5 utilise l’entropie, l'algorithme \ac{CHAID} utilise le test de khi carré, et plusieurs autres algorithmes.Dans cette partie nous ne parlerons que de deux premiers. Ces deux outils mathématiques visent à évaluer la « pureté » de chaque feuille : lorsque l’on se situe à un nœud donné de l’arbre, le but est de créer deux feuilles qui soient plus homogènes que le nœud qui
+les précède. Il faut donc disposer d’un moyen de mesurer cette homogénéité, ou « pureté ». Grâce
+à cela, à chaque nœud, le split est construit de manière à maximiser le gain d’information apporté
+par une question donnée sur la connaissance de la variable réponse.
+\subsubsection{Entropie}
+L’entropie  est une fonction mathématique créée par Claude Shannon en 1948, pour des questions initialement liées à la théorie du signal.\\
+En Machine Learning c'est la mesure du désordre ou de l'inégalité de répartition pour le choix d'un test à une position  de l'arbre.\\
+Notons par E notre ensemble d'apprentissage divisé en classes ${\omega}_{1},{\omega}_{2},....,{\omega}_{k}$
+- L'entropie de la distribution des classes = quantité moyenne d'information nécessaire pour identifier la classe d'un exemple de E.\\
+ \begin{center}$ H(E)=-\sum _{j=1}^{k} P({\omega}_{k} ) \log_{2}({\omega}_{k})$\end{center}
+ 
+où $ P({\omega}_{k} )$ est la probabilité a priori de la classe $ {\omega}_{k}$ \\
+- Soit un test T(portant sur une variable X) ayant m alternatives possibles qui divisent En sous-ensembles $ {E}_{j}$ , caractérisé par une entropie $ H({E}_{j})$.\\
+- L'entropie de la partition résultante, c'est-à-dire l'entropie conditionnelle de E étant donné T, est définie comme l'entropie moyenne des sous-ensembles:
+\begin{center}$ H(E|T)=\sum _{j=1}^{j} P({E}_{j})H({E}_{j})$\end{center}
+- Le gain d'information apporté par le test Test donc:
+\begin{center}$ Gain(E,T)=H(E) - H(E|T)$\end{center}
+L'algorithme de l'arbre de decisison se base sur ces propriétés.
+\subsubsection{L'indice de Gini}
+L’indice (ou coefficient) de Gini est une mesure, comprise entre 0 et 1, de la dispersion d’une distribution. Il est très souvent utilisé en économie ou en sociologie afin de mesurer les inégalités sociales au sein d’un pays. Dans ce contexte, plus le coefficient est proche de 1 et plus la société est inégalitaire.
+il se calcule de la manière suivante :
+\begin{center}
+	$ Gini = \sum_{i\ne j} p({\omega}_{i})p({\omega}_{j})$
+\end{center}
+Avec $p({\omega}_{i})$ la probabilité de la classe $ {\omega}_{i} $ .\\
+De la même façon que l'entropie on calcul le gain d'information avec l'indice de gini.
+\subsubsection{Algorithme}
+\begin{algorithm}
+	\caption{Pseudo code de l'arbre de décision}
+	\begin{algorithmic}
+		\Require 
+		Training set E \\
+		\State Initialiser l’arbre courant `a l’arbre vide ; la racine est le nœud courant
+	    \While{On n'as pas encore obtenu l'arbre}
+	    \State Décider si le nœud courant est terminale
+	    \If{le nœud est terminal } 
+	    \State lui affecter une classe 
+	    \Else 
+	    \State Sélectionner un test et créer autant de nouveaux nœuds fils qu’il y a de réponses possibles au test
+	    \EndIf
+	    \State Passer au nœud suivant non exploré s’il en existe
+	    \EndWhile
+		\end{algorithmic}
+		\end{algorithm}
+\paragraph{}
+En général, on décide qu’un nœud est terminal lorsque tous les exemples associés à ce nœud, ou du moins la plupart d’entre eux sont dans la même classe, ou encore, s’il n’y a plus d’attributs non utilisés dans la branche correspondante.
+\paragraph{}
+En général, on attribue au nœud la classe majoritaire (éventuellement calculée à l’aide d’une fonction de coût lorsque les erreurs de prédiction ne sont pas équivalentes). Lorsque plusieurs classes sont en concurrence, on peut choisir la classe la plus représentée dans l’ensemble de l’échantillon, ou en choisir une au hasard.
+\subsection{Élagage de l'arbre ou \emph{Prunning}}
+L'objectif de cette étape est de supprimer les parties de l'arbre qui ne semblent pas performantes pour
+prédire la classe de nouveaux cas et les remplacées par un nœud terminal (associé à la classe majoritaire).\\
+Le processus est remplacées par un nœud terminal (associé à la classe majoritaire).\\
+il existe différentes façons d'estimer le taux d'erreur entre autre: \\
+– sur base de nouveaux exemples disponibles;\\
+– via une validation croisée ;\\
+– sur base d'une estimation statistique, ex: borne supérieure d'un intervalle de confiance construit sur un modèle binomial .
+\subsection{Avantages et inconvénients des arbres de décisions}
+\subsubsection{Avantages}
+- Interprétabilité: chaque élément du modèle est facile à comprendre et à analyser pour un humain, et peut donner de l'information sur les données. Ceci est surtout vrai pour les petits arbres. À cause de l'instabilité des arbres (par exemple si on varie le choix des variables ou des données), il faut utiliser des techniques spécialisées pour determiner quelles variables sont réellement importantes. On peut faire correspondre un arbre de décision à un ensemble de règles SI-ALORS (en introduisant des nouvelles classes correspondant aux noeuds cachés de l'arbre).\\
+- Flexibilité: peut être utilisé sur des données de n'importe quel type (dont évidemment les variables continues et discrètes) pour lesquelles un ensemble fini (pas trop grand) de questions possibles pour la partition peut être défini (en principe cela peut être appliqué à n'importe quel type de structures de données). \\
+\subsubsection{Inconvénients }
+
+Un des inconvénients principaux des méthodes d'apprentissage par arbres de décision
+est leur instabilité. Sur des données réelles, il s’en faut souvent de peu qu'un attribut soit
+choisi plutôt qu'un autre et le choix d’un attribut-test, surtout s’il est près de la racine,
+influence grandement le reste de la construction. La conséquence de cette instabilité
+est que les algorithmes d'apprentissage par arbres de décision ont une variance importante, qui nuit à la qualité de l'apprentissage. Des méthodes comme le Bagging(pour Bootstrap Aggregating) ou les Random Forests(qui consiste à utiliser plusieurs arbres et utiliser le vote classe faite par chaque arbre pour classer une instance ) \cite{RandomForrest1} permettent dans une certaine mesure de remédier à ce problème.
+
+\subsubsection{Random Forrest }
+

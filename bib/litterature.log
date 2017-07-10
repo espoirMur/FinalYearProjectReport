@@ -1,0 +1,22 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdftex 2017.3.18)  18 MAR 2017 11:50
+entering extended mode
+**"C:/Users/Espoir M/Desktop/Memoire-working/bib/litterature.bib"
+("C:/Users/Espoir M/Desktop/Memoire-working/bib/litterature.bib"
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ‰ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¨ in font cmr10!
+
+! Undefined control sequence.
+l.27 	howpublished={\url
+                        {http://www.sharpsightlabs.com/dif ferenceÂ­machineÂ...
+
+? 
+! Emergency stop.
+l.27 	howpublished={\url
+                        {http://www.sharpsightlabs.com/dif ferenceÂ­machineÂ...
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

@@ -1,0 +1,56 @@
+\chapter{Généralités sur le DataMining }
+\paragraph{}
+Nous sommes submergées des données et leur quantité augmente du jour au lendemain . Les ordinateurs, les smart-phones et de plus en plus des équipements connectées nous submergent et sont omniprésents dans notre vie et cela nous permet de générer des très grandes quantités des données , toutes nos décisions , nos choix dans les supermarchés,nos habitudes financières sont sauvegardées dans d'énormes bases des données.
+
+L'internet est aussi submergé des informations c'est ce qui fait que chaque choix, chaque clic que nous faisons soit sauvegardé , ceci n'étant  que des choix personnels mais qui ont d'innombrables contreparties dans le monde du commerce et de l'industrie .
+Mais paradoxalement on a pu constaté  que plus les données augmentent et sont générées de moins en moins les personnes les comprennent   et ainsi un immense fossé s'est créé entre le volume des données générées et la capacité de compréhension de celles ci.
+D'où l'importance de mettre en place des méthodes et techniques qui faciliterons l'analyse et l'obtention des informations considérables de ces données.
+\section{Définitions}
+Dans cette partie nous allons définir 3 termes qui portent souvent à confusion : L'intelligence Artificielle,Le Machine Learning ou apprentissage automatique, La fouille des données ou Le DataMining, nous tenterons de dégager à la fin les différences et les ressemblances entre ces  termes.
+\subsection{L'intelligence Artificielle}
+L’intelligence artificielle(IA) est un domaine de l’informatique dédié à la création de matériel et de logiciels capables d’imiter la pensée humaine. Le but principal de l’intelligence artificielle est de rendre les ordinateurs plus intelligents en produisant des logiciels permettant à un ordinateur d’émuler des fonctions du cerveau humain dans des applications définies. L’idée n’est pas de remplacer l’être humain mais de lui donner un outil plus puissant afin de l’aider à accomplir ses tâches.\cite{coursKasoro}\\
+L'Intelligence artificielle est un domaine de l'Informatique qui a pour but de développer des machines 
+(= ordinateurs) "intelligentes", c'est-à-dire capables de résoudre des problèmes pour lesquels les méthodes conventionnelles sont inefficaces et inapplicables. 
+\cite{coursKasoro}
+\subsection{Le Machine Learning}
+Le Machine Learning est définie comme une branche de l'intelligence artificielle qui se penche sur la création des algorithmes qui peuvent apprendre et faire des prédictions à partir des données\cite{DMandMLBook}
+
+D'autres auteurs le définissent comme : \\
+- Un type de l'intelligence artificielle qui donne aux machines la possibilité d'apprendre sans être explicitement programmer\cite{differenceMLDM2}  \\
+- La science qui consiste à la création des logicielles qui apprennent d'eux même en fonction des données.\cite{differenceMLDM2}
+\subsection{Le DataMining}
+\paragraph{}
+Le DataMining ou la  fouille de données est une technique  consistant à rechercher et extraire de l'information (utile et inconnue) de gros volumes de données stockées dans des bases ou des entrepôts de données en utilisant les techniques du Machine Learning .\cite{DMandMLBook}
+
+Certains auteurs comme M. BATER\cite{MBaterBook} le définissent comme  une discipline scientifique qui a pour but l'analyse exploratoires des grandes quantités des données , la découvertes des modèles utiles ,valides , inattendus ainsi que  la connaissances compréhensibles dans celles ci. Outre la découvertes de l'information il englobe la collecte , le nettoyage et le traitement de ces données.
+\paragraph{}
+Le datamining peut aussi être défini comme un processus inductif, itératif  et interactif de découverte dans les bases de données  larges de modèles des données valides, nouveaux, utiles et compréhensibles.\cite{DMdef}
+- 	Itératif :     nécessite plusieurs passes
+
+- 	Interactif :   l'utilisateur est dans la boucle du processus
+
+- 	Valides :     valables dans le futur
+
+- 	Nouveaux : non prévisibles 
+
+-	Utiles :       permettent à l'utilisateur de prendre des décisions
+
+-	Compréhensibles : présentation simple
+
+\subsection{ {  Différence entre le DataMining , le Machine Learning, ainsi que les statistiques .} 
+	\cite{differenceMLDM2} \cite{differenceMLDM} \cite{differenceMLDMStack}}
+\paragraph{}
+A première vue on pourrait constater que ces 3 disciplines n'ont aucune différence car tous traitent de la même question : comment apprendre des données ?, couvrent les mêmes matières et utilisent les mêmes techniques qui sont entre autres : la régression linéaire, la régression logistique  , le réseau des neurones , le Support Vector Machine ,....
+\paragraph{} 
+Mais en analysant de prêt on remarque qu'ils ont des différences surtout concernant les sujets et matières sur lesquels ils insistent, ou en d'autres termes quand et comment les méthodes qu'ils ont en commun sont utilisées.
+
+- Les statistiques insistent sur les méthodes de la  statistique référentielle,descriptives , multivariés  (intervalle de confiance, test des hypothèses , estimation optimale )  dans un problème à faible dimension (une petite quantité des données ) et elles font des prédiction sur base de celle ci.\cite{differenceMLDM}
+
+- Le Machine Learning est beaucoup plus concentré vers le Génie logiciel il est beaucoup plus focalisé sur la construction des logicielles qui font des prédiction à partir des données apprennent de l'expérience. On dit qu'un programme apprend de l'expérience si ses performances sur les taches qu'il exécute augmentent avec l'expérience . ces performances sont évaluées à l'aide de certaines métriques que nous verront dans la suite.\\
+Il nécessite l'étude des algorithmes qui peuvent extraire l'information utile dans des grosses quantités des données automatiquement , dans certaines mesures il s'inspirent des statistiques. \cite{differenceMLDMStack}   
+
+-Le DataMining quand à lui s'inspire des techniques du Machine learning , des statistiques souvent avec un objectif bien fixé en vue de découvrir des patterns cachées dans des grosses volumes des données.
+- L'intelligence artificielle se focalise sur la création des agents intelligents , en pratique il consiste à programme un ordinateur pour qu'il simule le fonctionnement du cerveau humain . Qu'il exécute certaines taches comme un homme parmi ces taches figure la faculté d'apprendre sur base de l'expérience.
+\section{{ Différentes Techniques du Machine Learning   \cite{AndNgCourse}	} } 
+Dans cette partie nous allons passer en revue quelques méthodes et algorithmes utilisées dans le machine learning.
+Notons que ces méthodes se divisent en 2 groupes : l'apprentissage supervisée et l'apprentissage non supervisé.Concernant l'apprentissage supervisé nous parlerons de la régression linéaire , la régression, le réseau des neurones, le SVM(Support Vector Machine) , les arbres de décision et nous finirons par le Random Forrest qui n'est qu'une amélioration des arbres de décisions, et pour l'apprentissage non supervisé nous allons parler de K-means.  

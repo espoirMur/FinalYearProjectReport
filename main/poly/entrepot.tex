@@ -1,0 +1,1000 @@
+%       $Id: entrepot.tex,v 1.5 2000/04/17 09:35:10 gilleron Exp tommasi $    
+% Partie entrepôt de données. 
+%
+\chapter{Entrepôts de données}
+\label{sec:entrepots}
+
+Un métier du secteur informatique a certainement déjà disparu : 
+monteur de bandes. Cette personne était chargée de manutentionner des
+bandes magnétiques depuis les lieux de stockage jusqu'au site
+informatique central ou trônait un gigantesque ordinateur avec ses
+lecteurs de bande comme seule unité de sauvegarde. Pour charger une
+nouvelle application, il fallait monter la bande correspondante dans
+cette armoire où l'on voyait deux disques tourner, s'arrêter, changer
+de sens etc. Ce précieux périphérique remplaçait avantageusement les
+lecteurs de cartes trop lents. Mais
+l'apparition du disque dur, d'une remarquable capacité de 5Mo, a envoyé
+la bande à la décharge au milieu des années
+80. Aujourd'hui, le Mo est l'unité pour la mémoire vive et nous
+produisons des machines stockant plusieurs PetaOctets (des millions de
+milliards d'octets). Ce besoin de stockage est-il justifié et en quoi
+est-il nécessaire ?
+
+Les sociétés de téléphone gardent au moins un an les positions
+géographiques et les consommations de leurs abonnés << mobiles >>.
+Les grands magasins et les entreprises de vente par correspondance
+(VPC) conservent les achats de leurs clients (tickets de caisse en
+grande distribution, commandes en VPC), collectent des informations
+sur leurs clients grâce à des systèmes de cartes de fidélité ou de
+crédit, et achètent des bases de données géographiques et
+démographiques. Les sites web conservent des traces de connexions sur
+leurs sites marchands. En résumé, les entreprises en secteur très
+concurrentiel conservent les données de leur activité et achètent même 
+des données.
+
+Les motifs qui ont présidé à la conservation de ces données étaient :
+des obligations légales pour pouvoir justifier les facturations, des
+raisons de sécurité pour pouvoir détecter les fraudes, des motifs
+commerciaux pour suivre l'évolution des clients et des marchés. Quelle
+que soit la raison initiale, les entreprises se sont rendues compte
+que ces données pouvaient être une source d'informations à leur
+service. Ce constat, valable pour les sociétés du secteur
+marchand,  peut être étendu à de nombreux domaines comme la
+médecine, la pharmacologie. Il faut donc définir des environnements
+permettant de mémoriser de grands jeux de données et d'en extraire de
+l'information.
+
+Les structures qui accueillent ce flot important de données sont des
+entrepôts de données ou \emph{data warehouse}. Ils sont construits sur
+une nouvelle architecture permettant d'extraire l'information,
+architecture bien différente de celle prévue pour l'informatique de
+production, basée elle sur des systèmes de gestion de bases de données
+relationnelles et des serveurs transactionnels.  Un entrepôt de
+données est construit en l'alimentant \emph{via} les serveurs
+transactionnels de façon bien choisie et réfléchie pour permettre aux
+procédures d'extraction de connaissances de bien fonctionner.
+L'organisation logique des données est particulièrement conçue pour
+autoriser des recherches complexes. Le matériel est
+évidemment adapté à cette utilisation.
+
+Nous rappelons les différences essentielles entre informatique de
+production et de décision (section~\ref{sec:decpro}). La phase de
+construction est abordée en section \ref{sec:construction}. Nous la
+présentons en trois parties : l'étude préalable qui étudie la
+faisabilité, les besoins ; l'étude des données et de leur modélisation
+; l'étude de l'alimentation l'entrepôt. Le chapitre se termine par une
+présentation rapide des outils d'exploitation et d'administration :
+navigation, optimisation, requêtes et visualisation (section
+\ref{sec:utilisation}).
+
+\section{Informatique décisionnelle vs Informatique de production}
+\label{sec:decpro}
+
+Une des principales caractéristiques des systèmes de production est
+une activité constante constituée de modifications et d'interrogations
+fréquentes des données par de nombreux utilisateurs : ajouter une
+commande, modifier une adresse de livraison, rechercher les
+coordonnées d'un client, ...  Il faut conserver la cohérence des
+données (il faut interdire la modification simultanée d'une même
+donnée par deux utilisateurs différents). Il s'agit donc de
+privilégier un enregistrement rapide et sûr des données.  À l'inverse,
+les utilisateurs des systèmes d'information de décision n'ont aucun
+besoin de modification ou d'enregistrement de nouvelles données. Ils
+vont interroger le système d'information et les questions posées
+seront de la forme : << quelles sont les ventes du produit X pendant
+le trimestre A de l'année B dans la région C >>. Une telle
+interrogation peut nécessiter des temps de calcul importants. Or,
+l'activité d'un serveur transactionnel ne peut être interrompue. Il
+faut donc prévoir une nouvelle organisation qui permette de mémoriser
+de grands jeux de données et qui facilite la recherche d'informations.
+
+Enfin, nous étudierons dans le chapitre suivant l'extraction de
+connaissances à partir de données. Les méthodes de fouille de données
+nécessitent une préparation et une organisation particulière des
+données que nous détaillerons au chapitre suivant. L'existence d'un
+entrepôt simplifiera cette tâche et permettra donc d'optimiser le
+temps de développement d'un projet d'extraction de connaissances.  En
+résumé, on peut justifier la construction d'un entrepôt de données par
+l'affirmation suivante : 
+
+\begin{quote}
+  il est beaucoup plus simple de trouver une information pertinente
+  dans une structure organisée pour la recherche de connaissance.
+\end{quote}
+
+\subsection*{La production}\index{Informatique!production}\index{Production}
+\label{sec:OLTP}
+Le modèle Entité-Association (ou modèle EA\index{Modèle!Entité
+  Association}) est l'un des formalismes les plus utilisés pour la
+représentation conceptuelle des systèmes d'information. Il permet de
+construire des modèles de données dans lesquels on cherche à tout prix
+à éviter des redondances. Toute donnée mémorisée plus d'une fois est
+source d'erreurs, d'incohérences, et va pénaliser les temps
+d'exécution et complexifier les procédures d'ajout, de suppression ou
+de modification.
+
+D'un point de vue logique, ce sont les bases de données relationnelles
+qui ont su au mieux représenter ces modèles conceptuels. Les éditeurs
+de logiciels et les architectes d'ordinateurs ont dû fournir un effort
+important pour les rendre efficaces. Aujourd'hui les bases
+relationnelles ont acquis une maturité satisfaisante pour être
+largement utilisées et diffusées dans de nombreuses organisations, à
+toute échelle.   
+
+Conserver la cohérence de la base de données, c'est l'objectif et la
+difficulté principale pour l'informatique de production. Les systèmes
+transactionnels (temps réel) OLTP (\emph{On-Line Transaction
+  Processing}\index{OLTP}) garantissent l'intégrité des données. Les
+utilisateurs accèdent à des éléments de la base par de très courtes
+transactions indécomposables, isolées. Ils y accèdent très souvent
+pour des opérations d'ajout, suppression, modification mais aussi de
+lecture.  L'isolation permet de garantir que la transaction ne sera
+pas perturbée ni interrompue. Les contrôles effectués sont
+élémentaires.  La brièveté garantit que les temps de réponse seront
+acceptables (inférieurs à la seconde) dans un environnement avec de
+nombreux utilisateurs.
+
+Bien sûr, dans le souci de la garantie des performances, une requête
+dont le calcul prendrait trop de temps est inacceptable. Par exemple,
+une jointure sur de grosses tables à l'aide de champs non indexés est
+interdite. Les travaux sur une telle base sont souvent simples et
+répétitifs. Dès lors qu'un travail plus important est nécessaire,
+l'intervention de programmeurs et d'administrateurs de la base est
+requise et une procédure \emph{ad-hoc} est créée et optimisée. 
+ 
+Le modèle Entité-Association et sa réalisation dans un schéma
+relationnel sont pourtant des obstacles importants pour l'accès de
+l'utilisateur final aux données. Dans une situation réelle, le modèle
+des données est très large et contient plusieurs dizaines d'entités.
+Les bases sont alors constituées de nombreuses tables, reliées entre
+elles par divers liens dont le sens n'est pas toujours explicite.
+Souvent, les organisations ont choisi une norme pour définir des noms
+à chaque objet (table, champ,...) très << syntaxiques >> sans sémantique
+claire. Le but était de faciliter le travail des développeurs et
+l'efficacité des procédures. L'utilisateur final n'est pas considéré
+ici car c'est à l'informaticien de lui proposer une abstraction de ces
+modèles à travers les outils dont il a besoin. La complexité des
+données, l'absence d'annuaire clair rend la base inutilisable aux non
+initiés sans l'intervention d'informaticiens et d'outils sur mesure.
+
+L'informatique de production a donc été conçue pour privilégier les
+performances de tâches répétitives, prévues et
+planifiées tournées vers la production de documents standards
+(factures, commandes...). L'intervention de l'utilisateur est guidée
+à travers des outils spécifiques proposés par une équipe de
+développeurs. 
+
+La dernière caractéristique de ces bases de données est qu'elles
+conservent l'état instantané du système. Dans la plupart des
+cas, l'évolution  n'est pas conservée. On conserve simplement des
+versions instantanées pour la reprise en cas de panne et pour des
+raisons légales. 
+
+
+\subsection*{Le décisionnel}
+\label{sec:MDDW}
+\index{Informatique!de décision}\index{Décisionnel} 
+
+
+Dans un système d'information décisionnel, l'utilisateur final
+formulera des questions du type :
+\begin{itemize}
+\item Comment se comporte le produit X par rapport au produit Y ?
+\item Et par rapport à l'année
+  dernière ? 
+\item Quel type de client peut bien acheter mon produit Z ? 
+\end{itemize}
+
+Ces exemples permettent de mettre en évidence les faits suivants : 
+\begin{itemize}
+\item
+les
+questions doivent pouvoir être formulées dans le langage de
+l'utilisateur en fonction de son << métier >>, c'est-à-dire de son
+secteur d'activité (service marketing, service économique, service gestion des
+ressources humaines, ...) ;
+\item la prévision des interrogations est difficile car elles sont du
+  ressort de l'utilisateur. De plus, ses questions vont varier selon
+  les réponses obtenues : : si le produit X s'est vendu moins
+bien que l'année précédente, il va être utile d'en comprendre les
+raisons et donc de détailler les ventes du produit X (par région, par
+type de magasin, ...)
+\item des questions ouvertes (profil client du produit Z) vont
+  nécessiter la mise en place de méthodes d'extraction d'informations.
+\end{itemize}
+
+Ce qui caractérise d'abord les besoins, c'est donc
+la possibilité de poser une grande variété de questions au système,
+certaines prévisibles et planifiées comme des tableaux de bord et
+d'autres imprévisibles. Si des outils d'édition automatiques
+pré-programmés peuvent être envisagés, il est nécessaire de permettre
+à l'utilisateur d'effectuer les requêtes qu'il souhaite, par lui-même, 
+sans intervention de programmeurs. Deux contraintes apparaissent
+alors immédiatement: la simplicité du modèle des données, la
+performance malgré les grands volumes. 
+
+Pour les entrepôts de données, on recherche plus de lisibilité, de
+simplicité que dans le cas des SGBD.  La modélisation introduit les notions
+de\index{Faits}\index{Dimension} \emph{fait} et \emph{dimension}.  Les
+faits correspondent à l'activité de l'entreprise : ce sont les ventes
+pour une entreprise commerciale, les communications pour une
+entreprise de télécommunications, ... Les dimensions sont les critères
+sur lesquels on souhaite évaluer, quantifier, qualifier les faits :
+les dimensions usuelles sont le temps, le client, le magasin, la
+région, le produit...
+
+Dans les exemples de requêtes citées au début de ce paragraphe, les faits et les
+dimensions apparaissent : 
+\begin{itemize}
+\item les ventes en fait ; 
+\item les produits, les clients, le temps, le lieu en
+  dimensions.
+\end{itemize}
+Il sera souvent nécessaire de filtrer, d'agréger, de
+compter, sommer et de réaliser quelques statistiques élémentaires
+(moyenne, écart-type,\dots).  La structure logique doit être prévue
+pour rendre aussi efficace que possible toutes ces requêtes. Pour y
+parvenir, on est amené à introduire de la redondance dans les
+informations stockées en mémorisant des calculs intermédiaires (dans
+l'exemple, on peut être amené à stocker toutes les sommes de ventes
+par produit ou par année). On rompt donc avec le  principe de non
+redondance des bases de production.
+
+
+
+Si le critère de cohérence semble assuré avec les techniques du
+transactionnel, cette cohérence est toute relative. Elle se contrôle
+au niveau de la transaction élémentaire mais pas au niveau global et
+des activités de l'organisation. Pour les entrepôts, on requiert une
+cohérence interprétable par l'utilisateur.  Par exemple, si les
+livraisons n'ont pas été toutes saisies dans le système, comment
+garantir la cohérence de l'état du stock ? Autre, exemple, pour
+établir un profil client ou étudier les performances d'un magasin,
+toutes les données utiles le concernant doivent être présentes dans le
+système, ce que n'assure pas le serveur transactionnel mais que doit
+assurer le serveur décisionnel.
+
+Les entrepôts de données assureront donc plutôt une cohérence globale
+des données. Pour cette raison, leur alimentation sera un acte
+réfléchi et planifié dans le temps. Un grand nombre d'informations
+sera importé du système transactionnel lorsqu'on aura la garantie que
+toutes les données nécessaires auront été produites et mémorisées. Les
+transferts de données du système opérationnel vers le système
+décisionnel seront réguliers avec une périodicité bien choisie
+dépendante de l'activité de l'entreprise. Chaque transfert sera
+contrôlé avant d'être diffusé.  
+
+Une dernière caractéristique importante des entrepôts, qui est aussi
+une différence fondamentale avec les bases de production, est
+qu'aucune information n'y est jamais modifiée. En effet, on mémorise
+toutes les données sur une période donnée et terminée, il n'y aura
+donc jamais à remettre en cause ces données car toutes les
+vérifications utiles auront été faites lors de l'alimentation.
+L'utilisation se résume donc à un chargement périodique, puis à des
+interrogations non régulières, non prévisibles, parfois longues à
+exécuter.
+
+
+\section{Construction d'un entrepôt}
+\label{sec:construction}
+
+L'entrepôt de données est donc bien différent des bases de données
+de production car les besoins pour lesquels on veut le construire
+sont différents. Il contient des informations historisées, globalement
+cohérentes, organisées selon les métiers de l'entreprise pour le
+processus de décision. 
+L'entrepôt n'est pas un produit ou un logiciel mais un environnement. Il
+se bâtit et ne s'achète pas. Les données sont puisées dans les bases
+de production, nettoyées, normalisées, puis intégrées. Des
+métadonnées décrivent les informations dans cette nouvelle base pour
+lever toute ambiguïté quant à leur origine et leur signification.
+
+Nous décrivons, dans ce chapitre, les problèmes liés à la construction
+d'un entrepôt, les modèles de données et son alimentation. Mais, il
+faut garder à l'esprit qu'un entrepôt se conçoit avec un ensemble
+d'applications qui vont réaliser ce pour quoi il a été construit :
+l'aide à la décision. Ce sont des outils d'accès aux données
+(requêteurs, visualisateurs, outils de fouille, ...) qui seront plus
+précisément décrits dans la suite de ce cours.
+
+Nous avons relevé trois parties interdépendantes qui relèvent de  la
+construction d'un entrepôt de données :  
+\begin{enumerate}
+\item L'étude préalable qui va  poser la question du retour
+  sur investissement, définir les objectifs, préciser la démarche.
+\item L'étude du modèle des données qui représente l'entrepôt
+  conceptuellement et logiquement.
+\item L'étude de l'alimentation qui reprend à un niveau plus précis l'examen
+  des données, le choix des méthodes et des dates auxquelles les
+  données entreront dans l'entrepôt.  
+\end{enumerate}
+Nous terminons par quelques remarques sur les machines dédiées aux
+entrepôts de données et les optimisations à mettre en \oe uvre pour
+assurer de bons temps de réponse. 
+
+\subsection{Étude préalable}
+\label{sec:prealable}
+
+Cette partie de l'étude ressemble à toute étape préliminaire à
+l'implantation d'un nouveau système d'information automatisé. Les
+principes des méthodes connues pour le système de production restent
+valables ici. 
+
+
+\subsubsection{Étude des besoins}
+
+
+L'étude des besoins doit déterminer le contenu de l'entrepôt et son
+organisation, d'après les résultats attendus par les utilisateurs, les
+requêtes qu'ils formuleront, les projets qui ont été définis.  Le
+besoin d'informatisation peut provenir du système de pilotage ou d'un
+service particulier de l'entreprise. C'est souvent un projet au sein
+d'un schéma directeur qui va déclencher l'étude et la réalisation d'un
+cahier des charges. L'existant dans ce domaine est généralement un
+ensemble de petits produits ou développements sans grande intégration
+ni relations, disséminés dans divers services. L'information est
+dupliquée, les traitements répétés et aucune stratégie d'ensemble
+n'est définie. Le projet va donc s'orienter vers la recherche d'une
+solution intégrante résolument tournée vers l'utilisateur.
+
+
+L'expression des besoins par les utilisateurs met souvent en évidence
+la volonté d'obtenir  : des analyses sur ce qui s'est passé (par
+exemple comparer les performances actuelles d'un magasin avec celles
+de l'année dernière) ou des analyses prédictives (par exemple
+déterminer les achats potentiels pour un type de client, déterminer
+les clients qui risquent d'abandonner l'entreprise, ...).
+
+Les interviews doivent permettre de préciser les faits à suivre et
+dans quelles dimensions. Il faut recenser les données nécessaires à un
+bon fonctionnement de l'entrepôt. Il faut alors recenser les données
+disponibles dans les bases de production, toutes les données
+de production ne sont pas utiles dans l'entrepôt. Il faut aussi
+identifier les données supplémentaires requises et s'assurer la
+possibilité de se les procurer (achat de bases géographiques,
+démographiques, ...). 
+
+L'examen des dimensions dans lesquelles les faits seront suivis doit
+donner lieu à une étude de l'unité de ces dimensions, de la
+granularité de ces faits. Par exemple, l'unité de temps doit-elle être
+le jour, la semaine ? Les produits sont-ils analysés par catégorie,
+par lot, par marque ?
+
+La variété des besoins, leur modularité peut entraîner un découpage de
+l'entrepôt en plusieurs parties : \emph{les datamart}\index{Datamart}.
+Les datamart sont alimentés par un entrepôt et sont dédiés à une
+activité particulière pour un ou plusieurs services (le suivi des
+clients, la prévision des stocks). On peut mener l'analyse soit de
+façon ascendante (en commençant par les datamart), soit de manière
+descendante.
+
+Le lecteur intéressé est encouragé à consulter les neuf règles pour
+la conception d'entrepôts de données proposées par Ralf Kimball
+(\cite{Kimball97}). 
+
+
+\subsubsection*{Coûts de déploiement}
+
+Il faut une machine puissante, souvent une machine parallèle,
+spécialisée pour cette tâche. Les tentatives de mixer à la fois
+l'informatique de décision et l'informatique de production au sein
+d'une seule machine sont souvent des échecs. Comme nous l'avons vu
+précédemment les utilisations sont trop différentes. La capacité de
+stockage doit être très importante. Les prévisions de montée en charge
+du système devront évaluer cette quantité. Il faut noter que les prix
+de ces matériels ne cessent de décroître. En vertu de la loi de Moore,
+la puissance de stockage (resp. de calcul) est multipliée par deux
+tous les 2 ans (resp. 18 mois) et cette tendance s'accélère même, à
+prix constant.
+
+Comme tout système informatique, il faut une équipe pour le maintenir,
+le faire évoluer (administrateur, développeurs, concepteurs,\dots). Il
+faut prévoir la mise en place, la formation, etc. 
+
+Les coûts logiciels peuvent être importants. Ils concernent les
+logiciels d'administration de l'entrepôt, des logiciels
+d'interrogation et de visualisation ainsi que les coûts de
+l'environnement logiciel de data mining proprement dit. L'entrepôt
+devra être accessible par tout utilisateur et on se situe,
+généralement, dans un environnement client-serveur.
+
+\subsubsection*{Bénéfices attendus}
+
+Nous verrons, au chapitre suivant, qu'il est possible de développer un
+projet d'extraction de connaissances à partir de données sans mise en
+place d'un entrepôt de données. Cependant, par définition de
+l'entrepôt, les données ont été préparées et le travail sera donc
+facilité. 
+
+Il est possible de calculer les espérances de gain en prévoyant les
+performances du système. Il faut, pour cela, effectuer une étude
+exhaustive des services de l'entreprise demandeurs d'un environnement
+d'aide à la décision à partir de données. Pour chacun des services, il
+faut recenser des projets sur lesquels des bénéfices peuvent être
+retirés d'une telle implantation. Pour chacun des projets, il faut
+alors estimer les bénéfices attendus.
+
+Prenons l'exemple du service marketing direct qui veut augmenter
+le taux de réponse aux courriers qu'elle envoie. À l'aide d'un
+entrepôt de données, elle va mémoriser son activité et tenter 
+d'établir des profils dans sa clientèle. Si un outil de
+fouille de données permet de prédire avec un certain taux d'erreur si
+un client répondra ou non au courrier, la société peut cibler son
+action.  Avec des mailings maintenant ciblés, elle peut réduire le
+nombre d'envois tout en conservant le même nombre de retours.
+L'économie peut alors être quantifiée et comparée aux coûts
+d'investissement.
+
+Il est important de noter que, au vu des investissements nécessaires,
+il est fréquent de commencer par le développement de serveurs
+départementaux pour l'entrepôt (Datamart\index{Datamart}) sur des
+projets clairement définis avant de passer à une généralisation à
+l'ensemble des services de l'entreprise.
+
+\medskip
+
+L'étude préalable se conclue par la rédaction d'un cahier des charges
+comprenant la solution envisagée, le bilan du retour sur
+investissement et la décision d'implantation. 
+
+\subsection{Modèles de données}
+\label{sec:modeles}
+
+\subsubsection*{Niveau conceptuel}
+
+Le modèle conceptuel doit être simplifié au maximum pour permettre au
+plus grand nombre d'appréhender l'organisation des données, comprendre
+ce que l'entrepôt mémorise. On parle de modèle
+multidimensionnel\index{Modèle!multidimensionnel}\index{Modèle!cube},
+souvent représenté sous forme de cube, parce que les données seront
+toujours des faits à analyser suivant plusieurs dimensions.  Par
+exemple, dans le cas de ventes de produits à des clients dans le temps
+(3 dimensions, un vrai cube), les faits sont les ventes, les
+dimensions sont les clients, les produits et le temps.  Les
+interrogations s'interprètent souvent comme l'extraction d'un plan,
+d'une droite de ce cube (\emph{e.g.} lister les ventes du produit $A$
+ou lister les ventes du produit $A$ sur période de temps $D$), ou l'agrégation de
+données le long d'un plan ou d'une droite (\emph{e.g.}  Obtenir le
+total des ventes du produit $A$ revient à sommer les éléments du plan
+indiqué en figure \ref{fig:cube}).
+
+Un avantage évident de ce modèle est sa simplicité, dès que les mots
+ventes, clients, produits et temps sont précisés, désambiguisés.  Il
+reprend les termes et la vision de l'entreprise de tout utilisateur
+final concerné par les processus de décision. Même si dans un entrepôt
+important il peut exister plusieurs cubes, parce qu'il est nécessaire
+de suivre plusieurs faits dans des directions parfois identiques,
+parfois différentes, l'utilisateur pourra accéder à des versions
+simplifiées, car plus ciblées, dans des datamarts\index{Datamart}.
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+%BEGIN IMAGE
+    \epsfig{figure=cube.eps,width=.7\columnwidth}
+%END IMAGE
+%HEVEA\imageflush
+    \caption{Modèle en cube}
+    \label{fig:cube}
+  \end{center}
+\end{figure}
+
+\subsubsection*{Niveau logique}
+
+
+
+Au niveau logique, l'unité de base est la table comme dans le modèle
+relationnel. L'implantation classique consiste à considérer \emph{un modèle
+en étoile} avec au centre la table des faits et les dimensions comme
+autant de branches à l'étoile\index{Modèle!étoile}. Les branches de
+l'étoile sont des relations de 1 à plusieurs, la table des faits est
+énorme contrairement aux tables des dimensions. Le modèle est en cela
+très dissymétrique en comparaison avec les modèles relationnels des
+bases de production. Encore une fois, la simplicité du modèle obtenu
+rend la construction en étoile très attrayante.
+
+Les faits sont qualifiés par des champs qui sont le plus souvent
+numériques et cumulatifs comme des prix, des quantités et des clés
+évidemment pour relier les faits à chaque dimension. Les tables des
+dimensions sont caractérisées par des champs le plus souvent textuels. 
+Dans l'exemple présenté en figure \ref{fig:etoile}, nous nous limitons
+au suivi d'un seul fait : le montant des ventes. Un enregistrement
+dans la table des faits \texttt{Ventes} correspond à un total des ventes
+à un client dans une tranche horaire d'un jour précis, pour un
+produit choisi. 
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+%BEGIN IMAGE
+    \begin{tabular}[c]{|c|}
+      \hline
+      \textbf{Clients} \\ \hline
+      NumClient\\
+      Ville\\
+      Âge\\
+      Sexe\\ \hline
+    \end{tabular}
+    \begin{picture}(25,35)(0,0)
+      \put(0,18){\line(5,-1){30}}
+    \end{picture}
+    \ \begin{tabular}[c]{|c|}
+      \hline
+      \textbf{Ventes} \\ \hline
+      RefClient\\
+      RefTemps\\
+      RefProduit\\
+      Montant\\ \hline
+    \end{tabular}
+    \raisebox{-70pt}{\begin{picture}(25,140)(0,0)
+        \put(0,50){\line(3,-2){30}}
+        \put(0,70){\line(1,2){30}}
+      \end{picture}}
+    \begin{tabular}[c]{l}
+      \begin{tabular}[t]{|c|}
+        \hline
+        \textbf{Temps} \\ \hline
+        NumTemps\\
+        Tranche Horaire\\
+        Mois\\
+        Jour\\
+        Année\\
+        \hline
+      \end{tabular}\\
+      \begin{tabular}[t]{|c|}
+        \hline
+        \textbf{Produit} \\ \hline
+        NumProduit\\
+        Catégorie\\
+        Classe de Prix\\
+        Couleur\\ \hline
+      \end{tabular}
+    \end{tabular}
+%END IMAGE
+%HEVEA\imageflush
+    \caption{Modèle en étoile\label{fig:etoile}}
+  \end{center}
+\end{figure}
+
+Il existe un modèle concurrent : \emph{le modèle en
+  flocon}\index{Modèle!flocon}.  L'avantage mis en avant par les
+tenants de ce modèle est l'économie de place de stockage. Mais, le
+plus souvent, un examen approfondi montre que cette structure
+n'apporte rien, et complique même le modèle. Quand une hiérarchie
+apparaît dans une dimension, il est préférable de tout enregistrer
+dans une seule et même table formant une grande dimension.  Par
+exemple, pour une dimension produit avec des catégories, puis des
+sous-catégories (et ainsi de suite), toutes les échelles sont
+conservées dans la même table de dimension. Il sera ensuite possible
+de \emph{naviguer}\index{Navigation} (ou
+\emph{forer}\index{forage|see{Navigation}}) par des opérations de zoom
+dans cette échelle (en anglais \emph{drill up} et \emph{drill
+  down}\index{Drill|see{Navigation}}).
+
+\subsection{Alimentation}\index{Alimentation}
+\label{sec:alimentation}
+
+L'alimentation est la procédure qui permet de transférer des données
+du système opérationnel vers l'entrepôt de données en les adaptant. La
+conception de cette opération est une tâche assez complexe. Elle doit
+être faite en collaboration avec les administrateurs des bases de
+production qui connaissent les données disponibles et vérifient la
+faisabilité des demandes. Il est nécessaire de déterminer quelles
+données seront chargées, quelles transformations et vérifications
+seront nécessaires, la périodicité et le moment auxquels les
+transferts auront lieu.
+
+Traditionnellement, ce sont en grande partie des faits qui seront
+ajoutés. Les dimensions évoluent selon leur nature soit peu soit assez
+rapidement. Dans notre exemple, nous pouvons imaginer que la gamme des
+produits n'est pas très souvent modifiée. Par contre, de nouveaux
+clients seront certainement ajoutés mais bien moins que des dates. Le
+chargement implique aussi des problèmes physiques comme le recalcul
+des clés d'index. L'alimentation est ponctuée d'une procédure
+d'assurance qualité qui veillera à ce que tout se soit déroulé
+correctement avant la publication du nouveau jeu de données.
+
+\subsubsection*{Transformations, vérifications}\index{Données!transformation}
+
+L'étude des besoins a déterminé le contenu de l'entrepôt en partant
+des desiderata des utilisateurs.  Néanmoins, la forme, le contenu des
+données de production ne convient pas toujours immédiatement au format
+choisi pour les données de l'entrepôt. Par conséquent, des
+transformations sont souvent nécessaires. 
+
+\begin{description}
+\item[Format] Le format physique des données provenant de la
+  production peut ne pas être adéquat avec le système hôte de
+  l'entrepôt. Des transformations de type sont parfois
+  nécessaires (Système IBM vers système Unix...). Les données pouvant
+  provenir de serveurs différents dans des services différents, il est
+  nécessaire d'uniformiser les noms et les formats des données
+  manipulées au niveau de l'entrepôt.
+\item[Consolidation] Selon les choix des unités pour les dimensions,
+  des opérations de consolidation devront accompagner le chargement
+  des données (par exemple sommer les ventes pour obtenir et
+  enregistrer un total par jour et non pas toutes les transactions).
+\item[Uniformisation d'échelle] Pour éviter de trop grandes
+  dispersions dans les valeurs numériques, une homogénéisation des
+  échelles de valeurs est utile. Ne pas la réaliser peut pénaliser les
+  outils d'analyse et de visualisation et peut-être simplement remplir
+  inutilement les disques.
+\item[Autres] Des transformations qui permettent de mieux analyser les
+  données sont aussi réalisées pendant la phase de chargement. Par
+  exemple, la transformation de la date de naissance en âge, assure
+  une plus grande lisibilité des données et permet de pallier les
+  problèmes apparus avec l'introduction de la dimension temps. 
+\end{description}
+
+Malgré les efforts réalisés pour assurer l'intégrité des données de
+production, des erreurs peuvent survenir, en particulier, lorsque les
+données proviennent de sources différentes (par exemple, il est
+fréquent qu'un même client soit mémorisé plusieurs fois sur différents
+serveurs). Parmi les points à vérifier,
+on peut citer:
+\begin{description}
+\item[Erreurs de saisie] Des doublons sont présents mais sont
+  invisibles ; à cause des fautes de frappe: (Marcel dupont; 3,rue
+  verte; Lille) et (Marcel dupond; 3,rue verte; Lille) sont
+  certainement un seul et même client ; plusieurs membres d'un même
+  foyer peuvent être présents ; ...
+\item[Intégrité de domaine] Un contrôle sur les domaines des valeurs
+  permet de retrouver des valeurs aberrantes. De façon plus générale,
+  des valeurs douteuses peuvent se rencontrer, comme par exemple des
+  dates au 11 novembre 1911 (11/11/11) ou 1 janvier 1901 (01/01/01). 
+\item[Informations manquantes\index{Données!manquantes}] Des champs importants pour lesquels
+  aucune valeur n'a été saisie peuvent pénaliser le processus de
+  découverte d'information, ou bien encore avoir une signification
+  particulière (ex: détection de fraudes).  Il est parfois important
+  d'insérer des valeurs par défaut significatives (comme NULL) plutôt
+  que de laisser ces données vides.
+\end{description}
+
+Il convient de noter que les sources des données alimentant un
+entrepôt peuvent être hétérogènes. Les bases de production peuvent
+être nombreuses, différentes et délocalisées géographiquement. Des
+fichiers peuvent être achetées auprès d'entreprises qui se sont
+spécialisées dans la constitution et la revente de fichiers qui vont
+aussi entrer dans le processus d'alimentation de l'entrepôt. Les
+suites logicielles d'accompagnement d'entrepôts de données contiennent
+des outils susceptibles d'aider à développer des procédures
+d'alimentation qui prennent en compte ces problèmes de vérification et de
+normalisation.
+
+\subsubsection*{Métadonnées}\index{Métadonnées}
+
+Des choix conceptuels, logiques et organisationnels ont été opérés
+tout au long de cette démarche d'informatisation du système
+d'information de décision.  La perte de l'information sur ces choix
+peut induire de mauvaises interprétations. Donc, un annuaire
+spécialisé conserve toutes les informations (les métadonnées) au sujet
+du système d'information qui régit l'entrepôt. Cet annuaire contient
+entre autres choses :
+\begin{itemize}
+\item Les adresses et descriptions des objets de l'entrepôt : tables,
+  champs, ... En particulier chaque donnée est définie par une
+  description précise et claire, son origine, ... surtout lorsque les données
+  proviennent de bases différentes et qu'elles peuvent avoir d'autres
+  significations par ailleurs ;
+\item les utilisateurs, autorisations, \dots ; 
+\item les règles de transformation, de vérification ;
+\item l'historique de l'entrepôt avec les dates de chargement, ...
+\end{itemize}
+
+Sans référentiel qui qualifie de façon précise ce que signifie chaque
+valeur dans la base, il n'est pas possible de conduire une analyse et
+interpréter les résultats. C'est ce rôle que joue l'annuaire des
+métadonnées. 
+
+\subsubsection*{Certification, publication}\index{Publication}\index{Certification}
+
+Comme nous l'avons montré précédemment, la cohérence de l'entrepôt est
+globale et ce n'est qu'à la fin de la procédure de chargement qu'il
+est possible de la vérifier. Une procédure de certification de la
+qualité des données chargées doit suivre le chargement. Cette
+procédure est particulière à l'entrepôt et ne peut être décrite
+précisément. Elle va par exemple vérifier la cohérence des données au
+niveau des activités. En cas de succès, la nouvelle version de
+l'entrepôt sera publiée. Dans le cas contraire, c'est souvent le
+chargement complet qui est annulé et repoussé à une date ultérieure.
+En fait, le chargement peut être vu comme une très grosse (et longue)
+transaction.
+
+
+\section{Utilisation, exploitation}
+\label{sec:utilisation}
+
+L'alimentation des entrepôts s'accompagne, après validation, de
+l'édition automatique des tableaux de bord\index{Tableau de bord} les
+plus courants.  Ils sont prédéfinis, réalisés par le service
+informatique, et sont le reflet d'un besoin explicitement demandé au
+moment de la conception.  Souvent, ils sont insuffisants lorsqu'une
+anomalie est détectée ou lorsqu'un nouveau besoin s'exprime. L'utilisateur
+final doit alors pouvoir interroger les données \emph{en ligne} à
+l'aide d'outils simples et conviviaux. Ces outils commencent à se
+généraliser. Les éditeurs les nomment (ou les classent) : reporting
+tools\index{Reporting|see{Requêtes}}, managed queries, Executive
+Information Systems (EIS)\index{EIS}, OLAP tools (Online analytical
+Processing)\index{OLAP}, \ldots bien que les différences entre tous ces
+systèmes ne soient pas toujours très nettes.
+
+On suppose avoir défini un entrepôt de données pour lequel les données
+sont organisées selon un modèle en étoile. Nous allons préciser les
+outils attendus dans un tel environnement : outils de requête (SQL) et
+d'analyse multi-dimensionnelle ; les opérations possibles pour
+l'utilisateur en analyse multi-dimensionnelle ; les outils de visualisation.
+
+\subsection{Requêtes}\index{Requête}
+\label{sec:requetes}
+
+Nous présentons ici les outils destinés à l'utilisateur final qui
+permettent d'extraire des données de l'entrepôt.
+
+Les outils de création de rapport (reporting tools) extraient les
+données et proposent une mise en forme destinée à la diffusion : par
+impression ou par des services internet ou intranet. Ils sont très
+utilisés pour générer des tableaux de bord conventionnels, qui sont
+souvent composés et diffusés automatiquement et périodiquement sans
+demande spécifique des utilisateurs. Lorsque leur intégration dans le
+système d'information est réussie, ils mettent en évidence la
+structure multidimensionnelle et présentent les agrégats, supportent
+la navigation. Ils sont accessibles aux utilisateurs finals pour créer
+de nouveaux tableaux de bord.  Certains (managed queries tools comme
+par exemple Business Object) ne sont pas spécialisés pour les
+entrepôts de données mais proposent une métacouche entre l'utilisateur
+final et le système d'information destinée à simplifier le
+vocabulaire, éviter le SQL.
+
+Les progiciels (ex : SAS) dans ce domaine ont aussi réalisé une
+percée importante. Ils sont souvent qualifiés de EIS tools et ajoutent
+des analyses classiques et paramétrables pour les ventes, les achats
+ou la finance par exemple.
+
+Les outils les plus adaptés sont certainement les outils
+OLAP\index{OLAP}, néanmoins, on pourra relever quelques défauts qui
+expliquent peut-être la difficulté qu'ils ont à s'imposer. À
+l'origine, E.F. Codd précurseur dans les bases de données
+relationnelles a aussi écrit 12 règles pour définir ce que signifie
+OLAP. Ces règles portent sur l'évidence de multiples dimensions, la
+transparence du système, l'accessibilité aux utilisateurs, la
+performance, l'intégration dans le client-server, l'extensibilité des
+dimensions, la navigation, la flexibilité,... Les éditeurs ont tenté
+de bâtir des outils se réclamant de ces règles.  Malheureusement, il
+est difficile de vérifier les principes OLAP seulement avec le langage
+SQL. De ce fait, la plupart des outils sont maintenant des systèmes
+propriétaires non ouverts et non standardisés. De plus, ils
+ne peuvent pas à l'heure actuelle traiter des bases de données
+volumineuses.
+
+\subsection{Agrégats et navigation}
+
+L'opération de \emph{navigation} (ou forage\index{Navigation}) permet
+d'obtenir des détails sur la signification d'un résultat en affinant
+une dimension ou en ajoutant une dimension. Elle apparaît dans de
+nombreux outils et doit (parce qu'elle est souvent coûteuse) être
+intégrée dans le système.  Pour illustrer le forage, supposons qu'un
+utilisateur final demande les chiffres d'affaires par produit, et
+s'étonne d'un résultat pour un produit donné. Il aura sûrement l'envie
+d'en analyser les raisons. Une solution consisterait à ajouter la
+dimension temps, dans l'unité de temps trimestrielle pour trouver une
+variation saisonnière, dans l'unité hebdomadaire pour envisager
+l'effet week-end, ou encore la dimension magasin pour mettre en
+évidence un effet géographique.
+
+Pour des raisons de performance, il est utile de précalculer et
+préenregistrer dans l'entrepôt des agrégations de données. Dans notre
+exemple, si des requêtes fréquemment formulées impliquent le calcul de
+la somme des ventes par produit et par trimestre, il est alors simple
+d'optimiser le temps de réponse du système en mémorisant ce calcul. On
+introduit une redondance dans l'entrepôt mais elle se justifie de deux
+façons : d'une part on privilégie le temps de réponse ; d'autre part,
+puisque par principe les données d'un entrepôt ne sont pas modifiées,
+il n'est pas possible de rendre la base incohérente.
+
+C'est une fois de plus l'étude des besoins qui doit mettre en évidence
+la création des agrégats. Pour insister sur l'importance de mémoriser
+les résultats de calculs on peut noter que des machines sont parfois
+dédiées à leur exécution et leur diffusion : ce sont des \emph{serveurs
+  d'agrégats}.\index{Agrégats}
+
+La stratégie de mémorisation de ces agrégats peut prendre deux
+formes. La première solution consiste à créer de nouvelles tables de
+faits pour les agrégats. Toutes les dimensions inutiles ou
+incohérentes avec l'agrégat seront supprimées. La deuxième solution
+consiste à enrichir la table initiale des faits par les agrégats avec
+une information supplémentaire indiquant le niveau de
+regroupement. Ces deux solutions ont quasiment la même incidence sur
+les volumes. 
+
+Pour expliquer un résultat, il est parfois nécessaire de le comparer
+avec d'autres faits. Par exemple, la baisse des ventes pour le mois de
+janvier peut s'expliquer par une baisse des achats ou une rupture de
+stock. Si l'entrepôt est conçu pour suivre les ventes et les achats ou
+le stock, et si les dimensions selon lesquelles ces trois faits sont
+suivis sont identiques, on doit pouvoir réaliser un rapport unique. On
+parle alors de \emph{forage transversal} ou \emph{drill across}.
+C'est une opération qu'il faut réaliser avec beaucoup de soins car
+mettre en \oe uvre une requête sur plusieurs tables de faits peut se
+révéler irréalisable. Engagée sans précautions, la requête va générer
+une table intermédiaire énorme qui sera le produit cartésien entre les
+deux tables de faits.
+
+% \subsubsection{Exemple}
+
+
+\subsection{Visualisation}
+\label{sec:visualisation}
+
+Les outils de visualisation sont très importants dans
+le processus de décision et peuvent intervenir à plusieurs
+niveaux. Ils sont utiles pour 
+\begin{enumerate}
+\item découvrir de nouvelles informations, parce qu'une représentation
+  permet de repérer plus simplement des singularités, des anomalies ;
+\item présenter des résultats, dans l'optique d'une large diffusion,
+  parce qu'un graphique est plus accessible qu'un tableau de chiffres
+  ;
+\item représenter un modèle issu d'une opération de fouille de données
+  (représenter un arbre de décision, un ensemble des règles, un réseau
+  de neurones...). Nous ne développons pas ce point.
+\end{enumerate}
+
+
+
+Dans le premier cas, ils sont intégrés dans les outils d'analyse et
+doivent supporter des opérations comme comparer, modifier les
+échelles, retrouver  les données correspondant à un  point ou un objet
+tracé, zoomer sur des régions ou des sous-ensembles et enfin permettre
+la navigation (drill-up, drill down)\index{Navigation}. 
+
+Lorsqu'il est nécessaire de présenter un objet reposant sur plusieurs
+dimensions sur un écran ou une feuille de papier, des problèmes bien
+connus apparaissent. Les représentations 3D ne sont pas toujours
+adaptées : les objets sont déformés, certains sont cachés... Des
+animations sont nécessaires pour faire pivoter la représentation. Les
+couleurs, utilisées en grand nombre, sont difficiles à choisir, facile
+à confondre. La visualisation scientifique reste un secteur de la
+recherche actif où vont se mêler des arguments informatiques,
+psychologiques, ...
+
+Terminons en insistant sur l'importance du choix du type de graphique
+utilisé même en représentation 2D (surtout en situation de large
+diffusion). Un graphique en camembert représente une fonction de
+répartition (les parties en rapport avec le tout). Les courbes sont
+utiles lorsque les deux échelles sont numériques (et continues). Les
+histogrammes sont préférés quand une dimension est discrète (une liste
+de régions, une liste de produits). Souvent, l'axe des abscisses est
+réservé aux échelles respectant un ordre (des dates par exemple). Les
+superpositions de plusieurs séries sous forme d'aires ou de barres
+d'histogrammes sont réservées lorsque la somme des séries a un sens.
+
+\subsection{Supports physiques, optimisations}
+\label{sec:physique}
+
+Nous terminons ce chapitre par quelques éléments à prendre en compte
+lors de l'implantation d'un entrepôt de données. 
+
+
+\subsection*{Calcul des volumes} \index{Volumes}
+
+C'est une évaluation nécessaire et
+d'ailleurs traditionnelle à réaliser au moment de la rédaction du
+cahier des charges lorsqu'on désire construire une base de données ou
+un entrepôt. Dès que les études logiques ont abouti, il est nécessaire
+d'estimer la place que les données occuperont sur disque.
+  
+Prenons par exemple le suivi des ventes d'une chaîne de 300 magasins
+suivant les dimensions temps, magasin, produit, promotion. Les faits
+suivis sont : le prix de vente, la quantité vendue, le prix d'achat,
+le nombre d'achats réalisé. Un enregistrement de la table des faits
+aura donc une structure logique de la forme : 
+
+\begin{tabbing}
+\textbf{Fait}(\=RefTps,RefProduit,Refmagasin,Refpromo,\+ \\PrixVente,QtéVendue,PrixAchat,QtéAchat)
+\end{tabbing}
+
+On estime conserver les enregistrements sur 2 ans jour par jour, soit
+730 jours. Les 300 magasins vendent en moyenne 3000 produits par jour
+parmi 30000 possibles. Les produits ne bénéficient que d'une seule
+promotion dans un magasin à un jour donné. On aura donc $730\times 300
+\times 3000 \times 1 = 657$ millions d'enregistrements dans la table
+des faits.  Suivant le système choisi, et la représentation physique
+des clés (4 clés) et des entiers (4 champs numériques à suivre), on
+peut estimer la taille de la table des faits à environ 21 Go. Il reste
+à estimer la taille des index, la taille des tables de dimension etc
+\dots
+
+\subsection*{Matrices creuses}\index{Matrices creuses} 
+
+Avec l'exemple ci dessus, on s'aperçoit que
+la table des faits ne contient pas un enregistrement pour chaque
+élément dans chaque dimension. Par exemple, 300 des 3000 produits sont
+vendus chaque jour dans un magasin et chaque produit ne bénéficie pas
+d'une promotion. En revenant à la définition conceptuelle des données
+en cube, on interprète cette constatation en disant que beaucoup de
+cubes unitaires ne contiennent aucune donnée, formant ainsi comme une
+matrice creuse (\emph{i.e.}  comportant beaucoup de zéros). Cette
+propriété peut-être exploitée pour améliorer la performance des
+algorithmes et optimiser le stockage.
+  
+\subsection*{Le problème des clés et des index} 
+
+La gestion des clefs et des
+index est un problème important dans ces grandes tables. Il faut
+envisager leur évolution, la possibilité de les étendre sans les
+régénérer. L'organisation physique sur disque est déterminante pour
+les questions d'efficacité. Toutes ces questions sont très spécifiques
+et dépendent des machines utilisées (machines parallèles) et du type
+d'accès aux données.
+  
+La table des faits aura des index pour chaque clé étrangère et bien
+sûr pour les regroupements les plus fréquents de clés étrangères. Dans
+notre exemple, l'index sur la clé étrangère \texttt{RefProduit} est
+utile pour retrouver rapidement les achats d'un produit donné. Un index
+sur \texttt{RefProduit}.\texttt{RefTemps} (les 2 champs à la fois) est
+utile pour retrouver les achats d'un produit donné dans un mois
+donné.  Les tables de dimension sont souvent indexées suivant tous
+leurs champs.
+  
+\medskip
+
+Mais les gains les plus remarquables s'obtiennent par deux techniques
+: utiliser des \emph{machines parallèles} et \emph{précalculer des
+  agrégats}.
+
+
+
+\subsection*{Machines parallèles} \index{Parallèle}
+
+L'utilisation de machines parallèles est
+très adéquat pour les entrepôts de données et peut-être plus simple à
+mettre en \oe uvre que dans le cas du transactionnel. La
+caractéristique de n'accèder à l'entrepôt qu'en lecture permet de
+dupliquer des données, d'accepter plusieurs utilisateurs simultanés
+sans craindre des incohérences.
+
+Les architectures parallèles considérées ici sont des machines à
+plusieurs processeurs qui partagent de la mémoire, du disque ou rien
+du tout.  Un réseau de communication performant relie les processeurs.
+Ces machines améliorent les performances de plusieurs façons, suivant
+leur architecture, la répartition des données sur tous les disques et
+le grain de parallélisme envisagé. Le grain définit le niveau atomique
+ou indécomposable des tâches, soit encore le niveau auquel peut intervenir la
+mise en parallèle des tâches. On peut considérer que l'unité
+indécomposable est la requête, ou les opérations de base,
+comme la jointure, la sélection, le tri, le regroupement. 
+Un  pipe-line de tâches est aussi parfois possible. Par exemple, le
+résultat d'une sélection faite par un processeur est directement
+envoyé vers un second processeur qui effectue un tri et le tri peut
+commencer avant que la sélection soit terminée. 
+ 
+Si les données nécessaires à deux tâches exécutées en parallèle se
+trouvent sur la même unité de disque, l'exécution ne sera pas
+optimale, puisque les tâches devront partager une ressource, l'accès
+au disque. Inversement, un trop grand éclatement des données va
+pénaliser les tâches qui perdront du temps en communication.  Dans
+cette approche, la répartition des données est donc très importante.
+Plusieurs solutions sont proposées mais aucune n'est universelle et
+c'est une étude au cas par cas qu'il convient de mener. Les
+répartitions usuelles tiennent compte d'une table de hachage, des
+clés, du schéma des données ou encore se réalisent à la demande.
+
+
+
+\subsection*{Agrégats}\index{Agrégats}
+
+Le précalcul de certains groupes les plus fréquemment demandés est
+l'optimisation la plus performante. Les gains vont d'un rapport de 10
+à un rapport de 1000. Dans certains cas, des \emph{serveurs
+  d'agrégats}, des machines dédiées à distribuer des calculs
+intermédiaires sur les groupes, sont intégrées dans l'architecture de
+l'entrepôt. 
+
+
+ 
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% ispell-local-dictionary: "francais"
+%%% ispell-local-pdict: "~/.ispell_francais"
+%%% End: 

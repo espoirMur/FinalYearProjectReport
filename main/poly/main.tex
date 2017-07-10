@@ -1,0 +1,339 @@
+%       $Id: main.tex,v 1.3 2000/04/17 10:24:57 gilleron Exp tommasi $    
+% document principal 
+%
+%%%%%%%%%%
+% Index
+% Marche a suivre : Compiler avec latex
+%                   genérer le fichier d'index avec la commande
+%       makeindex  -s monstyle.ist  main.idx
+%                   Recompiler avec Latex.
+%%%%%%%%%
+% commande hevea:
+% hevea -francais  amsmath.hva macros.hva mathaccents.hva book.hva fancysection.hva -o sortie.html main.tex
+% imagen sortie
+% hacha sortie
+\documentclass[12pt]{book}
+\usepackage{a4wide}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\usepackage{tabularx}
+\usepackage{epsfig}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epic}
+\usepackage{eepic}
+\usepackage{ecltree}
+\usepackage{rotating}
+\usepackage{color}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage{hevea}
+%arbre unaires, binaires et ternaires
+\def\arbreun#1#2{
+\begin{bundle}{#1}
+    \chunk{#2}
+\end{bundle}
+}
+\def\arbrebin#1#2#3{
+\begin{bundle}{#1}
+    \chunk{#2}
+    \chunk{#3}
+\end{bundle}
+}
+\def\arbretern#1#2#3#4{
+\begin{bundle}{#1}
+    \chunk{#2}
+    \chunk{#3}
+    \chunk{#4}
+\end{bundle}
+}
+
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+\hbox{}\thispagestyle{empty}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+%\renewcommand{\headrulewidth}{1pt}
+\addtolength{\headheight}{3pt}
+%\addtolength{\headwidth}{\marginparsep}
+\fancyhf{}
+\fancyhead[LE]{\sffamily \thepage\qquad \leftmark}
+\fancyhead[RO]{\sffamily \rightmark\qquad \thepage}
+%\lhead{\nouppercase \leftmark}
+%\rhead{\nouppercase \rightmark}
+
+\title{Découverte de connaissances à partir de 
+  données
+\footnote{ Ces notes de cours correspondent \`a
+    une partie d'un cours donné en IUP MIAGE troisième année à Lille 1
+  et en maîtrise MASS à Lille 3} }
+\author{\ahref{mailto:gilleron@univ-lille3.fr}{Rémi Gilleron} \and \ahref{mailto:tommasi@univ-lille3.fr}{Marc Tommasi}}
+
+\makeindex
+
+\definecolor{part}{rgb}{0.7, 0.7, 1}
+\definecolor{chapter}{rgb}{0.8, 0.8, 1}
+\definecolor{section}{rgb}{0.9, 0.9, 1}
+\definecolor{subsection}{rgb}{0.95, 0.95, 1}
+\definecolor{subsubsection}{rgb}{0.97, 0.97, 1}
+
+
+\begin{document}
+
+\maketitle
+ 
+
+\tableofcontents
+\tabbingaccents
+\bibliographystyle{alpha}
+
+%\titlepage
+%\htmlfoot{Marc Tommasi}
+\vfill
+\noindent Copyright (c)  2000  Marc Tommasi  Rémi Gilleron.
+
+
+
+\noindent Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled
+``GNU Free Documentation License''.
+
+\noindent Une version de ce document est disponible sur
+\\ \centerline{\ahrefurl{http://www.grappa.univ-lille3.fr/polys}} avec bien d'autres
+polycopiés d'ailleurs. Des versions au format LaTeX et PostScript sont bien entendu
+disponibles à l'adresse\\
+\centerline{\ahrefurl{http://www.grappa.univ-lille3.fr/polys/fouille/main.tgz}} sous
+forme d'archive compressée avec les programmes gzip et tar.
+
+\begin{flushright}
+  Marc Tommasi et Rémi Gilleron
+\end{flushright}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Introduction\markboth{Introduction}{}}
+\addcontentsline{toc}{chapter}{Introduction}
+\label{sec:intro}
+
+Ce cours présente des outils, des techniques liées à l'informatique
+décisionnelle. De l'entrepôt de données qui définit un support au
+système d'information décisionnel, aux outils de fouille de données
+permettant d'extraire de nouvelles connaissances, de nombreux moyens
+informatiques sont aujourd'hui mis en \oe uvre pour aider les organes
+de décision des entreprises.
+
+\smallskip
+
+L'informatique de gestion a gagné sa place dans l'entreprise depuis
+les années 60 par une succession de progrès technologiques, logiciels
+et méthodologiques qui ont tous contribué à une réduction des coûts
+d'exploitation. L'invention du compilateur et de la compatibilité des
+séries de machines dans les années 60 a permis aux grands comptes de
+s'équiper. Le microprocesseur et les bases de données dans les années
+70 ont rendu l'informatisation accessible aux moyennes et grandes
+entreprises. Les bases de données relationnelles, les progiciels de
+gestion, ainsi que les premiers micro-ordinateurs des années 80 ont
+largement contribué à l'équipement des petites et moyennes
+entreprises, commerces, administrations. Jusque là, la plus grande
+partie des applications était dédiée au traitement des données
+directement liées à l'activité quotidienne des organisations : paie,
+comptabilité, commandes, facturation, \dots Ces applications que l'on
+regroupe sous le terme d'\emph{informatique de production ou
+  Informatique Opérationnelle}.  L'architecture générale était
+l'architecture maître-esclave, avec le maître, un puissant ordinateur
+(mini, ou gros système) en site central et les esclaves, terminaux
+passifs en mode texte. L'organisation de l'entreprise était très
+hiérarchisée dans sa structure informatique et sa structure de
+pilotage. Si des techniques d'aide à la décision ont été mises en
+place (essentiellement basées sur des outils de simulation et
+d'optimisation, parfois aussi de systèmes experts), elles nécessitaient
+l'intervention d'équipes d'informaticiens pour le développement de
+produits spécifiques. Ces outils étaient mal intégrés dans le système
+d'information.
+
+\medskip
+
+Avec l'apparition des ordinateurs personnels et des réseaux locaux,
+une autre activité a émergé, tout à fait distincte de l'informatique
+de production. Dans les secrétariats, les cabinets, on utilise des
+tableurs et des logiciels de traitements de texte, des petites bases
+de données sur des machines aux interfaces graphiques plus agréables.
+Jusqu'aux années 90, ces deux mondes (<< bureautique vs informatique
+>>) se sont ignorés, mais avec la montée en puissance des micro
+ordinateurs et l'avènement de l'architecture client-serveur, on
+observe aujourd'hui un décloisonnement remarquable. Le mot d'ordre
+principal est :
+\begin{quote}
+\emph{fournir à tout utilisateur reconnu et autorisé, les
+  informations nécessaires à son travail.}
+\end{quote}
+Ce slogan fait naître une nouvelle informatique, intégrante, orientée
+vers les utilisateurs et les centres de décision des organisations.
+C'est l'ère du client-serveur qui prend vraiment tout son essor à la
+fin des années 90 avec le développement des technologies Intranet.
+
+Enfin, un environnement de concurrence plus pressant contribue à
+révéler \emph{l'informatique décisionnelle}. Tout utilisateur de
+l'entreprise ayant à prendre des décisions doit pouvoir accéder en
+temps réel aux données de l'entreprise, doit pouvoir traiter ces
+données, extraire l'information pertinente de ces données pour prendre
+les << bonnes >> décisions. Il se pose des questions du type : <<
+quels sont les résultats des ventes par gamme de produit et par région
+pour l'année dernière ? >> ; << Quelle est l'évolution des chiffres
+d'affaires par type de magasin et par période >> ; ou encore <<
+Comment qualifier les acheteurs de mon produit X ? >> \dots Le système
+opérationnel ne peut satisfaire ces besoins pour au moins deux raisons
+: les bases de données opérationnelles sont trop complexes pour
+pouvoir être appréhendées facilement par tout utilisateur et le système
+opérationnel ne peut être interrompu pour répondre à des questions
+nécessitant des calculs importants. Il s'avère donc
+nécessaire de développer des systèmes d'information orientés vers la
+décision.  Il faut garder un historique et restructurer les données de
+production, éventuellement récupérer des informations démographiques,
+géographiques et sociologiques. Les \emph{entrepôts de données ou
+  datawarehouse} sont la réalisation de ces nouveaux systèmes
+d'information.  De nouveau, cette apparition est rendue possible grâce
+aux progrès technologiques à coûts constants (grâce à l'augmentation
+importante des capacités de stockage et à l'introduction des
+techniques du parallélisme dans l'informatique de gestion, techniques
+qui permettent des accès rapides à de grandes bases de données).  
+
+L'informatique décisionnelle s'est développée dans les années 70. Elle
+est alors essentiellement constituée d'outils d'édition de rapports,
+de statistiques, de simulation et d'optimisation.  Provenant des
+recherches en Intelligence Artificielle, les systèmes experts
+apparaissent. Ils sont conçus par << extraction >> de la connaissance
+d'un ou plusieurs experts et sont des systèmes à base de règles. De
+bons résultats sont obtenus pour certains domaines d'application tels
+que la médecine, la géologie, la finance, ... Cependant, il apparaît
+vite que la formalisation sous forme de règles de la prise de décision
+est une tâche difficile voire impossible dans de nombreux domaines.
+Dans les années 90, deux phénomènes se produisent simultanément.
+Premièrement, comme nous l'avons montré dans les paragraphes
+précédents, il est possible de concevoir des environnements
+spécialisés pour l'aide à la décision. Deuxièmement, de nombreux
+algorithmes permettant d'extraire des informations à partir de données
+brutes sont arrivés à maturité. Ces algorithmes ont des origines
+diverses et souvent multiples. Certains sont issus des statistiques ;
+d'autres proviennent des recherches en Intelligence Artificielle,
+recherches qui se sont concentrées sur des projets moins ambitieux,
+plus ciblés ; certains s'inspirent de phénomèmes biologiques ou de la
+théorie de l'évolution. Tous ces algorithmes sont regroupés dans des
+logiciels de \emph{fouille de données ou Data Mining} qui permettent
+la recherche d'informations nouvelles ou cachées à partir de données.
+Ainsi, dans le cas de systèmes à base de règles, plutôt que d'essayer
+d'extraire la connaissance d'experts et d'exprimer cette connaissance
+sous forme de règles, un logiciel va générer ces règles à partir de
+données. Par exemple, à partir d'un fichier historique des prêts
+contenant des renseignements sur les clients et le résultat du prêt
+(problèmes de recouvrement ou pas), le logiciel extrait un profil pour
+désigner un << bon >> ou un << mauvais >> client.  Après validation,
+un tel système peut être implanté dans le système d'information de
+l'entreprise afin de << classer >> ou de << noter >> les nouveaux
+clients.
+
+Plusieurs méthodes existent pour mettre en oeuvre la fouille de
+données. Le choix de l'une d'entre elles est une première difficulté
+pour l'utilisateur ou le concepteur. Aucune méthode n'est meilleure
+qu'une autre dans l'absolu. Néanmoins, l'environnement, les
+contraintes, les objectifs et bien sûr les propriétés des méthodes
+doivent guider l'utilisateur dans son choix. 
+
+Les entrepôts de données et la fouille de données sont les éléments
+d'un domaine de recherche et de développement très actifs actuellement
+: \emph{l'extraction de connaissances à partir de données ou Knowedge
+  Discovery in Databases (KDD for short)}. Par ce terme, on désigne
+tout le cycle de découverte d'information. Il regroupe donc la
+conception et les accès à de grandes bases de données ; tous les
+traitements à effectuer pour extraire de l'information de ces données
+; l'un de ces traitements est l'étape de \emph{fouille de données ou
+  Data Mining}. C'est l'objectif de ce
+cours que de vous en présenter les éléments essentiels.
+
+Le plan de ce cours est le suivant : 
+\begin{itemize}
+\item un premier chapitre présente les entrepôts de données (chapitre
+  \ref{sec:entrepots}) en insistant sur les différences entre un tel
+  système et les bases de données opérationnelles et transactionnelles
+  ; en présentant des éléments méthodologiques pour la conception
+  d'entrepôts de données, les modèles de données correspondants, les
+  problèmes liés à l'alimentation de ces entrepôts, et quelques
+  éléments d'information sur les technologies qui optimisent les accès
+  à de tels systèmes.
+\item Un second chapitre (chapitre \ref{sec:kdd}) présente le cycle
+  complet de découverte d'informations à partir de données (Knowledge
+  Discovery in Databases) : la préparation des données, le nettoyage,
+  l'enrichissement, le codage et la normalisation, la fouille de
+  données, la validation et l'intégration dans le système
+  d'information.
+\item Le dernier chapitre porte une attention particulière sur la
+  fouille de données (chapitre \ref{sec:mining}). Il est hors
+  d'atteinte d'un tel cours de prétendre présenter toutes les
+  techniques disponibles. Nous présentons la base des méthodes les
+  plus classiques : l'algorithme des $k$-moyennes, les règles
+  d'association, la méthode des plus proches voisins, les arbres de
+  décision et les réseaux de neurones.
+\end{itemize}
+Les sources
+  principales des auteurs se trouvent bien sûr en bibliographie page
+  \pageref{sec:biblio}. Mais nous recommandons essentiellement la
+  lecture des ouvrages suivants :
+  \begin{itemize}
+  \item le livre de P. Adriaans et D.
+    Zantinge~\cite{AdriaansZantinge96}, remarquable par sa clarté, qui
+    présente la découverte de connaissances à partir de données ;
+  \item le livre de R. Kimball~\cite{Kimball97} sur les entrepôts de
+    données ; le livre contient de nombreux exemples ;
+  \item le livre de M. Berry et G. Linoff~\cite{BerryLinoff97} qui
+      présente, en contexte d'applications et clairement, les méthodes
+      de fouille de données ;
+     \item pour ceux qui seraient plus intéressés par les aspects
+       algorithmiques et l'apprentissage automatique, l'ouvrage de T.
+       Mitchell~\cite{Mitchell97} est, en tous points, exceptionnel.
+         Pour les aspects classification supervisée, il est possible
+         également de consulter le poly de F. Denis et R.
+         Gilleron~\cite{DenisGilleron99} qui contient de nombreux
+         exercices.
+  \end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{entrepot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{kdd}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Fouille de données}
+\label{sec:mining}
+\input{fouille}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\nocite{*}
+\label{sec:biblio}
+% a mettre dans le .bbl 
+%\addcontentsline{toc}{chapter}{Bibliographie}
+\bibliography{bibapp}
+\input{glossaire}
+
+
+\printindex
+
+
+\end{document}
+% Local Variables: 
+% mode: latex
+% TeX-master: t
+% ispell-local-dictionary: "francais"
+% ispell-local-pdict: "~/.ispell_francais"
+% End: 
+
+% LocalWords:  maître-esclave client-serveur multidimensionnelles écart-type
+% LocalWords:  Entité-Association multidimensionnels historisées meta-données
+% LocalWords:  développeurs datamart} datamart metadonnées multidimensionnel
+% LocalWords:  agrégations

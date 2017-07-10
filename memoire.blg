@@ -1,0 +1,71 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: memoire.aux
+The style file: biblatex.bst
+This database file appears more than once: bib/litterature.bib
+---line 7 of file memoire.aux
+ : \bibdata{memoire-blx,bib/litterature,bib/litterature
+ :                                                     }
+I'm skipping whatever remains of this command
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: memoire-blx.bib
+Database file #2: bib/litterature.bib
+Warning--I didn't find a database entry for "8"
+Biblatex version: 3.3
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 18 entries,
+            6256 wiz_defined-function locations,
+            1291 strings with 11301 characters,
+and the built_in function-call counts, 80358 in all, are:
+= -- 4731
+> -- 3031
+< -- 517
++ -- 2679
+- -- 1793
+* -- 4596
+:= -- 7790
+add.period$ -- 0
+call.type$ -- 18
+change.case$ -- 278
+chr.to.int$ -- 174
+cite$ -- 34
+duplicate$ -- 7907
+empty$ -- 7696
+format.name$ -- 782
+if$ -- 16156
+int.to.chr$ -- 0
+int.to.str$ -- 48
+missing$ -- 0
+newline$ -- 405
+num.names$ -- 836
+pop$ -- 5655
+preamble$ -- 1
+purify$ -- 332
+quote$ -- 0
+skip$ -- 3003
+stack$ -- 0
+substring$ -- 7643
+swap$ -- 2085
+text.length$ -- 373
+text.prefix$ -- 2
+top$ -- 1
+type$ -- 599
+warning$ -- 0
+while$ -- 805
+width$ -- 0
+write$ -- 388
+(There was 1 error message)

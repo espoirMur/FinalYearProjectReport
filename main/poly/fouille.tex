@@ -1,0 +1,1765 @@
+On se situe dans un environnement d'aide à la décision à partir de
+données. On suppose que de grandes quantités de données sont
+disponibles. En règle générale, ces données sont structurées et
+correspondent aux enregistrements d'une table ou de plusieurs tables
+d'une base dédiée à la décision (Infocentre ou entrepôt de données).
+Nous allons présenter, dans ce chapitre, les tâches, i.e. les
+problèmes que l'on cherche à résoudre et quelques-unes des méthodes
+disponibles pour résoudre ces tâches.
+
+\section{Généralités}
+\label{sec:generalites}
+
+\subsection*{Les tâches}
+On dispose de données structurées. Les objets sont représentés par des
+enregistrements (ou descriptions) qui sont constitués d'un ensemble de
+champs (ou attributs) prenant leurs valeurs dans un domaine. On peut mettre en
+évidence différentes problématiques. Les termes employés pouvant
+varier d'une discipline à l'autre (parfois même dans une même
+discipline selon le domaine d'application), nous définissons notre
+vocabulaire avec la description associée de la tâche.
+\begin{description}
+\item[La classification :] \index{Classification} consiste à examiner
+  les caractéristiques d'un objet et lui attribuer une classe, la
+  classe est un champ particulier à valeurs discrètes. Des exemples
+  de tâche de classification sont :
+  \begin{itemize}
+\item attribuer ou non un prêt à un client,
+\item établir un diagnostic,
+\item accepter ou refuser un retrait dans un distributeur,
+\item attribuer un sujet principal à un article de presse, ...
+  \end{itemize}
+\item[L'estimation :]  \index{Estimation} consiste à estimer la valeur d'un champ à partir
+  des caractéristiques d'un objet. Le champ à estimer est un champ à
+  valeurs continues. L'estimation peut être utilisée dans un but de
+  classification. Il suffit d'attribuer une classe particulière pour
+  un intervalle de valeurs du champ estimé. Des exemples de tâche
+  d'estimation sont :
+  \begin{itemize}
+\item noter un candidat à un prêt ; cette estimation peut être
+  utilisée pour attribuer un prêt (classification), par exemple, en
+  fixant un seuil d'attribution, 
+\item estimer les revenus d'un client.
+  \end{itemize}
+\item[La prédiction :] \index{Prédiction} consiste à estimer une
+  valeur future. En général, les valeurs connues sont historisées. On
+  cherche à prédire la valeur future d'un champ. Cette tâche est
+  proche des précédentes. Les méthodes de classification et
+  d'estimation peuvent être utilisées en prédiction. Des exemples de
+  tâche de prédiction sont :
+  \begin{itemize}
+\item prédire les valeurs futures d'actions,
+\item prédire au vu de leurs actions passées les départs de
+  clients.
+  \end{itemize}
+\item[Les règles d'association (analyse du panier de la ménagère) :]
+  \index{Association} consiste à déterminer les valeurs qui sont
+  associées.  L'exemple type est la détermination des articles (le
+  poisson et le vin blanc ; la baguette et le camembert et le vin
+  rouge, ...) qui se retrouvent ensemble sur un même ticket de
+  supermarché. Cette tâche peut être effectuée pour identifier des
+  opportunités de vente croisée et concevoir des groupements
+  attractifs de produit.  C'est une des tâches qui nécessite de très
+  grands jeux de données pour être effective. Cette tâche a engendré
+  l'exemple (l'anecdote) suivant présent dans de nombreux articles
+  sur le data mining : dans les supermarchés américains, il a été
+  possible de mettre en évidence des corrélations entre achat de
+  bières et achat de couches-culottes avant le week-end ! remarque
+  justifiée par le comportement des jeunes pères américains qui
+  préparent leur week-end en préparant leur provision de bière pour
+  regarder la télévision et qui font les achats pour bébé au même
+  moment. Gag ou réalité, je n'ai jamais lu de résultats sur les
+  actions consistant à mettre, dans les supermarchés, les bières à
+  côté des couches-culottes !!
+\item[La segmentation : ] \index{Segmentation} consiste à former des
+  groupes (clusters) homogènes à l'intérieur d'une population. Pour
+  cette tâche, il n'y a pas de classe à expliquer ou de valeur à
+  prédire définie a priori, il s'agit de créer des groupes homogènes
+  dans la population (l'ensemble des enregistrements). Il appartient
+  ensuite à un expert du domaine de déterminer l'intérêt et la
+  signification des groupes ainsi constitués. Cette tâche est souvent
+  effectuée avant les précédentes pour construire des groupes sur
+  lesquels on applique des tâches de classification ou d'estimation.
+\end{description}
+
+\subsection*{Les données}
+
+Ce sont les valeurs des champs des enregistrements des tables de
+l'entrepôt. Ces données possèdent un type qu'il est important de
+préciser. En effet, la plupart des méthodes sont sensibles aux données
+manipulées. Par exemple, certaines méthodes sont mises en défaut par
+les données continues alors que d'autres peuvent être sensibles à la
+présence de données discrètes.
+
+\begin{description} 
+  \index{Données!codage} 
+\item[Les données discrètes] \
+  \begin{itemize}
+  \item les données binaires ou logiques : 0 ou 1 ; oui ou non ; vrai
+    ou faux. ce sont des données telles que le sexe, être bon client,
+    ...
+\item les données énumératives : ce sont des données discrètes pour
+  lesquelles il n'existe pas d'ordre défini a priori. Par exemple : la catégorie socioprofessionnelle,
+  la couleur, ... 
+\item les données énumératives ordonnées : les réponses à une enquête
+  d'opinion (1: très satisfait ; 2 : satisfait ; ...), les données
+  issues de la discrétisation de données continues (1 : solde
+  moyen $<$ 2000 ; 2 : 2000 $\leq$ solde moyen $<$ 5000 ; ...)
+  \end{itemize}
+\item[Les données continues] ce sont les données entières ou réelles :
+  l'âge, le revenu moyen, ... mais aussi les données pouvant prendre
+  un grand nombre de valeurs ordonnées.
+\item[Les dates] sont souvent problématiques car mémorisées selon des
+  formats différents selon les systèmes et les logiciels. Pour les
+  applications en fouille de données, il est fréquent de les
+  transformer en données continues ou en données énumératives
+  ordonnées. On transforme une date de naissance en âge entier ou en
+  une variable énumérative ordonnée correspondant à des tranches d'âge.
+\item[Les données textuelles  ] ne sont pas considérées dans ce
+  cours. Cependant, un texte peut, pour certaines applications, être
+  résumé comme un n-uplet constitué du nombre d'occurrences dans le
+  texte de mots clés d'un dictionnaire prédéfini.
+\end{description}
+
+\subsection*{Les méthodes}
+
+Nous ne présentons que certaines méthodes qui viennent compléter
+les outils classiques que sont : les requêtes SQL, les requêtes
+analyse croisée, les outils de visualisation, la statistique descriptive
+et l'analyse des données. Les méthodes choisies qui seront
+détaillées dans les sections suivantes sont :
+\begin{itemize}
+\item un algorithme pour la segmentation,
+\item les règles d'association,
+\item les plus proches voisins (raisonnement à partir de cas),
+\item les arbres de décision,
+\item les réseaux de neurones,
+\item les algorithmes génétiques.
+\end{itemize}
+
+La présentation ne prétend pas à l'exhaustivité. Les choix effectués
+sont subjectifs, quoique guidés par la disponibilité des méthodes dans
+les environnements de data mining standard. Des méthodes importantes
+ne sont pas étudiées dans ce cours. Citons les réseaux bayésiens, la
+programmation logique inductive et les machines à vecteurs de support
+(SVM for Support Vector Machine). De plus, pour les méthodes proposées
+dans ce cours, il existe de nombreuses variantes, non présentées, qui
+peuvent s'appliquer à des tâches différentes. Par exemple, nous
+présentons, dans la section réseaux de neurones, le perceptron et le
+perceptron multi couches et leurs applications en classification et
+estimation. Cependant, il existe d'autres modèles de réseaux de
+neurones bien adaptés pour la segmentation (réseaux de Kohonen par
+exemple) ou spécialisés pour la prédiction (réseaux récurrents). En
+tout état de cause, un fait important communément admis est :
+
+\medskip
+
+\begin{quote}
+\emph{Il n'existe pas de méthode supérieure à toutes les autres}
+\end{quote}
+
+\medskip
+
+Par conséquent, à tout jeu de données et tout problème correspond une
+ou plusieurs méthodes. Le choix se fera en fonction
+\begin{itemize}
+\item de la tâche à résoudre,
+\item de la nature et de la disponibilité des données,
+\item des connaissances et des compétences disponibles,
+\item de la finalité du modèle construit. Pour cela, les critères
+  suivants sont importants : complexité de la
+  construction du modèle, complexité de son utilisation, ses
+  performances, sa pérennité, et, plus généralement,
+\item de l'environnement de l'entreprise.
+\end{itemize}
+
+Nous nous attachons dans la présentation des différentes méthodes à
+préciser les particularités de chacune des méthodes selon ces axes.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Un algorithme pour la segmentation}
+\label{sec:segmentation}
+ \index{Segmentation}
+Pour résoudre certains problèmes complexes, il peut s'avérer utile de
+commencer par segmenter la population (la diviser en groupes) en
+espérant que le problème soit alors plus simple à résoudre sur les
+groupes ainsi constitués. La segmentation est une tâche
+d'apprentissage << non supervisée >> car on ne dispose d'aucune autre
+information préalable que la description des exemples. Après
+application de l'algorithme et donc lorsque les groupes ont été
+construits, d'autres techniques ou une expertise doivent dégager leur
+signification et leur éventuel intérêt. 
+
+Nous présentons ici la méthode des $k$-moyennes car elle est très
+ simple à mettre en oeuvre et 
+ très utilisée. Elle comporte
+ de nombreuses variantes et est souvent utilisée en
+combinaison avec d'autres algorithmes.
+
+\subsection*{Introduction}
+La méthode est basée sur une notion de similarité entre
+enregistrements. Nous allons pour introduire l'algorithme considérer un
+espace géométrique muni d'une distance, deux points sont similaires si
+ils sont proches pour la distance considérée. Pour pouvoir visualiser
+le fonctionnement de l'algorithme, nous allons limiter le nombre de
+champs des enregistrements. Nous nous plaçons donc dans l'espace
+euclidien de dimension 2 et considérons la distance euclidienne
+classique. L'algorithme suppose choisi a priori un nombre $k$ de
+groupes à constituer. On choisit alors $k$ enregistrements, soit $k$
+points de l'espace appelés les centres. On constitue alors les $k$
+groupes initiaux en affectant chacun des enregistrements dans le
+groupe correspondant au centre le plus proche. Pour chaque groupe
+ainsi constitué, on calcule son nouveau centre en effectuant la
+moyenne des points du groupe et on réitère le procédé. Le critère
+d'arrêt est : d'une itération à la suivante, aucun point n'a changé de
+groupe, i.e. les groupes sont stables. 
+
+Considérons l'exemple présenté en Figure~\ref{fig:kmoyennes}, les
+données d'entrée sont constituées de 8 points A, ..., H de l'espace
+euclidien de dimension 2. On choisit $k=2$, c'est-à-dire on cherche
+à constituer deux groupes dans cet ensemble de 8 points. On tire
+aléatoirement les 2 centres initiaux, B et D sont choisis. On répartit
+les points dans les deux groupes (nommés B et D) en fonction de leur
+proximité aux centres B et D. Géométriquement, il suffit de tracer la
+médiatrice du segment [BD]. Seul D est affecté au groupe D. On calcule
+les nouveaux centres pour l'étape 2, on obtient D et I(26/7;17/7) où
+les coordonnées de I sont les moyennes des coordonnées des 7 points
+autres que D. On recrée les groupes en fonction de leur proximité aux
+centres D et I, on remarque que A et C changent de groupe. Le procédé
+est réitéré, la stabilité est obtenue à l'étape 4 car on constate que
+les groupes ne sont plus modifiés. Les deux groupes obtenus sont
+$\{$A, B, C, D$\}$ et $\{$E, F, G, H$\}$.
+
+    \begin{figure}[ht]
+      \begin{center}
+        \leavevmode
+\begin{tabular}[h]{|l|c|c|c|}
+\hline
+          & étape 1 & étape 2 & étape 3 \\
+          & centre D(2;4) & centre D(2;4) & centre J(5/3;10/3) \\
+          & centre B(2;2) & centre I(27/7;17/7) & centre K(24/5;11/5)
+          \\ \hline
+points    & groupe & groupe & groupe \\ \hline
+A(1;3) &B &D &J  \\
+B(2;2) &B &I &J  \\
+C(2;3) &B &D &J  \\
+D(2;4) &D &D &J  \\
+E(4;2) &B &I &K  \\
+F(5;2) &B &I &K  \\
+G(6;2) &B &I &K  \\
+H(7;3) &B &I &K  \\ \hline
+\end{tabular}        
+        \caption{exemple pour l'algorithme des $k$-moyennes}
+        \label{fig:kmoyennes}
+      \end{center}
+    \end{figure}
+
+\subsection*{Description de l'algorithme}
+
+On travaille avec des enregistrements qui sont des $n$-uplets de
+valeurs. On suppose définie une notion de similarité qui permet de
+comparer les distances aux centres, un calcul de moyenne pour le
+calcul des nouveaux centres. L'algorithme est paramétré par le nombre
+$k$ de groupes que l'on souhaite constituer.
+
+ \index{Algorithme!k-moyennes}
+\bigskip
+\fbox{
+\begin{minipage}{\columnwidth}
+\begin{tabbing}
+aa\=bb\=cc\=dd\= \kill
+{\bf Algorithme des k-moyennes}
+ \\
+\textbf{paramètre : } le nombre $k$ de groupes \\
+{\bf entr\'ee :} un échantillon de $m$ enregistrements
+$\vec{x_1},\ldots \vec{x_m}$ \+ \\
+1. choisir $k$ centres initiaux $\vec{c_1},\ldots \vec{c_k}$ \\
+2. pour chacun des $m$ enregistrements, l'affecter au  groupe $i$ dont
+\+ \\ le
+centre $\vec{c_i}$ est le plus proche \- \\
+3. si aucun élément ne change de groupe alors arrêt et sortir les groupes\\
+4. calculer les nouveaux centres : pour tout $i$, $\vec{c_i}$ est la moyenne
+des \+ \\ éléments du groupe $i$ \- \\
+5. aller en 2
+\end{tabbing}
+\end{minipage}
+} 
+
+\bigskip
+
+Nous avons pu constater sur l'exemple simple présenté dans la
+Figure~\ref{fig:kmoyennes} que lorsque les points sont placés dans un
+espace euclidien, l'algorithme est très simple et très
+naturel. Où est le problème ? Les problèmes sont en fait multiples. 
+
+Un premier problème est que les bases de données commerciales sont
+constituées d'enregistrements qui ne sont pas des points d'un espace
+géométrique. En effet, les données sont des clients, des produits, des
+ventes qui ont peu de rapport avec des points d'un diagramme.
+L'algorithme est basé sur la notion de proximité. Il nous faut donc
+préciser comment définir cette notion pour que des points proches
+correspondent à des enregistrements similaires dans la base de
+données.  
+
+Pour les données continues, une mesure de similarité est de
+prendre la distance euclidienne entre deux points. 
+% On prend, par exemple,
+% \index{Distance} la distance euclidienne définie par : soit $\vec{x} =
+% (x_1,\ldots, x_n) \in {\mathbb R}^n$, $\vec{y} = (y_1,\ldots, y_n) \in
+% {\mathbb R}^n$,
+% $$d(\vec{x},\vec{y})= \sqrt{(y_1 - x_1)^2+\ldots+(y_n - x_n)^2}$$
+Il
+faut être attentif à la normalisation des échelles pour les différents
+champs. En effet, si un champ $A$ prend ses valeurs dans l'intervalle réel
+[0,1] et un champ $B$ ses valeurs dans [0,100 000], le second est
+privilégié, en effet deux enregistrement seront considérés comme
+proches si les valeurs pour le champ $B$ sont proches. 
+
+Lorsque les enregistrements contiennent essentiellement
+des champs à valeurs discrètes, on abandonne les mesures géométriques
+pour considérer des mesures basées sur le niveau de chevauchement. Une
+mesure usuelle est : étant donné deux enregistrements $\vec{x}$ et
+$\vec{y}$, la similarité est égale au rapport entre le nombre de
+champs égaux divisé par le nombre total de champs. Cette mesure
+possède de nombreuses variantes. Il est possible de définir des
+mesures qui mixent les calculs sur champs à valeurs réelles et champs
+à valeurs discrètes. Nous revenons plus en détail sur les problèmes de
+définitions de distances dans la présentation de la méthode des plus
+proches voisins en section~\ref{sec:prochesvoisins}.
+
+Un deuxième problème est le choix initial du nombre de groupes. Ce
+nombre est choisi a priori et fourni à l'algorithme. Il peut avoir été
+fixé par un expert mais, en règle générale, il est inconnu. Dans ce
+cas, on fait fonctionner l'algorithme avec différentes valeurs de $k$
+(ce peut être une boucle externe ajoutée à l'algorithme), on choisit
+ensuite une valeur de $k$ telle que, pour les groupes obtenus, les
+distances à l'intérieur du groupe soient petites et les distances
+entre centres des groupes soient grandes. 
+
+L'algorithme possède de nombreuses variantes selon : la méthode
+utilisée pour choisir les $k$ premiers centres, la mesure de
+similarité choisie, le choix de la valeur de $k$ et le calcul des
+distances entre groupes, la possibilité de pondérer les champs en
+fonction d'une connaissance initiale du problème.
+
+\subsection*{Autres méthodes pour la segmentation}
+
+Une première méthode est d'utiliser un algorithme d'agglomération
+(méthode ascendante). À
+partir d'un échantillon de $m$ enregistrements, on
+commence avec $m$ groupes, chacun des groupes est constitué d'un
+enregistrement. On calcule la matrice des distances deux à deux entre
+enregistrements. On choisit la plus petite valeur dans cette matrice
+des similarités. Elle identifie la paire de groupes les plus
+similaires. On regroupe ces deux groupes en un seul, on remplace les
+deux lignes par une ligne pour le groupe ainsi créé. On réitère le
+procédé jusqu'à obtenir un groupe constitué de tous les
+enregistrements. On a ainsi construit une suite de partitions de
+l'échantillon d'entrée où le nombre $k$ de groupes varie de $m$ à
+1. On choisit ensuite la valeur de $k$ (ce choix est discuté plus loin
+dans cette section).
+
+Une seconde méthode est basée sur les arbres de décision (voir plus
+loin dans ce chapitre, méthode descendante). On démarre avec un groupe
+constitué de l'ensemble des enregistrements et on divise récursivement
+les groupes en utilisant une fonction de diversité qui minimise la
+distance moyenne dans un groupe et maximise la distance entre
+groupes. On choisit ensuite la valeur de $k$.
+
+Pour choisir la valeur de $k$ dans ces différentes méthodes, à chaque étape, on
+calcule la distance intra groupe et la distance inter groupes. Les
+méthodes diffèrent par les distances utilisées et la façon de définir
+ces distances. La distance intra groupe peut être une moyenne des
+distances entre éléments du groupe. Pour
+calculer la distance inter groupes, il existe trois possibilités : 
+
+\begin{itemize}
+\item le
+rattachement simple où la distance entre deux groupes est la plus
+petite distance entre les éléments les plus proches ; 
+\item le rattachement
+complet où la distance entre deux groupes est donnée par la distance
+entre les membres les plus éloignés ; 
+\item la distance entre les
+centres. 
+\end{itemize}
+
+On choisit alors la valeur de $k$ qui minimise la distance
+intra groupe et maximise la distance entre groupes.
+
+Une dernière méthode est d'utiliser des réseaux de neurones bien
+adaptés pour la segmentation que sont les réseaux de neurones
+auto-organisés, en particulier les cartes de Kohonen.
+
+\subsection*{Critiques de la méthode}
+
+\begin{description}
+\item[Apprentissage non supervisé :] la méthode des $k$-moyennes et
+  ses variantes résolvent une tâche dite non supervisée, c'est-à-dire
+  qu'elle ne nécessite aucune information sur les données. La
+  segmentation peut être utile pour découvrir une structure cachée qui
+  permettra d'améliorer les résultats de méthodes d'apprentissage
+  supervisé (classification, estimation, prédiction).
+\item[Tout type de données : ] en choisissant une bonne notion de
+  distance, la méthode peut s'appliquer à tout type de données (mêmes
+  textuelles). 
+\item[Facile à implanter : ] la méthode ne nécessite que peu de
+  transformations sur les données (excepté les normalisations de
+  valeurs numériques), il n'y pas de champ particulier à identifier,
+  les algorithmes sont faciles à implanter et sont, en règle
+  générale, disponibles dans les environnements de data mining.
+\item[Problème du choix de la distance : ] les performances de
+  la méthode (la qualité des groupes constitués) sont dépendantes du
+  choix d'une bonne mesure de similarité ce qui est une tâche délicate
+  surtout lorsque les données sont de types différents.
+\item[Le choix des bons paramètres : ] la méthode est sensible au
+  choix des bons paramètres, en particulier, le choix du nombre $k$ de
+  groupes à constituer. Un mauvais choix de $k$ produit de mauvais
+  résultats. Ce choix peut être fait en combinant différentes
+  méthodes, mais la complexité de l'algorithme augmente.
+\item[L'interprétation des résultats : ] il est difficile
+  d'interpréter les résultats produits, i.e. d'attribuer une
+  signification aux groupes constitués. Ceci est général pour les
+  méthodes de segmentation.
+
+\end{description}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Les règles d'association}
+\label{sec:association}
+\index{Association}
+
+Les règles d'association sont traditionnellement liées au secteur de
+la distribution car leur principale application est << l'analyse du
+panier de la ménagère >> qui consiste en la recherche d'associations
+entre produits sur les tickets de caisse. Le but de la méthode est
+l'étude de ce que les clients achètent pour obtenir des informations
+sur qui sont les clients et pourquoi ils font certains achats. La
+méthode recherche \emph{quels produits tendent à être achetés
+  ensemble}. La méthode peut être appliquée à tout secteur d'activité
+pour lequel il est intéressant de rechercher des groupements
+potentiels de produits ou de services : services bancaires, services
+de télécommunications, par exemple. Elle peut être également utilisée
+dans le secteur médical pour la recherche de complications dues à des
+associations de médicaments ou à la recherche de fraudes en recherchant
+des associations inhabituelles.
+
+Un attrait principal de la méthode est la clarté des résultats
+produits. En effet, le résultat de la méthode est un ensemble de
+\emph{règles d'association}. Des exemples de règles
+d'association sont :
+\begin{itemize}
+\item si un client achète des plantes alors il achète du terreau,
+\item si un client achète du poisson et du citron alors il achète du
+  vin blanc.
+\item si un client achète une télévision, il achètera un magnétoscope
+  dans un an.
+\end{itemize}
+Ces règles sont intuitivement faciles à
+interpréter car elles montrent comment des produits ou des services se
+situent les uns par rapport aux autres. Ces règles sont
+particulièrement utiles en marketing. 
+Les règles d'association produites par la méthode peuvent être
+facilement utilisées dans le système d'information de
+l'entreprise. Cependant, il faut noter que la méthode, si elle peut
+produire des règles intéressantes, peut aussi produire des règles
+triviales (déjà bien connues des intervenants du domaine) ou inutiles
+(provenant de particularités de l'ensemble d'apprentissage). La
+recherche de règles d'association est une méthode non supervisée car
+on ne dispose en entrée que de la description des achats.
+
+\subsection*{Introduction de la méthode}
+
+On suppose avoir prédéfini une classification des articles (nous
+reviendrons sur ce point par la suite). Les données d'entrée sont
+constituées d'une liste d'achats. Un achat est lui-même constitué
+d'une liste d'articles. On peut remarquer que, contrairement aux
+enregistrements d'une table, les achats peuvent être de longueur
+variable. Pour introduire la méthode, nous considérons l'exemple
+suivant :
+
+\begin{figure}[h]
+  \begin{center}
+    \leavevmode
+    \begin{tabular}[c]{|r|c|c|c|c|c|}
+\hline
+           & produit A & produit B& produit C& produit D& produit E \\
+           \hline
+achat 1   &  X  & & & X & \\
+achat 2   &  X   &X &X &   & \\
+achat 3   &  X   & & &   & X \\
+achat 4   &  X   & & & X  & X \\
+achat 5   &     &X & & X  & \\ \hline
+    \end{tabular}
+    \caption{liste des achats}
+    \label{fig:listedesachats}
+  \end{center}
+\end{figure}
+À partir de ces données, si on recherche des associations entre deux
+produits, on construit le tableau de co-occurrence qui montre combien
+de fois deux produits ont été achetés ensemble :
+
+\begin{figure}[h]
+  \begin{center}
+    \leavevmode
+    \begin{tabular}[c]{|r|c|c|c|c|c|}
+\hline
+           & produit A & produit B& produit C& produit D& produit E \\
+           \hline
+produit A  &  4   &1 &1 & 2  & 1 \\
+produit B  &  1   &2 &1 & 1  & 0 \\
+produit C  &  1   &1 &1 & 0  & 0 \\
+produit D  &  2   &1 &0 & 3  & 1 \\
+produit E  &  1   &0 &0 & 1  & 2 \\ \hline
+    \end{tabular}
+    \caption{tableau de co-occurrence}
+    \label{fig:tableaucooccurrence}
+  \end{center}
+\end{figure}
+
+Un tel tableau permet de déterminer avec quelle fréquence deux produits se
+rencontrent dans un même achat. Par exemple, le produit A apparaît
+dans 80\% des achats, le produit C n'apparaît jamais en même temps que
+le produit E, les produits A et D apparaissent simultanément
+dans 40\% des achats. Ces observations peuvent suggérer une règle de la forme
+: << si un client achète le produit A alors il achète le produit D >>.
+
+Il nous faut préciser comment extraire les règles et, pour cela, il
+nous faut quantifier leur pertinence. Considérons les règles 
+\begin{enumerate}
+\item si A alors B,
+\item si A alors D,
+\item si D alors A.
+\end{enumerate}
+A et B apparaissent dans 20\% des achats, A et D apparaissent dans
+40\% des achats, la règle 1 a un support de 20\% et les règles 2 et 3
+ont un support de 40\%. Considérons les règles 2 et 3, c'est-à-dire
+les produits A et D. D apparaît dans trois achats et, dans ces trois achats,
+A apparaît deux fois. Par contre, A apparaît quatre fois et,
+lorsqu'il apparaît, D n'apparaît que deux fois. On définit alors la
+confiance d'une règle, la règle 3 a une confiance de 67\% et la règle
+2 a une confiance de 50\%. On préfère donc la règle 3 : si D alors A.
+
+Ces idées se généralisent à toutes les combinaisons d'un nombre
+quelconque d'articles. Par exemple, pour trois articles, on cherche à
+générer des règles de la forme si X et Y alors Z. Nous allons maintenant
+formaliser ces remarques introductives.
+
+\subsection*{Description de la méthode}
+
+On suppose avoir défini une liste d'articles. On dispose en entrée
+d'une liste d'achats. 
+\subsubsection*{Définitions}
+Une \emph{règle d'association} est une règle de
+la forme : Si \textbf{condition} alors \textbf{résultat}. Dans la
+pratique, on se limite, en général, à des règles où la \emph{condition
+  est une conjonction d'apparition d'articles} et le \emph{résultat
+  est constitué d'un seul article}. Par exemple, une règle à trois
+articles sera de la forme : Si X et Y alors Z ; règle dont la
+sémantique peu être énoncée : Si les articles X et Y apparaissent
+simultanément dans un achat alors l'article Z apparaît.
+
+Pour choisir une règle d'association, il nous faut définir les
+quantités numériques qui vont servir à valider l'intérêt d'une telle
+règle. Le \emph{support} \index{Support d'une règle} d'une règle est
+la fréquence d'apparition simultanée des articles qui apparaissent
+dans la condition et dans le résultat dans la liste d'achats donnée en
+entrée, soit
+\begin{equation}
+  \label{eq:support}
+  \text{support}=freq(\text{condition et résultat})=\frac{d}{m}
+\end{equation}
+où $d$ est le nombre d'achats où les articles des parties condition et
+résultat apparaissent et $m$ le nombre total d'achats.  La
+\emph{confiance} \index{Confiance d'une règle} est le rapport entre le
+nombre d'achats où tous les articles figurant dans la règle
+apparaissent et le nombre d'achats où les articles de la partie
+condition apparaissent, soit
+\begin{equation}
+  \label{eq:confiance}
+  \text{confiance}=\frac{freq(\text{condition et résultat})}{freq(\text{condition})}=\frac{d}{c}
+\end{equation}
+où $c$ est le nombre d'achats où les articles de la partie condition
+apparaissent. 
+
+La confiance ne dépend que des articles qui apparaissent dans la
+règle. Des règles, dont le support est suffisant, ayant été choisies,
+la règle de confiance maximale sera alors privilégiée. Cependant, nous
+allons montrer sur l'exemple suivant que le support et la confiance ne
+sont pas toujours suffisants. Considérons trois articles A, B et C et
+leurs fréquences d'apparition :
+
+\medskip
+
+\begin{tabular}[c]{l|c|c|c|c|c|c|c}
+article(s) & A & B & C & A et B & A et C & B et C & A et B et C \\
+\hline
+fréquence & 45\% & 42,5\% & 40\% & 25\% & 20\% & 15\% & 5\% \\
+\end{tabular}
+
+\medskip
+Si on considère les règles à trois articles, elles ont le même niveau
+de support 5\%. Le niveau de confiance des trois règles est :
+
+\medskip
+
+\begin{tabular}[c]{l|c}
+règle  & confiance \\ \hline
+si A et B alors C & 0.20 \\
+si A et C alors B & 0.25 \\
+si B et C alors A & 0.33 \\
+\end{tabular}
+
+\medskip
+
+La règle si B et C alors A possède la plus grande confiance. Une
+confiance de 0.33 signifie que si B et C apparaissent simultanément
+dans un achat alors A y apparaît aussi avec une probabilité estimée de
+33\%. Mais, si on regarde le tableau des fréquences d'apparition des
+articles, on constate que A apparaît dans 45\% des achats. Il vaut
+donc mieux prédire A sans autre information que de prédire A lorsque B
+et C apparaissent. C'est pourquoi il est intéressant d'introduire
+l'\emph{amélioration} \index{Amélioration d'une règle} qui permet de
+comparer le résultat de la prédiction en utilisant la règle avec la
+prédiction sans la règle. Elle est définie par :
+\begin{equation}
+  \label{eq:amelioration}
+  \text{amélioration}=\frac{\text{confiance}}{freq(\text{résultat})}
+\end{equation}
+Une règle est intéressante lorsque l'amélioration est
+supérieure à 1. Pour les règles choisies, on trouve :
+
+\medskip
+
+\begin{tabular}[c]{l|c|c|c}
+règle  & confiance & f(résultat)  & amélioration\\ \hline
+si A et B alors C & 0.20 & 40\%   & 0.50   \\
+si A et C alors B & 0.25 & 42.5\% & 0.59 \\
+si B et C alors A & 0.33 & 45\%   & 0.74 \\
+\end{tabular}
+
+\medskip
+
+Par contre, la règle si A alors B possède un support de 25\%, une
+confiance de 0.55 et une amélioration de 1.31, cette règle est donc la
+meilleure. En règle générale, la meilleure règle est celle qui
+contient le moins d'articles.
+
+\subsubsection*{Recherche des règles}
+
+Une liste de $n$ articles étant définie, on considère une liste de $m$
+achats. On procède comme suit :
+\begin{enumerate}
+\item on calcule le nombre d'occurrences de chaque article,
+\item on calcule le tableau des co-occurrences pour les paires d'articles,
+\item on détermine les règles de niveau 2 en utilisant les valeurs de
+  support, confiance et amélioration,
+\item  on calcule le tableau des co-occurrences pour les triplets d'articles,
+\item on détermine les règles de niveau 3 en utilisant les valeurs de
+  support, confiance et amélioration,
+\item ...
+\end{enumerate}
+La valeur du nombre $m$ d'achats est, en règle générale, très
+grande. Il est fréquent d'avoir à traiter des problèmes où $m$ est de
+l'ordre du million. Des parcours de cette liste sont nécessaires pour
+construire les tableaux de co-occurrences d'où la nécessité
+d'architectures qui permettent des accès rapides à de grands jeux de
+données. Pour le nombre $n$ d'articles, cette valeur peut également
+être grande. Étudions les tailles des tableaux en fonction de $n$ et
+du nombre d'articles apparaissant dans les règles:
+
+\medskip
+
+\begin{tabular}[c]{l|c|c|c}
+  & 2 & 3 & 4\\ \hline
+$n$ & $\frac{n(n-1)}{2}$ & $\frac{n(n-1)(n-2)}{6}$ & $\frac{n(n-1)(n-2)(n-3)}{24}$   \\
+100 & 4950 & 161 700 & 3 921 225 \\
+10 000 & $\approx 5 \times 10^7$ & $\approx 1.7 \times 10^{11}$
+& $\approx 4.2 \times 10^{14}$\\
+\end{tabular}
+
+\medskip
+
+On constate que les calculs nécessaires à la construction des règles
+(tableaux, support, confiance, amélioration) dépassent très vite les
+capacités de calcul des machines (malgré l'évolution continuelle de
+ces capacités). 
+
+Une technique de réduction du nombre des articles et
+de leurs combinaisons pris en considération à chaque étape est appelée
+\index{Élagage!par support minimum}
+\emph{élagage par support minimum}. On ne considère, à une étape
+donnée (par exemple recherche des règles à trois articles), que les
+règles faisant apparaître des articles pour lequel le support est
+supérieur à un taux fixé a priori. Par exemple, pour une liste
+d'achats de $m=1$ 000 000 d'articles, si le support minimum est fixé à
+2\%, à l'étape 2 on ne considère que les règles de la forme si X alors
+Y où X et Y apparaissent simultanément dans 20 000 achats. L'élagage
+par support minimum permet d'éliminer les articles qui sont trop peu
+fréquents pour générer des règles intéressantes. En faisant varier le
+support minimum selon l'étape, on peut trouver des combinaisons rares
+d'articles fréquents (si il diminue) ou des combinaisons fréquentes
+d'articles rares (si il augmente).
+
+Pour certaines applications, il est possible de limiter le nombre de
+combinaisons en limitant la forme des règles recherchées. Par exemple,
+la conclusion de la règle est restreinte à un sous-ensemble de
+l'ensemble des articles comme les articles nouvellement vendus.
+
+Une dernière façon de limiter les calculs est la création de groupes
+d'articles. Ceci nécessite de déterminer le bon niveau pour les
+articles, ce qui ne peut être fait qu'avec des experts du domaine
+demandeur de l'étude. Considérons des produits de supermarché. On peut
+aller d'une description d'un article qui va de << conserve >> au code barre
+de l'article en passant par << conserve de légumes >>, << conserve de
+légumes de telle marque >>, << conserve de légumes de telle taille >>,
+<< conserve de
+légumes de telle marque et telle taille >>. Le choix du bon niveau de
+description est difficile et dépend du problème à résoudre.
+
+\subsection*{Critiques de la méthode}
+\begin{description}
+\item[Résultats clairs :] les règles d'association sont
+  faciles à interpréter. Elles sont faciles à utiliser pour des
+  utilisations concrètes.
+\item[Apprentissage non supervisé : ] la méthode ne nécessite pas
+  d'autre information qu'une classification en articles et la donnée
+  d'une liste d'articles pour extraire les règles.
+\item[Achats de taille variable : ] la méthode est l'une des rares
+  méthodes qui prend en entrée des achats qui sont des listes
+  d'articles de taille variable. En effet, la plupart des autres
+  méthodes travaillent sur la base d'enregistrements d'une table, ces
+  enregistrements ayant une longueur fixe.
+\item[Introduction du temps : ] il est possible d'adapter la méthode
+  pour traiter des séries temporelles pour générer des règles de la
+  forme : << un client ayant acheté le produit A est susceptible
+  d'acheter le produit B dans deux ans >> ; il est possible d'introduire
+  des << articles virtuels >> tels que le jour, la période ou la
+  saison et limiter la forme des règles si on souhaite rechercher des
+  comportements d'achat qui dépendent du temps.
+\item[Simplicité de la méthode : ] la méthode et les calculs sont
+  élémentaires (on ne calcule que des fréquences d'apparition). La
+  méthode peut être programmée aisément sur tableur (pour des tailles
+  de problème raisonnables) et est disponible dans la plupart des
+  environnements de fouille de données.
+\item[Coût de la méthode : ] par contre, la méthode est coûteuse en
+  temps de calcul. Le regroupement d'articles et la méthode du support
+  minimum permettent de diminuer les calculs mais on peut alors
+  éliminer malencontreusement des règles importantes.
+\item[Le choix des articles : ] il est difficile de déterminer le bon
+  niveau d'articles. Les traitements  préalables sur les achats
+  peuvent être complexes : par exemple, il peut être difficile de
+  retrouver l'article à partir de son code-barre enregistré sur le
+  ticket de caisse.
+\item[Les articles rares : ] la méthode est plus efficace pour les
+  articles fréquents. Pour les articles rares, on peut restreindre la
+  forme des règles choisies ou faire varier le support minimum.
+\item[La qualité des règles : ] la méthode peut produire des règles
+  triviales ou inutiles. Les règles triviales sont des règles
+  évidentes (si camembert alors vin rouge) qui, par conséquent,
+  n'apportent pas d'information. Les règles inutiles sont des règles
+  difficiles à interpréter qui peuvent provenir de particularités
+  propres à la liste des achats ayant servie à l'apprentissage.
+\end{description}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Les plus proches voisins}
+\label{sec:prochesvoisins}
+\index{PPV}\index{Plus proches voisins}
+La méthode des plus proches voisins (PPV en bref, nearest neighbor en
+anglais ou kNN for short) est une méthode dédiée à la classification
+qui peut être étendue à des tâches d'estimation. La méthode PPV est
+une méthode de raisonnement à partir de cas. Elle part de l'idée de
+prendre des décisions en recherchant un ou des cas similaires déjà
+résolus en mémoire.  Contrairement aux autres méthodes de
+classification qui seront étudiées dans les sections suivantes (arbres
+de décision, réseaux de neurones, algorithmes génétiques), il n'y a
+pas d'étape d'apprentissage consistant en la construction d'un modèle
+à partir d'un échantillon d'apprentissage. C'est l'échantillon
+d'apprentissage, associé à une fonction de distance et d'une fonction
+de choix de la classe en fonction des classes des voisins les plus
+proches, qui constitue le modèle.  L'algorithme générique de
+classification d'un nouvel exemple par la méthode PPV est :
+
+\index{Algorithme!PPV}
+\bigskip
+\fbox{
+\begin{minipage}{\columnwidth}
+\begin{tabbing}
+aa\=bb\=cc\=dd\= \kill
+{\bf Algorithme de classification par k-PPV}
+ \\
+\textbf{paramètre : } le nombre $k$ de voisins \\
+{\bf donn\'ee :} un échantillon de $m$ enregistrements classés
+$(\vec{x},c(\vec{x}))$  \\
+{\bf entr\'ee :} un enregistrement $\vec{y}$ \+ \\
+1. déterminer les $k$ plus proches enregistrements de $\vec{y}$ \\
+2. combiner les classes de ces $k$ exemples en une classe $c$ \- \\ 
+{\bf sortie :} la classe de $\vec{y}$ est $c(\vec{y})=c$
+\end{tabbing}
+\end{minipage}
+} 
+
+\bigskip
+
+Nous allons, par conséquent, présenter les différents choix possibles
+pour la définition de la distance et pour le mode de sélection de la
+classe du cas présenté.
+\subsection*{Définition de la distance} \index{Distance}
+Le choix de la distance est primordial au bon fonctionnement de la
+méthode. Quoique les distances les plus simples permettent d'obtenir
+des résultats satisfaisants (lorsque c'est possible), il faut être
+attentif à différents pièges. Tout d'abord, rappelons qu'une distance
+doit satisfaire les propriétés suivantes :
+\begin{equation*}
+\begin{split}
+d(A,A)&=0 \\
+d(A,B)& = d(B,A) \\
+d(A,B)& \leq d(A,C) + d(B,C)
+\end{split}
+\end{equation*}
+pour tous points $A$, $B$ et $C$ de l'espace. Dans notre cadre, les
+points sont des enregistrements d'une base de données. D'après la
+première de ces propriétés, le plus proche voisin d'un enregistrement
+est lui-même. Par la suite, nous désignons par plus proche voisin un
+point le plus proche de l'enregistrement autre que lui-même. Les deux
+propriétés suivantes rendent la notion de proximité stable. On peut
+cependant noter qu'un point $A$ peut avoir un plus proche voisin $B$
+tandis que $B$ possède de nombreux voisins plus proches que $A$ (voir
+figure~\ref{fig:ppvoisins}). 
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+%BEGIN IMAGE
+    \epsfig{file=ppvoisins.eps}
+%END IMAGE
+%HEVEA \imageflush
+    \caption{$A$ a un plus proche voisin $B$, $B$ a de nombreux voisins proches autres que $A$}
+    \label{fig:ppvoisins}
+  \end{center}
+\end{figure}
+
+Pour définir la fonction de distance, on définit d'abord une distance
+sur chacun des champs, puis on combine ces distances pour définir la
+distance globale entre enregistrements. Commençons par étudier les
+choix possibles selon le type du champ.
+\begin{description}
+\item[champs numériques : ] la distance entre deux valeurs numériques $x$
+  et $y$ peut être choisie égale à :
+  \begin{itemize}
+  \item $d(x,y) = |x-y|$, ou
+  \item $d(x,y) = \frac{|x-y|}{d_{max}}$ où $d_{max}$ est la distance
+    maximale entre deux réels du domaine considéré.
+  \end{itemize}
+Lorsque nous allons combiner les différentes distances sur les champs,
+il faut éviter que les valeurs de distance aient des ordres de
+grandeurs trop différents. La seconde des deux distances normalise les
+distances dans l'intervalle réel [0,1].
+\item[champs discrets : ] la définition dépend alors des valeurs
+  possibles.
+  \begin{itemize}
+  \item les données binaires : 0 ou 1. On choisit $d(0,0)=d(1,1)=0$ et
+    $d(0,1)=d(1,0)=1$.
+\item les données énumératives : la distance vaut 0 si les valeurs
+  sont égales et 1 sinon.
+\item les données énumératives ordonnées : elles peuvent être
+  considérées comme des valeurs énumératives mais on peut également
+  définir une distance utilisant la relation d'ordre. Par exemple, si
+  un champ prend les valeurs 1, 2, 3, 4 et 5, on peut définir la
+  distance en considérant 5 points de l'intervalle [0,1] avec une
+  distance de 0,2 entre deux points successifs, on a alors
+  $d(1,2)=0,2$ ; $d(1,3)=0,4$ ; ... ; $d(4,5)=0,2$.
+  \end{itemize}
+\item[autres champs] une distance peut être définie sur de nombreux
+  types de champs comme des textes, des images, des informations
+  géographiques. 
+\end{description}
+
+Il reste à combiner les distances entre champs pour définir une
+distance entre enregistrements.  Soit $\vec{x} = (x_1,\ldots, x_n)$ et
+$\vec{y} = (y_1,\ldots, y_n)$ deux enregistrements, $d_1$, ..., $d_n$
+sont les distances définies sur les différents champs, la distance
+entre deux enregistrements peut être définie par :
+\begin{itemize}
+  \item la distance euclidienne :
+$d_e(\vec{x},\vec{y})= \sqrt{d_1(x_1,y_1)^2+\ldots+d_n(x_n,y_n)^2}$,
+\item la sommation : 
+$d_s(\vec{x},\vec{y})= d_1(x_1,y_1)+\ldots+d_n(x_n,y_n) $.
+\end{itemize}
+
+Considérons trois enregistrements $\vec{x}=(30,1,1000)$,
+$\vec{y}=(40,0,2200)$ et $\vec{z}=(45,1,4000)$ où le premier champ est
+l'âge, le second indique si le client est propriétaire de sa résidence
+principale, le troisième est un montant des mensualités des crédits en
+cours. Les champs n'ayant pas été normalisés, on choisit sur chacun
+des champs la distance normalisée. On combine les distances par les
+deux méthodes, on obtient alors :
+\begin{itemize}
+  \item $d_e(\vec{x},\vec{y})=
+    \sqrt{\frac{10}{15}^2+1^2+\frac{1200}{3000}^2} \approx 1.27$,
+  \item $d_e(\vec{x},\vec{z})=
+    \sqrt{\frac{15}{15}^2+0^2+\frac{3000}{3000}^2} \approx 1.41$,
+  \item $d_e(\vec{y},\vec{z})=
+    \sqrt{\frac{5}{15}^2+1^2+\frac{1800}{3000}^2} \approx 1.21$,
+  \item $d_s(\vec{x},\vec{y})= \frac{10}{15} + 1 +\frac{1200}{3000}
+    \approx 2.07 $,
+  \item $d_s(\vec{x},\vec{z})= \frac{15}{15} + 0 +\frac{3000}{3000} =2
+    $,
+  \item $d_s(\vec{y},\vec{z})=  \frac{5}{15} + 1 +\frac{1800}{3000}
+    \approx 1.83$.
+\end{itemize}
+On peut constater que, selon la distance choisie, le plus proche voisin
+de $\vec{x}$ est $\vec{y}$ ou $\vec{z}$. La distance euclidienne
+favorise les voisins dont tous les champs sont assez voisins, la
+distance par sommation permet de tolérer une distance importante sur
+l'un des champs. 
+
+Nous avons présenté différents choix possibles, selon le type des
+données, pour définir une distance sur un champ. Des variantes de ces
+définitions existent et, parfois, une distance spécifique peut être
+définie en fonction d'une expertise. De même,  il existe de
+nombreuses variantes pour combiner les distances entre champs. Il est
+également 
+possible de pondérer l'importance des différents champs. 
+
+\subsection*{Sélection de la classe}
+
+L'idée de la méthode est la recherche de cas similaires au cas à
+résoudre et d'utiliser les décisions des cas proches déjà résolus pour
+choisir une décision. La méthode la plus simple est de rechercher le
+cas le plus proche et de prendre la même décision. C'est la méthode
+1-PPV (1-NN) du plus proche voisin. Si cette méthode peut fournir de
+bons résultats sur des problèmes simples pour lesquels les points (les
+enregistrements) sont bien répartis en groupes denses
+d'enregistrements de même classe, en règle générale, il faut
+considérer un nombre de voisins plus important pour obtenir de bons
+résultats.
+
+Nous supposons avoir déterminé les $k$ voisins
+$(\vec{x_1},c(\vec{x_1}))$, ..., $(\vec{x_k},c(\vec{x_k}))$  d'un
+enregistrement $\vec{y}$ auquel on souhaite attribuer une classe
+$c(\vec{y})$. 
+
+Une première façon de combiner les $k$ classes des $k$ voisins les
+plus proches est le \emph{vote majoritaire}. Elle consiste simplement
+à prendre la classe majoritaire. Dans le cas de deux classes, on
+choisit une valeur de $k$ impaire.
+
+Une seconde façon est le \emph{vote majoritaire pondéré}. Chaque vote,
+c'est-à-dire chaque classe d'un des $k$ voisins sélectionnés, est
+pondéré. Soit $\vec{x_i}$ le voisin considéré, Le poids de
+$c(\vec{x_i})$ est inversement proportionnel à la distance entre
+l'enregistrement $\vec{y}$ à classer et $\vec{x_i}$.
+
+Dans les deux cas précédents, il est possible de définir une confiance
+dans la classe attribuée égale au rapport entre les votes gagnants et
+le total des votes.
+
+Lorsque la technique est appliquée à une tâche d'estimation, donc à
+prédire la valeur d'un attribut continu, la notion de vote perd tout
+son sens. Une première solution pour combiner les réponses est
+l'interpolation, c'est-à-dire de calculer une moyenne pondérée des
+réponses. Un défaut de cette solution est de <<lisser>> les données.
+Une deuxième solution est de considérer les $k$ enregistrements avec
+la valeur prédite correspondante et d'utiliser les techniques de
+régression linéaire pour estimer la valeur en $\vec{y}$.
+
+\subsection*{Mise en place de la méthode}
+
+La méthode ne nécessite pas de phase d'apprentissage. Le modèle sera
+constitué de l'échantillon d'apprentissage, de la distance et de la
+méthode de combinaison des voisins. 
+
+Il faut choisir l'échantillon, c'est-à-dire les attributs pertinents
+pour la tâche de classification considérée et l'ensemble des
+enregistrements. Il faut veiller à disposer d'un nombre assez grand
+d'enregistrements par rapport au nombre d'attributs et à ce que chacune des
+classes soit bien représentée dans l'échantillon choisi.
+
+Le choix de la distance par champ et du mode de combinaison des
+distances se fait en fonction du type des champs et des connaissances
+préalables du problème. Il est possible de choisir la distance en
+faisant varier cette distance et, pour chacun des choix, estimer
+l'erreur réelle. On choisit alors la distance donnant la meilleure
+erreur réelle estimée. L'estimation de l'erreur réelle se fait
+classiquement avec un ensemble test ou la validation croisée (voir
+section~\ref{sec:valid}).
+
+Le choix du nombre $k$ de voisins peut, lui aussi, être déterminé par
+utilisation d'un ensemble test ou par validation croisée. Une
+heuristique fréquemment utilisée est de prendre $k$ égal au nombre
+d'attributs plus 1. La méthode de vote ou d'estimation peut aussi être
+choisie par test ou validation croisée.
+
+\subsection*{Critiques de la méthode}
+\begin{description}
+\item[pas d'apprentissage :] c'est l'échantillon qui constitue le
+  modèle. L'introduction de nouvelles données permet d'améliorer la
+  qualité de la méthode sans nécessiter la reconstruction d'un
+  modèle. C'est une différence majeure avec des méthodes telles que
+  les arbres de décision et les réseaux de neurones.
+\item[clarté des résultats : ] bien que la méthode ne produit pas de
+  règle explicite, la classe attribuée à un exemple peut être
+  expliquée en exhibant les plus proches voisins qui ont amené à ce
+  choix.
+\item[tout type de données : ] la méthode peut s'appliquer dès qu'il
+  est possible de définir une distance sur les champs. Or, il est
+  possible de définir des distances sur des champs complexes tels que
+  des informations géographiques, des textes, des images, du
+  son. C'est parfois un critère de choix de la méthode PPV car les
+  autres méthodes traitent difficilement les données complexes. On
+  peut noter, également, que la méthode est robuste au bruit.
+\item[nombre d'attributs : ] la méthode permet de traiter des
+  problèmes avec un grand nombre d'attributs. Mais, plus le nombre
+  d'attributs est important, plus le nombre d'exemples doit être
+  grand. En effet, pour que la notion de proximité soit pertinente, il
+  faut que les exemples couvrent bien l'espace et soient suffisamment
+  proches les uns des autres. Si le nombre d'attributs pertinents est
+  faible relativement au nombre total d'attributs, la méthode donnera
+  de mauvais résultats car la proximité sur les attributs pertinents
+  sera noyée par les distances sur les attributs non pertinents. Il est
+  donc parfois utile de d'abord sélectionner les attributs pertinents.
+\item[temps de classification :] si la méthode ne nécessite pas
+  d'apprentissage, tous les calculs doivent être effectués lors de la
+  classification. Ceci est la contrepartie à payer par rapport aux
+  méthodes qui nécessite un apprentissage (éventuellement long) mais
+  qui sont rapides en classification (le modèle est créé, il suffit de
+  l'appliquer à l'exemple à classifier). Certaines méthodes permettent
+  de diminuer la taille de l'échantillon en ne conservant que les
+  exemples pertinents pour la méthode PPV, mais il faut, de toute
+  façon, un nombre d'exemples suffisamment grand relativement au
+  nombre d'attributs.
+\item[stocker le modèle :] le modèle est l'échantillon, il faut donc
+  un espace mémoire important pour le stocker ainsi que des méthodes
+  d'accès rapides pour accélérer les calculs.
+\item[distance et nombre de voisins : ] les performances de la méthode
+  dépendent du choix de la distance, du nombre de voisins et du mode
+  de combinaison des réponses des voisins. En règle générale, les
+  distances simples fonctionnent bien. Si les distances simples ne
+  fonctionnent pour aucune valeur de $k$, il faut envisager le
+  changement de distance, ou le changement de méthode !
+ 
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Les arbres de décision}
+\label{sec:arbresdedecision}
+Nous étudions les algorithmes de génération d'arbres de décision à
+partir de données. Les deux algorithmes les plus connus et les plus
+utilisés (l'un ou l'autre ou les deux sont présents dans les
+environnements de fouille de données) sont \index{CART} CART
+(Classification And Regression Trees \cite{Breiman84}) et \index{C5}
+C5 (version la plus récente après ID3 et C4.5 \cite{Quinlan93}). Ces
+algorithmes sont très utilisés car performants et car ils génèrent des
+procédures de classification exprimables sous forme de règles.
+
+\subsection*{Qu'est-ce qu'un arbre de décision ?} \index{Arbre de décision}
+Un arbre de décision est une représentation graphique d'une procédure
+de classification. Les n\oe uds internes de l'arbre sont des tests sur
+les champs ou attributs, les feuilles sont les classes. Lorsque les
+tests sont binaires, le fils gauche correspond à une réponse positive
+au test et le fils droit à une réponse négative. Un exemple
+d'arbre de décision est:
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+%BEGIN IMAGE
+    \setlength{\GapWidth}{10pt}
+    \arbrebin {\fbox{\texttt{MS > 5000}}} 
+        {Y}
+        {\arbrebin {\fbox{\texttt{age > 25}}}  
+           {\setlength{\GapWidth}{80pt}
+            \arbrebin {\fbox{\texttt{autres comptes}}} {Y} {N}}  
+           {N}
+        }  
+     \setlength{\GapWidth}{4pt}   
+%END IMAGE
+%HEVEA \imageflush
+    \caption{exemple d'arbre de décision ; \texttt{MS} est la moyenne des
+    soldes du compte courant, \texttt{autres comptes} est un champ binaire
+    qui vaut oui si le client dispose d'autres comptes, la classe Y
+    indique un a priori favorable pour l'attribution d'un prêt.}
+    \label{fig:exarbredecision}
+  \end{center}
+\end{figure}
+
+Pour classer un enregistrement, il suffit de descendre dans l'arbre
+selon les réponses aux différents tests pour l'enregistrement
+considéré. Soit l'enregistrement $\vec{x}$ défini par :
+\texttt{nom=Digra}, \texttt{prénom=Omar}, \texttt{age=32},
+\texttt{csp=2}, \texttt{MS=2550}, \texttt{prets en cours = oui},
+\texttt{autres comptes = oui}. Cet enregistrement sera classé Y car
+\texttt{MS<=2550} et \texttt{age > 25} et \texttt{autres comptes =
+  oui}. On peut déjà remarquer quelques propriétés importantes des
+arbres de décision :
+\begin{itemize}
+\item la procédure de classification associée est compréhensible par
+  tout utilisateur,
+\item la classe associée à un enregistrement particulier peut être
+  justifiée,
+\item les attributs apparaissant dans l'arbre sont les attributs
+  pertinents pour le problème de classification considéré.
+\end{itemize}
+On peut également remarquer qu'un arbre de décision est un système de
+règles. Il est immédiat de transformer l'arbre de la
+Figure~\ref{fig:exarbredecision} en :
+
+\noindent
+\begin{tabular}[c]{rcl}
+Si \texttt{MS > 5000} & alors & Y \\
+Si \texttt{MS <= 5000} et \texttt{age > 25} et \texttt{autres
+  comptes=oui} &  alors & Y \\
+Si \texttt{MS <= 5000} et \texttt{age > 25} et \texttt{autres comptes=
+  non} & alors & N \\
+Si \texttt{MS <= 5000} et \texttt{age <= 25} & alors & N \\
+\end{tabular}
+
+Les systèmes de règles construits sont particuliers. En effet, pour
+tout enregistrement une et une seule règle s'applique, c'est-à-dire
+que les règles sont exhaustives et mutuellement exclusives.
+
+\subsection*{Apprentissage des arbres de décision}
+
+Avec en entrée, un échantillon de $m$ enregistrements classés
+$(\vec{x},c(\vec{x}))$, un algorithme d'apprentissage doit fournir en
+sortie un arbre de décision. La plupart des algorithmes procèdent de
+façon descendante, c'est-à-dire qu'ils choisissent la racine de
+l'arbre (en général un test) puis, récursivement, choisissent
+l'étiquette des fils. Pour simplifier la présentation, nous nous
+limitons, dans cette section à des problèmes où les attributs sont
+discrets et le nombre de classes égal à 2. L'algorithme générique peut
+s'écrire :
+
+\index{Algorithme!arbres de décision}
+\bigskip
+\fbox{
+\begin{minipage}{\columnwidth}
+\begin{tabbing}
+aa\=bb\=cc\=dd\= \kill
+{\bf Algorithme d'apprentissage par arbres de décision}
+ \\
+{\bf donn\'ee :} un échantillon $S$ de $m$ enregistrements classés
+$(\vec{x},c(\vec{x}))$   \\
+\textbf{initialisation :} arbre vide ; n\oe ud courant : racine ;
+échantillon courant : $S$ \\
+\textbf{répéter} \+ \\
+décider si le n\oe ud courant est terminal \\
+\textbf{si} le n\oe ud courant est terminal \textbf{alors} \+ \\
+étiqueter le n\oe ud courant par une feuille \- \\ 
+\textbf{sinon} \+ \\
+sélectionner un test et créer le sous-arbre \- \\
+\textbf{finsi} \\
+n\oe ud courant : un n\oe ud non encore étudié \\
+échantillon courant : échantillon atteignant le n\oe ud courant \- \\
+\textbf{jusque} production d'un arbre de décision \\
+élaguer l'arbre de décision obtenu \\
+\textbf{sortie :} arbre de décision élagué \\
+\end{tabbing}
+\end{minipage}
+} 
+
+\bigskip
+
+Nous allons préciser les différents points de cet algorithme en
+mettant en évidence les particularités des différents algorithmes.
+
+\begin{description}
+\item[décider si le n\oe ud courant est terminal : ] le n\oe ud courant
+  est terminal si 
+  \begin{itemize}
+  \item il n'y a plus d'attributs disponibles, c'est-à-dire
+  que sur le chemin menant de la racine au n\oe ud courant tous les
+  tests disponibles ont été utilisés ;
+\item   tous les exemples de l'échantillon courant sont dans une même
+  classe. 
+\end{itemize}
+Les critères précédents sont indiscutables, les autres
+  critères sont spécifiques aux différents algorithmes et sont souvent
+  paramétrables. Des exemples de critères sont : 
+  \begin{itemize}
+  \item la proportion d'exemples
+  d'une classe est supérieure à un seuil prédéfini. Par
+  exemple, on décide de l'arrêt si une des classes contient plus
+  de 95\% des exemples.
+  \item C5 utilise le critère suivant : si il n'existe pas de test
+    ayant au moins $k$ éléments sur deux branches alors le n\oe ud est
+    terminal. L'objectif de ce critère est d'éviter une croissance
+    trop grande de l'arbre par l'exploration de branches comprenant
+    trop peu d'exemples. La valeur de $k$ est, par défaut, égale à 2,
+    elle peut être modifiée par l'utilisateur.
+\end{itemize}
+\item[étiqueter le n\oe ud courant par une feuille : ] On étiquette le
+  n\oe ud courant par la classe majoritaire. Par exemple, si le n\oe ud
+  courant est terminal et si il y a 5 exemples de classe 0 et 20
+  exemples de classe 1, on étiquette par 1. Cependant, pour certains
+  problèmes, il se peut que les erreurs de classification d'une classe
+  vers l'autre aient des conséquences différentes. C'est le cas, par
+  exemple, pour un diagnostic médical pour lequel classer un individu
+  malade comme sain ou classer un individu sain comme malade n'ont pas
+  les mêmes conséquences. Dans ce cas, il est possible de définir des
+  coûts de mauvaise classification et la classe choisie le sera en
+  fonction des coûts attribués.
+\item[sélectionner un test : ] on suppose que le n\oe ud courant n'est
+  pas terminal. Soit $S$ l'échantillon associé au n\oe ud courant. Pour
+  introduire les possibles critères de sélection du test, considérons
+  l'exemple suivant : $S$ contient 100 exemples, 60 de classe 0 et 40
+  de classe 1. Le n\oe ud courant sera étiqueté par le couple
+  (60,40). Supposons que deux tests soient disponibles, et que ces
+  deux tests déterminent les répartitions suivantes :
+
+\medskip
+
+\begin{tabular}[c]{lcl}
+(60,40)& $\rightarrow$ & \arbretern{$A$} {(30,10)} {(30,5)} {(0,25)}\\
+&&\\
+(60,40)& $\rightarrow$ & \arbrebin{$B$} {(40,20)} {(20,20)} \\
+&&\\
+\end{tabular}
+
+\medskip
+
+Pour choisir le test, on utilise des fonctions qui mesurent le <<
+degré de mélange >> \index{Fonction!de mélange} des différentes
+classes. Pour les problèmes à deux classes, on peut utiliser une des
+fonctions suivantes :
+\begin{itemize}
+\item la fonction de Gini : $Gini(x) = 4x(1-x)$ \index{Fonction!Gini}
+\item la fonction entropie : $Entropie(x) = -x \log x - (1-x) \log
+  (1-x)$ \index{Fonction!entropie}
+\end{itemize}
+
+où $x$ désigne la proportion d'éléments dans l'une des deux
+classes. Ces deux fonctions sont à valeurs dans l'intervalle réel
+$[0,1]$, prennent leur minimum pour $x=0$ ou $x=1$ (tous les exemples
+sont dans une même classe) et leur maximum lorsque $x=1/2$ (les
+exemples sont également répartis entre les deux classes). Choisissons,
+par exemple, la fonction de Gini. Pour le n\oe ud courant, $x=60/100$
+et $Gini(x)=4 \times 60/100 \times 40/100 = 0.96$. Si on choisit le
+test $A$, pour le premier fils (le plus à gauche), $x=3/4$ et
+$Gini(x)=0.75$, pour le second fils $x=6/7$ et $Gini(x)=0.49$, pour le
+troisième fils, $Gini(x)=0$. Pour comparer les trois tests, on estime
+le << degré de mélange espéré >> en pondérant les degrés de mélange
+des fils par la proportion des exemples allant sur ce fils, on
+obtient:
+\begin{itemize}
+\item pour $A$ : $\frac{40}{100} \times 0.75 + \frac{35}{100} \times
+  0.49 + \frac{25}{100} \times 0 = 0.47$
+\item pour $B$ : $\frac{60}{100} \times 0.89 + \frac{40}{100} \times
+  1 = 0.93$
+\end{itemize}
+On choisit alors le test qui fournit de degré de mélange espéré
+minimum. Souvent, on introduit le Gain qui est égal au degré de
+mélange du n\oe ud courant diminué du degré de mélange espéré par
+l'introduction du test, on choisit alors le test qui apporte le gain
+maximal. 
+\item[élaguer l'arbre de décision obtenu : ] \index{Élagage!arbres de
+    décision} il est possible de poursuivre la croissance de l'arbre
+  jusqu'à obtention d'un arbre d'erreur nulle (si c'est possible : si
+  il n'existe pas d'exemples ayant la même description mais des
+  classes différentes) ou d'un arbre d'erreur mesurée sur l'ensemble
+  d'apprentissage la plus petite possible. Cependant, l'objectif d'une
+  procédure de classification est de bien classer des exemples non
+  encore rencontrés, on parle de pouvoir de généralisation. Si
+  l'algorithme fournit en sortie un arbre très grand qui classe bien
+  l'échantillon d'apprentissage, on se trouve confronté au problème de
+  sur-spécialisation : on a appris << par coeur >> l'ensemble
+  d'apprentissage, mais on n'est pas capable de généraliser.
+  L'objectif de la phase d'élagage est d'obtenir un arbre plus petit
+  (on élague des branches, c'est-à-dire que l'on détruit des
+  sous-arbres) dans le but d'obtenir un arbre ayant un meilleur
+  pouvoir de généralisation (même si on fait augmenter l'erreur sur
+  l'ensemble d'apprentissage).
+\end{description}
+
+\subsection*{Les algorithmes d'apprentissage}
+
+\subsubsection*{CART} \index{CART}
+CART a été défini dans les années 80 (\cite{Breiman84}). Depuis, il a
+été intégré à de nombreux environnements de fouille de données sous de
+nombreuses variantes. Nous donnons ici ses principales
+particularités. A l'origine, l'algorithme ne considérait que des tests
+binaires. La fonction qui mesure le degré de mélange (et donc le
+gain) est la fonction de Gini (les versions diffusées proposent
+d'autres choix).  Pour l'élagage, on effectue un parcours ascendant de l'arbre
+construit. Pour décider si un sous arbre peut être élagué, on compare
+l'erreur réelle estimée de l'arbre courant avec l'arbre
+élagué. L'estimation de l'erreur réelle est mesurée sur
+un ensemble test ou par validation croisée.
+
+\subsubsection*{C5} \index{C5}
+
+C5 est la version la plus récente d'un algorithme ID3 développé par R.
+Quinlan \cite{Quinlan93}. L'algorithme peut prendre en compte des
+attributs d'arité quelconque. La fonction qui mesure le degré de
+mélange (et donc le gain) est la fonction entropie. Cette fonction a
+tendance à privilégier les attributs possédant un grand nombre de
+valeurs. Pour éviter ce biais, une fonction gain d'information est
+également disponible. L'élagage est effectué avec l'ensemble
+d'apprentissage par une évaluation pessimiste de l'erreur. Bien que
+cette technique puisse sembler inadaptée, elle donne de bons résultats
+en pratique. 
+
+\subsubsection*{Extensions}
+
+Bien que les algorithmes précédents semblent spécialisés pour les
+attributs discrets, ils ont été adaptés pour considérer également les
+attributs continus. Par exemple, dans C5, soit $A$ un attribut
+continu, pour sélectionner un test, l'algorithme fait participer à la
+compétition tous les tests de la forme $A>a$ où $a$ est une valeur
+prise par l'attribut $A$ dans l'ensemble d'apprentissage.
+
+Les algorithmes peuvent traiter les valeurs manquantes (descriptions
+contenant des champs non renseignés) pour
+l'apprentissage, mais aussi pour la classification.
+
+Pour les attributs discrets possédant plusieurs valeurs, il est
+possible de demander à l'algorithme de grouper les valeurs pour le
+choix des tests. Par exemple, si un attribut $A$ prend ses valeurs
+dans l'ensemble $\{1,2,3,4,5\}$, l'arbre engendré pourra contenir des
+tests de la forme $A \in \{1,3,5\}$. 
+
+C5 propose également de générer un système de règles à
+partir de l'arbre de décision. Le système obtenu n'est pas une simple
+réécriture de l'arbre car des transformations et simplifications sont
+effectuées.
+
+\subsection*{Critiques de la méthode}
+
+\begin{description}
+\item[lisibilité du résultat : ] un arbre de décision est facile à
+  interpréter et est la
+  représentation graphique d'un ensemble de règles. Si la taille de
+  l'arbre est importante, il est difficile d'appréhender l'arbre dans
+  sa globalité. Cependant, les outils actuels permettent une
+  navigation aisée dans l'arbre (parcourir une branche, développer un
+  n\oe ud, élaguer une branche) et, le plus important, est certainement
+  de pouvoir expliquer comment est classé un exemple par l'arbre, ce qui
+  peut être fait en montrant le chemin de la racine à la feuille pour
+  l'exemple courant.
+\item[tout type de données : ] l'algorithme peut prendre en compte
+  tous les types d'attributs et les valeurs manquantes. Il est robuste
+  au bruit.
+\item[sélection des variables : ] l'arbre contient les attributs
+  utiles pour la classification. L'algorithme peut donc être
+  utilisé comme pré-traitement qui permet de sélectionner  l'ensemble
+  des variables pertinentes pour ensuite appliquer une autre méthode.
+\item[classification efficace : ] l'attribution d'une classe à un
+  exemple à l'aide d'un arbre de décision est un processus très
+  efficace (parcours d'un chemin dans un arbre).
+\item[outil disponible : ] les algorithmes de génération d'arbres de
+  décision sont disponibles dans tous les environnements de fouille de
+  données. 
+\item[extensions et modifications : ] la méthode peut être adaptée pour
+  résoudre des tâches d'estimation et de prédiction. Des améliorations
+  des performances des algorithmes de base sont possibles grâce aux
+  techniques de bagging et de boosting : on génère un ensemble
+  d'arbres qui votent pour attribuer la classe.
+\item[sensible au nombre de classes : ] les performances tendent à
+  se dégrader lorsque le nombre de classes devient trop important.
+\item[évolutivité dans le temps : ] l'algorithme n'est pas
+  incrémental, c'est-à-dire, que si les données évoluent avec le
+  temps, il est nécessaire de relancer une phase d'apprentissage sur
+  l'échantillon complet (anciens exemples et nouveaux exemples).
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Les réseaux de neurones}
+\label{sec:reseauxdeneurones}
+\index{Perceptron multicouches PMC}
+\index{Réseau de neurones}
+
+Les réseaux de neurones sont des outils très utilisés pour la
+classification, l'estimation, la prédiction et la segmentation. Ils
+sont issus de modèles biologiques, sont constitués d'unités
+élémentaires (les neurones) organisées selon une architecture. Nous
+nous limitons dans ce paragraphe aux réseaux de neurones dédiés aux
+tâches d'estimation et classification que sont les \emph{Perceptrons
+  multicouches (PMC)}. Ceux-ci obtiennent de bonnes performances, en
+particulier, pour la reconnaissance de formes et sont donc bien
+adaptés pour des problèmes comprenant des variables continues
+éventuellement bruitées. Le principal désavantage est qu'un réseau est
+défini par une architecture et un grand ensemble de paramètres réels
+(les coefficients synaptiques), le pouvoir explicatif est faible : on
+parle parfois de << boîte noire >>.
+
+\subsection*{Qu'est-ce qu'un réseau de neurones ?}
+
+\subsubsection*{Un neurone}
+Un neurone est une unité de calcul élémentaire dont le modèle est issu
+de certains principes de fonctionnement du neurone biologique. L'unité
+de calcul combine des entrées réelles $x_1,\ldots,x_n$ en une sortie
+réelle $o$. Les entrées n'ont pas toutes la même importance et à
+chaque entrée $x_i$ est associée un poids (ou coefficient synaptique)
+$w_i$. L'unité calcule d'abord l'activité d'entrée. En règle générale,
+pour le neurone formel, l'activité en entrée est mesurée par la somme
+pondérée des entrées $\Sigma_{i} w_{i}x_{i}$.
+
+
+      \begin{figure}[htbp]
+        \begin{center}
+          \leavevmode
+%BEGIN IMAGE
+          \input{perceptron.pstex_t}
+%END IMAGE
+%HEVEA \imageflush
+          \caption{Un neurone ou perceptron}
+          \label{fig:perceptron}
+        \end{center}
+      \end{figure}
+      
+      Pour le neurone biologique, lorsque l'activité en entrée dépasse
+      un certain seuil, sa sortie est activée.  Pour le neurone
+      formel, une fonction de
+      transfert $H$ est appliquée à l'activité d'entrée. Cette fonction doit
+      être telle que sa valeur de sortie soit 1 lorsque l'activité est
+      suffisante et 0 sinon (parfois -1). Un premier choix possible
+      est la fonction de Heaviside définie par $H(x) =1$ si $x>0$ et
+      $H(x)=0$ sinon. Cette fonction n'est pas dérivable et les
+      algorithmes utilisant des méthodes de gradient, on utilise plus
+      souvent des approximations dérivables de cette fonction. Parmi
+      elles, la fonction la plus utilisée
+      est la fonction sigmoïde \index{Fonction!sigmoïde}
+      \index{Fonction!d'activation} définie par :
+
+\begin{equation*}
+  \label{eq:sigmoide}
+  \sigma(x) = \frac{e^{x}}{e^{x}+1} = \frac{1}{1+e^{-x}}
+\end{equation*}
+
+Cette fonction (représentée dans la figure~\ref{fig:sigmoide}) prend
+ses valeurs dans l'intervalle $[0,1]$, passe de 0 à 1 lorsque l'entrée
+est suffisante, tout en étant continue et dérivable. Il existe
+d'autres modèles de neurones selon la façon de cumuler les entrées, la
+fonction de transfert choisie. Nous nous limitons au modèle présenté :
+la sortie est à valeurs dans [0,1], la fonction de combinaison des
+entrées est la somme pondérée, la fonction de transfert est la
+fonction sigmoïde. Ces choix ayant été fixés, on voit qu'un neurone
+est entièrement déterminé par la donnée du vecteur $\vec{w}=(w_1,
+\ldots, w_n)$ des $n$ poids.
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+%BEGIN IMAGE
+             \epsfig{file=sigma.eps,height=4cm,width=8cm}
+%END IMAGE
+%HEVEA \imageflush
+        \caption{La fonction sigmoïde}
+  \label{fig:sigmoide}
+  \end{center}
+\end{figure}
+
+\subsubsection*{Un Perceptron multicouches (PMC)}
+\index{Perceptron multicouches PMC}
+
+Le perceptron multicouches est un modèle de réseaux de neurones. Les
+neurones sont répartis en couches successives, les calculs sont
+effectués des entrées vers la ou les sorties, le neurone élémentaire
+est, en règle générale, celui considéré dans le paragraphe
+précédent.
+ 
+     \begin{figure}[htbp]
+        \begin{center}
+          \leavevmode
+%BEGIN IMAGE
+          \input{pmc.pstex_t}
+%END IMAGE
+%HEVEA \imageflush
+          \caption{Un perceptron multicouches : une couche d'entrée de
+          5 cellules, 2 couches cachées possédant respectivement 3 et
+          2 neurones, 1 couche de sortie à 1 neurone}
+          \label{fig:pmc}
+        \end{center}
+      \end{figure}
+      
+La première couche est la \emph{couche d'entrée} : aucun calcul n'est
+effectué, une cellule d'entrée ne fait que copier son entrée vers sa
+sortie. Les entrées correspondent aux attributs (ou leurs codages) du
+problème considéré. Ensuite, viennent une ou plusieurs \emph{couches cachées}
+constituées de neurones élémentaires. Tous les neurones d'une couche
+sont les entrées de chaque neurone de la couche suivante et de elle
+seulement : autrement dit, il n'y a pas de retour arrière et on passe
+d'une couche à la suivante. Enfin, la dernière couche est la
+\emph{couche de sortie} qui contient un ou plusieurs neurones. Les
+sorties de ces neurones correspondent aux valeurs à estimer (ou leurs
+codages) pour le problème considéré. 
+
+\subsection*{Algorithme d'apprentissage}
+\index{Algorithme!rétropropagation}
+
+Dans la très jeune histoire de l'informatique, il faut savoir que les
+réseaux de neurones sont anciens (première définition du neurone en 43
+par McCulloch et Pitts), que les recherches ont été nombreuses et
+prometteuses. Cependant, il a été vite constaté que, pour résoudre des
+problèmes complexes, le neurone élémentaire (éventuellement légèrement
+complexifié : perceptron de Rosenblatt 58) ne suffisait pas. Il
+fallait donc considérer des réseaux de neurones tels que le PMC
+défini auparavant. Le problème, qui a freiné les études sur les
+réseaux de neurones, est que l'on ne disposait pas d'algorithme
+d'apprentissage pour ces architectures. Il a fallu attendre le début
+des années 80 pour qu'un tel algorithme apparaisse :
+\emph{l'algorithme de rétropropagation du gradient} défini par divers auteurs
+(Rumelhart, McClelland, Parker, Hinton, Le Cun).
+
+
+L'étude de cet algorithme en tant que tel n'est pas l'objectif de ce
+cours. Nous nous contenterons donc d'en énoncer les principes de base
+et d'expliquer les paramètres à régler lors de l'utilisation d'un
+générateur de réseaux de neurones dans un environnement de fouille de
+données. 
+
+Nous considérons un problème d'estimation ou de classification. On
+dispose donc, en entrée, d'un échantillon $S$ de $m$ enregistrements
+classés $(\vec{x},c(\vec{x}))$ où $\vec{x}$ est constitué de $n$
+entrées réelles et $c(\vec{x})$ est un réel de [0,1] ou un élément de
+$\{0,1\}$. On suppose avoir fixé une architecture à $n$ entrées et 1
+sortie en choisissant le nombre de couches cachées et le nombre de
+neurones sur chacune des couches cachées (nous étudions le problème du
+choix de l'architecture dans la suite). On note $o(\vec{x})$ la
+sortie calculée par le réseau sur l'entrée $\vec{x}$. L'objectif de
+l'algorithme est de minimiser l'erreur apparente mesurée sur
+l'ensemble d'apprentissage. Cette erreur $E$ est l'erreur quadratique
+mesurée sur $S$ et peut s'écrire :
+
+\begin{equation} \label{def:erreurpmc}
+E = 1/2 \sum_{(\vec{x}, c(\vec{x}))\in S} (c(\vec{x}) - o(\vec{x}))^2
+\end{equation}
+
+Le principe de l'algorithme
+est le suivant : 
+
+\begin{itemize}
+\item on initialise aléatoirement les poids de tous les neurones du
+  réseau ;
+\item de façon itérative, on présente un élément $\vec{x}$ de $S$ en entrée du
+réseau, le réseau calcule une sortie $o(\vec{x})$, la sortie attendue
+est $c(\vec{x})$, on peut mesurer l'écart entre sortie calculée et
+sortie attendue, on procède alors à une rétropropagation du gradient,
+c'est-à-dire qu'à l'aide d'une méthode mathématique (méthode du
+gradient), on modifie les poids (les coefficients synaptiques) de la
+couche de sortie vers la couche d'entrée pour minimiser l'erreur sur
+cet exemple ; 
+\item un critère d'arrêt doit être défini.
+\end{itemize}
+
+Nous supposons toujours que l'architecture du réseau est fixée.  Nous
+allons présenter les différents paramètres à régler pour
+l'apprentissage d'un PMC (ils sont résumés dans la
+figure~\ref{tab:paraspmc}).  Tout d'abord, on choisit une
+\index{Fonction!d'activation} \emph{fonction
+d'activation}. Un fichier d'apprentissage étant défini, on initialise
+aléatoirement les poids. Il faut noter que des initialisations
+différentes peuvent produire des résultats différents. 
+
+Le paramètre
+\emph{nombre d'exemples} définit le nombre d'exemples qui sont passés dans le
+réseau avant qu'un calcul d'erreur soit effectué et que les poids
+soient mis à jour. Les valeurs extrêmes sont 1 et $m$ : le cardinal de
+l'ensemble d'apprentissage. Pour la valeur 1, il y a mise à jour des
+poids après chaque exemple. Dans ce cas, la convergence est rapide,
+mais on peut tomber dans un minimum local (on trouve un minimum de
+l'erreur mais ce n'est pas l'erreur minimale que l'on peut espérer).
+pour la valeur $m$, on passe l'échantillon complet, on calcule
+l'erreur $E(PMC)$ définie dans l'équation~\ref{def:erreurpmc}, puis on
+met à jour les poids. La convergence est plus lente.
+
+Le paramètre \emph{taux d'apprentissage} souvent nommé $\eta$ ou
+$\epsilon$ est une valeur réelle de l'intervalle [0,1] qui influe sur
+la modification des poids. Une valeur grande signifie que l'on modifie
+fortement les poids à chaque mise à jour, une valeur petite entraine
+des modifications minimes de ces poids. Il est fréquent de choisir une
+valeur initiale qui diminue avec le nombre d'itérations. La valeur
+initiale est choisie << assez grande >> (0.2 ou 0.1 par défaut) pour
+une convergence rapide, puis diminue pour éviter les oscillations et
+converger vers un minimum.
+
+Le paramètre \emph{inertie} \index{Inertie} souvent nommé $\alpha$ est
+une valeur réelle de l'intervalle [0,1] qui lisse les modifications de
+poids. Plus précisément, si on modifie les poids après chaque
+exemple, il se peut que certains poids soient alternativement
+augmentés ou diminués. Pour atténuer ce phénomène, on modifie les
+poids en tenant compte des modifications faites aux étapes
+précédentes.
+
+La \emph{tolérance} \index{Tolérance} définit l'erreur cible,
+c'est-à-dire l'erreur que l'on souhaite atteindre avant de s'arrêter.
+Elle est choisie en fonction du mode de calcul de l'erreur, l'erreur
+$E(PMC)$ étant parfois normalisée. Des critères d'arrêt sur le nombre
+d'exemples de l'échantillon d'apprentissage $S$ qui sont bien classés
+(ou bien estimés : erreur inférieure à un certain seuil) sont parfois
+ajoutés au précédent.
+
+\begin{table}[htbp]
+  \begin{center}
+    \leavevmode
+    \begin{tabularx}{\textwidth}{p{3cm}|p{3cm}|X}
+      paramètre & parameter & objet du paramètre \\ \hline fonction
+      d'activation & activation function & fonction d'activation
+      pour le neurone élémentaire, souvent la sigmoïde \\
+      && \\
+      nombre d'exemples & epoch length & nombre d'exemples avant mise
+      à
+      jour des poids, par défaut 1 \\
+      &&\\
+      taux d'apprentissage & learn rate & coefficient qui contrôle la
+      vitesse de modification des poids \\
+      &&\\
+      inertie & momentum & coefficient qui permet de lisser la
+      variation des
+      poids \\
+      &&\\
+      tolérance & error tolerance ; target error& seuil d'erreur pour
+      arrêt de l'apprentissage
+    \end{tabularx}
+    \caption{paramètres d'apprentissage pour la rétropropagation}
+    \label{tab:paraspmc}
+  \end{center}
+\end{table}
+
+\subsection*{Mise en oeuvre}
+
+\begin{description}
+\item[codage du problème: ] \index{Codage} \index{Normalisation}
+  \index{Données!codage} \index{Données!normalisation} les PMC prennent des entrées
+  réelles. Cependant, pour un bon fonctionnement des algorithmes, il
+  est souvent nécessaire de normaliser les entrées dans l'intervalle
+  [0,1]. Cette normalisation peut être prise en charge par le
+  générateur de réseaux de neurones ou est à la charge du
+  programmeur. Les entrées binaires ne nécessitent pas de codage. Pour
+  les données énumératives, plusieurs codages sont possibles. Prenons
+  l'exemple d'un attribut $A$ prenant ses valeurs dans l'ensemble
+  $\{1,2,3,4,5\}$. Plusieurs codages sont envisageables :
+  \begin{itemize}
+  \item 5 entrées à valeurs binaires ; dans ce cas, la donnée $A=3$ est
+    codée par la troisième entrée vaut 1, les autres valent 0.
+  \item on peut coder 5 valeurs sur 3 bits. L'attribut $A$ peut alors
+    être codé sur 3 entrées ; par exemple, la donnée $A=3$ est
+    codée par première entrée à 0, deuxième entrée à 1, troisième
+    entrée à 1 si on choisit le codage binaire. D'autres codages sur 3
+    bits sont possibles si une notion d'ordre ou de proximité existe
+    sur les valeurs de l'attribut $A$.
+  \item 1 entrée réelle ; dans ce cas, on peut par exemple coder les
+    valeurs 1, 2, 3, 4 et 5 par 0, 0.25, 0.5, 0.75 et 1.
+  \end{itemize} 
+
+Les PMC peuvent avoir une ou plusieurs sorties réelles. Pour un
+problème d'estimation d'une ou plusieurs variables, un neurone de
+sortie sert à estimer une des variables (normalisée). Pour un problème
+de classification à plusieurs classes, on peut créer une sortie pour
+chacune des classes ou coder en binaire (pour quatre classes, deux
+sorties suffisent). Remarquer que le codage << une sortie par classe
+>> est intéressant si un même exemple peut appartenir à plusieurs
+classes.
+\item[choix de l'architecture : ] \index{Architecture d'un réseau} le
+  codage étant choisi, on connaît le nombre d'entrées et le nombre de
+  sorties du réseau. Il reste à choisir l'architecture. Un exemple
+  d'architectures possibles est présenté dans la
+  Figure~\ref{fig:pmc41}. Plus la structure du réseau est riche, plus
+  le pouvoir d'expression du modèle est grand. Sur l'exemple présenté,
+  l'architecture 4-1 est moins puissante que l'architecture 4-2-1,
+  elle-même moins puissante que l'architecture 4-4-1.
+ 
+     \begin{figure}[htbp]
+        \begin{center}
+          \leavevmode
+%BEGIN IMAGE
+          \input{pmc41.pstex_t}
+%END IMAGE
+%HEVEA \imageflush
+          \caption{différentes architectures possibles pour un
+          problème à quatre entrées et une sortie}
+          \label{fig:pmc41}
+        \end{center}
+      \end{figure}
+
+Si on souhaite avoir un réseau de neurones ayant un bon pouvoir de
+généralisation, il faut choisir une architecture assez riche, mais pas
+trop ! En effet, on rencontre ici la même difficulté que pour les
+arbres de décision, il faut éviter la sur-spécialisation et si
+l'architecture est trop riche, on prend le risque d'un apprentissage
+<< par coeur >>, sans pouvoir de généralisation. Le choix de
+l'architecture est fait, soit par l'expérience, soit par des essais
+successifs. 
+
+\item[réglage des paramètres et choix de l'architecture : ] Nous
+  venons de signaler l'importance du choix de l'architecture sur la
+  qualité du réseau de neurones produit. Il faut également, une
+  architecture étant choisie, régler les différents paramètres
+  d'apprentissage pour générer un << bon >> réseau de neurones. Pour
+  cela, si les données disponibles sont en nombre suffisant, on
+  découpe l'échantillon en trois ensembles : un ensemble
+  d'apprentissage $A$, un ensemble de test $T$ et un ensemble de
+  validation $V$. Pour un choix d'architecture et un réglage des
+  paramètres, on apprend avec $A$, on estime la qualité du réseau
+  produit avec $T$. Ensuite, on choisit l'architecture et le réglage
+  ayant obtenu les meilleures performances sur $T$. On relance
+  l'apprentissage, l'estimation de l'erreur réelle est obtenue en
+  calculant l'erreur sur $V$.
+\end{description}
+
+\subsection*{Critiques de la méthode}
+\begin{description}
+\item[lisibilité du résultat : ] Le résultat de l'apprentissage est un
+  réseau constitué de cellules organisées selon une architecture,
+  définies par une fonction d'activation et un très grand nombre de
+  poids à valeurs réelles. Ces poids sont difficilement
+  interprétables. Pour un vecteur d'entrée, il est difficile
+  d'expliquer le pourquoi de la sortie calculée.
+\item[les données réelles : ] les réseaux traitent facilement les
+  données réelles -- préalablement normalisées -- et les algorithmes
+  sont robustes au bruit. Ce sont, par conséquent, des outils bien
+  adaptés pour le traitement de données complexes éventuellement
+  bruitées comme la reconnaissance de formes (son, images sur une
+  rétine, ...).
+\item[classification efficace : ] le réseau étant construit, le calcul
+  d'une sortie à partir d'un vecteur d'entrée est un calcul très rapide.
+\item[outil disponible : ] les algorithmes de génération de réseaux
+  de neurones sont disponibles dans tous les environnements de fouille de
+  données. 
+\item[paramètres d'apprentissage : ] il n'est pas facile, sans
+  expérience approfondie, de choisir l'architecture et de régler les
+  paramètres d'apprentissage. Il est possible de procéder par
+  différents essais mais le point suivant nous montre que ce n'est pas
+  toujours possible.
+\item[temps d'apprentissage : ] l'échantillon nécessaire à
+  l'apprentissage doit être suffisamment grand et représentatif des
+  sorties attendues. Il faut passer un grand nombre de fois tous les
+  exemples de l'échantillon d'apprentissage avant de converger et donc
+  le temps d'apprentissage peut être long.
+\item[évolutivité dans le temps : ] comme pour les arbres de décision,
+  l'apprentissage n'est pas incrémental et, par conséquent, si les
+  données évoluent avec le temps, il est nécessaire de relancer une
+  phase d'apprentissage pour s'adapter à cette évolution.
+\item[en combinaison avec d'autres méthodes : ] pour des problèmes
+  contenant un grand nombre d'attributs pour les entrées, il peut être
+  très difficile de construire un réseau de neurones. On peut, dans ce
+  cas, utiliser les arbres de décision pour sélectionner les variables
+  pertinentes, puis générer un réseau de neurones en se restreignant
+  à ces entrées.
+\item[extensions : ] les extensions sont nombreuses pour les tâches de
+  classification et d'estimation : autres fonctions d'activation,
+  algorithmes d'apprentissage, apprentissage << on line >>,
+  ... Rappelons également que des modèles de réseaux de neurones
+  existent pour les tâches de prédiction (réseaux récurrents : la
+  sortie d'un neurone peut influer sur les neurones des couches
+  précédentes) et pour les tâches de segmentation (réseaux
+  associatifs, cartes de Kohonen).
+\end{description}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Les algorithmes génétiques}
+% \label{sec:algosgenetiques}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% ispell-local-dictionary: "francais"
+%%% ispell-local-pdict: "~/.ispell_francais"
+%%% End: 
+% LocalWords:  évolutivité

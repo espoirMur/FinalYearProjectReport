@@ -1,0 +1,32 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage[
+backend=bibtex,
+natbib=true,
+style=numeric,
+sorting=none]{biblatex}
+\usepackage{comment}
+% acronyms and abbreviations will need to put them in a separate file
+\usepackage{acronym} 
+\bibliography{bib/litterature.bib}{}
+\addbibresource{bib/litterature.bib}\newpage\cleardoublepage
+\begin{document}
+\input{text/abreviation}\newpage\cleardoublepage
+\input{text/introduction}\newpage\cleardoublepage
+\input{text/firstChapiter}\newpage\cleardoublepage
+\input{text/RegressionLineaire.tex}\newpage\cleardoublepage	\input{text/RegressionLogistique.tex}\newpage\cleardoublepage
+\input{text/NeuralNetwork.tex}\newpage\cleardoublepage
+\input{text/SupporVectorMachine.tex}\cleardoublepage
+\input{text/TreeBasedAlgorithms.tex}\cleardoublepage
+\input{text/clustering.tex}\cleardoublepage
+\input{text/Methodologie_CRISP.tex}\cleardoublepage
+\printbibliography
+\end{document}

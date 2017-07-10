@@ -1,0 +1,63 @@
+%       $Id$    
+\newcommand{\monlabel}[1]{\mbox{\bfseries\textsf{#1}}\dotfill}
+\newenvironment{monglossaire}%
+{\begin{list}{}%
+    {\renewcommand{\makelabel}{\monlabel}%
+      \setlength{\labelwidth}{.3\columnwidth}%
+      \setlength{\itemsep}{3cm}%
+%      \setlength{\parsep}{140pt}%
+      \setlength{\labelsep}{0pt}%
+      \setlength{\leftmargin}{\labelwidth}
+      \addtolength{\leftmargin}{\labelsep}%
+    }%
+}%
+{\end{list}}%
+
+\vfill 
+
+\chapter*{Glossaire}\markboth{Glossaire}{}
+\addcontentsline{toc}{chapter}{Glossaire}
+
+\vspace*{1cm}
+
+\begin{monglossaire}
+\item [Machine Parallèle] Machine souvent utilisée pour de lourdes
+  tâches (gros calculs scientifiques, serveur de nombreux
+  utilisateurs,...). Elle est composée de plusieurs processeurs
+  et intègre des procédures spécialisées permettant
+  de les mettre à profit.  
+\item[SGBD] Système de Gestion de Bases de Données. C'est l'ensemble
+  des programmes qui permettent de manipuler les données contenues
+  dans une base de données. 
+\item[SQL] Structured Query Language. Langage de manipulation,
+  définition de données. Ce langage a été plusieurs fois normalisé. Il
+  est très répandu et largement utilisé dans la plupart des SGBD,
+  surtout pour la communication entre clients et serveurs.
+
+\item[OLAP] Online Analytical Processing. 
+  
+
+\item [Table de hachage] Table qui permet un accès rapide aux éléments
+  d'une structure de données (tableau, fichier). C'est une technique
+  très utilisée pour l'implantation d'index dans les bases de
+  données. 
+
+\item [Tableau de bord] Document de référence utilisé par les
+  utilisateurs du système d'information de décision. Il indique des
+  valeurs d'indices qui décrivent l'évolution de faits utiles au
+  processus de décision. Par exemple, le bilan des ventes du mois, la
+  progression du nombre de client...
+
+\item[Validation croisée] Procédure d'estimation de l'erreur réelle
+  d'un modèle qui permet de se passer d'un ensemble test. La
+  validation croisée est souvent utilisée lorsqu'on ne dispose pas de
+  suffisamment d'exemples pour valider un modèle.
+  
+
+\end{monglossaire}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main.tex"
+%%% End: 

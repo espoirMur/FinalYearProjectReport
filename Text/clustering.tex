@@ -1,0 +1,17 @@
+\subsection{Segmentation  Par K-means }
+La Segmentation est une technique d'apprentissage non supervisé, Les classes des données ne sont pas connus en avance .
+La segmentation consiste à grouper les données dans des clusters ou segments selon leurs ressemblance , et leurs similarités. 
+L'objectif de la segmentation est la maximisation des distances inter-cluster et la minimisation de la distance intra-cluster .
+L'unité de mesure de la ressemblance entre les données c'est la distance . \\
+Il existes plusieurs métriques pour définir la distance entre 2 points ${x}_{i}$ et ${y}_{i}$:  \\
+- La distance euclidienne $d(x,y) = \sqrt{\sum_{i=1}^{n}({x}_{i}-{y}_{i})^2}$ \\
+- La distance de Manhattan $d(x,y) = \sum_{i=1}^{n}|{x}_{i}-{y}_{i}|$ \\
+- La distance de Minkowski $d(x,y) = \sqrt[q]{\sum_{i=1}^{n}|{x}_{i}-{y}_{i}|^p}$ \\
+Supposons que nous disposons de m points $x_i$ que nous voulons segmenter en k clusters , l'objectif est d'assigner un cluster à chaque point .\\
+ La methode K-means consiste à trouver les positions $\mu_k$  k = 1,2...K qui minimisent la distance distance du point aux cluster .
+L'algorithme K-means consiste à résoudre le roblème suivant :\\
+\begin{center}
+	min $\sum_{i=1}^k\sum_{\b{x}\in c_i} d(\b{x},\mu_k)$
+\end{center}
+ou $c_i$  est l'ensemble des points appartenant au cluster i 
+\subsubsection{Algorithme K-means }

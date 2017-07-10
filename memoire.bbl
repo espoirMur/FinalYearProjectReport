@@ -1,0 +1,420 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\sortlist[entry]{none/global/}
+  \entry{Articl1Mr}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SIEBO}{%
+         family={S.\bibnamedelima IMANE},
+         familyi={S\bibinitperiod\bibinitdelim I\bibinitperiod},
+         given={E.\bibnamedelima B.\bibnamedelima OMAR},
+         giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim
+  O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SIEBO1}
+    \strng{fullhash}{SIEBO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{108}
+    \field{title}{Prediction approach for improving students orientation in
+  university: case of sidi mohammed ben abdelah university}
+    \field{journaltitle}{International Journal of Computer Science and
+  Applications}
+    \field{year}{2015}
+  \endentry
+
+  \entry{MethFr}{book}{}
+    \name{author}{1}{}{%
+      {{hash=RRTIP}{%
+         family={R.\bibnamedelima R.\bibnamedelima Tremblay},
+         familyi={R\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim
+  T\bibinitperiod},
+         given={I.\bibnamedelima Perrier},
+         giveni={I\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Les Éditions de la Chenelière inc}%
+    }
+    \strng{namehash}{RRTIP1}
+    \strng{fullhash}{RRTIP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Savoir plus : outils et méthodes de travail intellectuel}
+    \field{year}{2006}
+  \endentry
+
+  \entry{DMProces}{online}{}
+    \name{author}{1}{}{%
+      {{hash=CR}{%
+         family={Consulting},
+         familyi={C\bibinitperiod},
+         given={RITHME},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CR1}
+    \strng{fullhash}{CR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Méthodologie de mise en place du processus de data mining}
+    \verb{url}
+    \verb http://www.rithme.eu/?m=resources&p=dmmethod&lang=fr
+    \endverb
+    \field{year}{2017}
+    \field{urlday}{29}
+    \field{urlmonth}{04}
+    \field{urlyear}{2017}
+  \endentry
+
+  \entry{coursKasoro}{unpublished}{}
+    \name{author}{1}{}{%
+      {{hash=MK}{%
+         family={Mulenda},
+         familyi={M\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MK1}
+    \strng{fullhash}{MK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{inédit FSTA ULPGL}
+    \field{title}{cours d’intelligence artificielle et systèmes experts}
+    \field{year}{juin 2016}
+  \endentry
+
+  \entry{DMandMLBook}{book}{}
+    \name{author}{1}{}{%
+      {{hash=IHWMAHEF}{%
+         family={Ian H.\bibnamedelima Witten},
+         familyi={I\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim
+  W\bibinitperiod},
+         suffix={Eibe\bibnamedelima Frank},
+         suffixi={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+         given={Mark A.\bibnamedelima Hall},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Morgan Kaufmann Publishers}%
+    }
+    \strng{namehash}{IHWEFMAH1}
+    \strng{fullhash}{IHWEFMAH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{1}
+    \field{title}{Data Mining Practical Machine Learning Tools and Techniques}
+    \list{location}{1}{%
+      {USA}%
+    }
+    \field{year}{2011}
+  \endentry
+
+  \entry{differenceMLDM2}{online}{}
+    \name{author}{1}{}{%
+      {{hash=ND}{%
+         family={N},
+         familyi={N},
+         given={DHAKSHAYANI},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=Q}{%
+         family={Quora},
+         familyi={Q\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ND1}
+    \strng{fullhash}{ND1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Answer To quora Question}
+    \field{title}{What is the difference between data mining, artificial
+  intelligence and machine learning?}
+    \verb{url}
+    \verb \url{https://www.quora.com/What-is-the-difference-between-data-mining
+    \verb -artificial-intelligence-and-machine-learning}
+    \endverb
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+
+  \entry{MBaterBook}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BM}{%
+         family={BATER},
+         familyi={B\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Pack publish}%
+    }
+    \strng{namehash}{BM1}
+    \strng{fullhash}{BM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{10}
+    \field{title}{Learning Data mining with R}
+    \list{location}{1}{%
+      {Mumbai}%
+    }
+    \field{year}{2015}
+  \endentry
+
+  \entry{DMdef}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=CD}{%
+         family={CHAMI},
+         familyi={C\bibinitperiod},
+         given={Djazia},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CD1}
+    \strng{fullhash}{CD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Une plate forme orient{\'e}e agent pour le data mining}
+    \list{institution}{1}{%
+      {Universit{\'e} de Batna 2}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{2010}
+  \endentry
+
+  \entry{differenceMLDM}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=LSS}{%
+         family={LABS},
+         familyi={L\bibinitperiod},
+         given={SHARP\bibnamedelima SIGHT},
+         giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=LSS}{%
+         family={LABS},
+         familyi={L\bibinitperiod},
+         given={SHARP\bibnamedelima SIGHT},
+         giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LSS1}
+    \strng{fullhash}{LSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{http://www.sharpsightlabs.com/dif
+  ference­machine­learning­statistics­data­mining/?utm_content=buf
+  ferf9474\&utm_medium=social}}
+    \field{note}{Accessed: 2016-05-16}
+    \field{title}{What is the difference between machine
+  learning,statistics,and datamining?}
+  \endentry
+
+  \entry{differenceMLDMStack}{online}{}
+    \name{author}{1}{}{%
+      {{hash=LG}{%
+         family={L.},
+         familyi={L\bibinitperiod},
+         given={Gongsun},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=S}{%
+         family={StackExchange},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LG1}
+    \strng{fullhash}{LG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Answer To StackExchange Question}
+    \field{title}{What is the difference between data mining, statistics,
+  machine learning and AI?}
+    \verb{url}
+    \verb \url{https://stats.stackexchange.com/questions/5026/what-is-the-diffe
+    \verb rence-between-data-mining-statistics-machine-learning-and-ai}
+    \endverb
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+
+  \entry{AndNgCourse}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=NA}{%
+         family={Ng},
+         familyi={N\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NA1}
+    \strng{fullhash}{NA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{https://www.coursera.org/learn/machine-learning}}
+    \field{note}{Accessed: 2016-11-23 au 2016-12-05}
+    \field{title}{Stanford CS229 -Machine Learning -Ng}
+    \field{year}{2011}
+  \endentry
+
+  \entry{NNBook}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CB}{%
+         family={C},
+         familyi={C},
+         given={Bishop},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Clarendon Press}%
+    }
+    \strng{namehash}{CB1}
+    \strng{fullhash}{CB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Neural networks for pattern recognition}
+    \list{location}{1}{%
+      {Oxford}%
+    }
+    \field{year}{1995}
+  \endentry
+
+  \entry{SVm1}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=KA}{%
+         family={KOWALCZYK},
+         familyi={K\bibinitperiod},
+         given={Alexandre},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KA1}
+    \strng{fullhash}{KA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{http://www.svm-tutorial.com/}}
+    \field{note}{Accessed: 2016-12-6}
+    \field{title}{SVM Tutorial}
+    \field{year}{2014}
+  \endentry
+
+  \entry{SVm2}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=KE}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Eric},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KE1}
+    \strng{fullhash}{KE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{howpublished}{\url{http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html}}
+    \field{note}{Accessed: 2016-12-09}
+    \field{title}{Everything You Wanted to Know about the Kernel Trick}
+    \field{year}{2011}
+  \endentry
+
+  \entry{TreeBk1}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CDM}{%
+         family={C.\bibnamedelima Decaestecker},
+         familyi={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+         given={M.Saerens},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {inédit ULB}%
+    }
+    \strng{namehash}{CDM1}
+    \strng{fullhash}{CDM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{1}
+    \field{title}{Les arbres de décision (decision trees)}
+    \list{location}{1}{%
+      {Belgique}%
+    }
+    \field{year}{2006}
+  \endentry
+
+  \entry{TreeAV}{online}{}
+    \name{author}{1}{}{%
+      {{hash=TAVC}{%
+         family={TEAM},
+         familyi={T\bibinitperiod},
+         given={ANALYTICS VIDHYA\bibnamedelima CONTENT},
+         giveni={A\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim
+  C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TAVC1}
+    \strng{fullhash}{TAVC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{A Complete Tutorial on Tree Based Modeling from Scratch (in R
+  \& Python) MACHINE LEARNING PYTHON R}
+    \verb{url}
+    \verb https://www.analyticsvidhya.com/blog/2016/04/complete-tutorial-tree-b
+    \verb ased-modeling-scratch-in-python/
+    \endverb
+    \field{year}{2016}
+    \field{urlday}{27}
+    \field{urlmonth}{03}
+    \field{urlyear}{2017}
+  \endentry
+
+  \entry{RandomForrest1}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=BL}{%
+         family={Breiman},
+         familyi={B\bibinitperiod},
+         given={Leo},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BL1}
+    \strng{fullhash}{BL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{5\bibrangedash 32}
+    \field{title}{Random forests}
+    \field{volume}{45}
+    \field{journaltitle}{Machine learning}
+    \field{year}{2001}
+  \endentry
+\endsortlist
+\endinput
