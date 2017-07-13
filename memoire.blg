@@ -23,49 +23,54 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: memoire-blx.bib
 Database file #2: bib/litterature.bib
+I was expecting a `,' or a `}'---line 367 of file bib/litterature.bib
+ :  
+ :  title={Unsupervised learning},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "8"
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 24 entries,
+You've used 30 entries,
             6256 wiz_defined-function locations,
-            1325 strings with 11831 characters,
-and the built_in function-call counts, 107821 in all, are:
-= -- 6622
-> -- 3545
-< -- 690
-+ -- 3173
-- -- 1921
-* -- 6325
-:= -- 10129
+            1360 strings with 12830 characters,
+and the built_in function-call counts, 145058 in all, are:
+= -- 9049
+> -- 4904
+< -- 882
++ -- 4721
+- -- 2809
+* -- 8561
+:= -- 14264
 add.period$ -- 0
-call.type$ -- 24
-change.case$ -- 408
-chr.to.int$ -- 174
-cite$ -- 46
-duplicate$ -- 10752
-empty$ -- 10496
-format.name$ -- 1061
-if$ -- 22128
+call.type$ -- 30
+change.case$ -- 505
+chr.to.int$ -- 246
+cite$ -- 58
+duplicate$ -- 14671
+empty$ -- 13723
+format.name$ -- 1435
+if$ -- 29155
 int.to.chr$ -- 0
-int.to.str$ -- 71
+int.to.str$ -- 87
 missing$ -- 0
-newline$ -- 549
-num.names$ -- 1174
-pop$ -- 7621
+newline$ -- 738
+num.names$ -- 1466
+pop$ -- 9728
 preamble$ -- 1
-purify$ -- 480
+purify$ -- 614
 quote$ -- 0
-skip$ -- 4092
+skip$ -- 5159
 stack$ -- 0
-substring$ -- 10675
-swap$ -- 2792
-text.length$ -- 477
+substring$ -- 14725
+swap$ -- 3663
+text.length$ -- 617
 text.prefix$ -- 4
 top$ -- 1
-type$ -- 803
+type$ -- 1006
 warning$ -- 0
-while$ -- 1061
+while$ -- 1527
 width$ -- 0
-write$ -- 526
-(There was 1 error message)
+write$ -- 709
+(There were 2 error messages)

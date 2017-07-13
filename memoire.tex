@@ -2,7 +2,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{graphicx}
 \usepackage{subfig}
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
@@ -14,9 +13,14 @@ natbib=true,
 style=numeric,
 sorting=none]{biblatex}
 \usepackage{comment}
+\usepackage{rotating}
 % acronyms and abbreviations will need to put them in a separate file
 \usepackage{acronym} 
 \usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{multicol}
 \newcommand\litem[1]{\item{\bfseries #1,\enspace}}
 \bibliography{bib/litterature.bib}{}
 \addbibresource{bib/litterature.bib}\newpage\cleardoublepage
@@ -32,5 +36,6 @@ sorting=none]{biblatex}
 \input{text/clustering.tex}\cleardoublepage
 \input{text/Methodologie_CRISP.tex}\cleardoublepage
 \input{text/secondChapiter.tex}\cleardoublepage
+\input{text/chapter3.tex}\cleardoublepage
 \printbibliography
 \end{document}

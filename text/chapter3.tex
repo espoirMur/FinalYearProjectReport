@@ -1,0 +1,485 @@
+\chapter{Présentation et Exploitation des Données Obtenues}
+\paragraph{}
+ Dans ce chapitre nous allons exploités les données mise en notre
+disposition par les autorités de l'\ac{ULPGL}. Celles-ci sont issues du
+système d'information \ac{UAT}  et pour des
+raisons de confidentialité nous n'avons pas eu accès a toute la base des
+données nous avons juste fais une requête des donnes dont nous avons
+besoin pour notre étude et l'administrateur a exécuté une requete vers
+sa base des données et nous a fourni les données dont nous avions besoin
+pour l'étude sous forme d'un fichier \ac {CSV}. Comme
+souligné dans le chapitre premier ce chapitre se basera sur la
+méthodologie \ac{CRISP-DM} elle sera subdivisé en différentes sections:
+\begin{itemize}
+	\item L'exploration et la préparation des données 
+	\item  Construction du modèle de Prédiction  
+	\item  L'amélioration du modèle  \cite{bookSckit-Learn}
+\end{itemize}
+
+
+    \section{Exploration et la préparation des donnés}
+\paragraph{}
+Les spécialités affirment que 70-80 \% du temps consacré à un projet
+DataMining est alloué à la phase de l'exploration et la préparation des
+données \cite{DataExpAV} , il n' ya pas des raccourcis pour cette phase et si on l'a pas
+bien effectué nous risquons de nous retrouver entrain d'améliorer
+l'exactitude de notre algorithme mais en vain nous serons toujours
+obligées de retourner à cette phase et toutes ces techniques de
+l'exploration des données pourrons nous venir en aide .\\
+Les Étapes de la phase d'exploration et la préparation des donnes sont mentionnées sur la figure suivante :
+\paragraph{}
+En bref l'exploration des données consiste à se plonger dans le passée
+pour prédire l'avenir .Souvenons nous que la qualité de notre entré
+détermine la qualité de notre sortie, ces phases nous permettent
+d'améliorer la qualité de notre entré en vue d'avoir une bonne sortie.
+Voici les étapes de cette phases:
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fig/Exploration.png}
+	\caption[Short caption]{Étapes de la phase d'exploration des données }
+	\label{fig:imageExpSt}
+\end{figure} 
+\begin{itemize}
+\item
+  Identification des variables
+\item
+  Statistique Descriptive
+\item
+  Analyse Bi-varié
+\item
+  Traitement des valeur manquantes
+\item
+  Traitement des déviations  ou valeurs aberrantes (\emph{Outliers})  
+\item
+  Transformation des variables
+\item
+  Création des nouvelles variables
+\end{itemize}
+Comme nous l'avons soulignées dans le chapitre 1 ce processus est un
+processus itératif et incrémentai nous exécuterons cette phase 2 a 5 fois ou plus en vue d'avoir un bon modèle.
+\subsection{Identification des Données et des Variables}
+\paragraph{}
+Comme soulignées dans la phase d'introduction les données mise à notre
+disposition sont sous format \ac {CSV} et nous allons utilisé la librairie pandas de python pour faire l'analyse , nous utiliserons aussi d'autres libraires qui nous permettrons de faire les statistiques ainsi que les visualisations :
+Nous pouvons voir à quoi ressemble notre ensemble d'apprentissage au tableau :[enter number of the table]  \\ 
+
+Nous remarquons que les données sont stocké dans un e structure de type
+matricielle appelé Dataframe. \cite{pedregosa2011scikit}
+Un DataFrame selon la documentation officielle de pandas est une
+structure des données bidimensionnel avec des colonnes des données des différentes types . Il peut être comparée à une feuille de calcul Excel ou une table dans \ac{SQL}.
+Notre ensemble d'apprentissage de départ est une matrice de 9606 lignes et  22 colonnes .\\
+Chaque ligne comprend les informations d'un étudiant pour une année académique et voici la description des nos colonnes.\\ 
+\begin{multicols}{2}
+	\begin{enumerate}
+	 \item IDENTIFICATION : contient une identification unique et anonyme d'un étudiant les noms et les matricules réels des étudiants on éé cachées
+	pour des raisons de confidentialités
+	
+	\item BIRTHDAY : contient la date de naissance de chaque étudiant
+	
+	\item NAME : contient le sexe de chaque étudiant
+	
+
+	
+	\item DIPLOMTYPE : le type de diplôme
+	
+	\item DIPLOMMENTION : mention de diplôme
+	
+	\item  DIPLOMPERCENTAGE: le pourcentage au diplôme
+	
+	\item DIPLOMSECTION: la section du diplôme
+	
+	\item DIPLOMOPTION : l'option
+	
+	\item  DIPLOMPLACE : l'endroit d'obtention du diplôme
+	
+	\item SCHOOL : l'école de provenance
+	
+	\item  SCHOOLPROVINCE : la province de provenance
+	
+	\item  SCHOOLCODE : code de l'école
+	
+	\item SCHOOLSTATUS : le statuts de l'école (privée , publique ,
+	conventionné ,..)
+	
+	\item  ACADYEAR : l'année académique
+	
+	\item  PERC1 : pourcentage en première session
+	
+	\item  MENT1 : mention en première session
+	
+	\item  PERC2 : pourcentage en seconde session
+	
+	\item  MENT2 : mention en seconde session
+	
+	\item  FAC : la faculté de l'étudiant 
+	
+	\item  OPT : l'option choisie par l'étudiant
+	
+	\item  PROM : la promotion de l'étudiant 
+	\end{enumerate}
+\end{multicols}
+
+ Comme nous pouvons le constater les colonnes 1-13 regorgent les informations que chaque étudiant donné à son inscription , ils constituerons nos variables d'entres les restes seront utilisées pour constituer notre variable de sortie.
+
+Nous l'avons aussi signales que chaque ligne comprend les information
+d'un étudiant pour une année académique . Pour mener bien notre analyse nous allons grouper les information de chaque étudiant en une ligne nos données seront groupé selon les variables d'entrées ensuite les donnés de sorties seront groupes selon une fonction d'agrégation prédéfinie.
+Nous allons premièrement faire une analyse uni-varié  sur les données en entrées !
+Soulignons que nous avons décidé de supprimer certaines colonnes n'ayant pas des informations importantes car contenant plus de 90 \% des valeurs manquantes il s'agit entre autres des colonnes suivantes :
+'DIPLOMDATE','DIPLOMMENTION','DIPLOMPLACE','SCHOOLCODE'.
+
+Après suppression les colonnes en entrée deviennent les 10 premiers colonnes.
+
+Pour une première approche nous allons grouper notre ensemble en fonction des données en entré et ensuite écrire une fonction qui va grouper les donnes de sortie la fonction de qui regroupe les données en sortie ne fait que grouper les mention , et pourcentage pour une année académique d'un étudiant dans une liste.\\ 
+Après groupement en fonction des matricules nous venons de remarquer que
+notre ensemble comprend 4715 lignes et 18 colonnes et c'est sera notre ensemble pour notre étude ,cet ensemble est subdivisé en variables d'entré et variables de
+sortie!\\
+Voici un aperçu des nos données en entrée ainsi que les données en sorties  au tableau \ref{tab:Dataset}
+\paragraph{}
+Nous venons de finir avec la présentation des nos données nous allons
+maintenant débuter avec la phase d'analyse promptement dite  des donnés que nous avons en entré et ensuite nous effectuerons  une analyse des données en
+sortie en enfin analyse les donnes des sortie combinées à celles des données  en entrée
+\begin{sidewaystable}
+	\centering
+	\begingroup % make the next setting local
+	\captionsetup{type=table} % here we want to caption a table
+	\caption{Bref aperçu de notre ensemble d'apprentissage }
+	\label{tab:Dataset}
+	\begin{tabular}{lllllr}
+		\toprule
+		{} & SCHOOLSTATUS &   SCHOOL\_RIGHT &         OPTION\_RIGHT & SCHOOLPROVINCE &  DIPLOMPERCENTAGE \\
+		\midrule
+		45  &   protestant &         zanner &  commmerciale et adm &      NORD-KIVU &         61,000000 \\
+		215 &     publique &       chemchem &            pedagogie &        MANIEMA &         51,000000 \\
+		343 &   catholique &        kambali &           bio-chimie &      NORD-KIVU &         62,000000 \\
+		356 &   catholique &  mwanga/ uvira &          latin philo &       SUD-KIVU &         51,000000 \\
+		429 &   protestant &      maendeleo &              inconnu &      NORD-KIVU &         56,876522 \\
+		474 &   protestant &      maendeleo &          latin philo &      NORD-KIVU &         56,000000 \\
+		644 &     publique &          ngoma &        math-physique &      NORD-KIVU &         68,000000 \\
+		645 &     publique &          ngoma &            pedagogie &      NORD-KIVU &         59,000000 \\
+		\bottomrule
+	\end{tabular}
+	\begin{tabular}{lrlllllll}
+	\toprule
+	{} &   ID &                ACADYEAR &                  PERC1 &     MENT1 &                 PERC2 &       MENT2 &   FAC &      PROM \\
+	\midrule
+	0 &   45 &             [2013-2014] &                  [nan] &      [AA] &                 [nan] &       [nan] &  FPSE &      [L2] \\
+	1 &  215 &             [2012-2013] &                  [nan] &     [ADM] &       [63.0999984741] &         [S] &    FD &      [L2] \\
+	2 &  343 &             [2015-2016] &                  [nan] &      [AA] &       [52.2000007629] &         [A] &  FSEG &      [G2] \\
+	3 &  356 &             [2015-2016] &                  [nan] &   [ADSTM] &       [59.9000015259] &         [S] &  FSEG &      [L2] \\
+	4 &  429 &             [2013-2014] &                  [nan] &      [AA] &                 [nan] &         [A] &    FD &      [G1] \\
+	5 &  474 &  [2014-2015, 2015-2016] &            [nan, 62.5] &   [AA, S] &            [nan, nan] &  [nan, nan] &    FD &  [G3, G3] \\
+	6 &  644 &  [2013-2014, 2014-2015] &  [60.4000015259, 68.0] &    [S, S] &            [nan, nan] &  [nan, nan] &    FD &  [L1, L2] \\
+	7 &  645 &  [2014-2015, 2015-2016] &             [nan, nan] &  [AA, AA] &  [61.4000015259, nan] &    [S, NAF] &    FD &  [L1, L2] \\
+	\bottomrule
+\end{tabular}
+\endgroup
+\end{sidewaystable}
+ \subsection{Préparation des données }
+Cette phase consistera aux traitement des valeurs manquantes et valeurs aberrantes mais aussi au nettoyage des données mal orthographiées lors de la saisie des données pour certaines attribues. 
+Commençons par  Expliquer les raisons de la présence des valeur manquantes , ainsi que les données aberrantes et la manière de les traiter
+\paragraph{}
+Malgré la quantité croissante de données, les problématiques de données
+manquantes et des valeurs extrêmes restent très répandues dans les
+problèmes statistiques et nécessitent une approche particulière. Ignorer
+les données manquantes et les valeurs extrêmes peut entraîner, outre une
+perte de précision, de forts biais dans les modèles d'analyse et comme
+signaler dans l'introduction de ce chapitre peuvent augmenter l'erreur
+de prédiction.
+\subsubsection{Valeurs Manquantes}
+\paragraph{Cause et types des Données Manquantes} \cite{MissinVal}
+Les \ac{DM} ont de multiples causes. Il peut être
+impossible de contacter une personne sélectionnée pour faire partie
+d'une enquête (non-réponse totale) ou un répondant peut refuser de
+répondre à une ou plusieurs questions (non-réponse partielle). Une
+mauvaise saisie de l'information peut également générer des \ac{DM}.
+Finalement,des \ac{DM} peuvent aussi être causées par l'existence de données
+aberrantes qui doivent être supprimées avant d'effectuer des analyses.
+Selon les cause on classe les données manquantes selon différentes types
+il existe plusieurs types de données manquantes, ils peuvent être introduit lors de :
+\begin{enumerate}
+\item  l'extraction des données :
+il peut être possible qu'on ait des problèmes lors de l'extraction des données 
+dans ce cas il es préférable de vérifier les données avec les donateurs c'est comme par exemple pour notre étude dans une première approche nous n'avons pas réussie les données des étudiants ayant passer en première session 
+certaines fonctions peuvent aussi créer des données manquantes comme c'est le cas de notre fonction qui calcule les dates '
+ces genres des données peuvent facilement être détecter.
+\item  la collecte des données ;
+c'est le cas le plus courant et il est plus facile de le détecter.
+\end{enumerate}
+
+Dans ce cas la classification la plus couramment utilisée ayant été
+proposée par Little et Rubin \cite{MissinVal} : 
+\begin{itemize}
+	\item  Missing completely at random (MCAR) (complètement aléatoire)
+	\item Missing at random'' (MAR) (aléatoire)
+	\item Missing not at random'' (MNAR) (non aléatoire)
+\end{itemize}
+\subparagraph{}
+ Les DM sont MCAR lorsque la probabilité de non réponse pour une variable ne
+dépend pas de celle-ci, mais uniquement de paramètres extérieurs,
+indépendants de cette variable. Cela veut dire qu'il n'est pas possible
+de défi- nir un profil des individus ayant des DM et que la probabilité
+des DM est uniforme. De manière générale, ce type de DM est très rare.
+\subparagraph{}
+Les DM sont dites MAR lorsque la probabilité de non-réponse peut
+dépendre des observations mais pas des DM, par exemple s'il existe une
+différence de non-réponse entre les hommes et les femmes concernant la
+question du revenu, mais que parmi les hommes entre eux ou parmi les
+femmes entre-elles, la probabilité d'avoir des non-réponses est
+identique quel que soit le niveau du revenu.
+\subparagraph{}
+Finalement, les DM sont de type MNAR lorsque la probabilité de
+non-réponse est liée aux valeurs prises par la variable ayant des
+DM.comme par exemple pour notre cas les étudiant n'ayant pas passé tous
+leurs examens à une session n'ont pas des pourcentage à cette session et
+on pour mention AA assimiléé aux ajournées .
+
+\paragraph{Méthodes d'imputations} 
+
+Nous avons choisi 9 méthodes de traitement des données manquantes
+largement répandues à l'heure actuelle, y compris des méthodes connues
+pour être peu performantes mais cependant toujours utilisées. 
+\begin{enumerate}
+	\item Analyse des cas complets (CC)
+	\item Imputation par la moyenne (MEAN) : c'est la
+	méthode que nous utiliserons par défaut
+	\item Imputation par la médiane
+	(MED)
+	\item  Imputation par régression simple (REG)
+	\item Imputation multiple par Markov Chain Monte-Carlo (MCMC)
+	\item  Imputation par le plus proche
+	voisin (KNN)
+	\item Imputation multiple par un algorithme basé sur le
+	bootstrap, approchant des résultats de l'algorithme EM (EM)
+	\item Imputation multiple par ``Predictive Mean Matching'' (PMM)
+\end{enumerate}
+Toutes ces techniques existe sont implémentées dans les librairies que nous
+utilisons.\\
+Dans ce travail selon le cas nous allons faire une imputation par la
+moyenne ou par analyse des cas complets mais soulignons qu'il faut bien
+réfléchir avant d'utiliser une imputation par la moyenne car il a une
+mauvaise influence sur la variance
+\subsubsection{Valeurs aberrantes ou extrêmes ou outliers}
+Une valeur aberrante est une valeur qui diffère de façon significative
+de la tendance globale des autres observations quand on observe un
+ensemble de données ayant des caractéristiques communes. Par exemple
+dans l'analyse des pourcentage du diplôme à l'EXETAT nous avons trouvé
+des diplôme qui ne sont pas dans l'intervalle 0 à 50 \% des étudiant
+avec des diplômes de 634\% ou des diplômes de 0\%
+
+Voici quelque remarques à considérer pour les valeurs aberrantes :
+\begin{enumerate}
+	\item Les valeurs aberrantes ne sont pas forcément erronées. Dans certains
+	cas, la valeur aberrante doit être acceptée comme une indication
+	intéressante. par exemple après analyse on trouve une étudiant âge de 60
+	ans! 
+	\item Il ne faut pas adopter une attitude radicale de rejet, ou
+	d'inclusion systématique des valeurs aberrantes. Le rejet systématique
+	peut entraîner la perte d'informations réelles Le rejet des valeurs
+	aberrantes a des conséquences statistiques non négligeables car
+	l'analyse est ensuite faite sur un échantillon censuré qui n'est plus
+	aléatoire.
+\end{enumerate}
+En fonction des circonstances, il existe des méthodes,
+dites robustes, qui prennent en compte toutes les données mais
+minimisent l'influence des valeurs aberrantes. 
+L'apparition de valeurs aberrantes est due à diverses sources de natures différentes, d'où la
+complexité de l'examen des valeurs aberrantes.
+
+Pour détecter les valeurs manquantes nous avons utiliser les techniques
+suivantes :
+
+\begin{enumerate}
+	\def\labelenumi{\alph{enumi})}
+	\item
+	Contrôle sur le domaine des valeurs : Exemple : Pour la variable «
+	DIPLOMPERCENTAGE », une borne maximale (100 \% ) est connue et la
+	valeur minimale est de 50 . Les valeurs supérieures à 100 et
+	inférieur à 50 sont considérés comme aberrantes.
+	\item
+	Détection graphique : Pour détecter la présence de valeurs aberrantes
+	On a utilisé :
+\end{enumerate}
+
+\begin{itemize}
+	\item
+	Boxplot
+	\item
+	diagramme de dispersion des observations classées en fonction de leur
+	rang
+\end{itemize}
+
+\paragraph{Traitement des valeurs aberrantes :}
+\begin{enumerate}
+	\item  Les valeurs aberrantes pouvant provenir d'erreurs de saisie, on le traite séparément
+	en étudiant cas par cas.c'est cette technique que nous allons utilisé
+	pour certaines valeur du pourcentage de diplôme.
+	\item On les rejette et on applique ensuite une des méthodes d’imputation (moyenne,médiane…) vues pour les valeurs manquantes.
+	\item  On adopte des méthodes qui diminuent leur impact au cours des analyses statistiques :la médiane
+\end{enumerate}
+Voici Un aperçu des nos colonnes avec données manquantes et données aberrantes
+ce tableau décrit.
+\begin{table}
+\centering
+\begingroup % make the next setting local
+\captionsetup{type=table} % here we want to caption a table
+\caption{Statistiques Des Données avec Valeurs manquantes et abberantes}
+\label{tab:MisisnV}
+\begin{tabular}{lrlllllll}
+	\toprule
+	{}& IDENTIFICATION   &  BIRTHDAY &  DIPLOMPERCENTAGE \\
+	\midrule  
+count  &   4038.000000 & 4038.000000      & 4038.000000\\
+mean   &   8792.137692  &   26.072022       &  57.749876 \\
+std   &    2333.542658   &  3.957584     &    95.088746\\
+min   &     215.000000    &20.000000     &     0.000000\\
+25perc  &     7310.250000 &   24.000000     &    52.000000\\
+50perc   &   9181.500000  & 25.000000      &   55.000000\\
+75perc  &   10540.750000   & 27.000000     &    60.000000 \\
+max  &    12360.000000  &  58.000000      & 6053.000000\\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{table}
+
+Ce tableau décrit toutes les informations possibles sur les données
+continues et de prime à bord nous sommes à mesure de constater certaines
+incohérences sur les diplôme pourcentage qui on un maximum de 6053 et un
+minimum de 0 qui est vraiment impossible car le diplôme en RDC dois être
+compris entre 50 et 100 \% !Nous allons visualisé ces incohérence de
+plus prêt avec des box-plots.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fig/AGEPlot1.png}
+	\caption[Short caption]{Box Plot Attribue Diplôme Pourcentage  }
+	\label{fig:AgeBXPlot1}
+\end{figure} 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fig/PercetagePlot.png}
+	\caption[Short caption]{Box Plot Attribue  Age  }
+	\label{fig:PercBXPlot1}
+\end{figure} 
+Au vu de ces courbes nous remarquons que l'attribue diplôme pourcentage
+dispose de beaucoup des déviations. Nous avons pu corriger au cas par cas en remplaçant les valeurs aberrantes par leurs valeurs exactes et d'autres par la moyenne comme il n'était pas nombreux
+\subsubsection{Données mal orthographiées }
+Dans notre première analyse nous avons remarqué que certaines  attribues ont des valeurs très désorganisées et vraiment dispersé et ce
+qui a une mauvaise influence sur le calcul de l'entropie et ainsi sur
+les algorithmes du Machine Learning . Nous pouvons aisément constater
+que ce problèmes est du à des fautes d'orthographes commise lors de la
+phase de saisie des données et ainsi pour continues nous devons essayer
+de corriger ces erreurs et bien organisé les données . 
+
+Par exemple pour la variable diplôme section on a pu voir les valeurs suivantes : 'TECSC', 'Techniqe',
+'TECHN IQUE',technique','TCH' qui sont saisie pour la même et unique
+section 'techniques' mais avec différentes erreurs d'orthographe.
+Pour l'attribut SCHOOL nous avons obtenus les valeurs suivantes :
+'matanoia', 'metanoia', 'metonoina', '\%etanoia', 'meta' pour la seule école 'metanoia'
+Nous avons aussi remarqué ces genres d'incohérence pour les autres attribues catégorielles.  
+Après analyse nous avons pu détecter qu'il étaient  du à des erreurs d'orthographe.
+Ces genres d'erreur de notation ont pour conséquence le fait qu'il font
+augmenter l'entropie de nos colonnes et ainsi pénalisent nos algorithmes
+surtout lorsqu'on travaille avec les arbres de décisions .Nous avons
+procédé à un nettoyage automatique qui a consisté en un groupement des
+valeurs proches en utilisant la distance de Leveinstein :\cite{LevStack}combinée au  clustering par l'algorithme d'affinity propagation,et
+ainsi qu'un nettoyage manuelle pour arranger les données à la fin de
+cette phase nous avons obtenus des données moyennement propres et bien
+nettoyer avec un entropie faible.
+ \subsection{Analyse des données}\label{analyse-des-donnuxe9es}
+\paragraph{}
+Cette phase comprend une analyse statistique bi-varié et uni-varié nous
+visualiserons les résultat à l'aide des graphiques . Dans cette partie
+nous utiliserons beaucoup plus la statistique descriptives et la statistique inférentielle
+Comme nous  pouvons le remarquer notre ensemble d'apprentissage
+comprend à la fois des données numériques (continues ) ainsi que des
+données discrètes catégories. voici comment nous allons procéder
+
+\subsubsection{Analyse Uni-Varié}
+Dans cette partie nous allons effectuer les statistiques descriptives pour chaque variable .
+\begin{enumerate}
+	
+	\item
+	\emph{\textbf{Variable Numériques ou continues : }}Pour les données continues nous
+	allons essayer de comprendre la tendance et la dispersion des nos
+	variables .les métriques utilisées sont sur la figure suivante: 
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.5\textwidth]{fig/DataExploration.png}
+		\caption[Short caption]{Techniques d'exploration des données en entré }
+		\label{fig:DataExplora}
+	\end{figure}
+	En bref nous allons examiner le moyenne , le mode , l'écart-type et la
+	variance , nous conterons aussi les variables nous allons faire les
+	visualisations avec des box-plot! cette étape nous sera aussi utile
+	dans le traitement des valeur manquantes et des valeurs aberrantes!
+	\item
+	\emph{\textbf{Variable catégorielle ou quantitative :}} Pour les données discrètes nous
+	allons utiliser  les tables des fréquences pour comprendre la distribution de
+	chaque catégorie nous pour aussi voir le pourcentage de chaque
+	catégorie , les histogrammes et bar char seront utilisées.
+\end{enumerate}
+Commençons par l'analyse des attributs numériques age et pourcentage à l' \ac{EXETAT} 
+\paragraph{L'AGE et Le Diplôme Pourcentage}
+Voici un bref aperçu des statistiques descriptives de ses variables .
+\subparagraph{AGE}
+Nous avons calculer l'age en se basant sur la date de naissance et la date d'aujourd'hui.signalons que cet attribue dispose des valeurs manquantes : Oui , ils sont causées par des erreurs à l'entré pour leurs imputation nous utiliserons la moyenne dans la phase de nettoyage des données.
+\paragraph{Analyse Bi-variée}\label{analyse-bivariuxe9e}
+C'est une technique d'analyse statistique des données, consistant à
+découvrir la relation pouvant exister entre 2 variables dans le but de
+tester l'hypothèse d'association et de causalité entre 2 variables !Par
+exemple dans notre analyser nous allons essayer de voir la relation
+existant entre le choix de la faculté et le pourcentage du diplôme à l'examen d'état. Elle se déroule en 4 étapes : \cite{becker2011uncertainty}
+\begin{itemize}
+	\item Définition de la nature des relations
+	\item  identification et direction des relations 
+	\item   Détermination si
+	la relation est important du point de vue statistique(Intervalle de
+	confiance)
+	\item  Détermination si
+	la relation est important du point de vue statistique(Intervalle de
+	confiance)
+\end{itemize}
+Nous effectuerons cette analyse à 3 niveau :
+\begin{enumerate}
+	
+	\item
+	\emph{\textbf{Variables Continues et
+			catégorielle ou quantitatives: }}
+	Pour effectuer cette analyse nous
+	utiliserons le test \ac{ANOVA},
+	c'est une technique statistique permettant de comparer les moyennes de plus de deux populations. Son but est en fait de procéder à une sorte de généralisation de la comparaison des moyennes ou de la comparaison des pourcentages lorsqu'il y a plus de deux valeurs à comparer. Il s'agit aussi de l'équivalent, pour des variables qualitatives de la régression linéaire.
+	\paragraph{}
+	Cette technique est utile en sciences sociales dans l'analyse de certaines données, organisées en blocs de même taille. Il s'agit dans ce cas le plus souvent d'analyse de la variance à un seul facteur. Les analyses à deux facteurs sont en revanche fréquentes dans l'exploitation d'enquêtes d'usage psychologique.
+	\paragraph{}
+	Les données de notre étude répondent bel et bien à l'usage de la technique de l'Analyse de la variance. Ainsi, à travers les pages qui suivent, nous analysons l'effet des variables  Age, pourcentage à l'examen d'état, sur l'option choisie par l'étudiant . Par la même occasion nous nous permettons de comparer des histogrammes de chaque groupe en fonction des mêmes variables ; ainsi que les divers seuils de significative.
+	\paragraph{}
+	Pour cette analyse l'hypothèse nulle est du type:
+	H0 : les moyennes sont égales dans toutes les catégories. 
+	et son hypothèse alternatif est 
+	H1 : au moins une moyenne est différente des autres..
+	\item \emph{\textbf{Variable catégorielle ou catégorielle  :}} 
+	Pour ces types des données nous allons effectué le test de chi-carré: Le chi-carré est un test statistique conçu pour déterminer si la différence
+	entre deux distributions de fréquences est attribuable à l'erreur
+	d'échantillonnage (le hasard) ou est suffisamment grande pour être
+	statistiquement significative.
+	Ho - est, comme son nom l'indique, une hypothèse qui postule qu'il n'y a pas de différence entre les fréquences ou les proportions des deux groupes elle est considéré comme hypothèse nulle.
+	Si la différence entre les deux distributions est réduite, l'hypothèse
+	nulle sera acceptée. Si la différence est grande, l'hypothèse nulle sera
+	rejetée. Dans ce dernier cas, on parlera d'une différence
+	statistiquement significative parce que l'écart entre les deux
+	distributions est trop important pour être expliqué par le hasard
+	seulement : une différence réelle existe donc.
+\item \emph{\textbf{Variable continues et continues  :}} 
+Pour les variables continues on utilise cherche la corrélation et pour
+notre travail nous allons utilisée le coefficient de corrélation de
+Pearson: Les coefficients de corrélation permettent de donner une mesure
+synthétique de l'intensité de la relation entre deux caractères et de
+son sens lorsque cette relation est monotone. Le coefficient de
+corrélation de Pearson permet d'analyser les relations linéaires et le
+coefficient de corrélation de Spearman les relations non-linéaires
+monotones. Il existe d'autres coefficients pour les relations
+non-linéaires et non-monotones.
+Signalons que python dispose des multiples librairies pour effectuer ces
+genres d'analyse et nous les utiliserons dans la suite
+\end{enumerate}

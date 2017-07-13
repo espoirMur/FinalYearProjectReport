@@ -563,5 +563,195 @@
     }
     \field{year}{1971}
   \endentry
+
+  \entry{bookSckit-Learn}{book}{}
+    \name{author}{1}{}{%
+      {{hash=GA}{%
+         family={Géron},
+         familyi={G\bibinitperiod},
+         given={Aurélien},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {O’Reilly Media, Inc.}%
+    }
+    \strng{namehash}{GA1}
+    \strng{fullhash}{GA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Hands-On Machine Learning with Scikit-Learn and TensorFlow}
+    \field{year}{March 2017}
+  \endentry
+
+  \entry{DataExpAV}{online}{}
+    \name{author}{1}{}{%
+      {{hash=RS}{%
+         family={RAY},
+         familyi={R\bibinitperiod},
+         given={SUNIL},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RS1}
+    \strng{fullhash}{RS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Guide to Data Exploration}
+    \verb{url}
+    \verb https://www.analyticsvidhya.com/blog/2016/01/guide-data-exploration
+    \endverb
+    \field{year}{2016}
+    \field{urlday}{27}
+    \field{urlmonth}{05}
+    \field{urlyear}{2017}
+  \endentry
+
+  \entry{pedregosa2011scikit}{article}{}
+    \true{moreauthor}
+    \name{author}{10}{}{%
+      {{hash=PF}{%
+         family={Pedregosa},
+         familyi={P\bibinitperiod},
+         given={Fabian},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=VG}{%
+         family={Varoquaux},
+         familyi={V\bibinitperiod},
+         given={Ga{\"e}l},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Gramfort},
+         familyi={G\bibinitperiod},
+         given={Alexandre},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MV}{%
+         family={Michel},
+         familyi={M\bibinitperiod},
+         given={Vincent},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=TB}{%
+         family={Thirion},
+         familyi={T\bibinitperiod},
+         given={Bertrand},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=GO}{%
+         family={Grisel},
+         familyi={G\bibinitperiod},
+         given={Olivier},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Blondel},
+         familyi={B\bibinitperiod},
+         given={Mathieu},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PP}{%
+         family={Prettenhofer},
+         familyi={P\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=WR}{%
+         family={Weiss},
+         familyi={W\bibinitperiod},
+         given={Ron},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=DV}{%
+         family={Dubourg},
+         familyi={D\bibinitperiod},
+         given={Vincent},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PF+1}
+    \strng{fullhash}{PFVGGAMVTBGOBMPPWRDV+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{2825\bibrangedash 2830}
+    \field{title}{Scikit-learn: Machine learning in Python}
+    \field{volume}{12}
+    \field{journaltitle}{Journal of Machine Learning Research}
+    \field{year}{2011}
+  \endentry
+
+  \entry{MissinVal}{book}{}
+    \name{author}{1}{}{%
+      {{hash=LRRD}{%
+         family={Little\bibnamedelima R.J.A.},
+         familyi={L\bibinitperiod\bibinitdelim R\bibinitperiod},
+         given={Rubin\bibnamedelima D.B.},
+         giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {John Wiley}%
+    }
+    \strng{namehash}{LRRD1}
+    \strng{fullhash}{LRRD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Statistical Analysis with Missing Data}
+    \field{year}{1987}
+  \endentry
+
+  \entry{LevStack}{online}{}
+    \name{author}{1}{}{%
+      {{hash=SN}{%
+         family={Sh.},
+         familyi={S\bibinitperiod},
+         given={NIlesh},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=ES}{%
+         family={Exchange},
+         familyi={E\bibinitperiod},
+         given={Stack},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SN1}
+    \strng{fullhash}{SN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Answer To StackOverflow question}
+    \field{title}{Fuzzy Group By, Grouping Similar Words}
+    \verb{url}
+    \verb https://stackoverflow.com/questions/11535483/fuzzy-group-by-grouping-
+    \verb similar-words
+    \endverb
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+
+  \entry{becker2011uncertainty}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=BW}{%
+         family={Becker},
+         familyi={B\bibinitperiod},
+         given={William},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BW1}
+    \strng{fullhash}{BW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Uncertainty propagation through large nonlinear models}
+    \list{institution}{1}{%
+      {University of Sheffield}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{2011}
+  \endentry
 \endsortlist
 \endinput

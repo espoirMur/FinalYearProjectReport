@@ -1,0 +1,1495 @@
+    
+\documentclass[11pt]{article}
+        
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{DataExplorationDraft1}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+    \section{Presentation et Exploitation des
+Données}\label{presentation-et-exploitation-des-donnuxe9es}
+
+    Dans ce chapitre nous allons exploités les données mise en notre
+disposition par les autorités de l'ULPGL. Celles-ci sont issues du
+système d'information UAT (Univeristy Administrative Tool) et pour des
+raisons de confidentialité nous n'avons pas eu accès a toute la base des
+données nous avons juste fais une requete des donnes dont nous avons
+besoin pour notre étude et l'administrateur a executé une requete vers
+sa base des données et nous a fourni les données dont nous avions besoin
+pour l'etude sous forme d'un fichier csv (commat separted values). Comme
+souligné dans le chapitre premier ce chapitre se basera sur la
+methodologie CRISP-DM elle sera subdivisé en differentes sections: -
+L'exploration et la preparation des donnéés - selection des algorithmes
+et leur execution - l'amelioratrion et optimisation des algorithmes
+source : Sklean Handbook Appendix 2
+
+    \subsection{Exploration et la preparation des donness
+données}\label{exploration-et-la-preparation-des-donness-donnuxe9es}
+
+    source :
+https://www.analyticsvidhya.com/blog/2016/01/guide-data-exploration/
+SUNIL RAY , JANUARY 10, 2016
+
+    les specialites affirment que 70-80 \% du temps consacré à un projet
+dataMining est alloué à la phase de l'exploration et la preparation des
+données , il n' ya pas des racourcis pour cette phase et si on l'a pas
+bien effectué nous risquons de nous retouver entrain d'ameliorer
+l'exactitude de notre algorithme mais en vain nous serons toujours
+obligées de retourner à cette phase et toutes ces techniques de
+l'exploration des données pourrons nous venir en aide .
+
+    \begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Les Etapes de la phase d'exploration ét la preparation des donnes
+  Certaines des ces étapes sont mentionées sur la figure suivante ;
+  source: http://www.saedsayad.com/data\_mining\_map.htm
+\end{enumerate}
+
+En bref l'exploration des données consiste à se plonger dans le passée
+pour prédire l'avenir .Souvenenons nous que la qualité de notre entré
+determine la qualité de notre sortie, ces phases nous permettent
+d'ameliorer la qualité de notre entré en vue d'avoir une bonne sortie.
+Voici les étapes de cette phases:
+
+\begin{itemize}
+\tightlist
+\item
+  Identification des variables
+\item
+  Statistique Descriptive
+\item
+  Analyse Bi-varié
+\item
+  Traitement des valeur maquantes
+\item
+  Traitement des deviations ou outliers
+\item
+  Transformation des variables
+\item
+  creation des nouvelles variables
+\end{itemize}
+
+Comme nous l'avons soulignées dans le chapitre 1 ce processus est un
+processus iteratif et incremetale nous executerons cette phase 2 a 5
+fois ou plus en vue d'avoir un bon modele
+
+    \subsection{Identification des Données et des
+Variables}\label{identification-des-donnuxe9es-et-des-variables}
+
+    Comme soulignées dans la phase d'introduction les données mise à notre
+disposition sont sous format csv et nous alons utilisé la librarie
+pandas de python pour faire l'analyse , nous utiliserons aussi d'autres
+libraies qui nous permetrons de faire les statistiques ainsi ques les
+visualisations :
+
+voici le code pour charger le librairies.
+
+    Nous venons de charger les donnes et nous pouvons remarquer à quoi ils
+ressemblent
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}52}]:} (9606, 18)
+\end{Verbatim}
+        
+    Nous remarquons que les données sont stocké dans un e structure de type
+matricielle appelé dataframe. source :
+https://pandas.pydata.org/pandas-docs/stable/dsintro.html\#dataframe
+
+un DataFrame selon la documentation officielle de pandas est une
+structure des données bidementionnel avec des colonnes des données des
+differentes types . Il peut etre compareé à une feuille de calcul excel
+ou une table dans SQL
+
+    la commande dataset.shape nous a permis de dire que notre emsemble
+d'apprentissage de depart comprend 9606 lignes et 22 colones ! Analysons
+de plus pret les colones
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}6}]:} Index([u'IDENTIFICATION', u'BIRTHDAY', u'NAME', u'DIPLOMDATE', u'DIPLOMTYPE',
+               u'DIPLOMMENTION', u'DIPLOMPERCENTAGE', u'DIPLOMSECTION',
+               u'DIPLOMOPTION', u'DIPLOMPLACE', u'SCHOOL', u'SCHOOLPROVINCE',
+               u'SCHOOLCODE', u'SCHOOLSTATUS', u'ACADYEAR', u'PERC1', u'MENT1',
+               u'PERC2', u'MENT2', u'FAC', u'OPT', u'PROM'],
+              dtype='object')
+\end{Verbatim}
+        
+    chaque ligne comprend les information d'un étudiant pour une année
+Academique
+
+    1 IDENTIFICATION : contient une identification unique et anonyme d'un
+étudiant les noms et les matricules reeles des étudiants on éé cachées
+pour des raisons de confidentialites
+
+2 BIRTHDAY : contient la date de naissance de chaque étudiant
+
+3 NAME : contient le sexe de chaque étudiant
+
+4 DIPLOMDATE : L'anné d'optiention du diplome
+
+5 DIPLOMTYPE : le type de diplome
+
+6 DIPLOMMENTION : mention de diplome
+
+7 DIPLOMPERCENTAGE: le pourcentage du diplome
+
+8 DIPLOMSECTION: la section du diplome
+
+9 DIPLOMOPTION : l'option
+
+10 DIPLOMPLACE : l'endroit d'optention du diplome
+
+11 SCHOOL : l'ecole de provenance
+
+12 SCHOOLPROVINCE : la province de provenance
+
+13 SCHOOLCODE : code de l'ecole
+
+14 SCHOOLSTATUS : le status de l'ecole (privaté , publique ,
+conventioneé ,..)
+
+15 ACADYEAR : l'annéé academique '
+
+16 PERC1 : poucentage en premiere session
+
+17 MENT1 : mention en premier session
+
+18 PERC2 : pourcentage en seconde session
+
+19 MENT2 : mention en seconde session
+
+20 FAC : la faculté
+
+21 OPT : l'option
+
+22 PROM : la promotion
+
+    Comme nous pouvons le constater les colonnes 1-14 regrogent les
+informations que chaque étudiant donné à son instcription , ils
+constituerons nos variables d'entres les restes seronts utilisées pour
+constituer notre variable de sortie
+
+    Nous l'avons aussi signales que chaque ligne comprend les information
+d'un étudiant pour une année academique . Pour mener bien notre anyse
+nous alons grouper les information de chaque etudieant en une lignee
+
+    nos données seront groupé selons les variables d'entrees ensuites les
+donnés de sorties serot groupes selon une fonction d'aggregation
+predefinie
+
+    Nous allons premierement faire une analyse univarié sur les données en
+entrees !
+
+    Avant la phase de traitement des donnés regardons notre ensemble pour
+enlever les colonnes sans informations consoiderables.
+
+    Nous avons ecrit une function qui nous donnes un pourcentrage des
+valeurs maquantes pour chaque collones et de prime à bord nous allons
+supprimer certaines colonnes qu ne comportent pas des informations.
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}6}]:} BIRTHDAY             0
+        DIPLOMDATE          98
+        DIPLOMPLACE         98
+        SCHOOLSTATUS         0
+        DIPLOMPERCENTAGE     0
+        SCHOOLPROVINCE       0
+        FAC                  0
+        ACADYEAR             0
+        DIPLOMMENTION       99
+        SCHOOLCODE          70
+        PERC1               55
+        PERC2               36
+        DIPLOMOPTION         0
+        OPT                  0
+        SCHOOL               5
+        NAME                 0
+        DIPLOMSECTION        0
+        MENT1                0
+        PROM                 0
+        MENT2               24
+        IDENTIFICATION       0
+        DIPLOMTYPE           0
+        Name: \% of missing, dtype: int64
+\end{Verbatim}
+        
+    Avec cette table nous remarquons que 4 colones ne nous servirons à riens
+dans la suite car elles disposent de plus de 70 \% des valeurs maquantes
+et nous devons les suprimées avant de continuer notre analyse
+
+    Nous pouvons remarquer que notre ensemble d'apprentissage change de
+dimenssion et (7216,22) à (7216,18)
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}16}]:} (9606, 18)
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}13}]:} Index([u'IDENTIFICATION', u'BIRTHDAY', u'NAME', u'DIPLOMTYPE',
+                u'DIPLOMPERCENTAGE', u'DIPLOMSECTION', u'DIPLOMOPTION', u'SCHOOL',
+                u'SCHOOLPROVINCE', u'SCHOOLSTATUS', u'ACADYEAR', u'PERC1', u'MENT1',
+                u'PERC2', u'MENT2', u'FAC', u'OPT', u'PROM'],
+               dtype='object')
+\end{Verbatim}
+        
+    les colonnes en entrée deviennent les 10 premiers colonnes
+
+    Pour une premiere approche nous allons grouper notre ensemble en
+fonction des données en entré et ensuite ecrire une functuion qui va
+groupper les donnes de sortie
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}35}]:} (9606, 18)
+\end{Verbatim}
+        
+    voici la function qui va grouper les données de sortie
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}37}]:} (4715, 8)
+\end{Verbatim}
+        
+    apres groupement en fonction des matricules nous venons de remarquer que
+notre ensemble comprend 4715 rows et 18 columns et c'est sera notre
+ensemble pour notre étude
+
+    cette ensemble est subdivisé en variables d'entré et variables de
+sortie!
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}24}]:} (4715, 10)
+\end{Verbatim}
+        
+    Nous allons afficher notre ensemble d"enntre et de sortie ici
+
+    Nous venons de finir avec la presentation des nos données nous allons
+maintenant debuter avec la phase d'analyse promremendite des donnés que
+nous avons en entré et ensuite nous fairons une analyse des données en
+sortie en enfin analyse les donnes des sortie combinées à celles des
+données ?
+
+    \subsubsection{Analyse des données}\label{analyse-des-donnuxe9es}
+
+    Cette phase comprend une analyse statistique bivarié et univarié nous
+visualiserons les résultat à l'aide des graphiques . Dans cette partie
+nous utiliserons beaucoup plus la statistique descriptives et
+inferentielle.
+
+    Comme nous pous pouvons le remarquer notre ensemble d'apprentissage
+comprend à la fois des données numeriques (continues ) ainsi que des
+données discrètes categories. voici comment nous allons procèder
+
+    \paragraph{Statistique Descriptive}\label{statistique-descriptive}
+
+    \begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  variable Numériques ou continues : Pour les données continues nous
+  allons essayer de comprendre la tendence et la dispertion des nos
+  variables .les metriques utilisées sont sur la figure suivante: En
+  bréf nous allons éxaminer le moyenne , le mode , l'ecart-type et la
+  variance , nous conterons aussi les variables nous fairons les
+  visualisations avec des boxplot! cette étape nous sera aussi utile
+  dans le traitement des valeur maquantes et des outliers!
+\item
+  variable categorielle ou quantitative Pour les données discrètes nous
+  aloons les tables des frequences pour comprendre la distrubution de
+  chaque categorie nous pour aussi voir le pourcentage de chaque
+  categorie , les histogrammes et bar chart seront utilisées.
+\end{enumerate}
+
+    \paragraph{Analyse Bivariée}\label{analyse-bivariuxe9e}
+
+    c'est une technique d'analyse statistique des données, consistant à
+découvrir la relation pouvant exister entre 2 variables dans le but de
+tester l'hypothèse d'association et de causalité entre 2 variables !Par
+exemple dans notre anlyser nous allons essayer de voir la relation
+existant entre le choix de la faculté de le pourcentage du diplome à
+l'exetat. Elle se deroule en 4 étapes : - Définition de la nature des
+rélations - Identification et direction des rélations - Determination si
+la relation est important du poinr de vue statistique(Intervalle de
+confiance) - Detarmination de La force de relation
+
+Source: Becker, William. Uncertainty propagation through large nonlinear
+models. Diss. University of Sheffield, 2011. de Smith, M. J. "STATSREF:
+Statistical Analysis Handbook-a web-based statistics." (2015).
+
+    Nous effecurons cette analyse à 3 niveau : 1. Variables Continues et
+categorielle ou quantitatives Pour effectuer cette analyse nous
+utiliserons le test ANOVA (Analyse of variance):
+
+
+{[}formule et decision{]} 2. variable Categorielles et Cateorielles
+
+Pour ces types des données nous allons effectué le test de chi carré: Le
+chi carré est un test statistique conçu pour déterminer si la différence
+entre deux distributions de fréquences est attribuable à l'erreur
+d'échantillonnage (le hasard) ou est suffisamment grande pour être
+statistiquement significative.
+
+Ho - est, comme son nom l'indique, une hypothèse qui postule qu'il n'y a
+pas de différence entre les fréquences ou les proportions des deux
+groupes elle est considére comme hypothèse nulle.
+
+Si la différence entre les deux distributions est réduite, l'hypothèse
+nulle sera acceptée. Si la différence est grande, l'hypothèse nulle sera
+rejetée. Dans ce dernier cas, on parlera d'une différence
+statistiquement significative parce que l'écart entre les deux
+distributions est trop important pour être expliqué par le hasard
+seulement : une différence réelle existe donc. {[}Inserrer la formule{]}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Variables Continues et Continues
+\end{enumerate}
+
+Pour les variables continues on utilise cherche la correlation et pour
+notre travail nous allons utilisée le coeficient de correlation de
+pearson: Les coefficients de corrélation permettent de donner une mesure
+synthétique de l'intensité de la relation entre deux caractères et de
+son sens lorsque cette relation est monotone. Le coefficient de
+corrélation de Pearson permet d'analyser les relations linéaires et le
+coefficient de corrélation de Spearman les relations non-linéaires
+monotones. Il existe d'autres coefficients pour les relations
+non-linéaires et non-monotones.
+
+Signalons que python dispose des mutiples librairies pour effectuer ces
+genres d'analyse.
+
+    Commencons par l'analyse des données univariés sur les variables d'entré
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 4038 entries, 0 to 4037
+Data columns (total 10 columns):
+IDENTIFICATION      4038 non-null int64
+BIRTHDAY            4038 non-null object
+NAME                4038 non-null object
+DIPLOMTYPE          4038 non-null object
+DIPLOMPERCENTAGE    4038 non-null float64
+DIPLOMSECTION       4038 non-null object
+DIPLOMOPTION        4038 non-null object
+SCHOOL              4038 non-null object
+SCHOOLPROVINCE      4038 non-null object
+SCHOOLSTATUS        4038 non-null object
+dtypes: float64(1), int64(1), object(8)
+memory usage: 315.5+ KB
+
+    \end{Verbatim}
+
+    Nous remarquons que nous données en entré dispose des 10 colones avec
+variables quantitatives et qualitatives,
+
+    1. Variables continues
+
+a. Attribue Date
+
+    Type: String
+
+    Pour nous faciliter la tache nous allons remplacer la date de naissance
+de chaque individu par son age a ce moment ci et ainsi obtenit un
+attribue continue de plus.
+
+    Valeurs Maquantes : Oui , ils sont causées par des erreurs à l'entré
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}24}]:} 7
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}73}]:} 4038
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}76}]:} 0
+\end{Verbatim}
+        
+    Solution : Ils sont remplace par la moyenne comme leur proportion est
+insignifiant
+
+    Ce tableau decrit toutes les informations possibles sur les données
+continues et de prime à bord nous sommes à mesure de constater certaines
+incoherences sur les diplome percentage qui on un maximun de 6053 et un
+minimum de 0 qui est vraiment impossible car le diplome en RDC doi etre
+compris entre 50 et 100 \% !Nous allons visualisé ces inchoherence de
+plus prêt avec des boxplots.
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{DataExplorationDraft1_files/DataExplorationDraft1_73_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{DataExplorationDraft1_files/DataExplorationDraft1_74_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Au vu de ces courbes nous remarquons que l'attribue diplome percentage
+dispose de beaucoup des deviations.
+
+    Mais l'attribue Bithday a une distribution presque normale
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}36}]:} <matplotlib.axes.\_subplots.AxesSubplot at 0x7fb771ca6410>
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{DataExplorationDraft1_files/DataExplorationDraft1_77_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Nous pouvons facilement voir que l'age a une distribution presque
+normale. NB: change norm hist to 1 to see count
+
+    regardons de plus pret celui du diplome percentage
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}128}]:} <matplotlib.axes.\_subplots.AxesSubplot at 0x7f1a8e854150>
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{DataExplorationDraft1_files/DataExplorationDraft1_80_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    A cause des dispertions nous ne pouvons pas bien visualis la
+distribution. essayons d'isoler les distibution pour voir de plus prét
+les données .
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}98}]:} 34
+\end{Verbatim}
+        
+    Nous remarquons que nous avons 29 échantillons avec des valeur hors
+normes nous allons les normaliser dans la phase de préparation
+
+    \subparagraph{Variables qualitatives ou
+categorieles}\label{variables-qualitatives-ou-categorieles}
+
+    Pour chaque attriblue nous alons faire de count plot voir les
+diffrerents valeurs
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}37}]:} ['BIRTHDAY',
+          'NAME',
+          'DIPLOMTYPE',
+          'DIPLOMSECTION',
+          'DIPLOMOPTION',
+          'SCHOOL',
+          'SCHOOLPROVINCE',
+          'SCHOOLSTATUS']
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}39}]:} H    2771
+         F    1944
+         Name: NAME, dtype: int64
+\end{Verbatim}
+        
+    Nous pouvons remarqué facilement avec cete comande la repartition des
+sexes!
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{DataExplorationDraft1_files/DataExplorationDraft1_91_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Voici la repartition de sexes dans notre ensemble d'apprentissage on
+peut aisement constater qu'il n'est pas si desequilibré que ça!, le
+genre est vraiment respecté avec 41\% dés nouveaux étudiant etant de
+sexe feminin.
+
+    Attribue : Diplome Type
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{DataExplorationDraft1_files/DataExplorationDraft1_94_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Nous pouvons remarquer que notre dataset contient plus de 70\% d'element
+avec le diplome d'etat et 26 avec un diplome type inconue nous allons
+traaiter cela à la suite et quelque echantillon avec des diplomes du
+Rwanda et d'autre avec des anciens diplomes, les individus dont le
+diplomé type sont inconu serons consideré comme diplome d'etat, donc
+nous pouvons le remplacer par le diplome d'etat.
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}50}]:} DIPLÔME D'ETAT              4706
+         DIPLÔME D'ETAT A2              4
+         DIPLÔME D'ETAT DU RWANDA       4
+         DIPLÔME D'ETAT067              1
+         Name: DIPLOMTYPE, dtype: int64
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{DataExplorationDraft1_files/DataExplorationDraft1_98_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Attribue Diplome option et Diplome Section
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}104}]:} 90
+\end{Verbatim}
+        
+    Nous avons plus de 90 sections
+
+    une chose importante à remarquer au niveau des attribues 'DIPLOMOPTION'
+et 'DIPLOMSECTION' sont tres desorganisées il faut bien les oragniées
+dans la phase de préparation des données
+
+    Attribue School Province
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{DataExplorationDraft1_files/DataExplorationDraft1_104_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Avec cette image nous pouvons aisement constater que 63 \% des étudaints
+de l'ulpgl proviennent de la province du nord kivu mais il ya une autre
+categorie qui provient du sud KIVu soit 15\%
+
+    Attribue SCHOOL ET SCHOOL STATUS
+
+    Pour une bonne visualisation on peut prealablement transformer les
+colones en minuscule
+
+    Nous avon un attribue avec 1285 categories differentes ... Nous devons
+les analyser en details
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}46}]:} inconnu         3833
+         catholique       289
+         protestant       260
+         privé            170
+         publique         152
+         musulman           6
+         kimbanguiste       3
+         autodidacte        2
+         Name: SCHOOLSTATUS, dtype: int64
+\end{Verbatim}
+        
+    ces attribues aussi necessite un nettoyage et une bonne reparation
+
+    Nous allons creer une branches à part pour le traitement de ces valeurs
+pour les diplomes section et diplome option
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}47}]:} ['IDENTIFICATION',
+          'BIRTHDAY',
+          'NAME',
+          'DIPLOMTYPE',
+          'DIPLOMPERCENTAGE',
+          'DIPLOMSECTION',
+          'DIPLOMOPTION',
+          'SCHOOL',
+          'SCHOOLPROVINCE',
+          'SCHOOLSTATUS']
+\end{Verbatim}
+        
+    les collones que nous allons traiter sont school ,schoolstatus,
+dilpomesection,diplomeoption
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}78}]:}    IDENTIFICATION         DIPLOMSECTION                   DIPLOMOPTION  \textbackslash{}
+         0              45          PEDAGOGIEQUE                  PEDA GENERALE   
+         1             215          SCIENTIFIQUE                  MATH-PHYSIQUE   
+         2             343          SCIENTIFIQUE                  MATH PHYSIQUE   
+         3             356  ECONOMIE ET COMMERCE                       ECONOMIE   
+         4             429             TECHNIQUE  COMMERCIALE ET ADMINISTRATIVE   
+         
+                        SCHOOL SCHOOLSTATUS  
+         0  INSTITUT MAENDELEO      inconnu  
+         1      INSTITUT VUNGI      inconnu  
+         2     INSTITUT FARAJA      inconnu  
+         3       ESISE/GISENYI      inconnu  
+         4          C,S, UMOJA      inconnu  
+\end{Verbatim}
+        
+    Nous allons sauvergarder cet nouveau dataframe dans un fichier csv et
+creer une notebook à part pour le traitement et le raffinement de ces
+collones
+
+    \subparagraph{Nettoyage des attribues
+bruitées}\label{nettoyage-des-attribues-bruituxe9es}
+
+    Nous avons pu remarquer dans la phase de precedante que certaines
+attribues ont des valeurs très desorganisées et vraiment dispersé et ce
+qui a une mauvaise influance sur le calcul de l'entropie et ainsi sur
+les algorithmes du Machine Learning . Nous pouvons aisement constater
+que ce problèmes est du à des fautes d'orthographes commise lors de la
+phase de saisie des données et ainsi pour countinues nous devons essayer
+de corriger ces erreurs et bien organisé les données . Voyons d'abord en
+chiffre comment cela se presente
+
+    Attribue Diplomes sections
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}42}]:} 101
+\end{Verbatim}
+        
+    Avec cette commande nous remarquons que cette attribue dispose de 101
+valeurs disctinctes qui c'es qui es impossible pour la valeur de diplome
+section
+
+    voyons un peu en details ce qui contient cette attribue
+
+    Dans cette simple description nous remarquons que les valeurs on été mal
+saisi comme par example les valeurs suivantes : 'TECSC', 'Techniqe',
+'TECHN IQUE',technique','TCH' qui sont saisie pour la meme et unique
+section 'techniques' mais avec differentes erreurs d'orthographe
+
+    cela n'est qu'un example des differentes valeurs mal orthographiées
+presente dans notre ensemble d'etude
+
+    ce genre d'erreur de notation à pour consequence le fait qu'il font
+augmenter l'entropie de nos colonnes et ainsi penalisent nos algoritmes
+surtout lorsqu'on travaille avec les arbres de décisions nous avons
+procéde à un nettoyage automatique qui a consisté en un groupement des
+valleurs proches en utilisant la distance de leveinstein :(source :
+leveinstein) et le cllustering par l'agorithme d'affinity propagation,et
+ainsi qu'un nettoyage manuelle pour arranger les données à la fin de
+cette phase nous avons obtenus des données moyenement propres et bien
+netoyer avec un entropie faibe. Nous pouvons le remarquer dans
+l'ensemble d'apprentissager suivant que ces données sont bien grouper.
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}36}]:} protestant      1370
+         catholique      1305
+         publique         726
+         inconnu          691
+         privé            536
+         autodidacte       44
+         musulman          38
+         kimbanguiste       5
+         Name: SCHOOLSTATUS, dtype: int64
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}7}]:} protestant      1370
+        catholique      1305
+        publique         726
+        inconnu          691
+        privé            536
+        autodidacte       44
+        musulman          38
+        kimbanguiste       5
+        Name: SCHOOLSTATUS, dtype: int64
+\end{Verbatim}
+        
+    Nous pouvons maintenant combinner cette ensemble avec notre ensemble
+d'apprentissage de départ et ainsi continuer nore anlyse univarié poour
+les collones avce des varaibles qualitatives
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}162}]:} protestant      1370
+          catholique      1305
+          publique         726
+          inconnu          691
+          privé            536
+          autodidacte       44
+          musulman          38
+          kimbanguiste       5
+          Name: SCHOOLSTATUS, dtype: int64
+\end{Verbatim}
+        
+    Nous allons enfin continuer avec notre anlyser univarié pour les
+attribues nouvellement nettoyer
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}12}]:}    IDENTIFICATION DIPLOMSECTION DIPLOMOPTION    SCHOOL SCHOOLSTATUS  \textbackslash{}
+         0          3895.0         TECHN           ca  i zanner   protestant   
+         
+           SCHOOL\_CORRECT SCHOOL\_RIGHT         OPTION\_RIGHT  
+         0         zanner       zanner  commmerciale et adm  
+\end{Verbatim}
+        
+    \subparagraph{Attribue SCHOOLSTATUS}\label{attribue-schoolstatus}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{DataExplorationDraft1_files/DataExplorationDraft1_142_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Dans cette figure nous pouvons remarquer aisement que 29\% des étudiants
+proviennent des écoles dites protestantes , 27\% viennent des écoles
+catholiques , 11\% des écoles privé , 15 des écoles publiques mais aussi
+il ya des étudiants venant des autodidactes , ceux provenant des écoles
+musulmanes et kibanguistes mais en proportion vraiment negligeable
+
+    \subparagraph{Attribue OPTIONRIGHT}\label{attribue-optionright}
+
+    Nous allons maintenant nous attaquer à l'attribue option du diplome qui
+contient les valeurs de l'option du diplome de 'étudaint'
+
+    Essayons de voir de plus pret combien des valeur distinctes il dispose
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}32}]:} 33
+\end{Verbatim}
+        
+    Nous pouvons aisement remarquer que les étudiants de notre étude
+proviennent des 33 écoles differentes
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{DataExplorationDraft1_files/DataExplorationDraft1_149_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Dans cette figure nous pouvons remarquer que la majeure partie des
+étudiants de notre études proviennent de la section pedagogique avec
+enivoront 28\% ensuite vienne la section commerciale et administrative
+avec 19\% , suivent sociale avec 13\%, scientifique bio-chimie avec 14
+\% ensuite viennent autres differentes options avec des valeurs
+inferieurs à 5\%
+
+    \subparagraph{Attribut School}\label{attribut-school}
+
+    cette attribue comprend les valeurs de l'ecole de provenance des nos
+finaliste combiné avec l'attribue school status il joue un role
+important dans notre étude.
+
+    voyons d'abord combien des valeurs differentes il comprend:
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}13}]:} 594
+\end{Verbatim}
+        
+    nous pouvons aisement remarquer que les eleves proviennent de 594 écoles
+differentes dans l'image qui va suivre nous allons visulaise les écoles
+les plus representées
+
+    Nous pouvons remarquer aisement que le top 10 des école de provenance
+est constituer de grandes écoles de la ville de Goma avec l'insititut
+metanoia et le college mwanga en tete de liste avec l'institut mwanga et
+metanoia en tete de liste avec 15\% chacun ensuite vienne l'institut
+bakanja avec 6\% ensuite vienne maendelo, le lycée sainte ursule et
+l'institut de Goma avec 6\%, 5\% et 5 \% respectivement et d'autres
+éecole se partagent le reste de 50\%.
+
+    Pour finaliser l'analyser univarrié des nos données en entrée nous
+allons jetter un coup d'oeil sur la colonne Fac qui contient la faculté
+choisie par l'etudiant.
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}8}]:} Faculté des Sciences Économiques et de Gestion           1549
+        Faculté des Sciences et Technologies Appliquées           903
+        Faculté de Droit                                          896
+        Faculté de Santé et Développement Communautaires          758
+        Faculté de Médecine                                       242
+        Faculté de Psychologie et des Sciences de l'Éducation     227
+        Faculté de Théologie                                      140
+        Name: FAC, dtype: int64
+\end{Verbatim}
+        
+    Nous allons remplacer les non des facultées par leurs abreviations
+respectifs
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+/Users/espyMur/Desktop/Memory-WorkingDir/memoryVenv/lib/python2.7/site-packages/pandas/core/indexing.py:141: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html\#indexing-view-versus-copy
+  self.\_setitem\_with\_indexer(indexer, value)
+
+    \end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}10}]:} FSEG    1549
+         FSTA     903
+         FD       896
+         FSDC     758
+         FM       242
+         FPSE     227
+         FT       140
+         Name: FAC, dtype: int64
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{DataExplorationDraft1_files/DataExplorationDraft1_164_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Dans ce tableau nous remarquons la distribution des valeurs pour
+l'attribue faculté des étudiants: - FSGEG: 32,8\% - FSTA : 19,153\% - FD
+:19\% - FSDC :16\% - FM : 5\% - FPSE : 4\% - FT :3\%
+
+    Nous pouvons maintenant passer à l'analyse bi-varié
+
+    \paragraph{Statistique Bivariée}\label{statistique-bivariuxe9e}
+
+    Dans cette partie nous allons nous allons effectué une analyse bivariée
+entre les attribues en entrée et les attribues en sortie , pour une
+premiere approche nous allons faire une analyse entre la faculté choisie
+et les differentes variables d'entres de notre ensemble d'apprentissage
+dans la seconde approche nous essayerons de le faire la meme chose pour
+le autres variables de sortie. voici le differentes combinaisons que
+nous allons effectuer: 1. FAC-Diplome Province : Pour voir la relation
+entre la faculté et la province d'origine de l'etudiant 2.
+FAC-DIPPOURCENTAGE: Pour voir la relation entre la faculté et la
+pourcentage obtenu à l'exetat 3. FAC-AGE: Pour voir la relation entre
+l'age de l'etudiant et la FAC 4. FAC-DIPLOMEOPTION: Pour voir la
+relation entre la faculté et l'option du diplome 5. FAC-SEXE: Pour la
+relation avec le sexe des étudiants 6. FAC-SCHOOL: pour la relation
+entre l'ecole de provenance la fac 7. FAC-SCOOLSTATUS : pour la relation
+entre le status de l'ecole de la FAC
+
+    FACULTE DIPLOME PROVINCE
+
+    \begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Definition et Nature de la relation: Nous allons essayer de decouvrir
+  la relation existante entre la province de l'ecole et le choix de ma
+  section
+\item
+  Pour determiner le type nous allons utiliser le test de chi-carré qui
+  nous permettra de trouver la force de la cette relation
+\end{enumerate}
+
+    Notre hypothèse est la suivante est la suivante : il n'yas pas de
+relation etntre la province du diplome et la section coise
+
+    Nous nous somme servie d'une classe specialisé qui contient les methodes
+qui nous permettrons de conduire notre test statistique
+
+    Prèmierement nous allons cherche la table de contigence qui nous montre
+comment nos valeurs se repartissent en terme des section
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}128}]:} SCHOOLPROVINCE
+          BANDUNDU              2.298197
+          BAS CONGO             0.383033
+          EQUATEUR              0.766066
+          K OR                  0.191516
+          KASAI OCCIDENTAL      0.574549
+          KASAI ORIENTAL        1.915164
+          KATANGA               4.596394
+          KIGALI                0.383033
+          KINSHASA             13.406151
+          MANIEMA               7.852174
+          NORD-KIVU           708.610817
+          NYARUKENGE            0.191516
+          ORIENTALE            15.895864
+          OUEST                 0.383033
+          SUD-KIVU            140.956098
+          inconnu               4.596394
+          Name: FSTA, dtype: float64
+\end{Verbatim}
+        
+    Dans ces 2 tableau nous avons les differentes tables l'une c'est pour
+les valleurs observées et l'autre c'est pour les valeurs attendu ainsi
+avec ces valeurs nous pouvons trouver la valeur du test statistique
+chi-carrée ensuite la comparée avec notre valeur critique et ensuiste
+verifier si nous pouvons confirmé ou infimé notre hypothèse nulle
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}124}]:} ('It indicates that the relationship between the variables is significant at confidence of \%s',
+           0.95)
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}125}]:} 113.1452701425554
+\end{Verbatim}
+        
+    Notre valeur critique est de 113,14
+
+    et notre valeur du test statistique est donnée par :
+
+    lorque nous comparons ces 2 valeurs nous remarquons que notre valeur de
+chi2 est superieur à notre valeur critique et tombe dans la region de
+rejet de notre hypothèse nulle et ainsi celle est rejetée et ainsi nou
+concluons avec 95\% de certitude que notre hypothèse alternative est
+vrai: il ya une relation entre la province et la faculté en d'autre
+terme ayant un nombre des étudiant venant d'une province nous pouvons
+predire la faculté choisie.
+
+    Mais cette relation est à prendre avec reserve car les données sont
+inegalement repartie entre les provinces!
+
+    Nous pouvons remarquer les résultat des nos analyser dans cette figure.
+
+    FACULTE DIPLOMEOPTION
+
+    nous allons refaire la meme analyse que pour le point precedant!!
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}147}]:} OPTION\_RIGHT  agrecole  agronomie  batiment  bio-chimie  \textbackslash{}
+          FAC                                                       
+          FD                   1          0         0          28   
+          FM                   1          1         0         111   
+          FPSE                 0          0         0           4   
+          FSDC                 1          0         0         117   
+          FSEG                 1          0         1         156   
+          FSTA                 5          2         2         244   
+          FT                   0          1         0           6   
+          
+          OPTION\_RIGHT  commerciale informatique  commmerciale et adm  construction  \textbackslash{}
+          FAC                                                                         
+          FD                                  12                   62             0   
+          FM                                   4                    5             0   
+          FPSE                                 0                    2             0   
+          FSDC                                 1                   31             0   
+          FSEG                                63                  724             3   
+          FSTA                                11                   59            48   
+          FT                                   0                   10             2   
+          
+          OPTION\_RIGHT  coupe couture  diet  economie     {\ldots}       machine outil  \textbackslash{}
+          FAC                                             {\ldots}                       
+          FD                        3     0         1     {\ldots}                   0   
+          FM                        0     0         0     {\ldots}                   0   
+          FPSE                      2     0         0     {\ldots}                   0   
+          FSDC                     10     2         0     {\ldots}                   0   
+          FSEG                      4     0         1     {\ldots}                   0   
+          FSTA                      0     0         0     {\ldots}                   7   
+          FT                        0     0         0     {\ldots}                   0   
+          
+          OPTION\_RIGHT  math-physique  mec gene  mecanique machines outils  nutr  \textbackslash{}
+          FAC                                                                      
+          FD                       10         3                          0     1   
+          FM                       13         0                          0    14   
+          FPSE                      2         0                          0     0   
+          FSDC                     11         0                          0    47   
+          FSEG                     42         2                          0     6   
+          FSTA                    149        64                         11     1   
+          FT                        4         0                          0     3   
+          
+          OPTION\_RIGHT  pedagogie  relations publiques  secretariat  sociale  \textbackslash{}
+          FAC                                                                  
+          FD                  327                    0            0      169   
+          FM                   48                    0            1       27   
+          FPSE                189                    0            0       16   
+          FSDC                290                    0            0      187   
+          FSEG                270                    1            5      184   
+          FSTA                114                    0            2       51   
+          FT                   90                    0            0       13   
+          
+          OPTION\_RIGHT  vétérinaire  
+          FAC                        
+          FD                      0  
+          FM                      4  
+          FPSE                    0  
+          FSDC                    5  
+          FSEG                    1  
+          FSTA                    0  
+          FT                      1  
+          
+          [7 rows x 30 columns]
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}148}]:} OPTION\_RIGHT  agrecole  agronomie  batiment  bio-chimie  \textbackslash{}
+          FAC                                                       
+          FD            1.710286   0.760127  0.570095  126.561188   
+          FM            0.461930   0.205302  0.153977   34.182821   
+          FPSE          0.433298   0.192577  0.144433   32.064051   
+          FSDC          1.446872   0.643054  0.482291  107.068505   
+          FSEG          2.956734   1.314104  0.985578  218.798303   
+          FSTA          1.723648   0.766066  0.574549  127.549947   
+          FT            0.267232   0.118770  0.089077   19.775186   
+          
+          OPTION\_RIGHT  commerciale informatique  commmerciale et adm  construction  \textbackslash{}
+          FAC                                                                         
+          FD                           17.292895           169.698409     10.071686   
+          FM                            4.670626            45.833722      2.720255   
+          FPSE                          4.381124            42.992789      2.551644   
+          FSDC                         14.629480           143.561824      8.520467   
+          FSEG                         29.895864           293.373701     17.411877   
+          FSTA                         17.427996           171.024178     10.150371   
+          FT                            2.702015            26.515376      1.573701   
+          
+          OPTION\_RIGHT  coupe couture      diet  economie     {\ldots}       machine outil  \textbackslash{}
+          FAC                                                 {\ldots}                       
+          FD                 3.610604  0.380064  0.380064     {\ldots}            1.330223   
+          FM                 0.975186  0.102651  0.102651     {\ldots}            0.359279   
+          FPSE               0.914740  0.096288  0.096288     {\ldots}            0.337010   
+          FSDC               3.054507  0.321527  0.321527     {\ldots}            1.125345   
+          FSEG               6.241994  0.657052  0.657052     {\ldots}            2.299682   
+          FSTA               3.638812  0.383033  0.383033     {\ldots}            1.340615   
+          FT                 0.564157  0.059385  0.059385     {\ldots}            0.207847   
+          
+          OPTION\_RIGHT  math-physique   mec gene  mecanique machines outils       nutr  \textbackslash{}
+          FAC                                                                            
+          FD                43.897349  13.112195                   2.090350  13.682291   
+          FM                11.856204   3.541463                   0.564581   3.695440   
+          FPSE              11.121315   3.321951                   0.529586   3.466384   
+          FSDC              37.136373  11.092683                   1.768399  11.574973   
+          FSEG              75.889502  22.668293                   3.613786  23.653871   
+          FSTA              44.240297  13.214634                   2.106681  13.789183   
+          FT                 6.858961   2.048780                   0.326617   2.137858   
+          
+          OPTION\_RIGHT   pedagogie  relations publiques  secretariat     sociale  \textbackslash{}
+          FAC                                                                      
+          FD            252.362248             0.190032     1.520255  122.950583   
+          FM             68.160339             0.051326     0.410604   33.207635   
+          FPSE           63.935525             0.048144     0.385154   31.149311   
+          FSDC          213.493955             0.160764     1.286108  104.013998   
+          FSEG          436.282503             0.328526     2.628208  212.556310   
+          FSTA          254.333828             0.191516     1.532131  123.911135   
+          FT             39.431601             0.029692     0.237540   19.211029   
+          
+          OPTION\_RIGHT  vétérinaire  
+          FAC                        
+          FD               2.090350  
+          FM               0.564581  
+          FPSE             0.529586  
+          FSDC             1.768399  
+          FSEG             3.613786  
+          FSTA             2.106681  
+          FT               0.326617  
+          
+          [7 rows x 30 columns]
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}151}]:} 4155.0246292496686
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}152}]:} ' It indicates that both categorical variable are dependent'
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}153}]:} 205.77862677980613
+\end{Verbatim}
+        
+    sur base de ce fait on fait la meme conclusion que pour la province : il
+ya une relation de dependance entre la section du diplome et la faculté
+ce qui est loqique car les étudiant en genral se base sur leur option
+pour chosir leur option
+
+    \#\#\#\#\#\# FACULTE SCHOOLSTATUS
+
+    nous allons refaire la meme analyse que pour le point precedant!!
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}223}]:} 304.71578214658456
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}224}]:} ('It indicates that the relationship between the variables is significant at confidence of \%s',
+           0.99)
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}225}]:} 66.206236283993221
+\end{Verbatim}
+        
+    sur base de ce fait on fait la meme conclusion que pour la province : il
+ya une relation de dependance entre la section du diplome et la faculté
+ce qui est loqique car les étudiant en genral se base sur leur option
+pour chosir leur option
+
+    FACULTE SCHOOL
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}202}]:} FAC
+          FD      29
+          FM       2
+          FPSE     0
+          FSDC     2
+          FSEG    42
+          FSTA     3
+          FT       0
+          Name: zanner, dtype: int64
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}203}]:} FAC
+          FD      14.822481
+          FM       4.003393
+          FPSE     3.755249
+          FSDC    12.539555
+          FSEG    25.625027
+          FSTA    14.938282
+          FT       2.316013
+          Name: zanner, dtype: float64
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}197}]:} 6389.4044131161027
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}198}]:} ('It indicates that the relationship between the variables is significant at confidence of \%s',
+           0.95)
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}199}]:} 3697.8815995010605
+\end{Verbatim}
+        
+    reste à verifier ....
+
+    FACULTE SEXE
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}327}]:}           M          F
+          GENDER    F    H   FAC
+          FD      356  540   896
+          FM      109  133   242
+          FPSE    119  108   227
+          FSDC    469  289   758
+          FSEG    726  823  1549
+          FSTA    140  763   903
+          FT       25  115   140
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}264}]:} 896
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}257}]:} 4715.0
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}171}]:} 445.85875262024177
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}175}]:} ('It indicates that the relationship between the variables is significant at confidence of \%s',
+           0.95)
+\end{Verbatim}
+        
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}173}]:} 12.591587243743977
+\end{Verbatim}
+        
+    sur base de ce fait on fait la meme conclusion que pour la province : il
+ya une relation de dependance entre le sexe et la faculté ce qui est
+loqique car par example en faculté de technologie et teologie on trouve
+moin des hommes que des femmes
+
+    FACULTE - DIPLOME AGE et FACULTE DIPLOME POURCENTAGE
+
+    comme ces une des colones dispose des variables continues nous allons
+utiliser le test ANOVA
+
+    ce test nous permmetra de savoir si la noyennne de l'age des étudiants
+est la meme pour chaque faculté: cela consituera notre hypothèse nulle
+,on va cherche la probabilité p est on decidera sur base de cette valeur
+! si elle es inferieur à 0.05 on rejetera l'hypothèse nulle
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}314}]:}               df        sum\_sq      mean\_sq           F         PR(>F)
+          C(FAC)       6.0  14857.002658  2476.167110  135.823792  3.721673e-159
+          Residual  4708.0  85830.284723    18.230732         NaN            NaN
+\end{Verbatim}
+        
+    comme la valeur de PR est inferieur à 0.05 on peut conclure qua la
+moyenne de l'age n'est pas la meme au sein de chaque faculté
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}320}]:}       IDENTIFICATION  DIPLOMPERCENTAGE        AGE
+          FAC                                              
+          FD       8837.433036         56.151372  24.771205
+          FM      10887.719008         59.434420  21.487603
+          FPSE     8417.453744         56.202099  28.224670
+          FSDC     8195.007916         55.329211  25.974934
+          FSEG     8410.416398         56.832564  24.323434
+          FSTA     9166.437431         58.941594  23.307863
+          FT       8125.250000         53.814286  31.428571
+\end{Verbatim}
+        
+    Pour prouver le rejet de notre hypothèse nulle on peut remarquer que les
+facultées de Medecine et celui de technologie on une moyenne d'age de 21
+et 23 respectivement et les facultées de psycologie et celui de
+theologie on une mooyenne d'age respective de 28 et 31 ans
+
+    \paragraph{Diplome pourcentage}\label{diplome-pourcentage}
+
+    voici comment se presente le test:
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}325}]:}               df         sum\_sq      mean\_sq          F        PR(>F)
+          C(FAC)       6.0    9139.202728  1523.200455  48.757704  2.256165e-58
+          Residual  4708.0  147078.865397    31.240201        NaN           NaN
+\end{Verbatim}
+        
+    Egalement ici on rejete aussi notre hypothèse nulle qui stipulait que la
+moyenne du pourcentage du diplome est la meme au seind de chaque faculté
+. Pour prouver le rejet de notre hypothèse nulle on peut remarquer que
+les facultés de Medecine et celui de technologie on une moyenne de
+pourcentage de 59\% chacun et celui de theologie à une moyenne de 53\%
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}324}]:} 3.3032675567110044
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+          File "<ipython-input-1-b7f99248bc48>", line 1
+        ipython nbconvert --to pdf --template hidecode DataExplorationDraft1.ipynb
+                        \^{}
+    SyntaxError: invalid syntax
+
+
+    \end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
