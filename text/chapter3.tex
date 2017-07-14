@@ -61,8 +61,6 @@ processus itératif et incrémentai nous exécuterons cette phase 2 a 5 fois ou 
 \paragraph{}
 Comme soulignées dans la phase d'introduction les données mise à notre
 disposition sont sous format \ac {CSV} et nous allons utilisé la librairie pandas de python pour faire l'analyse , nous utiliserons aussi d'autres libraires qui nous permettrons de faire les statistiques ainsi que les visualisations :
-Nous pouvons voir à quoi ressemble notre ensemble d'apprentissage au tableau :[enter number of the table]  \\ 
-
 Nous remarquons que les données sont stocké dans un e structure de type
 matricielle appelé Dataframe. \cite{pedregosa2011scikit}
 Un DataFrame selon la documentation officielle de pandas est une
@@ -133,7 +131,7 @@ Pour une première approche nous allons grouper notre ensemble en fonction des d
 Après groupement en fonction des matricules nous venons de remarquer que
 notre ensemble comprend 4715 lignes et 18 colonnes et c'est sera notre ensemble pour notre étude ,cet ensemble est subdivisé en variables d'entré et variables de
 sortie!\\
-Voici un aperçu des nos données en entrée ainsi que les données en sorties  au tableau \ref{tab:Dataset}
+Voici un aperçu des nos données en entrée ainsi que les données en sorties  au tableau la figure la figure \ref{tab:Dataset}
 \paragraph{}
 Nous venons de finir avec la présentation des nos données nous allons
 maintenant débuter avec la phase d'analyse promptement dite  des donnés que nous avons en entré et ensuite nous effectuerons  une analyse des données en
@@ -235,7 +233,7 @@ on pour mention AA assimiléé aux ajournées .
 
 \paragraph{Méthodes d'imputations} 
 
-Nous avons choisi 9 méthodes de traitement des données manquantes
+Il existe 8 à 9 méthodes de traitement des données manquantes
 largement répandues à l'heure actuelle, y compris des méthodes connues
 pour être peu performantes mais cependant toujours utilisées. 
 \begin{enumerate}
@@ -373,7 +371,7 @@ de corriger ces erreurs et bien organisé les données .
 
 Par exemple pour la variable diplôme section on a pu voir les valeurs suivantes : 'TECSC', 'Techniqe',
 'TECHN IQUE',technique','TCH' qui sont saisie pour la même et unique
-section 'techniques' mais avec différentes erreurs d'orthographe.
+section 'techniques' mais avec différentes erreurs d'orthographe. \\
 Pour l'attribut SCHOOL nous avons obtenus les valeurs suivantes :
 'matanoia', 'metanoia', 'metonoina', '\%etanoia', 'meta' pour la seule école 'metanoia'
 Nous avons aussi remarqué ces genres d'incohérence pour les autres attribues catégorielles.  
@@ -398,7 +396,6 @@ données discrètes catégories. voici comment nous allons procéder
 \subsubsection{Analyse Uni-Varié}
 Dans cette partie nous allons effectuer les statistiques descriptives pour chaque variable .
 \begin{enumerate}
-	
 	\item
 	\emph{\textbf{Variable Numériques ou continues : }}Pour les données continues nous
 	allons essayer de comprendre la tendance et la dispersion des nos
@@ -421,10 +418,132 @@ Dans cette partie nous allons effectuer les statistiques descriptives pour chaqu
 \end{enumerate}
 Commençons par l'analyse des attributs numériques age et pourcentage à l' \ac{EXETAT} 
 \paragraph{L'AGE et Le Diplôme Pourcentage}
-Voici un bref aperçu des statistiques descriptives de ses variables .
+Voici un bref aperçu des statistiques descriptives de ses variables  à la la figure la figure \ref{tab:DescribeData}
+\begin{table}
+	\centering
+	\begingroup % make the next setting local
+	\captionsetup{type=table} % here we want to caption a table
+	\caption{Statistiques Des Données }
+	\label{tab:DescribeData}
+	\begin{tabular}{lrr}
+		\toprule
+		{} &  DIPLOMPERCENTAGE &          AGE \\
+		\midrule
+		count &       4715,000000 &  4715,000000 \\
+		mean  &         56,878914 &    24,732768 \\
+		std   &          5,756663 &     4,621602 \\
+		min   &         50,000000 &    18,000000 \\
+		25\%   &         52,000000 &    22,000000 \\
+		50\%   &         56,000000 &    24,000000 \\
+		75\%   &         60,000000 &    27,000000 \\
+		max   &         86,000000 &    59,000000 \\
+		\bottomrule
+	\end{tabular}
+\endgroup
+\end{table}
 \subparagraph{AGE}
-Nous avons calculer l'age en se basant sur la date de naissance et la date d'aujourd'hui.signalons que cet attribue dispose des valeurs manquantes : Oui , ils sont causées par des erreurs à l'entré pour leurs imputation nous utiliserons la moyenne dans la phase de nettoyage des données.
-\paragraph{Analyse Bi-variée}\label{analyse-bivariuxe9e}
+
+Nous avons calculer l'age en se basant sur la date de naissance et la date d'aujourd'hui.signalons que cet attribue disposait des valeurs manquantes au début et on était imputer par la moyenne , comme nous pouvons le voir à la la figure la figure \ref{tab:DescribeData}  nos étudiant disposent en moyenne d'un age de 24 ans avec une variance de 4,5 le moins âgé a 18 ans et le plus âgé a 59 ans.
+On peut aisément que l'age suit une distribution normale . 
+\begin{figure}[!htbp]
+	\centering
+	\subfloat[Box-Plot ad l'age ]{\includegraphics[width=0.4\textwidth]{fig/AGE.png}\label{fig:Agea}}
+	\hfill
+	\subfloat[distribution de l'age ]{\includegraphics[width=0.4\textwidth]{fig/AGEDist.png}\label{fig:Ageb}}
+	\hfill
+	\caption{Graphiques de l'attribue age}
+\end{figure}
+\subparagraph{Pourcentage du diplôme}
+Après nettoyage et contrairement à la la figure la figure \ref{tab:MisisnV} on a constater qu'après nettoyage la moyenne est de 56,8 \% avec unn écart type de 5,7 le minimum de 50 \% et un maximum de 86\% .
+les graphiques représentent les informations sur l'age  son à la la figure la figure \ref{fig:Pourcentagea} et la figure la figure \ref{fig:Pourcentageb}
+\begin{figure}[!htbp]
+	\centering
+	\subfloat[Box-Plot du Pourcenatge du diplome ]{\includegraphics[width=0.4\textwidth]{fig/dipomePourcentage.png}\label{fig:Pourcentagea}}
+	\hfill
+	\subfloat[distribution du Pourcenatage ]{\includegraphics[width=0.4\textwidth]{fig/diplomePercentageDis.png}\label{fig:Pourcenategb}}
+	\hfill
+	\caption{Graphiques de l'attribue du Pourcentage à l'examen d'état }
+\end{figure}
+\subparagraph{Le Sexe des étudiants}
+	\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fig/NAME.png}
+	\caption[Short caption]{Distribution du sexe des étudiants }
+	\label{fig:SEXE}
+\end{figure}
+La  la figure la figure \ref{fig:SEXE} nous donne la  répartition de sexes dans notre ensemble d'apprentissage on peut aisément constater qu'il n'est pas si déséquilibre que ça!, le
+genre est vraiment respecté avec 41\% dés nouveaux étudiant étant de
+sexe féminin.
+\subparagraph{le type d'école}
+\begin{figure}[!htbp]
+	\centering
+	\makebox[\textwidth]{\includegraphics[width=\paperwidth]{fig/SCHOOLSTATUS.png}}
+	\caption[Short caption]{Différente statut de l'école de provenance }
+	\label{fig:SchoolStatus}
+\end{figure}
+ Dans la la figure la figure \ref{fig:SchoolStatus} nous pouvons remarquer aisément que 29\% des étudiants
+proviennent des écoles dites protestantes , 27\% viennent des écoles
+catholiques , 11\% des écoles privé , 15 des écoles publiques mais aussi
+il ya des étudiants venant des autodidactes , ceux provenant des écoles
+musulmanes et kibanguistes mais en proportion vraiment négligeable.
+\subparagraph{l'Option de provenance}
+Nos étudiant Proviennent des 33 écoles différentes:
+
+\begin{figure}[!htbp]
+	\centering
+	\makebox[\textwidth]{\includegraphics[width=\paperwidth]{fig/OPTION_RIGHT.png}}
+	\caption[Short caption]{l'option suivie à l'école secondaire }
+	\label{fig:Option_right}
+\end{figure}
+Sur la la figure la figure \ref{fig:Option_right} nous pouvons remarquer que la majeure partie des
+étudiants de notre études proviennent de la section pédagogique avec
+environ 28\% ensuite vienne la section commerciale et administrative
+avec 19\% , suivent sociale avec 13\%, scientifique bio-chimie avec 14
+\% ensuite viennent autres différentes options avec des valeurs
+inférieurs à 5\%.
+\subparagraph{Attribut School}\label{attribut-school}
+cette attribue comprend les valeurs de l'école de provenance des nos
+finaliste combiné avec l'attribue SCHOOLSTATUS  il joue un rôle
+important dans notre étude.
+nous pouvons aisément remarquer que les élèves proviennent de 594 écoles
+différentes sur la figure \ref{fig:SCHOOL} nous allons visualiser les écoles
+les plus représentées.
+\begin{figure}[!htbp]
+	\centering
+	\makebox[\textwidth]{\includegraphics[width=\paperwidth]{fig/SCHOOL_RIGHT.png}}
+	\caption[Short caption]{les écoles de provenances  }
+	\label{fig:SCHOOL}
+\end{figure}
+Nous pouvons remarquer aisément que le top 10 des école de provenance
+est constituer de grandes écoles de la ville de Goma avec l'institut
+metanoia et le collège mwanga en tête de liste avec l'institut mwanga et
+metanoia en tete de liste avec 15\% chacun ensuite vienne l'institut
+bakanja avec 6\% ensuite vienne maendelo, le lycée sainte ursule et
+l'institut de Goma avec 6\%, 5\% et 5 \% respectivement et d'autres
+école se partagent le reste de 50\%.
+\subparagraph{Attribue SCHOOL Province}
+\begin{figure}[!htbp]
+	\centering
+	\makebox[\textwidth]{\includegraphics[width=\paperwidth]{fig/SCHOOLPROVINCE.png}}
+	\caption[Short caption]{les provinces de provenances des étudiants   }
+	\label{fig:SCHOOLProvince}
+\end{figure}
+A la figure \ref{fig:SCHOOLProvince} nous pouvons aisément constater que 75 \% des étudiants
+de l'\ac{ULPGL} proviennent de la province du nord kivu mais il ya une autre
+catégorie provenant  du Sud Kivu soit 15\% l'autre partie provient des autres provinces de la \ac{RDC}.
+\subparagraph{Attribue Faculté}
+Pour finaliser l'analyser uni-varié des nos données en entrée nous allons jeter un coup d'œil sur la colonne Fac qui contient la faculté choisie par l'étudiant.
+Voici comment elle se présente a la figure \ref{fig:FAC}:
+\begin{figure}[!htbp]
+	\centering
+	\makebox[\textwidth]{\includegraphics[width=\paperwidth]{fig/FAC.png}}
+	\caption[Short caption]{les FAculteé}
+	\label{fig:FAC}
+\end{figure}
+ Nous remarquons la distribution des valeurs pour
+l'attribue faculté des étudiants: - FSGEG: 32,8\% , FSTA : 19,153\% , FD
+:19\% -,FSDC :16\% ,FM : 5\% ,FPSE : 4\% ,FT :3\%
+\subsubsection{Analyse Bi-variée}
 C'est une technique d'analyse statistique des données, consistant à
 découvrir la relation pouvant exister entre 2 variables dans le but de
 tester l'hypothèse d'association et de causalité entre 2 variables !Par
