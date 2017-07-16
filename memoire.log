@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  14 JUL 2017 10:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  16 JUL 2017 14:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1548,7 +1548,36 @@ Overfull \hbox (13.36945pt too wide) in paragraph at lines 567--571
  of va-riance ([])[],
  []
 
-[59 <./fig/FAC.png>] [60]) [61]
+[59 <./fig/FAC.png>] [60]
+Overfull \hbox (15.71432pt too wide) in paragraph at lines 643--652
+ [][] 
+ []
+
+
+LaTeX Warning: Reference `label' on page 61 undefined on input line 680.
+
+<fig/AGE-FAC.png, id=277, 867.24pt x 433.62pt>
+File: fig/AGE-FAC.png Graphic file (type png)
+ <use fig/AGE-FAC.png>
+Package pdftex.def Info: fig/AGE-FAC.png used on input line 683.
+(pdftex.def)             Requested size: 312.00119pt x 156.00383pt.
+ [61]
+Overfull \hbox (9.84076pt too wide) in paragraph at lines 698--707
+ [][] 
+ []
+
+<fig/AGE-POURC.png, id=282, 867.24pt x 433.62pt>
+File: fig/AGE-POURC.png Graphic file (type png)
+ <use fig/AGE-POURC.png>
+Package pdftex.def Info: fig/AGE-POURC.png used on input line 711.
+(pdftex.def)             Requested size: 312.00119pt x 156.00383pt.
+
+[62 <./fig/AGE-FAC.png>]
+Overfull \hbox (63.3775pt too wide) in paragraph at lines 723--735
+ [][] 
+ []
+
+[63 <./fig/AGE-POURC.png>]) [64]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 40.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -1565,7 +1594,7 @@ Overfull \hbox (4.61922pt too wide) in paragraph at lines 41--41
 $\T1/cmtt/m/n/12 \url{https : / / stats . stackexchange .
  []
 
-[62
+[65
 
 
 ]
@@ -1581,7 +1610,7 @@ Overfull \hbox (1.11081pt too wide) in paragraph at lines 41--41
 L'orien-ta-tion sco-laire et pro-fes-sion-nelle pour la réus-
  []
 
-[63] [64] (./memoire.aux)
+[66] [67] (./memoire.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1595,13 +1624,13 @@ Package logreq Info: Writing requests to 'memoire.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13277 strings out of 492995
- 219181 string characters out of 6132704
+ 13300 strings out of 492995
+ 219556 string characters out of 6132704
  480148 words of memory out of 5000000
- 16573 multiletter control sequences out of 15000+600000
+ 16594 multiletter control sequences out of 15000+600000
  19063 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,12n,49p,1289b,1613s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,12n,49p,1289b,1619s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
@@ -1630,10 +1659,10 @@ e1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
 /public/cm-super/sfrm2074.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
 ublic/cm-super/sfti1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
 lic/cm-super/sftt1200.pfb>
-Output written on memoire.pdf (64 pages, 1757319 bytes).
+Output written on memoire.pdf (67 pages, 1798110 bytes).
 PDF statistics:
- 379 PDF objects out of 1000 (max. 8388607)
- 226 compressed objects within 3 object streams
+ 393 PDF objects out of 1000 (max. 8388607)
+ 233 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 

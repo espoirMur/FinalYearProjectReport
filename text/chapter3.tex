@@ -215,7 +215,7 @@ proposée par Little et Rubin \cite{MissinVal} :
  Les DM sont MCAR lorsque la probabilité de non réponse pour une variable ne
 dépend pas de celle-ci, mais uniquement de paramètres extérieurs,
 indépendants de cette variable. Cela veut dire qu'il n'est pas possible
-de défi- nir un profil des individus ayant des DM et que la probabilité
+de définir un profil des individus ayant des DM et que la probabilité
 des DM est uniforme. De manière générale, ce type de DM est très rare.
 \subparagraph{}
 Les DM sont dites MAR lorsque la probabilité de non-réponse peut
@@ -447,7 +447,7 @@ Nous avons calculer l'age en se basant sur la date de naissance et la date d'auj
 On peut aisément que l'age suit une distribution normale . 
 \begin{figure}[!htbp]
 	\centering
-	\subfloat[Box-Plot ad l'age ]{\includegraphics[width=0.4\textwidth]{fig/AGE.png}\label{fig:Agea}}
+	\subfloat[Box-Plo det  l'age ]{\includegraphics[width=0.4\textwidth]{fig/AGE.png}\label{fig:Agea}}
 	\hfill
 	\subfloat[distribution de l'age ]{\includegraphics[width=0.4\textwidth]{fig/AGEDist.png}\label{fig:Ageb}}
 	\hfill
@@ -458,9 +458,9 @@ Après nettoyage et contrairement à la la figure la figure \ref{tab:MisisnV} on
 les graphiques représentent les informations sur l'age  son à la la figure la figure \ref{fig:Pourcentagea} et la figure la figure \ref{fig:Pourcentageb}
 \begin{figure}[!htbp]
 	\centering
-	\subfloat[Box-Plot du Pourcenatge du diplome ]{\includegraphics[width=0.4\textwidth]{fig/dipomePourcentage.png}\label{fig:Pourcentagea}}
+	\subfloat[Box-Plot du Pourcentage du diplome ]{\includegraphics[width=0.4\textwidth]{fig/dipomePourcentage.png}\label{fig:Pourcentagea}}
 	\hfill
-	\subfloat[distribution du Pourcenatage ]{\includegraphics[width=0.4\textwidth]{fig/diplomePercentageDis.png}\label{fig:Pourcenategb}}
+	\subfloat[distribution du Pourcentage ]{\includegraphics[width=0.4\textwidth]{fig/diplomePercentageDis.png}\label{fig:Pourcenategb}}
 	\hfill
 	\caption{Graphiques de l'attribue du Pourcentage à l'examen d'état }
 \end{figure}
@@ -537,7 +537,7 @@ Voici comment elle se présente a la figure \ref{fig:FAC}:
 \begin{figure}[!htbp]
 	\centering
 	\makebox[\textwidth]{\includegraphics[width=\paperwidth]{fig/FAC.png}}
-	\caption[Short caption]{les FAculteé}
+	\caption[Short caption]{les Facultés }
 	\label{fig:FAC}
 \end{figure}
  Nous remarquons la distribution des valeurs pour
@@ -602,3 +602,145 @@ non-linéaires et non-monotones.
 Signalons que python dispose des multiples librairies pour effectuer ces
 genres d'analyse et nous les utiliserons dans la suite
 \end{enumerate}
+Passons maintenant à l'analyser des proprement dite 
+ Dans cette partie nous allons nous allons effectué une analyse bivariée
+ entre les attribues en entrée et les attribues en sortie , pour une
+ première approche nous allons faire une analyse entre la faculté choisie
+ et les différentes variables d'entres de notre ensemble d'apprentissage
+ dans la seconde approche nous essayerons de le faire la même chose pour
+ le autres variables de sortie. voici le différentes combinaisons que
+ nous allons effectuer: 
+ \begin{enumerate}
+ 	\item FAC-Diplome Province : Pour voir la relation
+ 	entre la faculté et la province d'origine de l'étudiant
+ 	\item FAC-DIPLOMPOURCENTAGE: Pour voir la relation entre la faculté et la
+ 	pourcentage obtenu à l'\ac{EXETAT}
+ 	\item FAC-AGE: Pour voir la relation entre
+ 	l'age de l'étudiant et la FAC
+ 	\item FAC-DIPLOMEOPTION: Pour voir la
+ 	relation entre la faculté et l'option du diplôme
+ 	\item FAC-SEXE: Pour la
+ 	relation avec le sexe des étudiants 
+ 	\item FAC-SCHOOL: pour la relation
+ 	entre l'école de provenance la fac 
+ 	\item FAC-SCHOOL-STATUTS : pour la relation
+ 	entre le statuts de l'école de la FAC
+ \end{enumerate}
+ \paragraph{Analyse des Variables continues Vs Variables Numériques}
+ Comme ces une des colonnes dispose des variables continues nous allons
+ utiliser le test A-NOVA
+ ce test nous permettra de savoir si la moyenne de l'age des étudiants
+ est la même pour chaque faculté: cela constituera notre hypothèse nulle
+ ,on va cherche la probabilité p est on décidera sur base de cette valeur
+ ! si elle es inférieur à 0.05 on rejettera l'hypothèse nulle.
+\subparagraph{AGE}
+ \begin{table}[!htbp]
+ 	\centering
+ 	\begingroup % make the next setting local
+ 	\captionsetup{type=table} % here we want to caption a table
+ 	\caption{Analyse ANOVA Age - faculté}
+ 	\label{tab:ANOVAAge}
+ 	\begin{tabular}{lllllr}
+ 		\toprule
+ 		{} & df     &   sum\_sq &     mean\_sq      &     F    &     PR(>F) \\
+ 		\midrule
+ 		C(FAC)    &   6.0 &  14857.002658 & 2476.167110 & 135.823792  &3.721673e-159 \\
+ 		Residual & 4708.0  &85830.284723    &18.230732    &     NaN    &        NaN \\
+ 		\bottomrule
+ 	\end{tabular}
+ 	\endgroup
+ \end{table}
+ comme la valeur de PR est inférieur à 0.05 on peut conclure que la
+ moyenne de l'age n'est pas la même au sein de chaque faculté
+\begin{table}[!htbp]
+	\centering
+	\begingroup % make the next setting local
+	\captionsetup{type=table} % here we want to caption a table
+	\caption{Analyse répartition de la moyenne de l'age et pourcentage dans les facultés}
+	\label{tab:ANOVAge}
+	\begin{tabular}{lllllr}
+		\toprule
+		FAC & DIPLOMPERCENTAGE &       AGE \\
+		\midrule
+		FD          &      56.151372  &24.771205 \\
+		FM            &   59.434420 & 21.487603\\
+		FPSE         &     56.202099  &28.224670\\
+		FSDC      &        55.329211 & 25.974934\\
+		FSEG        &   56.832564 & 24.323434\\
+		FSTA       &      58.941594 & 23.307863\\
+		FT       &         53.814286 & 31.428571\\
+		\bottomrule
+	\end{tabular}
+	\endgroup
+\end{table}
+ Pour prouver le rejet de notre hypothèse nulle on peut remarquer que les
+ facultés de Médecine et celui de technologie on une moyenne d'age de 21
+ et 23 respectivement et les facultés de psychologie et celui de
+ théologie on une moyenne d'age respective de 28 et 31 ans.
+ Pour plus de détails on peut visualiser les détails sur la figure \ref{label}
+ 	\begin{figure}[!htbp]
+ 	\centering
+ 	\includegraphics[width=0.8\textwidth]{fig/AGE-FAC.png}\label{fig:ANOVAb}
+ 	\caption[Short caption]{distribution des ages au sein des différentes facultés } 
+ 	\end{figure}
+\subparagraph{Pourcentage}
+  Également ici on rejette aussi notre hypothèse nulle qui stipulait que la
+moyenne du pourcentage du diplôme est la même au sein de chaque faculté
+. Pour prouver le rejet de notre hypothèse nulle on peut remarquer que
+les facultés de Médecine et celui de technologie on une moyenne de
+pourcentage de 59\% chacun et celui de théologie à une moyenne de 53\%.
+\begin{table}[!htbp]
+	\centering
+	\begingroup % make the next setting local
+	\captionsetup{type=table} % here we want to caption a table
+	\caption{Analyse ANOVA pourcentage - faculté}
+	\label{tab:ANOVAPourcentage}
+	\begin{tabular}{lllllr}
+		\toprule
+		{} & df     &   sum\_sq &     mean\_sq      &     F    &     PR(>F) \\
+		\midrule
+		C(FAC)    &   6.0  &  9139.202728  &1523.200455  &48.757704&  2.256165e-58 \\
+		Residual & 4708.0 & 147078.865397 &   31.240201  &      NaN      &     NaN \\
+		\bottomrule
+	\end{tabular}
+	\endgroup
+\end{table}
+Pour Plus des détails sur les distributions statistique 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{fig/AGE-POURC.png}\label{fig:ANOVAa}
+	\caption[Short caption]{distribution des pourcentage au sein des différentes facultés } 
+\end{figure}
+ \paragraph{Variables Catégorielles et Catégorielles}
+ Pour ces genres de relation nous avons effectuer le test chi-carré , Dans le tableau \ref{tab:chi-Carrée} nous pouvons visualiser les  différentes valeurs et effectuer nos conclusions sur base de celle si.\\
+ Notre hypothèse nulle H0 est du type : Il n'ya pas de relation entre la variable considéré et la faculté. 
+ \begin{table}
+ 	\centering
+ 	\begingroup % make the next setting local
+ 	\captionsetup{type=table} % here we want to caption a table
+ 	\caption{test chi carrée avec des différentes variables avec la faculté }
+ 	\label{tab:chi-Carrée}
+ 	\begin{tabular}{lllllr}
+ 		\toprule
+ 		 Variable &   Dégrée De Lib.  &         Valeur Critique T & Valeur de Chi2 &  Décision sur H0 \\
+ 		\midrule
+        Province & 90&113&256&Rejet\\
+        Option & 174 & 205& 4155& Rejet \\
+        SchoolStatus &42&58&304&Rejet\\
+        SCHOOL&3558&3697&6389&Rejet\\
+        SEXE&6&12,5&445&Rejet\\
+ 		\bottomrule
+ 	\end{tabular}
+ 	\endgroup
+ \end{table}
+ Voici Les conclusion que nous prenons sur base de notre test statistique:
+ \begin{enumerate}
+ 	\item FAC-PROVINCE :
+ 	lorsque nous comparons ces 2 valeurs nous remarquons que notre valeur de chi2 est supérieur à notre valeur critique et tombe dans la région de rejet de notre hypothèse nulle et ainsi celle est rejetée et ainsi nous concluons avec 95\% de certitude que notre hypothèse alternative est vrai: il ya une relation entre la province et la faculté en d'autre terme ayant un nombre des étudiant venant d'une province nous pouvons prédire la faculté choisie.
+ 	\item FAC-SEXE :
+ 	l ya une relation de dépendance entre le sexe et la faculté ce qui est logique car par exemple en faculté de technologie et théologie on trouve moins des hommes que des femmes.
+ 	\item FAC-OPTION :
+ 	sur base de ce fait on fait la même conclusion que pour la province : il ya une relation de dépendance entre la section du diplôme et la faculté ce qui est logique car les étudiant en général se base sur leur option pour choisir leur faculté
+ 	\item FAC-SCHOOLSTATUS :
+ 	il ya une relation de dépendance entre la section du diplôme et la faculté ce qui est logique car les étudiant en général se base sur leur option pour choisir leur option
+ \end{enumerate}
