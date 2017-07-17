@@ -1,6 +1,6 @@
 \chapter{Présentation et Exploitation des Données Obtenues}
 \paragraph{}
- Dans ce chapitre nous allons exploités les données mise en notre
+ Dans ce chapitre nous exploiterons  les données mise en notre
 disposition par les autorités de l'\ac{ULPGL}. Celles-ci sont issues du
 système d'information \ac{UAT}  et pour des
 raisons de confidentialité nous n'avons pas eu accès a toute la base des
@@ -60,7 +60,7 @@ processus itératif et incrémentai nous exécuterons cette phase 2 a 5 fois ou 
 \subsection{Identification des Données et des Variables}
 \paragraph{}
 Comme soulignées dans la phase d'introduction les données mise à notre
-disposition sont sous format \ac {CSV} et nous allons utilisé la librairie pandas de python pour faire l'analyse , nous utiliserons aussi d'autres libraires qui nous permettrons de faire les statistiques ainsi que les visualisations :
+disposition sont sous format \ac {CSV} et nous utiliserons la librairie pandas de python pour faire l'analyse , nous utiliserons aussi d'autres libraires qui nous permettrons de faire les statistiques ainsi que les visualisations :
 Nous remarquons que les données sont stocké dans un e structure de type
 matricielle appelé Dataframe. \cite{pedregosa2011scikit}
 Un DataFrame selon la documentation officielle de pandas est une
@@ -120,21 +120,20 @@ Chaque ligne comprend les informations d'un étudiant pour une année académiqu
  Comme nous pouvons le constater les colonnes 1-13 regorgent les informations que chaque étudiant donné à son inscription , ils constituerons nos variables d'entres les restes seront utilisées pour constituer notre variable de sortie.
 
 Nous l'avons aussi signales que chaque ligne comprend les information
-d'un étudiant pour une année académique . Pour mener bien notre analyse nous allons grouper les information de chaque étudiant en une ligne nos données seront groupé selon les variables d'entrées ensuite les donnés de sorties seront groupes selon une fonction d'agrégation prédéfinie.
-Nous allons premièrement faire une analyse uni-varié  sur les données en entrées !
+d'un étudiant pour une année académique . Pour mener bien notre analyse nous grouperons  les information de chaque étudiant en une ligne nos données seront groupé selon les variables d'entrées ensuite les donnés de sorties seront groupes selon une fonction d'agrégation prédéfinie.
+Nous fairons premièrement faire une analyse uni-varié  sur les données en entrées !
 Soulignons que nous avons décidé de supprimer certaines colonnes n'ayant pas des informations importantes car contenant plus de 90 \% des valeurs manquantes il s'agit entre autres des colonnes suivantes :
 'DIPLOMDATE','DIPLOMMENTION','DIPLOMPLACE','SCHOOLCODE'.
 
 Après suppression les colonnes en entrée deviennent les 10 premiers colonnes.
 
-Pour une première approche nous allons grouper notre ensemble en fonction des données en entré et ensuite écrire une fonction qui va grouper les donnes de sortie la fonction de qui regroupe les données en sortie ne fait que grouper les mention , et pourcentage pour une année académique d'un étudiant dans une liste.\\ 
+Pour une première approche nous grouperons  notre ensemble en fonction des données en entré et ensuite écrire une fonction qui va grouper les donnes de sortie la fonction de qui regroupe les données en sortie ne fait que grouper les mention , et pourcentage pour une année académique d'un étudiant dans une liste.\\ 
 Après groupement en fonction des matricules nous venons de remarquer que
 notre ensemble comprend 4715 lignes et 18 colonnes et c'est sera notre ensemble pour notre étude ,cet ensemble est subdivisé en variables d'entré et variables de
 sortie!\\
 Voici un aperçu des nos données en entrée ainsi que les données en sorties  au tableau la figure la figure \ref{tab:Dataset}
 \paragraph{}
-Nous venons de finir avec la présentation des nos données nous allons
-maintenant débuter avec la phase d'analyse promptement dite  des donnés que nous avons en entré et ensuite nous effectuerons  une analyse des données en
+Nous venons de finir avec la présentation des nos données nous débutons avec la phase d'analyse promptement dite  des donnés que nous avons en entré et ensuite nous effectuerons  une analyse des données en
 sortie en enfin analyse les donnes des sortie combinées à celles des données  en entrée
 \begin{sidewaystable}
 	\centering
@@ -252,7 +251,7 @@ pour être peu performantes mais cependant toujours utilisées.
 \end{enumerate}
 Toutes ces techniques existe sont implémentées dans les librairies que nous
 utilisons.\\
-Dans ce travail selon le cas nous allons faire une imputation par la
+Dans ce travail selon le cas nous fairons  une imputation par la
 moyenne ou par analyse des cas complets mais soulignons qu'il faut bien
 réfléchir avant d'utiliser une imputation par la moyenne car il a une
 mauvaise influence sur la variance
@@ -309,7 +308,7 @@ suivantes :
 \paragraph{Traitement des valeurs aberrantes :}
 \begin{enumerate}
 	\item  Les valeurs aberrantes pouvant provenir d'erreurs de saisie, on le traite séparément
-	en étudiant cas par cas.c'est cette technique que nous allons utilisé
+	en étudiant cas par cas.c'est cette technique que nous utiliserons 
 	pour certaines valeur du pourcentage de diplôme.
 	\item On les rejette et on applique ensuite une des méthodes d’imputation (moyenne,médiane…) vues pour les valeurs manquantes.
 	\item  On adopte des méthodes qui diminuent leur impact au cours des analyses statistiques :la médiane
@@ -343,7 +342,7 @@ Ce tableau décrit toutes les informations possibles sur les données
 continues et de prime à bord nous sommes à mesure de constater certaines
 incohérences sur les diplôme pourcentage qui on un maximum de 6053 et un
 minimum de 0 qui est vraiment impossible car le diplôme en RDC dois être
-compris entre 50 et 100 \% !Nous allons visualisé ces incohérence de
+compris entre 50 et 100 \% !Nous visualiserons ces incohérence de
 plus prêt avec des box-plots.
 
 \begin{figure}[ht]
@@ -391,14 +390,14 @@ visualiserons les résultat à l'aide des graphiques . Dans cette partie
 nous utiliserons beaucoup plus la statistique descriptives et la statistique inférentielle
 Comme nous  pouvons le remarquer notre ensemble d'apprentissage
 comprend à la fois des données numériques (continues ) ainsi que des
-données discrètes catégories. voici comment nous allons procéder
+données discrètes catégories. voici comment nous procéderons 
 
 \subsubsection{Analyse Uni-Varié}
-Dans cette partie nous allons effectuer les statistiques descriptives pour chaque variable .
+Dans cette partie nous effectuerons les statistiques descriptives pour chaque variable .
 \begin{enumerate}
 	\item
 	\emph{\textbf{Variable Numériques ou continues : }}Pour les données continues nous
-	allons essayer de comprendre la tendance et la dispersion des nos
+	essayerons de comprendre la tendance et la dispersion des nos
 	variables .les métriques utilisées sont sur la figure suivante: 
 	\begin{figure}[ht]
 		\centering
@@ -406,13 +405,13 @@ Dans cette partie nous allons effectuer les statistiques descriptives pour chaqu
 		\caption[Short caption]{Techniques d'exploration des données en entré }
 		\label{fig:DataExplora}
 	\end{figure}
-	En bref nous allons examiner le moyenne , le mode , l'écart-type et la
-	variance , nous conterons aussi les variables nous allons faire les
+	En bref nous examinerons le moyenne , le mode , l'écart-type et la
+	variance , nous conterons aussi les variables nous effectuerons  les
 	visualisations avec des box-plot! cette étape nous sera aussi utile
 	dans le traitement des valeur manquantes et des valeurs aberrantes!
 	\item
 	\emph{\textbf{Variable catégorielle ou quantitative :}} Pour les données discrètes nous
-	allons utiliser  les tables des fréquences pour comprendre la distribution de
+	 utiliserons  les tables des fréquences pour comprendre la distribution de
 	chaque catégorie nous pour aussi voir le pourcentage de chaque
 	catégorie , les histogrammes et bar char seront utilisées.
 \end{enumerate}
@@ -506,7 +505,7 @@ cette attribue comprend les valeurs de l'école de provenance des nos
 finaliste combiné avec l'attribue SCHOOLSTATUS  il joue un rôle
 important dans notre étude.
 nous pouvons aisément remarquer que les élèves proviennent de 594 écoles
-différentes sur la figure \ref{fig:SCHOOL} nous allons visualiser les écoles
+différentes sur la figure \ref{fig:SCHOOL} nous visualiserons les écoles
 les plus représentées.
 \begin{figure}[!htbp]
 	\centering
@@ -532,7 +531,7 @@ A la figure \ref{fig:SCHOOLProvince} nous pouvons aisément constater que 75 \% 
 de l'\ac{ULPGL} proviennent de la province du nord kivu mais il ya une autre
 catégorie provenant  du Sud Kivu soit 15\% l'autre partie provient des autres provinces de la \ac{RDC}.
 \subparagraph{Attribue Faculté}
-Pour finaliser l'analyser uni-varié des nos données en entrée nous allons jeter un coup d'œil sur la colonne Fac qui contient la faculté choisie par l'étudiant.
+Pour finaliser l'analyser uni-varié des nos données en entrée nous jetterons un coup d'œil sur la colonne Fac qui contient la faculté choisie par l'étudiant.
 Voici comment elle se présente a la figure \ref{fig:FAC}:
 \begin{figure}[!htbp]
 	\centering
@@ -547,7 +546,7 @@ l'attribue faculté des étudiants: - FSGEG: 32,8\% , FSTA : 19,153\% , FD
 C'est une technique d'analyse statistique des données, consistant à
 découvrir la relation pouvant exister entre 2 variables dans le but de
 tester l'hypothèse d'association et de causalité entre 2 variables !Par
-exemple dans notre analyser nous allons essayer de voir la relation
+exemple dans notre analyser nous essayerons de voir la relation
 existant entre le choix de la faculté et le pourcentage du diplôme à l'examen d'état. Elle se déroule en 4 étapes : \cite{becker2011uncertainty}
 \begin{itemize}
 	\item Définition de la nature des relations
@@ -578,7 +577,7 @@ Nous effectuerons cette analyse à 3 niveau :
 	et son hypothèse alternatif est 
 	H1 : au moins une moyenne est différente des autres..
 	\item \emph{\textbf{Variable catégorielle ou catégorielle  :}} 
-	Pour ces types des données nous allons effectué le test de chi-carré: Le chi-carré est un test statistique conçu pour déterminer si la différence
+	Pour ces types des données nous effectuerons le test de chi-carré: Le chi-carré est un test statistique conçu pour déterminer si la différence
 	entre deux distributions de fréquences est attribuable à l'erreur
 	d'échantillonnage (le hasard) ou est suffisamment grande pour être
 	statistiquement significative.
@@ -591,7 +590,7 @@ Nous effectuerons cette analyse à 3 niveau :
 	seulement : une différence réelle existe donc.
 \item \emph{\textbf{Variable continues et continues  :}} 
 Pour les variables continues on utilise cherche la corrélation et pour
-notre travail nous allons utilisée le coefficient de corrélation de
+notre travail nous utiliserons le coefficient de corrélation de
 Pearson: Les coefficients de corrélation permettent de donner une mesure
 synthétique de l'intensité de la relation entre deux caractères et de
 son sens lorsque cette relation est monotone. Le coefficient de
@@ -603,13 +602,13 @@ Signalons que python dispose des multiples librairies pour effectuer ces
 genres d'analyse et nous les utiliserons dans la suite
 \end{enumerate}
 Passons maintenant à l'analyser des proprement dite 
- Dans cette partie nous allons nous allons effectué une analyse bivariée
+ Dans cette partie nous effectuerons une analyse bivariée
  entre les attribues en entrée et les attribues en sortie , pour une
- première approche nous allons faire une analyse entre la faculté choisie
+ première approche nous effectuerons une analyse entre la faculté choisie
  et les différentes variables d'entres de notre ensemble d'apprentissage
  dans la seconde approche nous essayerons de le faire la même chose pour
  le autres variables de sortie. voici le différentes combinaisons que
- nous allons effectuer: 
+ nous  effectuerons: 
  \begin{enumerate}
  	\item FAC-Diplome Province : Pour voir la relation
  	entre la faculté et la province d'origine de l'étudiant
@@ -627,12 +626,11 @@ Passons maintenant à l'analyser des proprement dite
  	entre le statuts de l'école de la FAC
  \end{enumerate}
  \paragraph{Analyse des Variables continues Vs Variables Numériques}
- Comme ces une des colonnes dispose des variables continues nous allons
- utiliser le test A-NOVA
+ Comme ces une des colonnes dispose des variables continues nous 
+ utiliserons le test A-NOVA
  ce test nous permettra de savoir si la moyenne de l'age des étudiants
  est la même pour chaque faculté: cela constituera notre hypothèse nulle
- ,on va cherche la probabilité p est on décidera sur base de cette valeur
- ! si elle es inférieur à 0.05 on rejettera l'hypothèse nulle.
+ ,on va cherche la probabilité p est on décidera sur base de cette valeur.si elle es inférieur à 0.05 on rejettera l'hypothèse nulle.
 \subparagraph{AGE}
  \begin{table}[!htbp]
  	\centering

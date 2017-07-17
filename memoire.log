@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  16 JUL 2017 14:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  17 JUL 2017 08:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1434,150 +1434,155 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--98
  []
 
 [46]
-Overfull \hbox (47.68622pt too wide) in paragraph at lines 145--174
+Overfull \hbox (47.68622pt too wide) in paragraph at lines 144--173
  [][] 
  []
 
 
-Overfull \hbox (46.64246pt too wide) in paragraph at lines 145--174
+Overfull \hbox (46.64246pt too wide) in paragraph at lines 144--173
  [] 
  []
 
-[47] [48]
 Package acronym Info: Label `acro:DM' newly defined as it shall be overridden
-although it is yet undefined on input line 188.
- [49] [50] [51] <fig/AGEPlot1.png, id=224, 350.30875pt x 262.9825pt>
+although it is yet undefined on input line 187.
+[47] [48] [49] [50] <fig/AGEPlot1.png, id=221, 350.30875pt x 262.9825pt>
 File: fig/AGEPlot1.png Graphic file (type png)
 
 <use fig/AGEPlot1.png>
-Package pdftex.def Info: fig/AGEPlot1.png used on input line 351.
+Package pdftex.def Info: fig/AGEPlot1.png used on input line 350.
 (pdftex.def)             Requested size: 195.0pt x 146.39038pt.
 
-<fig/PercetagePlot.png, id=225, 350.30875pt x 262.9825pt>
+<fig/PercetagePlot.png, id=222, 350.30875pt x 262.9825pt>
 File: fig/PercetagePlot.png Graphic file (type png)
 
 <use fig/PercetagePlot.png>
-Package pdftex.def Info: fig/PercetagePlot.png used on input line 358.
+Package pdftex.def Info: fig/PercetagePlot.png used on input line 357.
 (pdftex.def)             Requested size: 195.0pt x 146.39038pt.
- [52 <./fig/AGEPlot1.png>] [53 <./fig/PercetagePlot.png>] <fig/DataExploration.
-png, id=234, 426.59375pt x 155.58125pt>
+ [51] [52 <./fig/AGEPlot1.png>]
+Overfull \hbox (5.58664pt too wide) in paragraph at lines 396--398
+[]\T1/cmr/m/n/12 Dans cette par-tie nous ef-fec-tue-rons les sta-tis-tiques des
+-crip-tives pour chaque
+ []
+
+[53 <./fig/PercetagePlot.png>]
+<fig/DataExploration.png, id=234, 426.59375pt x 155.58125pt>
 File: fig/DataExploration.png Graphic file (type png)
 
 <use fig/DataExploration.png>
-Package pdftex.def Info: fig/DataExploration.png used on input line 405.
+Package pdftex.def Info: fig/DataExploration.png used on input line 404.
 (pdftex.def)             Requested size: 195.0pt x 71.11955pt.
 Package acronym Info: Label `acro:EXETAT' newly defined as it shall be overridd
 en
-although it is yet undefined on input line 419.
+although it is yet undefined on input line 418.
  <fig/AGE.png, id=235, 433.62pt x 289.08pt>
 File: fig/AGE.png Graphic file (type png)
 
 <use fig/AGE.png>
-Package pdftex.def Info: fig/AGE.png used on input line 450.
+Package pdftex.def Info: fig/AGE.png used on input line 449.
 (pdftex.def)             Requested size: 155.99762pt x 103.99814pt.
  <fig/AGEDist.png, id=236, 433.62pt x 289.08pt>
 File: fig/AGEDist.png Graphic file (type png)
 
 <use fig/AGEDist.png>
-Package pdftex.def Info: fig/AGEDist.png used on input line 452.
+Package pdftex.def Info: fig/AGEDist.png used on input line 451.
 (pdftex.def)             Requested size: 155.99762pt x 103.99814pt.
 
 
 LaTeX Warning: Reference `fig:Pourcentageb' on page 54 undefined on input line 
-458.
+457.
 
 <fig/dipomePourcentage.png, id=237, 433.62pt x 289.08pt>
 File: fig/dipomePourcentage.png Graphic file (type png)
 
 <use fig/dipomePourcentage.png>
-Package pdftex.def Info: fig/dipomePourcentage.png used on input line 461.
+Package pdftex.def Info: fig/dipomePourcentage.png used on input line 460.
 (pdftex.def)             Requested size: 155.99762pt x 103.99814pt.
 
 <fig/diplomePercentageDis.png, id=238, 433.62pt x 289.08pt>
 File: fig/diplomePercentageDis.png Graphic file (type png)
 
 <use fig/diplomePercentageDis.png>
-Package pdftex.def Info: fig/diplomePercentageDis.png used on input line 463.
+Package pdftex.def Info: fig/diplomePercentageDis.png used on input line 462.
 (pdftex.def)             Requested size: 155.99762pt x 103.99814pt.
  [54 <./fig/DataExploration.png>] [55 <./fig/AGE.png> <./fig/AGEDist.png>] <fig
 /NAME.png, id=248, 433.62pt x 289.08pt>
 File: fig/NAME.png Graphic file (type png)
 
 <use fig/NAME.png>
-Package pdftex.def Info: fig/NAME.png used on input line 470.
+Package pdftex.def Info: fig/NAME.png used on input line 469.
 (pdftex.def)             Requested size: 195.0pt x 130.00098pt.
  <fig/SCHOOLSTATUS.png, id=249, 1445.4pt x 433.62pt>
 File: fig/SCHOOLSTATUS.png Graphic file (type png)
 
 <use fig/SCHOOLSTATUS.png>
-Package pdftex.def Info: fig/SCHOOLSTATUS.png used on input line 480.
+Package pdftex.def Info: fig/SCHOOLSTATUS.png used on input line 479.
 (pdftex.def)             Requested size: 597.50787pt x 179.25421pt.
+ <fig/OPTION_RIGHT.png, id=250, 2168.1pt x 722.7pt>
+File: fig/OPTION_RIGHT.png Graphic file (type png)
+
+<use fig/OPTION_RIGHT.png>
+Package pdftex.def Info: fig/OPTION_RIGHT.png used on input line 493.
+(pdftex.def)             Requested size: 597.50787pt x 199.16766pt.
  [56 <./fig/dipomePourcentage.png> <./fig/diplomePercentageDis.png> <./fig/NAME
 .png>]
-<fig/OPTION_RIGHT.png, id=256, 2168.1pt x 722.7pt>
-File: fig/OPTION_RIGHT.png Graphic file (type png)
- <use fig/OPTION_RIGHT.png>
-Package pdftex.def Info: fig/OPTION_RIGHT.png used on input line 494.
-(pdftex.def)             Requested size: 597.50787pt x 199.16766pt.
-
-[57 <./fig/SCHOOLSTATUS.png> <./fig/OPTION_RIGHT.png>]
-<fig/SCHOOL_RIGHT.png, id=262, 2168.1pt x 361.35pt>
+<fig/SCHOOL_RIGHT.png, id=257, 2168.1pt x 361.35pt>
 File: fig/SCHOOL_RIGHT.png Graphic file (type png)
  <use fig/SCHOOL_RIGHT.png>
-Package pdftex.def Info: fig/SCHOOL_RIGHT.png used on input line 513.
+Package pdftex.def Info: fig/SCHOOL_RIGHT.png used on input line 512.
 (pdftex.def)             Requested size: 597.50787pt x 99.58383pt.
 
+[57 <./fig/SCHOOLSTATUS.png> <./fig/OPTION_RIGHT.png>]
 <fig/SCHOOLPROVINCE.png, id=263, 2168.1pt x 578.16pt>
 File: fig/SCHOOLPROVINCE.png Graphic file (type png)
 
 <use fig/SCHOOLPROVINCE.png>
-Package pdftex.def Info: fig/SCHOOLPROVINCE.png used on input line 527.
+Package pdftex.def Info: fig/SCHOOLPROVINCE.png used on input line 526.
 (pdftex.def)             Requested size: 597.50787pt x 159.33414pt.
- [58 <./fig/SCHOOL_RIGHT.png> <./fig/SCHOOLPROVINCE.png>] <fig/FAC.png, id=269,
- 2168.1pt x 361.35pt>
+ <fig/FAC.png, id=264, 2168.1pt x 361.35pt>
 File: fig/FAC.png Graphic file (type png)
- <use fig/FAC.png>
-Package pdftex.def Info: fig/FAC.png used on input line 539.
+
+<use fig/FAC.png>
+Package pdftex.def Info: fig/FAC.png used on input line 538.
 (pdftex.def)             Requested size: 597.50787pt x 99.58383pt.
+ [58 <./fig/SCHOOL_RIGHT.png> <./fig/SCHOOLPROVINCE.png>]
 Package acronym Info: Label `acro:ANOVA' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 569.
+although it is yet undefined on input line 568.
 
-Overfull \hbox (13.36945pt too wide) in paragraph at lines 567--571
+Overfull \hbox (13.36945pt too wide) in paragraph at lines 566--570
 \T1/cmr/m/n/12 fec-tuer cette ana-lyse nous uti-li-se-rons le test [][]Ana-lyse
  of va-riance ([])[],
  []
 
 [59 <./fig/FAC.png>] [60]
-Overfull \hbox (15.71432pt too wide) in paragraph at lines 643--652
+Overfull \hbox (15.71432pt too wide) in paragraph at lines 641--650
  [][] 
  []
 
 
-LaTeX Warning: Reference `label' on page 61 undefined on input line 680.
+LaTeX Warning: Reference `label' on page 61 undefined on input line 678.
 
 <fig/AGE-FAC.png, id=277, 867.24pt x 433.62pt>
 File: fig/AGE-FAC.png Graphic file (type png)
  <use fig/AGE-FAC.png>
-Package pdftex.def Info: fig/AGE-FAC.png used on input line 683.
+Package pdftex.def Info: fig/AGE-FAC.png used on input line 681.
 (pdftex.def)             Requested size: 312.00119pt x 156.00383pt.
  [61]
-Overfull \hbox (9.84076pt too wide) in paragraph at lines 698--707
+Overfull \hbox (9.84076pt too wide) in paragraph at lines 696--705
  [][] 
  []
 
 <fig/AGE-POURC.png, id=282, 867.24pt x 433.62pt>
 File: fig/AGE-POURC.png Graphic file (type png)
  <use fig/AGE-POURC.png>
-Package pdftex.def Info: fig/AGE-POURC.png used on input line 711.
+Package pdftex.def Info: fig/AGE-POURC.png used on input line 709.
 (pdftex.def)             Requested size: 312.00119pt x 156.00383pt.
 
-[62 <./fig/AGE-FAC.png>]
-Overfull \hbox (63.3775pt too wide) in paragraph at lines 723--735
+Overfull \hbox (63.3775pt too wide) in paragraph at lines 721--733
  [][] 
  []
 
-[63 <./fig/AGE-POURC.png>]) [64]
+[62 <./fig/AGE-FAC.png>] [63 <./fig/AGE-POURC.png>]) [64]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 40.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -1659,7 +1664,7 @@ e1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
 /public/cm-super/sfrm2074.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
 ublic/cm-super/sfti1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
 lic/cm-super/sftt1200.pfb>
-Output written on memoire.pdf (67 pages, 1798110 bytes).
+Output written on memoire.pdf (67 pages, 1798016 bytes).
 PDF statistics:
  393 PDF objects out of 1000 (max. 8388607)
  233 compressed objects within 3 object streams
