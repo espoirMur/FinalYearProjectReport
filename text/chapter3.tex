@@ -11,13 +11,12 @@ pour l'étude sous forme d'un fichier \ac {CSV}. Comme
 souligné dans le chapitre premier ce chapitre se basera sur la
 méthodologie \ac{CRISP-DM} elle sera subdivisé en différentes sections:
 \begin{itemize}
-	\item L'exploration et la préparation des données 
-	\item  Construction du modèle de Prédiction  
-	\item  L'amélioration du modèle  \cite{bookSckit-Learn}
+	\item L'exploration 
+	\item la préparation des données \cite{bookSckit-Learn}
 \end{itemize}
 
 
-    \section{Exploration et la préparation des donnés}
+    \section{Introduction}
 \paragraph{}
 Les spécialités affirment que 70-80 \% du temps consacré à un projet
 DataMining est alloué à la phase de l'exploration et la préparation des
@@ -57,7 +56,7 @@ Voici les étapes de cette phases:
 \end{itemize}
 Comme nous l'avons soulignées dans le chapitre 1 ce processus est un
 processus itératif et incrémentai nous exécuterons cette phase 2 a 5 fois ou plus en vue d'avoir un bon modèle.
-\subsection{Identification des Données et des Variables}
+\section{Identification des Données et des Variables}
 \paragraph{}
 Comme soulignées dans la phase d'introduction les données mise à notre
 disposition sont sous format \ac {CSV} et nous utiliserons la librairie pandas de python pour faire l'analyse , nous utiliserons aussi d'autres libraires qui nous permettrons de faire les statistiques ainsi que les visualisations :
@@ -131,7 +130,7 @@ Pour une première approche nous grouperons  notre ensemble en fonction des donn
 Après groupement en fonction des matricules nous venons de remarquer que
 notre ensemble comprend 4715 lignes et 18 colonnes et c'est sera notre ensemble pour notre étude ,cet ensemble est subdivisé en variables d'entré et variables de
 sortie!\\
-Voici un aperçu des nos données en entrée ainsi que les données en sorties  au tableau la figure la figure \ref{tab:Dataset}
+Voici un aperçu des nos données en entrée ainsi que les données en sorties  au tableau la figure\ref{tab:Dataset}
 \paragraph{}
 Nous venons de finir avec la présentation des nos données nous débutons avec la phase d'analyse promptement dite  des donnés que nous avons en entré et ensuite nous effectuerons  une analyse des données en
 sortie en enfin analyse les donnes des sortie combinées à celles des données  en entrée
@@ -171,7 +170,8 @@ sortie en enfin analyse les donnes des sortie combinées à celles des données 
 \end{tabular}
 \endgroup
 \end{sidewaystable}
- \subsection{Préparation des données }
+\section{Préparation des Données}
+ \subsection{Données en entré  : \emph{Inputs}}
 Cette phase consistera aux traitement des valeurs manquantes et valeurs aberrantes mais aussi au nettoyage des données mal orthographiées lors de la saisie des données pour certaines attribues. 
 Commençons par  Expliquer les raisons de la présence des valeur manquantes , ainsi que les données aberrantes et la manière de les traiter
 \paragraph{}
@@ -383,7 +383,118 @@ valeurs proches en utilisant la distance de Leveinstein :\cite{LevStack}combiné
 ainsi qu'un nettoyage manuelle pour arranger les données à la fin de
 cette phase nous avons obtenus des données moyennement propres et bien
 nettoyer avec un entropie faible.
- \subsection{Analyse des données}\label{analyse-des-donnuxe9es}
+ \subsection{Données en sortie: \emph{Outputs}}
+
+ Dans cette partie nous préparerons notre ensemble de sortie en
+ construisant nos variables de sortie , celles-ci seront constituées à
+ l'aide des divers fonction qui nous aiderons à déterminer pour une année
+ si sur base des résultat que nous avons si un étudiant est passé en
+ première session, s'il a distingué ou bien s'il a échoué, nous
+ déterminerons enfin le pourcentage obtenu.
+ 
+ Notons que nous nous sommes butés à 2 grands problème concernant les
+ données obtenus et qui risquent de biaiser nos calculs ils constituent en fait le limites de ce travail 
+ \begin{enumerate}
+ 	\item Nous n'avons
+ 	pas pu obtenir le pourcentage final de certains étudiants ayant échouer
+ 	ou abandonner leurs études avant la fin de l'année académique , ces
+ 	étudiants qui après la seconde session sont AA (Assimilé aux Ajournées )
+ 	n'ont pas de pourcentage final pour palier à ce problème nous avons
+ 	remplacer cette valeur manquante par une valeur aléatoire choisie entre
+ 	40\% et 50\%   ce qui représente l'échec!
+ 	\item  Pour nous étudiant le
+ 	nombre des années académiques pour lequel nous avons le résultat n'est
+ 	pas le même pour certains étudiant nous avons des informations pour une 
+ 	année académique, d'autres pour 2 , etc. Pour palier à ce problème nous
+ 	avons utiliser des ration pour nous valeur de sortie qui consister à
+ 	diviser le nombre sur le nombre des année académiques que l'étudiant a
+ 	passée à la faculté.
+ \end{enumerate}:
+  Voici sur la figure \ref{tab:Output1} à  quoi ressemble notre ensemble d'apprentissage pour chaque année académique :
+\begin{table}
+	\centering
+	\begingroup % make the next setting local
+	\captionsetup{type=table} % here we want to caption a table
+	\caption{Sortie Pour Chaque Année Académique}
+	\label{tab:Output1}
+	\begin{tabular}{lrlrlrllllllr}
+		\toprule
+		{} &   ID &   YEAR &      PERC1 &  MENT1 &      PERC2 & MENT2 &   FAC & PROM &  Echec & Pass1erSession & Distinction &  PercFinal \\
+		\midrule
+		0 &   45 &  2013-2014 &        NaN &     AA &        NaN &   NaN &  FPSE &   L2 &   True &          False &       False &  43,000000 \\
+		1 &  215 &  2012-2013 &        NaN &    ADM &  63,099998 &     S &    FD &   L2 &  False &          False &       False &  63,099998 \\
+		2 &  343 &  2015-2016 &        NaN &     AA &  52,200001 &     A &  FSEG &   G2 &   True &          False &       False &  52,200001 \\
+		3 &  356 &  2015-2016 &        NaN &  ADSTM &  59,900002 &     S &  FSEG &   L2 &  False &          False &       False &  59,900002 \\
+		4 &  398 &  2012-2013 &  65,099998 &      S &        NaN &   NaN &  FSDC &   L2 &  False &           True &       False &  65,099998 \\
+		5 &  429 &  2013-2014 &        NaN &     AA &        NaN &     A &    FD &   G1 &   True &          False &       False &  41,000000 \\
+		6 &  474 &  2014-2015 &        NaN &     AA &        NaN &   NaN &    FD &   G3 &   True &          False &       False &  46,000000 \\
+		7 &  474 &  2015-2016 &  62,500000 &      S &        NaN &   NaN &    FD &   G3 &  False &           True &       False &  62,500000 \\
+		\bottomrule
+	\end{tabular}
+	\endgroup
+\end{table}
+ Nous avons ensuite constituer notre ensemble d'apprentissage finale en groupant ces données pour chaque année académique et en évaluant 
+ la moyenne des pourcentage obtenu à la fin de chaque année académique  et nous l'appellerons \textbf{\ac{CGPA} }par analogie avec le système anglophone, \emph{elle constituera notre variable de sortie principale}  nous l'accompagnerons de 3 autres variables entre autre :
+ \begin{itemize}
+ 	\item
+ 	DistinctionRatio : Le nombre de fois que l'étudiant a distingué
+ 	divisé par le nombre des années académique
+ 	\item
+ 	EchecRatio : Le nombre de fois que l'étudiant a échoué divisé par le
+ 	nombre des années académique
+ 	\item
+ 	PassAstSessionRatio : Le nombre de fois que l'étudiant est passée en
+ 	première session divisé par le nombre des années académique
+ \end{itemize}
+\begin{table}
+	\centering
+	\begingroup % make the next setting local
+	\captionsetup{type=table} % here we want to caption a table
+	\caption{Sortie Chaque étudiant avec des Ratio}
+	\label{tab:Output2}
+	\begin{tabular}{lrrrrrr}
+		\toprule
+		{} &   ID &       CGPA &  DistinctionRatio &  EchecRatio &  NADYEAR &  Pass1stSessionRatio \\
+		\midrule
+		0 &   45 &  43,000000 &                0, &         1,0 &         1, &                  0,0 \\
+		1 &  215 &  63,099998 &                0, &         0,0 &         1, &                  0,0 \\
+		2 &  343 &  52,200001 &                0, &         1,0 &         1, &                  0,0 \\
+		3 &  356 &  59,900002 &                0, &         0,0 &         1, &                  0,0 \\
+		4 &  398 &  65,099998 &                0, &         0,0 &         1, &                  1,0 \\
+		5 &  429 &  41,000000 &                0, &         1,0 &         1, &                  0,0 \\
+		6 &  474 &  54,250000 &                0, &         0,5 &         2, &                  0,5 \\
+		7 &  526 &  65,000000 &                0, &         0,0 &         1, &                  1,0 \\
+		\bottomrule
+	\end{tabular}
+	\endgroup
+\end{table}
+Nos 3 derniers ratio sont des nombres variant qui peuvent prendre ses
+différents valeurs :
+\begin{itemize}
+	\item 0 :signifie que l'étudiant a un ration de 0 
+	\item  1 :signifie ration: 1/1,2/2,3/3,4/4
+	\item  0.25 : 1/4
+	\item  0.3333: 1/3
+	\item  0.5:2/4 ou 1/2
+	\item 0.66666 :2/3
+	\item 0.75:3/4
+\end{itemize}
+ Nous allons appréhender ce problème en
+terme de classification donc nous allons affecter des lettre à ces
+ratio: 
+\begin{itemize}
+	\item 0: G
+	\item  1:A
+	\item  0.25 : F
+	\item  0.333:E
+	\item  0.5:D 
+	\item 0.666:C
+	\item 0.75:B
+\end{itemize}
+qui
+correspondent aux classes respectifs!
+Pour conclure cette analyse des données de sortie nous pouvons conclure que notre travail sera d'une part une tache de régression mais aussi d'une classification à multiples classes.
+ \section{Analyse des données}\label{analyse-des-donnuxe9es}
 \paragraph{}
 Cette phase comprend une analyse statistique bi-varié et uni-varié nous
 visualiserons les résultat à l'aide des graphiques . Dans cette partie
@@ -391,8 +502,7 @@ nous utiliserons beaucoup plus la statistique descriptives et la statistique inf
 Comme nous  pouvons le remarquer notre ensemble d'apprentissage
 comprend à la fois des données numériques (continues ) ainsi que des
 données discrètes catégories. voici comment nous procéderons 
-
-\subsubsection{Analyse Uni-Varié}
+\subsection{Analyse Uni-Varié}
 Dans cette partie nous effectuerons les statistiques descriptives pour chaque variable .
 \begin{enumerate}
 	\item
@@ -417,7 +527,7 @@ Dans cette partie nous effectuerons les statistiques descriptives pour chaque va
 \end{enumerate}
 Commençons par l'analyse des attributs numériques age et pourcentage à l' \ac{EXETAT} 
 \paragraph{L'AGE et Le Diplôme Pourcentage}
-Voici un bref aperçu des statistiques descriptives de ses variables  à la la figure la figure \ref{tab:DescribeData}
+Voici un bref aperçu des statistiques descriptives de ses variables  à la figure\ref{tab:DescribeData}
 \begin{table}
 	\centering
 	\begingroup % make the next setting local
@@ -442,7 +552,7 @@ Voici un bref aperçu des statistiques descriptives de ses variables  à la la f
 \end{table}
 \subparagraph{AGE}
 
-Nous avons calculer l'age en se basant sur la date de naissance et la date d'aujourd'hui.signalons que cet attribue disposait des valeurs manquantes au début et on était imputer par la moyenne , comme nous pouvons le voir à la la figure la figure \ref{tab:DescribeData}  nos étudiant disposent en moyenne d'un age de 24 ans avec une variance de 4,5 le moins âgé a 18 ans et le plus âgé a 59 ans.
+Nous avons calculer l'age en se basant sur la date de naissance et la date d'aujourd'hui.signalons que cet attribue disposait des valeurs manquantes au début et on était imputer par la moyenne , comme nous pouvons le voir à la figure\ref{tab:DescribeData}  nos étudiant disposent en moyenne d'un age de 24 ans avec une variance de 4,5 le moins âgé a 18 ans et le plus âgé a 59 ans.
 On peut aisément que l'age suit une distribution normale . 
 \begin{figure}[!htbp]
 	\centering
@@ -453,8 +563,8 @@ On peut aisément que l'age suit une distribution normale .
 	\caption{Graphiques de l'attribue age}
 \end{figure}
 \subparagraph{Pourcentage du diplôme}
-Après nettoyage et contrairement à la la figure la figure \ref{tab:MisisnV} on a constater qu'après nettoyage la moyenne est de 56,8 \% avec unn écart type de 5,7 le minimum de 50 \% et un maximum de 86\% .
-les graphiques représentent les informations sur l'age  son à la la figure la figure \ref{fig:Pourcentagea} et la figure la figure \ref{fig:Pourcentageb}
+Après nettoyage et contrairement à la figure\ref{tab:MisisnV} on a constater qu'après nettoyage la moyenne est de 56,8 \% avec unn écart type de 5,7 le minimum de 50 \% et un maximum de 86\% .
+les graphiques représentent les informations sur l'age  son à la figure\ref{fig:Pourcentagea} et la figure\ref{fig:Pourcentageb}
 \begin{figure}[!htbp]
 	\centering
 	\subfloat[Box-Plot du Pourcentage du diplome ]{\includegraphics[width=0.4\textwidth]{fig/dipomePourcentage.png}\label{fig:Pourcentagea}}
@@ -470,7 +580,7 @@ les graphiques représentent les informations sur l'age  son à la la figure la 
 	\caption[Short caption]{Distribution du sexe des étudiants }
 	\label{fig:SEXE}
 \end{figure}
-La  la figure la figure \ref{fig:SEXE} nous donne la  répartition de sexes dans notre ensemble d'apprentissage on peut aisément constater qu'il n'est pas si déséquilibre que ça!, le
+La  la figure\ref{fig:SEXE} nous donne la  répartition de sexes dans notre ensemble d'apprentissage on peut aisément constater qu'il n'est pas si déséquilibre que ça!, le
 genre est vraiment respecté avec 41\% dés nouveaux étudiant étant de
 sexe féminin.
 \subparagraph{le type d'école}
@@ -480,7 +590,7 @@ sexe féminin.
 	\caption[Short caption]{Différente statut de l'école de provenance }
 	\label{fig:SchoolStatus}
 \end{figure}
- Dans la la figure la figure \ref{fig:SchoolStatus} nous pouvons remarquer aisément que 29\% des étudiants
+ Dans la figure\ref{fig:SchoolStatus} nous pouvons remarquer aisément que 29\% des étudiants
 proviennent des écoles dites protestantes , 27\% viennent des écoles
 catholiques , 11\% des écoles privé , 15 des écoles publiques mais aussi
 il ya des étudiants venant des autodidactes , ceux provenant des écoles
@@ -494,7 +604,7 @@ Nos étudiant Proviennent des 33 écoles différentes:
 	\caption[Short caption]{l'option suivie à l'école secondaire }
 	\label{fig:Option_right}
 \end{figure}
-Sur la la figure la figure \ref{fig:Option_right} nous pouvons remarquer que la majeure partie des
+Sur la figure\ref{fig:Option_right} nous pouvons remarquer que la majeure partie des
 étudiants de notre études proviennent de la section pédagogique avec
 environ 28\% ensuite vienne la section commerciale et administrative
 avec 19\% , suivent sociale avec 13\%, scientifique bio-chimie avec 14
@@ -542,7 +652,7 @@ Voici comment elle se présente a la figure \ref{fig:FAC}:
  Nous remarquons la distribution des valeurs pour
 l'attribue faculté des étudiants: - FSGEG: 32,8\% , FSTA : 19,153\% , FD
 :19\% -,FSDC :16\% ,FM : 5\% ,FPSE : 4\% ,FT :3\%
-\subsubsection{Analyse Bi-variée}
+\subsection{Analyse Bi-variée}
 C'est une technique d'analyse statistique des données, consistant à
 découvrir la relation pouvant exister entre 2 variables dans le but de
 tester l'hypothèse d'association et de causalité entre 2 variables !Par
@@ -602,7 +712,7 @@ Signalons que python dispose des multiples librairies pour effectuer ces
 genres d'analyse et nous les utiliserons dans la suite
 \end{enumerate}
 Passons maintenant à l'analyser des proprement dite 
- Dans cette partie nous effectuerons une analyse bivariée
+ Dans cette partie nous effectuerons une analyse bi-variée
  entre les attribues en entrée et les attribues en sortie , pour une
  première approche nous effectuerons une analyse entre la faculté choisie
  et les différentes variables d'entres de notre ensemble d'apprentissage
@@ -710,13 +820,13 @@ Pour Plus des détails sur les distributions statistique
 	\caption[Short caption]{distribution des pourcentage au sein des différentes facultés } 
 \end{figure}
  \paragraph{Variables Catégorielles et Catégorielles}
- Pour ces genres de relation nous avons effectuer le test chi-carré , Dans le tableau \ref{tab:chi-Carrée} nous pouvons visualiser les  différentes valeurs et effectuer nos conclusions sur base de celle si.\\
+ Pour ces genres de relation nous avons effectuer le test chi-carré , Dans le tableau \ref{tab:chi-Carrée} nous pouvons visualiser les  différentes valeurs et effectuer nos conclusions sur base de celle ci.\\
  Notre hypothèse nulle H0 est du type : Il n'ya pas de relation entre la variable considéré et la faculté. 
  \begin{table}
  	\centering
  	\begingroup % make the next setting local
  	\captionsetup{type=table} % here we want to caption a table
- 	\caption{test chi carrée avec des différentes variables avec la faculté }
+ 	\caption{test chi carrée entre  nos  différentes variables et la faculté }
  	\label{tab:chi-Carrée}
  	\begin{tabular}{lllllr}
  		\toprule
@@ -742,3 +852,248 @@ Pour Plus des détails sur les distributions statistique
  	\item FAC-SCHOOLSTATUS :
  	il ya une relation de dépendance entre la section du diplôme et la faculté ce qui est logique car les étudiant en général se base sur leur option pour choisir leur option
  \end{enumerate}
+\paragraph{Analyse des données en entré Vs le CGPA}:\\
+Analysons Enfin les relations existants entre nos données en entré et notre variable principale de sortie le \ac{CGPA}: 
+comme à la partie précédente nous allons faire l'analyse Bi-varié à
+8 niveau mais au sein de chaque faculté et à la fin nous essayerons de voir l'analyse bi-varié entre nos 4 données de sorties
+\begin{enumerate}
+	\item CGPA-Diplôme Province : Pour voir la relation entre le CGPA
+	et la province d'origine de l'étudiant
+	\item CGPA-DIPPOURCENTAGE: Pour voir
+	la relation entre le CGPA et la pourcentage obtenu à \ac{EXETAT}
+	\item CGPA-AGE: Pour voir la relation entre l'age de l'étudiant et le CGPA
+	\item CGPA-FAC-DIPLOMEOPTION: Pour voir la relation entre le CGPA et l'option
+	du diplôme mais par rapport aux faculté choisie.
+	\item CGPA-FAC-SEXE: Pour
+	la relation avec le sexe des étudiants et le CGPA Obtenu.
+	\item  CGPA-FAC-SCHOOL: pour la relation entre l'école de provenance la fac 
+	\item GPA-FAC-SCOOLSTATUS : pour la relation entre le statut de l'école de la
+	FAC 
+	\item FAC-CGPA
+\end{enumerate}
+
+Nos allons représenter les résultats su des divers tableaux dans les pages qui suivent.
+\begin{table}
+	\begingroup % make the next setting local
+	\captionsetup{type=table} % here we want to caption a table
+	\caption{Analyse entre les données d'entre et la donnée de sortie le CGPA en Faculté de Médecine}
+	\label{tab:ANOVAMed}
+	\noindent
+	{\resizebox*{\textwidth}{\textheight}{%
+			\renewcommand{\arraystretch}{2}
+			\begin{tabularx}{\textwidth}{RRHJW}
+				\toprule\rowcolor{white}
+				\textbf{Variable}   & \textbf{Type}  & \textbf{P-value} & \textbf{Conclusion} &  \textbf{Commentaire}\\
+				\hline
+				\midrule
+				PERC   & Pearson-Corr & 0.45 P=2 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable\\ 
+				AGE   & Pearson-Corr & -0.26 P=6 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable , et comme le coefficient est négatif la corrélation es inverse\\
+				STATUS   & ANOVA 1-way & 2 10 e-5 &< à 0.05  rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie &  Nous pouvons aisément remarqué que les étudiants venant des écoles catholiques réussissent mieux en faculté de médecine avec une moyenne de 60 ensuite viennent ceux des écoles protestantes\\
+				SEXE   & ANOVA 1-way & 0.2 & >0.05 la moyenne du CGPA est la même Pour les hommes que pour les femmes  & le sexe n'as pas une influence considérable sur le CGPA bien que les filles ont des résultats légèrement meilleur  que les garçons en Faculté de médecine surtout en terme des distinctions \\
+				SCHOOL & ANOVA 1-way & 0.009 & <0.05 rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie  & Après analyse des box-plot  des  20 écoles dont 10 sont les plus représentes et 5 sont ceux qui on une grande moyenne et 5 ceux qui ont une faible moyenne on remarque que les étudiant provenant des écoles comme lycée sainte Ursule, mwanga, Bakanja ,ALfagiri, faraja,amani, n'échouent presque pas en faculté de médecine\\
+				OPTION &ANOVA 1-way &0.4 & >0.05 	on n'accepte pas l'hypothèse nulle immédiatement ,&  la moyenne est la même que pour certaines options  Bio-chimie, nutrition , agricole on la même ,mais certains Option on une moyenne plus élevé que d'autres Notre CGPA dépend aussi de l'option du diplôme \\
+				\bottomrule
+	\end{tabularx}}}
+\endgroup
+\end{table}
+\begin{table}
+	\centering
+	\begingroup % make the next setting local
+	\captionsetup{type=table} % here we want to caption a table
+	\caption{Analyse entre les données d'entre et la donnée de sortie le CGPA en Faculté de Technologie}
+	\label{tab:ANOVATech}
+	\noindent
+	{\resizebox*{\textwidth}{\textheight}{%
+			\renewcommand{\arraystretch}{2}
+			\begin{tabularx}{\textwidth}{RRHJW}
+				\toprule\rowcolor{white}
+				\textbf{Variable}   & \textbf{Type}  & \textbf{P-value} & \textbf{Conclusion} &  \textbf{Commentaire}\\
+				\hline
+				\midrule
+				PERC   & Pearson-Corr & 0.34P=2 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable\\ 
+				
+				AGE   & Pearson-Corr & -0.03 P=6 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable , et comme le coefficient est négatif la corrélation es inverse\\
+				
+				SEXE   & ANOVA 1-way & 0.081204 & >0.05 la moyenne du CGPA est la même Pour les hommes que pour les femmes  . Mais la faculté est plus maculine avec 85\% des Hommes et 15\% des Femmes de& le sexe n'as pas une influence considérable sur le CGPA bien que les filles ont des résultats légèrement meilleur  que les garçons en Faculté de médecine surtout en terme des distinctions \\
+				
+				PROVINCE   & ANOVA 1-way &0.07731&> à 0.05  On n'accepte pas H0 Automatiquement , Certaines catégories on la même Moyenne &  après analyse graphique on conclu Rapidement que les étudiants provenant de la province du sud Kivu sont plus performant en faculté de Technologie\\
+				
+				STATUS   & ANOVA 1-way & 3.12e-13&< à 0.05  rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie & Nous remarquons que les étudiant venant des écoles catholiques  réussissent mieux en faculté de Techno , ensuite les autodidacte ,ensuite ceux des écoles protestantes\\
+				
+				SCHOOL & ANOVA 1-way & 3.939e-11& <0.05 rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie  & On remarques sur la figure que les grandes écoles connus on une bonne moyenne et un bon maximum de CGPA comme le lycée Amani, l'ITIG , l'ITFM,etc..\\
+				
+				OPTION &ANOVA 1-way &1.05e-23&  <0.05 rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie  ,& Comme nous pourrions s'y attendre les options techniques et Scientifiques viennent en tête de liste et en bas de l'échelle viennent  les options littéraires et commerciales \\
+				
+				\bottomrule
+	\end{tabularx}}}
+	\endgroup
+\end{table}
+\begin{table}
+	\centering
+	\begingroup % make the next setting local
+	\captionsetup{type=table} % here we want to caption a table
+	\caption{Analyse entre les données d'entre et la donnée de sortie le CGPA en Faculté de d'économie}
+	\label{tab:ANOVAEco}
+	{\resizebox*{\textwidth}{\textheight}{%
+			\renewcommand{\arraystretch}{2}
+			\begin{tabularx}{\textwidth}{RRHJW}
+				\toprule\rowcolor{white}
+				\textbf{Variable}   & \textbf{Type}  & \textbf{P-value} & \textbf{Conclusion} &  \textbf{Commentaire}\\
+				\hline
+				\midrule
+				PERC   & Pearson-Corr & 0.236P=2 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable\\ 
+				 
+				AGE   & Pearson-Corr & -0.08 P=6 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable , et comme le coefficient est négatif la corrélation es inverse\\
+				 
+				SEXE   & ANOVA 1-way & 0.585536 & >0.05 la moyenne du CGPA est la même Pour les hommes que pour les femmes. La faculté a 54\% des Hommes et 46\% des Femmes & le sexe n'as pas une influence considérable sur le CGPA . Les deux catégorie ont une même moyenne\\
+				 
+				PROVINCE   & ANOVA 1-way &0.07731&> à 0.05  On n'accepte pas H0 Automatiquement , Certaines catégories on la même Moyenne &  après analyse graphique on conclu Rapidement que les étudiants provenant de la province du Nord Kivu sont plus performant en faculté d'economie , ensuite vient la province du Sud-Kivu, en bas de l'échelle nous trouvons la province du Kasai\\
+				 
+				STATUS   & ANOVA 1-way & 2.21e-13&< à 0.05  rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie & Nous remarquons que les étudiant venant des écoles catholiques  réussissent mieux en faculté d'économie, ensuite les autodidacte ,ensuite ceux des écoles protestantes\\
+				 
+				SCHOOL & ANOVA 1-way & 2.939e-11& <0.05 rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie  & On remarques sur la figure que les grandes écoles connus on une bonne moyenne et un bon maximum de CGPA comme le lycée Amani, l'ITIG , l'ITFM, etc..\\
+				 
+				OPTION &ANOVA 1-way &3.53e-12&  <0.05 rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie  ,& Contrairement aux idées réussies ne les options techniques et Scientifiques viennent en tête de liste ensuite vienne les options économies , commerciale et latin philo .En bas de l'échelle vienne les options sociales et pédagogiques \\
+				 
+				\bottomrule
+	\end{tabularx}}}
+	\endgroup
+\end{table}
+\begin{table}
+	\centering
+	\begingroup % make the next setting local
+	\captionsetup{type=table} % here we want to caption a table
+	\caption{Analyse entre les données d'entre et la donnée de sortie le CGPA en Faculté de Droit}
+	\label{tab:ANOVADroit}
+	{\resizebox*{\textwidth}{\textheight}{%
+			\renewcommand{\arraystretch}{2}
+			\begin{tabularx}{\textwidth}{RRHJW}
+				\toprule\rowcolor{white}
+				\textbf{Variable}   & \textbf{Type}  & \textbf{P-value} & \textbf{Conclusion} &  \textbf{Commentaire}\\
+				 \hline
+				 \midrule
+				PERC   & Pearson-Corr & 0.22P=2 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable\\ 
+				 
+				AGE   & Pearson-Corr & 0.11 4 P=6 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable , et comme le coefficient est négatif la corrélation es inverse\\
+				 
+				SEXE   & ANOVA 1-way &0.745 & >0.05 la moyenne du CGPA est la même Pour les hommes que pour les femmes. La faculté a 60\% des Hommes et 40\% des Femmes & le sexe n'as pas une influence considérable sur le CGPA . Les deux catégorie ont une même moyenne\\
+				 
+				PROVINCE   & ANOVA 1-way &0.187473&>0.05 On accepte pas automatiquement H0 on observe de plus prêt & Nous remarquons que le moyenne du CGPA est la même pour les provinces suivantes : Nord-Kivu, Sud-Kivu, Kinshasa , Orientale ,Maniema, les distinctions proviennent beaucoup plus des provinces du nord-Kivu, sud Kivu et Kinshasa.\\
+				 
+				STATUS   & ANOVA 1-way &	1.20e-08& >0.05 la moyenne pour les différentes statut n'est pas la même  &  Nous remarquons que les celles étudiants qui distinguent c'est ceux provenant des écoles protestants et catholiques, en queue de la liste se trouve les autodidacte\\
+				 
+				SCHOOL & ANOVA 1-way &2.5e-10& < 0.05 la moyenne n'est pas la même  & CGPA dépend de cette valeurs car certains écoles échouent lamentablement d'autres pas\\
+				 
+				OPTION &ANOVA 1-way &7.25e-10&  < 0.05 la moyenne n'est pas la même  & Voila comme on pourrait s'y attendre l'option latin philo est en tête de liste les options commerciale , pédagogie , sociale , math-physique ,mec sont en bas de l'échelle \\
+				 
+				\bottomrule
+	\end{tabularx}}}
+	\endgroup
+\end{table}
+
+\begin{table}
+	\centering
+	\begingroup % make the next setting local
+	\captionsetup{type=table} % here we want to caption a table
+	\caption{Analyse entre les données d'entre et la donnée de sortie le CGPA en Faculté de Santé}
+	\label{tab:ANOVASante}
+	{\resizebox*{\textwidth}{\textheight}{%
+			\renewcommand{\arraystretch}{2}
+			\begin{tabularx}{\textwidth}{RRHJW}
+				\toprule\rowcolor{white}
+				\textbf{Variable}   & \textbf{Type}  & \textbf{P-value} & \textbf{Conclusion} &  \textbf{Commentaire}\\
+				\hline
+				\midrule
+				PERC   & Pearson-Corr & 0.236 P=2 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable\\ 
+				 
+				AGE   & Pearson-Corr & -0.06 P=6 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable , et comme le coefficient est négatif la corrélation es inverse\\
+				 
+				SEXE   & ANOVA 1-way & 0.17 & >0.05 la moyenne du CGPA est la même Pour les hommes que pour les femmes. La faculté a 40\% des Hommes et 60\% des Femmes & le sexe n'as pas une influence considérable sur le CGPA . Les deux catégorie ont une même moyenne\\
+				 
+				PROVINCE   & ANOVA 1-way &0.089&> à 0.05  On n'accepte pas H0 Automatiquement , Certaines catégories on la même Moyenne &  La tendance est inversée les étudiant de la province du sud et nord kivu échouent plus en faculté de santé, les distinctions proviennent de la province orientale et du sud Kivu.\\
+				 
+				STATUS   & ANOVA 1-way & 8 10e-5&< à 0.05  rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie & Nous remarquons que les étudiant venant des écoles catholiques , protestantes en tête de liste , mais les écoles musulmanes , privé , et autodidacte viennent en bas de l'échelle\\
+				 
+				SCHOOL & ANOVA 1-way & 0.00223& <0.05 rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie  & Les étudiant provenant des écoles suivantes échouent rarement faculté de santé : Maendeleo, sainte ursule , Bakandja.\\
+				 
+				OPTION &ANOVA 1-way &1e-6&  <0.05 rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie  ,& Les Options scientifiques , techniques réussissent mieux au sein de la faculté de santé \\
+				 
+				\bottomrule
+		\end{tabularx}}}
+		\endgroup
+	\end{table}
+	
+	\begin{table}
+		\centering
+		\begingroup % make the next setting local
+		\captionsetup{type=table} % here we want to caption a table
+		\caption{Analyse entre les données d'entre et la donnée de sortie le CGPA en Faculté de Psychologie}
+		\label{tab:ANOVAPscyco}
+		{\resizebox*{\textwidth}{\textheight}{%
+				\renewcommand{\arraystretch}{2}
+				\begin{tabularx}{\textwidth}{RRHJW}
+					\toprule\rowcolor{white}
+					\textbf{Variable}   & \textbf{Type}  & \textbf{P-value} & \textbf{Conclusion} &  \textbf{Commentaire}\\
+					 \hline
+					 \midrule
+					PERC   & Pearson-Corr & 0.32 P=2 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable\\ 
+					 
+					AGE   & Pearson-Corr & 0.09 P=6 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable , et comme le coefficient est négatif la corrélation es inverse\\
+					 
+					SEXE   & ANOVA 1-way &0.603 & >0.05 la moyenne du CGPA est la même Pour les hommes que pour les femmes. La faculté a 48\% des Hommes et 52\% des Femmes & le sexe n'as pas une influence considérable sur le CGPA . Les deux catégorie ont une même moyenne\\
+					 
+					PROVINCE   & ANOVA 1-way &0.585&> à 0.05  On n'accepte pas H0 Automatiquement , Certaines catégories on la même Moyenne &  Nous remarquons que le moyenne du CGPA est la même pour les provinces suivantes : Nord-Kivu, Sud-Kivu, Kinshasa , Orientale ,Maniema, les distinctions proviennent beaucoup plus des provinces du nord-Kivu, sud-Kivu .\\
+					 
+					STATUS   & ANOVA 1-way & 0.017&< à 0.05  rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie & les étudiants issue des écoles privées catholiques, et protestantes obtiennent des bonnes notes au sein de la faculté de Pycho, on remarque que ceux issues des écoles catholiques échouent moins\\
+					 
+					SCHOOL & ANOVA 1-way & 0.000061& <0.05 rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie  & Les étudiant provenant des écoles suivantes échouent rarement faculté de psychologie : Maendeleo, sainte ursule , Bakandja ,amani , meta Anuarite.\\
+					 
+					OPTION &ANOVA 1-way &0.000214&  <0.05 rejet de Ho les moyenne ne sont pas les même au sein de chaque catégorie  ,& contrairement aux idées réussies ceux qui réussissent plus en faculté de psychologie sont les étudiant issues des section scientifiques ensuite vient 'option latin philo et en 4ème position l'option pédagogique , signalons su'aucun étudiant issu de commerciale n'as réussi au sein de cette faculté \\
+					 
+					\bottomrule
+		\end{tabularx}}}
+		\endgroup
+	\end{table}
+	
+	\begin{table}
+		\centering
+		\begingroup % make the next setting local
+		\captionsetup{type=table} % here we want to caption a table
+		\caption{Analyse entre les données d'entre et la donnée de sortie le CGPA en Faculté de Théologie}
+		\label{tab:ANOVATheo}
+		{\resizebox*{\textwidth}{\textheight}{%
+				\renewcommand{\arraystretch}{2}
+				\begin{tabularx}{\textwidth}{RRHJW}
+					\toprule\rowcolor{white}
+					\textbf{Variable}   & \textbf{Type}  & \textbf{P-value} & \textbf{Conclusion} &  \textbf{Commentaire}\\
+					 \hline
+					 \midrule
+					PERC   & Pearson-Corr & 0.14P=2 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable\\ 
+					 
+					AGE   & Pearson-Corr & 0.14 P=6 10e-5 & Pas de relation avec Le CGPA &  le coefficient étant inférieur à  0.5 conclu qu'il n'ya pas de corrélation considérable , et comme le coefficient est négatif la corrélation es inverse\\
+					 
+					SEXE   & ANOVA 1-way &0.745 & >0.05 la moyenne du CGPA est la même Pour les hommes que pour les femmes. La faculté a 80\% des Hommes et 20\% des Femmes & le sexe n'as pas une influence considérable sur le CGPA . Les deux catégorie ont une même moyenne\\
+					 
+					PROVINCE   & ANOVA 1-way &0.033&< à 0.05  nous pouvons conclure que la moyenne n'est pas la même au sein de chaque faculté &  Les résultats remarquables viennent des provinces du sud-Kivu, du nord-Kivu et de la province orientale\\
+					 
+					STATUS   & ANOVA 1-way &0.717429& >0.05 On accepte pas automatiquement H0 on observe de plus prêt   &  Contrairement aux idées réussies les étudiant On serait tenter de dire que les étudiants issues des écoles protestantes réussissent mieux au sein de cette faculté mais les statistiques nous prouvent le contraire\\
+					 
+					SCHOOL & ANOVA 1-way &0.156736& >0.05 On accepte pas automatiquement H0 on observe  & CGPA dépend de cette valeurs car certains écoles échouent lamentablement d'autres pas\\
+					 
+					OPTION &ANOVA 1-way &0.356&  .05 On accepte pas automatiquement H0 on observe& Les échecs sont des cas rare au sein de cette faculté , et que tous le monde réussi mieux \\
+					 
+					\bottomrule
+		\end{tabularx}}}
+		\endgroup
+	\end{table}
+\newpage 
+\section{Conclusion}
+Nous avons à présent notre ensemble d'apprentissage avec nos variables en entrée et les variables en sortie bien nettoyées, nous avions d'analysé 
+les corrélations existantes entre les variables d'entrées le choix de la faculté , ensuite celles existantes avec le CGPA notre variable principale !
+\paragraph{}
+Dans la première phase de l'analyse bi-varié nous avons pu conclure que tous nos variables avaient une influence  sur le choix de la Faculté;
+par exemple les femmes ne choisissent pas les facultés de Technologie et Théologie plus fréquemment, les étudiant issus des sections scientifiques et techniques s'orientent plus en faculté de technologie ,les étudiant les plus agés sont en faculté de théologie, le moins agés sont en faculté de médecine, ceux avec un grand pourcentage à l'\ac{EXETAT} sont en faculté de Médecine et technologie.
+\paragraph{}
+Mais après l'analyse des ces données face à notre variable de sortie le CGPA celle qui symbolise le réussite d'un étudiant au sein d'une faculté nous avons pu remarque avec certitude que certaines variables n'influent à rien sur le CGPA comme le pourcentage obtenu à l'\ac{EXETAT}  ,l'age ainsi que le sexe des étudiant!
+c'est pourquoi lors de l'élaboration de  notre modèle d'apprentissage ses variables ne seront pas considérés lors de la constitution de notre ensemble d'apprentissage surtout pour la prédiction du CGPA. \\
+Nous passons maintenant au prochain chapitre consistant à l'élaboration de notre ensemble d'apprentissage et notre modèle de prédiction  pour chaque faculté.

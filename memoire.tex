@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
+\usepackage{sectsty}
 \usepackage{subfig}
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
@@ -21,7 +22,23 @@ sorting=none]{biblatex}
 \usepackage{caption}
 \usepackage{booktabs}
 \usepackage{multicol}
+\usepackage{makecell}
+\usepackage{array,booktabs,tabularx}
+\usepackage{microtype}
+% for making the table looks goods
+\usepackage{lscape}
+\usepackage[table]{xcolor}
+\definecolor{skyblue}{RGB}{150,194,255}
+\definecolor{darkblue}{RGB}{2,40,94}
 \newcommand\litem[1]{\item{\bfseries #1,\enspace}}
+\usepackage[margin=2.5cm,left=2.5cm,
+top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
+\allsectionsfont{\color{darkblue}}
+\newcolumntype{R}{>{\leavevmode\ignorespaces\rmfamily\bfseries}p{2cm}}%
+\newcolumntype{H}{>{\leavevmode\ignorespaces\raggedright\arraybackslash\rmfamily}X}%
+\newcolumntype{J}{>{\leavevmode\ignorespaces\rmfamily}X}%
+\newcolumntype{W}{>{\leavevmode\ignorespaces\raggedleft\arraybackslash\rmfamily}X}%
+\rowcolors{2}{blue!05}{skyblue!05}
 \bibliography{bib/litterature.bib}{}
 \addbibresource{bib/litterature.bib}\newpage\cleardoublepage
 \begin{document}
