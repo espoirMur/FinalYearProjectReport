@@ -1,0 +1,118 @@
+\chapter{Élaboration  et évaluation du modèle de prédiction }
+Tous au long de ce chapitre nous allons entrainer nos algorithmes de prédiction avec des données provenant de chaque faculté et essayerons de prédire le CGPA, nous  avons utiliser des algorithmes présenté au chapitre premier pour entrainer nos modèles de prédiction.
+Pour choisir l'algorithme à utiliser nous somme basée sur la documentation officielle de la librairie scikit-learn \cite{pedregosa2011scikit} qui nous a fourni l'infographie sur la figure \ref{fig:skLearn1} pour le choix des algorithmes. \\
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fig/sckikLearnCheatSheet.png}
+	\caption[Short caption]{sckit-Learn Algorithm cheat sheet }
+	\label{fig:skLearn1}
+\end{figure} 
+
+Vu que nous disposons de moins de 100000 instances pour nos ensemble d'apprentissage et vu que notre tache était celui de prédire une variable continue (Une régression )  nous avions décidé d'entrainer les algorithmes  suivantes :
+\begin{enumerate}
+	\item Ridge Régression
+	\item Elastic Net Régression
+	\item Lasso Régression
+	\item \ac{SVR} avec Kernel Linéaire
+	\item  \ac{SVR} avec Kernel Gaussien 
+\end{enumerate}
+Les 3 premiers modèles sont des versions issues de la régularisation de la régression linéaire vu au chapitre 1  et qui conviennent bien pour des ensembles d'apprentissages relativement petits , le 2 derniers sont une adaptation du \ac{SVM} pour la régression.\\
+Notons que toutes ses librairies sont bien implémentées et optimisées dans scikit-learn.
+Tous au long de ce chapitre nous avions suivie les étapes suivantes  sur la figure \ref{fig:predictiveModelBuilding}:
+ \begin{enumerate}
+ \item Préparation des données :
+ \begin{itemize}
+ 	\item  Encodage One Hot
+ 	\item  Normalisation
+ 	\item  Échantillonnage
+ \end{itemize}
+\item Exécution des algorithmes
+\item évaluation 
+   \begin{itemize}
+  	\item  Évaluation sur l'ensemble d'apprentissage (training set)
+  	\item  Validation croisée sur l'ensemble d'apprentissage
+  	\item  Évaluation sur l'ensemble d'évaluation (test set) 
+  \end{itemize}
+\item Amélioration des modèles par les méthodes d'ensembles
+\item Évaluation du modèle finale
+ \end{enumerate}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fig/ModelBuilding.png}
+	\caption[Short caption]{étapes à suivre pour l'élaboration du modèle d'apprentissage }
+	\label{fig:predictiveModelBuilding}
+\end{figure} 
+\section {Préparation des données pour l'exécution des algorithmes } 
+Dans cette partie nous expliquerons comment s'est passé la préparation des nos données , rappelons que notre ensemble d'apprentissage finale dispose de 4 attribues et notre valeur à prédire :
+\begin{enumerate}
+	\item  SCHOOLNAME : de nature catégorielle (string)
+	\item  OPTION : de nature catégorielle (string)
+	\item  DIPPERC : de nature continue (float)
+	\item  CGPA : de nature continue (float)
+\end{enumerate}
+Comme l'a souligné \cite{OneHotEncoding} la librairie scikit learn ne travaille qu'avec les variables numériques , c'est pourquoi nous avions décider de transformer nos variables catégorielles les chaines de caractères en variables numériques en utilisant la technique du \emph{\textbf{One Hot encoding}} 
+\subsection{Encodage des Variables One Hot }
+Un encodage one-hot consiste à représenter des états en utilisant pour chacun une valeur dont la représentation binaire n'a qu'un seul chiffre 1.
+
+On peut définir une fonction d'encodage one-hot comme étant la fonction qui prend en entrée un vecteur  z et qui redéfinit en sortie la plus grande valeur de  z à 1 et toutes autres valeurs de  z à 0.
+L'avantage principal de cet encodage est que pour passer d'un état à un autre, seules deux transitions sont nécessaires : un chiffre passe de 1 à 0, un autre de 0 à 1. Son inconvénient est qu'il faut au minimum n bits pour représenter n états, ce qui conduit à une augmentation linéaire du nombre de chiffres par rapport au nombre d'états. Un encodage utilisant toutes les valeurs binaires existantes a quant à lui une augmentation logarithmique du nombre de chiffres.
+
+Pour notre ensemble , après notre encodage nous pouvons aisément remarquer que notre ensemble d'apprentissage vient de passer de (4715, 4 )à (4715 , 647)  dimensions.
+Mais ces dimension restent raisonnables pour un projet de machine Learning. 
+\subsection{Normalisation  } 
+Nous avions ensuite normaliser nos données pour les variables numérique en divisant le pourcentage du diplôme d'état par 100 et celui du CGPA,ceci pour permettre une exécution rapide de nos algorithmes. 
+\subsection{Échantillonnage  \cite{statBook1} } 
+Pour commencer notre entrainement nous avions échantillonner nos donnes pour constituer un ensemble d'apprentissage (Training set), et un ensemble d'évaluation du modèle (test set). Notre Training set était constituer de 80 \% de nos données et les 20 autres pour cent ont constitué notre ensemble d'évaluation.
+Pour ce faire nous avions utilisé un échantillonnage stratifié.
+Lorsqu'on utilise l'échantillonnage stratifié, on divise la population en groupes homogènes (appelés strates), qui sont mutuellement exclusifs, puis on sélectionne à partir de chaque strate des échantillons indépendants. On peut utiliser n'importe quelle des méthodes d'échantillonnage  pour sélectionner l'échantillon à l'intérieur de chaque strate. La méthode d'échantillonnage peut varier d'une strate à une autre. Lorsqu'on utilise l'échantillonnage aléatoire simple pour sélectionner l'échantillon à l'intérieur de chaque strate, on appelle le plan d'échantillonnage un plan d'échantillonnage aléatoire simple stratifié. On peut stratifier avant l'échantillonnage une population au moyen de toute variable dont on dispose pour la totalité des unités , pour notre étude nous avions utilisé la variable \textbf{EchecRatio}.
+
+A la fin de cette phase nous avions pu obtenir un ensemble d'apprentissage (Training Set) et Un ensemble d'évaluation (Test Set )
+
+\section {Élaboration et Évaluation du Modèle de Prédiction au sein de Chaque faculté} 
+Dans cette section nous allons entrainer les différents algorithmes de prédictions avec les données de issue de chaque faculté et ensuite nous évaluerons le modèles sur les 2 ensemble.
+
+Mais avant d'attaquer l'entrainement de nos modèle nous expliquerons nos métriques d'évaluations.
+\subsection{Techniques D'évaluation} 
+\subsubsection{\ac{RMSE} \cite{ProbaStat} }
+C'est la racine carrée de la somme des carrées des différences entres les valeurs exactes et celles prédite par un modèle de prédiction pour chaque élément d'un ensemble d'apprentissage .
+Il se donne par la formule suivante  :
+
+ $RMSE=\sqrt{\frac{\sum _{=1}^{N}{\left[{h}_{\theta}\left({x}^{(i)}\right) - {y}^{(i)}\right]}^2} {N}}$
+ 
+ Il constituera notre métrique d'évaluation pour tous nos modèles.
+\subsubsection{Validation Croisé  \cite{CrossValidation}}
+La validation croisée (« cross-validation ») est une méthode d’estimation de fiabilité d’un modèle fondé sur une technique d’échantillonnage. En fait, il y a au moins trois techniques de validation croisée : « test set validation » ou « holdout method », « k-fold cross-validation » et \ac{LOOCV} .
+\begin{itemize}
+	\item La première méthode est très simple, il suffit de diviser l'échantillon de taille n en deux sous échantillons, le premier d'apprentissage (communément supérieur à 60 \% de l'échantillon) et le second de test. Le modèle est bâti sur l'échantillon d'apprentissage et validé sur l'échantillon de test. L'erreur est estimée en calculant un test, une mesure ou un score de performance du modèle sur l'échantillon de test, par exemple l'erreur quadratique moyenne.
+	\item Dans la seconde, on divise l'échantillon original en k échantillons, puis on sélectionne un des k échantillons comme ensemble de validation et les (k-1) autres échantillons constitueront l'ensemble d'apprentissage. On calcule comme dans la première méthode le score de performance. Puis on répète l'opération en sélectionnant un autre échantillon de validation parmi les (k-1) échantillons qui n'ont pas encore été utilisés pour la validation du modèle. L'opération se répète ainsi k fois pour qu'en fin de compte chaque sous-échantillon ait été utilisé exactement une fois comme ensemble de validation. La moyenne des k erreurs quadratiques moyennes est enfin calculée pour estimer l'erreur de prédiction. 
+	\item La troisième méthode est un cas particulier de la deuxième méthode où k=n, c'est-à-dire que l'on apprend sur (n-1) observations puis on valide le modèle sur la énième observation et l'on répète cette opération n fois . 
+\end{itemize}
+
+Tous au long de ce chapitre nous avions utilisé les 2 premières techniques , nous n'avions pas utiliser le 3 ème car elle est trop gourmande  en terme de ressource(temps et mémoire) 
+
+Nous pouvons maintenant attaquer l'entrainement des modèles au sein de chaque faculté  :
+\subsubsection{Résultat des différents algorithmes par faculté}
+Le tableau qui va suivre décrira les différentes algorithmes que nous avions entrainer pour les données de chaque faculté , chaque modèles dispose des paramètres ainsi que des différentes erreurs.
+
+\begin{figure}
+	\centering
+	\begin{tabular}{|l|l|l|l|}\hline
+		\multirow{10}{*}{numeric literals} & \multirow{5}{*}{integers} & in decimal & \verb|8743| \\ \cline{3-4}
+		& & \multirow{2}{*}{in octal} & \verb|0o7464| \\ \cline{4-4}
+		& & & \verb|0O103| \\ \cline{3-4}
+		& & \multirow{2}{*}{in hexadecimal} & \verb|0x5A0FF| \\ \cline{4-4}
+		& & & \verb|0xE0F2| \\ \cline{2-4}
+		& \multirow{5}{*}{fractionals} & \multirow{5}{*}{in decimal} & \verb|140.58| \\ \cline{4-4}
+		& & & \verb|8.04e7| \\ \cline{4-4}
+		& & & \verb|0.347E+12| \\ \cline{4-4}
+		& & & \verb|5.47E-12| \\ \cline{4-4}
+		& & & \verb|47e22| \\ \cline{1-4}
+		\multicolumn{3}{|l|}{\multirow{3}{*}{char literals}} & \verb|'H'| \\ \cline{4-4}
+		\multicolumn{3}{|l|}{} & \verb|'\n'| \\ \cline{4-4}          %% here
+		\multicolumn{3}{|l|}{} & \verb|'\x65'| \\ \cline{1-4}        %% here
+		\multicolumn{3}{|l|}{\multirow{2}{*}{string literals}} & \verb|"bom dia"| \\ \cline{4-4}
+		\multicolumn{3}{|l|}{} & \verb|"ouro preto\nmg"| \\ \cline{1-4}          %% here
+	\end{tabular}
+\end{figure}
+

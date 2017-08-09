@@ -33,6 +33,10 @@ sorting=none]{biblatex}
 \newcommand\litem[1]{\item{\bfseries #1,\enspace}}
 \usepackage[margin=2.5cm,left=2.5cm,
 top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
+% for mutil level tables 
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{colortbl}
 \allsectionsfont{\color{darkblue}}
 \newcolumntype{R}{>{\leavevmode\ignorespaces\rmfamily\bfseries}p{2cm}}%
 \newcolumntype{H}{>{\leavevmode\ignorespaces\raggedright\arraybackslash\rmfamily}X}%
@@ -54,5 +58,6 @@ top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
 \input{text/Methodologie_CRISP.tex}\cleardoublepage
 \input{text/secondChapiter.tex}\cleardoublepage
 \input{text/chapter3.tex}\cleardoublepage
+\input{text/chapter4.tex}\cleardoublepage
 \printbibliography
 \end{document}

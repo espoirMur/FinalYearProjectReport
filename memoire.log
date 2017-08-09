@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  23 JUL 2017 15:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  9 AUG 2017 22:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1000,6 +1000,13 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen164
 \Gm@dimlist=\toks37
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip82
+\multirow@cntb=\count335
+\multirow@dima=\skip83
+\bigstrutjot=\dimen165
+)
 Package biblatex Info: Trying to load language 'french'...
 Package biblatex Info: ... file 'french.lbx' found.
 
@@ -1010,32 +1017,32 @@ File: french.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count335
-\@quotereset=\count336
+\@quotelevel=\count336
+\@quotereset=\count337
 (./memoire.aux)
 \openout1 = `memoire.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Info: Redefining \degres on input line 44.
-LaTeX Info: Redefining \dots on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Info: Redefining \degres on input line 48.
+LaTeX Info: Redefining \dots on input line 48.
 Package frenchb.ldf Info: Setting StandardItemizeEnv=true for
 (frenchb.ldf)             compatibility with enumitem package,
-(frenchb.ldf)             reported on input line 44.
+(frenchb.ldf)             reported on input line 48.
 Package frenchb.ldf Info: Setting StandardEnumerateEnv=true for
 (frenchb.ldf)             compatibility with enumitem package,
-(frenchb.ldf)             reported on input line 44.
-LaTeX Info: Redefining \up on input line 44.
+(frenchb.ldf)             reported on input line 48.
+LaTeX Info: Redefining \up on input line 48.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
@@ -1070,21 +1077,27 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Invalid format of field 'date' 
 (biblatex)                - Invalid format of field 'date'.
 
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'OneHotEncoding':
+(biblatex)                - Invalid format of field 'date' 
+(biblatex)                - Invalid format of field 'date'.
+
 )
-Package biblatex Info: Reference section=0 on input line 44.
-Package biblatex Info: Reference segment=0 on input line 44.
+Package biblatex Info: Reference section=0 on input line 48.
+Package biblatex Info: Reference segment=0 on input line 48.
  (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count337
-\scratchdimen=\dimen165
+\scratchcounter=\count338
+\scratchdimen=\dimen166
 \scratchbox=\box58
-\nofMPsegments=\count338
-\nofMParguments=\count339
+\nofMPsegments=\count339
+\nofMParguments=\count340
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count340
-\MPscratchDim=\dimen166
-\MPnumerator=\count341
-\makeMPintoPDFobject=\count342
+\MPscratchCnt=\count341
+\MPscratchDim=\dimen167
+\MPnumerator=\count342
+\makeMPintoPDFobject=\count343
 \everyMPtoPDFconversion=\toks39
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1106,7 +1119,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 44.
+LaTeX Info: Redefining \microtypecontext on input line 48.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1263,7 +1276,7 @@ File: fig/OverfiittingLogistic.png Graphic file (type png)
 Package pdftex.def Info: fig/OverfiittingLogistic.png used on input line 135.
 (pdftex.def)             Requested size: 227.62206pt x 90.55946pt.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 156--49
+Underfull \hbox (badness 10000) in paragraph at lines 156--53
 
  []
 
@@ -1816,7 +1829,7 @@ Underfull \hbox (badness 5622) in paragraph at lines 928--928
  []
 
 
-LaTeX Warning: Float too large for page by 38.99953pt on input line 930.
+LaTeX Warning: Float too large for page by 39.00291pt on input line 930.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 959--959
@@ -2223,8 +2236,42 @@ Underfull \hbox (badness 1199) in paragraph at lines 1086--1086
 
 LaTeX Warning: Float too large for page by 39.0055pt on input line 1088.
 
-[54] [55] [56] [57] [58] [59] [60] [61]) [62]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 57.
+[54] [55] [56] [57] [58] [59] [60] [61]) [62] (./text/chapter4.tex
+Chapitre 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--4
+
+ []
+
+<fig/sckikLearnCheatSheet.png, id=288, 3651.35571pt x 2276.505pt>
+File: fig/sckikLearnCheatSheet.png Graphic file (type png)
+
+<use fig/sckikLearnCheatSheet.png>
+Package pdftex.def Info: fig/sckikLearnCheatSheet.png used on input line 7.
+(pdftex.def)             Requested size: 227.62206pt x 141.89911pt.
+Package acronym Info: Label `acro:SVR' newly defined as it shall be overridden
+although it is yet undefined on input line 17.
+Package acronym Info: Label `acro:SVM' newly defined as it shall be overridden
+although it is yet undefined on input line 20.
+ [63
+
+
+ <./fig/sckikLearnCheatSheet.png>]
+<fig/ModelBuilding.png, id=293, 730.73pt x 408.52625pt>
+File: fig/ModelBuilding.png Graphic file (type png)
+
+<use fig/ModelBuilding.png>
+Package pdftex.def Info: fig/ModelBuilding.png used on input line 42.
+(pdftex.def)             Requested size: 227.62206pt x 127.25272pt.
+ [64 <./fig/ModelBuilding.png>] [65]
+Package acronym Info: Label `acro:RMSE' newly defined as it shall be overridden
+
+although it is yet undefined on input line 77.
+Package acronym Info: Label `acro:LOOCV' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 85.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 101.
+
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -2233,31 +2280,31 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-Overfull \hbox (0.19543pt too wide) in paragraph at lines 58--58
+) [66] [67]
+Overfull \hbox (0.19543pt too wide) in paragraph at lines 63--63
 []\T1/cmr/m/n/12 (-20) SHARP SIGHT \T1/cmr/m/sc/12 (-20) LABS\T1/cmr/m/n/12 (-2
 0) . \T1/cmr/m/it/12 (-20) What is the dif-fe-rence bet-ween ma-chine lear-ning
 ,statistics,and
  []
 
 
-Overfull \hbox (25.444pt too wide) in paragraph at lines 58--58
+Overfull \hbox (25.444pt too wide) in paragraph at lines 63--63
 \T1/cmtt/m/n/12 com / difference­machine­learning­statistics­data­mining /
  ?utm _ content =
  []
 
-[63
+[68
 
 
 ]
-Overfull \hbox (7.29774pt too wide) in paragraph at lines 58--58
+Overfull \hbox (7.29774pt too wide) in paragraph at lines 63--63
 []\T1/cmr/m/n/12 (-20) SUNIL \T1/cmr/m/sc/12 (-20) RAY\T1/cmr/m/n/12 (-20) . \T
 1/cmr/m/it/12 (-20) Guide to Data Ex-plo-ra-tion\T1/cmr/m/n/12 (-20) . 2016. \T
 1/cmr/m/sc/12 (-20) url \T1/cmr/m/n/12 (-20) : $\T1/cmtt/m/n/12 https : / / www
  . analyticsvidhya .
  []
 
-[64] (./memoire.aux)
+[69] (./memoire.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -2271,45 +2318,46 @@ Package logreq Info: Writing requests to 'memoire.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16347 strings out of 492995
- 267396 string characters out of 6132704
- 639583 words of memory out of 5000000
- 19417 multiletter control sequences out of 15000+600000
- 25184 words of font info for 129 fonts, out of 8000000 for 9000
+ 16448 strings out of 492995
+ 269157 string characters out of 6132704
+ 640234 words of memory out of 5000000
+ 19502 multiletter control sequences out of 15000+600000
+ 25576 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,14n,51p,1298b,1626s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,14n,51p,1298b,1630s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2017/texm
-f-dist/fonts/type1/public/cm-super/sfbi1440.pfb></usr/local/texlive/2017/texmf-
-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2017/texmf-di
-st/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2017/texmf-dist
-/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2017/texmf-dist/f
-onts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2017/texmf-dist/fon
-ts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2017/texmf-dist/fonts
-/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
-ype1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
-e1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
-/public/cm-super/sfrm2074.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
-ublic/cm-super/sfti1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
-lic/cm-super/sftt1200.pfb>
-Output written on memoire.pdf (64 pages, 1838334 bytes).
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pf
+b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
+2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2017/t
+exmf-dist/fonts/type1/public/cm-super/sfbi1440.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2017/texmf
+-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2017/texmf-d
+ist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2017/texmf-dis
+t/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2017/texmf-dist/
+fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2017/texmf-dist/fo
+nts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2017/texmf-dist/font
+s/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/
+type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
+pe1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
+1/public/cm-super/sfti1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
+public/cm-super/sftt1200.pfb>
+Output written on memoire.pdf (69 pages, 2626816 bytes).
 PDF statistics:
- 383 PDF objects out of 1000 (max. 8388607)
- 226 compressed objects within 3 object streams
+ 407 PDF objects out of 1000 (max. 8388607)
+ 240 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 22202 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 22212 words of extra memory for PDF output out of 24883 (max. 10000000)
 

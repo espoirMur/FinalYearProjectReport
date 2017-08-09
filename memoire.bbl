@@ -753,5 +753,84 @@
     \field{type}{phdthesis}
     \field{year}{2011}
   \endentry
+
+  \entry{OneHotEncoding}{online}{}
+    \name{author}{1}{}{%
+      {{hash=PR}{%
+         family={P.},
+         familyi={P\bibinitperiod},
+         given={Rapaio},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=ES}{%
+         family={Exchange},
+         familyi={E\bibinitperiod},
+         given={Stack},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PR1}
+    \strng{fullhash}{PR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Answer To datascience stack-exchange question}
+    \field{title}{Strings as features in decision tree/random forest}
+    \verb{url}
+    \verb https://datascience.stackexchange.com/a/5229/30464
+    \endverb
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+
+  \entry{statBook1}{incollection}{}
+  \endentry
+
+  \entry{ProbaStat}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SP}{%
+         family={S.},
+         familyi={S\bibinitperiod},
+         given={Prasanna},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Department of Mathematics, University of Louisville}%
+    }
+    \strng{namehash}{SP1}
+    \strng{fullhash}{SP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Probability And Mathemathical Statistics}
+    \list{location}{1}{%
+      {Louisville, KY 40292 USA}%
+    }
+    \field{year}{2005}
+  \endentry
+
+  \entry{CrossValidation}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=CM}{%
+         family={Cornec},
+         familyi={C\bibinitperiod},
+         given={Matthieu},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CM1}
+    \strng{fullhash}{CM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Probability bounds for the cross-validation estimate in the
+  context of the statistical learning theory and statistical models applied to
+  economics and finance}
+    \list{institution}{1}{%
+      {Université de Nanterre-Paris X}%
+    }
+    \field{type}{phdthesis}
+    \field{year}{2009}
+  \endentry
 \endsortlist
 \endinput
