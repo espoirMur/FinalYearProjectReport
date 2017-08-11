@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+\usepackage{multirow}
+\begin{document}
+ 
+\begin{table}[!htbp]
+	\caption{Résultat des Algorithmes }
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			\multirow{6}{*}{} Faculté & Dimensions &Modèle&Paramètres &RMSE Train &\multicolumn{2}{c|}{CV Score}&RMSE Test  \\
+			\cline{6-7}
+			&&&&&M&std& \\
+			\cline{1-8}
+			&&Ridge&A&B&M&std& \\
+			\cline{3-8}
+			&&Lasso&D&E&M&std& \\
+			\cline{3-8}
+			&Medecine&Elastic Net&F&G&M&std& \\
+			\cline{3-8}
+			&&LinearSVR&I&J&M&std& \\
+			\cline{3-8}
+			&&RbfSVR&K&L&M&std& \\
+			\cline{1-8}
+			\multirow{5}{*}{}
+			&&Ridge&${\alpha}$=1 ,solver=cholesky&0.05 : 9\% &0.067: 11.53\%& 0.00454&0.071 : 12.31\% \\
+			\cline{3-8}
+			&&Lasso&${\alpha}$=1e-05,iIter=10000&0.0485 : 8.36\%&0.07 : 12.06\%&0.0036&  0.074: 12.79\%\\
+			\cline{3-8}
+			Droit&897x 297&Elastic Net&${\alpha}$=1e-05,Iter=10000,l1Ratio=0.5&0.048:8.34\%&0.070
+			12.11\%
+			&0.0035& 0.0742 : 12.79\%\\
+			\cline{3-8}
+			&&LinearSVR&kernel=linear&0.052:8.95\%&0.075 :13.045\%&0.00637&0.0740 :12.75\%\\
+			\cline{3-8}
+			&&RbfSVR&Kernel =Gaussian&0.067:11.52\%&0.068 : 11.8\% &0.006& 0.0721 : 12.43\%\\
+			\cline{1-8}
+			\hline
+				\multirow{5}{*}{}
+			&&Ridge&A&B&M&std& \\
+			\cline{3-8}
+			&&Lasso&D&E&M&std& \\
+			\cline{3-8}
+			&Économie&Elastic Net&F&G&M&std& \\
+			\cline{3-8}
+			&&LinearSVR&I&J&M&std& \\
+			\cline{3-8}
+			&&RbfSVR&K&L&M&std& \\
+			\cline{1-8}
+				\multirow{5}{*}{}
+			&&Ridge&A&B&M&std& \\
+			\cline{3-8}
+			&&Lasso&D&E&M&std& \\
+			\cline{3-8}
+			&Santé&Elastic Net&F&G&M&std& \\
+			\cline{3-8}
+			&&LinearSVR&I&J&M&std& \\
+			\cline{3-8}
+			&&RbfSVR&K&L&M&std& \\
+			\cline{1-8}
+				\multirow{5}{*}{}
+			&&Ridge&A&B&M&std& \\
+			\cline{3-8}
+			&&Lasso&D&E&M&std& \\
+			\cline{3-8}
+			&Psychologie&Elastic Net&F&G&M&std& \\
+			\cline{3-8}
+			&&LinearSVR&I&J&M&std& \\
+			\cline{3-8}
+			&&RbfSVR&K&L&M&std& \\
+			\cline{1-8}
+				\multirow{5}{*}{}
+			&&Ridge&A&B&M&std& \\
+			\cline{3-8}
+			&&Lasso&D&E&M&std& \\
+			\cline{3-8}
+			&Droit&Elastic Net&F&G&M&std& \\
+			\cline{3-8}
+			&&LinearSVR&I&J&M&std& \\
+			\cline{3-8}
+			&&RbfSVR&K&L&M&std& \\
+			\cline{1-8}
+				\multirow{5}{*}{}
+			&&Ridge&A&B&M&std& \\
+			\cline{3-8}
+			&&Lasso&D&E&M&std& \\
+			\cline{3-8}
+			&Santé&Elastic Net&F&G&M&std& \\
+			\cline{3-8}
+			&&LinearSVR&I&J&M&std& \\
+			\cline{3-8}
+			&&RbfSVR&K&L&M&std& \\
+			\cline{1-8}
+		\end{tabular}
+	\end{center}
+	\label{tab:multicol}
+\end{table}
+\end{document}

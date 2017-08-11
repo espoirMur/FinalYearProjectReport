@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  9 AUG 2017 22:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  11 AUG 2017 20:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2270,17 +2270,20 @@ although it is yet undefined on input line 77.
 Package acronym Info: Label `acro:LOOCV' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 85.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 101.
+ [66]
 
+LaTeX Warning: Float too large for page by 24.52736pt on input line 199.
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
+) [67] [68] [69]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 62.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 Package microtype Info: Loading generic settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-) [66] [67]
+
 Overfull \hbox (0.19543pt too wide) in paragraph at lines 63--63
 []\T1/cmr/m/n/12 (-20) SHARP SIGHT \T1/cmr/m/sc/12 (-20) LABS\T1/cmr/m/n/12 (-2
 0) . \T1/cmr/m/it/12 (-20) What is the dif-fe-rence bet-ween ma-chine lear-ning
@@ -2293,7 +2296,7 @@ Overfull \hbox (25.444pt too wide) in paragraph at lines 63--63
  ?utm _ content =
  []
 
-[68
+[70
 
 
 ]
@@ -2304,7 +2307,7 @@ Overfull \hbox (7.29774pt too wide) in paragraph at lines 63--63
  . analyticsvidhya .
  []
 
-[69] (./memoire.aux)
+[71] (./memoire.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -2318,10 +2321,10 @@ Package logreq Info: Writing requests to 'memoire.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16448 strings out of 492995
- 269157 string characters out of 6132704
- 640234 words of memory out of 5000000
- 19502 multiletter control sequences out of 15000+600000
+ 16450 strings out of 492995
+ 269202 string characters out of 6132704
+ 629184 words of memory out of 5000000
+ 19504 multiletter control sequences out of 15000+600000
  25576 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,14n,51p,1298b,1630s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2354,10 +2357,10 @@ type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
 pe1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
 1/public/cm-super/sfti1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
 public/cm-super/sftt1200.pfb>
-Output written on memoire.pdf (69 pages, 2626816 bytes).
+Output written on memoire.pdf (71 pages, 2622410 bytes).
 PDF statistics:
- 407 PDF objects out of 1000 (max. 8388607)
- 240 compressed objects within 3 object streams
+ 413 PDF objects out of 1000 (max. 8388607)
+ 244 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  22212 words of extra memory for PDF output out of 24883 (max. 10000000)
 
