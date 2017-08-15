@@ -94,8 +94,7 @@ Tous au long de ce chapitre nous avions utilisé les 2 premières techniques , n
 Nous pouvons maintenant attaquer l'entrainement des modèles au sein de chaque faculté  :
 \subsection{Résultat des différents algorithmes par faculté}
 Le tableau qui va suivre décrira les différentes algorithmes que nous avions entrainer pour les données de chaque faculté , chaque modèles dispose des paramètres ainsi que des différentes erreurs.
- \newpage
-\begin{table} [!htbp]
+\begin{table} 
 	\begingroup % make the next setting local
 	\captionsetup{type=table} % here we want to caption a table
 	\caption{Résultat des Algorithmes }
@@ -202,7 +201,7 @@ Comme nous pouvons le remarquer dans ce tableau , après entrainement et évalua
 \subsubsection{Méthodes d'ensembles}
 il a été souligné par différents auteur \cite{bookSckit-Learn} que combiner les résultat des plusieurs modèles de régressions donnent des meilleurs résultats qu'un seul modèle c'est pourquoi nous avions choisi de combiner nos 5 modèles pour obtenir un bon modèle finale ,.
 Nous avons donc décider de combiner ces résultats finales prédites par les  les 5 modèles par une régressions pour trouver le résultats finale de nos modèles .Et Notre erreur a peu être réduite à la fois sur le training et le test set dans toutes les facultés , voici au tableau \ref{tab:ensembleResults} les différentes erreurs au sein de chaque faculté .
-\begin{table}[!htbp]
+\begin{table}[h!]
 \centering
 \begingroup % make the next setting local
 \captionsetup{type=table} % here we want to caption a table
@@ -223,3 +222,17 @@ Nous avons donc décider de combiner ces résultats finales prédites par les  l
 \end{tabular}
 \endgroup
 \end{table}
+\subsection{Conclusion}
+Au chapitre précédent nous avions pu remarquer qu'il existait une forte corrélation entre le CGPA et l'option suivie par l'étudiant à l'école secondaire ,et entre l'école de provenance et le CGPA , mais nous avions aussi souligné qu'il n'existait pas de corrélation entre le CGPA et Le DIPERC mais nous avions décider de l'utiliser dans la prédiction du CGPA pour améliorer l'exactitude ne notre modèle et le rendre plus subjectif  .
+
+Lors de l'entrainement de nos modèles nous avions pu remarquer qu'au sein de chaque faculté les modèles de régression linaire régularisée(Lasso,Elastic-Net et Ridge) disposent des meilleurs résultats avec une moyenne de \ac{RMSE}inférieur à 12\% tandis que les modèles SVM disposaient des résultats légèrement supérieur .
+Ces Erreurs élevées étaient dues au fait :
+
+\begin{itemize}
+	\item Nous n'avions pas pu disposer de plusieurs variables du même type que le DIPPERC  c'est pourquoi pour réduire cet erreur nous devrions obtenir diverses variable du même type que le CGPA entre autre les valeurs des pourcentages obtenus à l'école secondaire car notre modèle a tendance à avantager le diplôme pourcentage en lui donnant un grand coefficient (0.67) en faculté de technologie et 0.47 en faculté de médecine. 
+	\item Que nous ne disposions pas d'assez des données(exemples) pour entrainer nos algorithmes notre grand ensemble d'apprentissage disposaient de 900 éléments (moins de 1000 ) ce qui reste relativement  moins élevé   .
+\end{itemize}
+
+Pour palier a ces problème et dans le souci de réduire notre \ac{RMSE} nous avions utiliser la technique de stacking qui consistait à combiner les différentes résultats des différents modèles et à partir de ceux -ci prédire un résultat finale à l'aide d'une régression linéaire, nous avons souligné que cette technique réduisait l'erreur de prédiction considérablement et nous avions ainsi une erreur inférieur à 10\% dans certaines faculté.
+ Ceci n'est qu'une première itération dans la suite nous exécuterons une seconde itération et vérifierons comment se comportera l'erreur de prédiction.   
+
