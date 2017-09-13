@@ -1,0 +1,119 @@
+\documentclass[a4paper,dvipsnames,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{sectsty}
+\usepackage{subfig}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage[
+backend=bibtex,
+natbib=true,
+style=numeric,
+sorting=none]{biblatex}
+\usepackage{comment}
+\usepackage{rotating}
+% acronyms and abbreviations will need to put them in a separate file
+\usepackage{acronym}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{makecell}
+\usepackage{array,booktabs,tabularx,hhline}
+\usepackage{microtype}
+% for making the table looks goods
+\usepackage{lscape}
+\usepackage[table]{xcolor}
+\definecolor{skyblue}{RGB}{150,194,255}
+\definecolor{darkblue}{RGB}{2,40,94}
+\newcommand\litem[1]{\item{\bfseries #1,\enspace}}
+\usepackage[margin=2.5cm,left=2.5cm,
+top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
+% for mutil level tables
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{colortbl}
+
+\usepackage{tabu}
+%\usepackage{threeparttablex}
+
+\allsectionsfont{\color{darkblue}}
+
+
+\bibliography{bib/litterature.bib}{}
+\addbibresource{bib/litterature.bib}\newpage\cleardoublepage
+\begin{document}
+\definecolor{lineCol}{RGB}{220, 140, 90}
+\definecolor{tableHeader}{RGB}{120, 35, 35}
+\definecolor{tableHeaderB}{RGB}{160, 60, 60}
+\definecolor{tableLineOne}{RGB}{245, 245, 245}
+\definecolor{tableLineTwo}{RGB}{224, 224, 224}
+\definecolor{fiverowscolA}{RGB}{250, 250, 250}
+\definecolor{fiverowscolB}{RGB}{224, 224, 224}
+\rowcolors{2}{tableHeader}{tableHeader}
+\newcommand{\tableHeaderStyle}{
+\rowfont{\leavevmode\color{white}\bfseries}
+%\rowcolor{tableHeader}
+}
+\taburowcolors[2] 2{tableLineOne .. tableLineTwo}
+\tabulinesep = ^4mm_3mm
+%\everyrow{\tabucline[.4mm white]{}}
+\taburulecolor{lineCol}
+\begin{table}
+   \captionsetup{type=table} % here we want to caption a table
+    \caption{Résultat des Algorithmes }
+    \label{tab:AlgoResults}
+    \noindent
+{\resizebox*{\textwidth}{\textheight}{%
+    \setlength\arrayrulewidth{1.2pt}
+    \extracolsep{0pt}
+            \renewcommand{\arraystretch}{2}
+\begin{tabu} to \textwidth {|c|c|c|c|c|c|c|c|}\hline
+\tableHeaderStyle
+Faculté & Dimensions &Modèle&Paramètres &RMSE Train &\multicolumn{2}{c|}{CV Score}&RMSE Test  \\\hhline{|*{5}{>{\arrayrulecolor{tableHeader}}->{\arrayrulecolor{lineCol}}|}*{2}{-}|*{1}{>{\arrayrulecolor{tableHeader}}->{\arrayrulecolor{lineCol}}|}}%
+\tableHeaderStyle\rowcolor{tableHeaderB} 
+&&&&&M&std& \\ \hline
+\cellcolor{fiverowscolB}&\cellcolor{fiverowscolB}&Ridge&A&B&M&std& \\
+\cellcolor{fiverowscolB} &\cellcolor{fiverowscolB}&&&&B& C &  D \\ 
+\cellcolor{fiverowscolB}&\cellcolor{fiverowscolB}&&&&&E & F  \\
+\cellcolor{fiverowscolB}&\cellcolor{fiverowscolB}&LinearSVR&I&J&M&std&  \\
+\multirow{-5}*{\cellcolor{fiverowscolB}3}&\multirow{-5}*{\cellcolor{fiverowscolB}Medicine}&&&&& I & J  \\ \hline
+\cellcolor{fiverowscolA}&\cellcolor{fiverowscolA}&Ridge&kernel=linear&0.052:8.95\%&0.075 :13.045\%&0.00637&0.0740 :12.75\% \\
+\cellcolor{fiverowscolA} &\cellcolor{fiverowscolA}&&&&B& C &  D \\
+\cellcolor{fiverowscolA}&\cellcolor{fiverowscolA}&Elastic Net&${\alpha}$=1e-05,Iter=10000,l1Ratio=0.5&0.048:8.34\%&0.070 12.11\%  &0.0035& 0.0742 : 12.79\%  \\
+\cellcolor{fiverowscolA}&\cellcolor{fiverowscolA}&&&&& G & H  \\
+\multirow{-5}*{\cellcolor{fiverowscolA}TestA}&\multirow{-5}*{\cellcolor{fiverowscolA}Medicine}&&&&& I & J  \\ \hline
+\cellcolor{fiverowscolB}&\cellcolor{fiverowscolB}&Ridge&A&B&M&std& \\
+\cellcolor{fiverowscolB} &\cellcolor{fiverowscolB}&&&&B& C &  D \\
+\cellcolor{fiverowscolB}&\cellcolor{fiverowscolB}&&&&&E & F  \\
+\cellcolor{fiverowscolB}&\cellcolor{fiverowscolB}&&&&& G & H  \\
+\multirow{-5}*{\cellcolor{fiverowscolB}TestB}&\multirow{-5}*{\cellcolor{fiverowscolB}Medicine}&&&&& I & J  \\ \hline
+\cellcolor{fiverowscolA}&\cellcolor{fiverowscolA}&Ridge&A&B&M&std& \\
+\cellcolor{fiverowscolA} &\cellcolor{fiverowscolA}&&&&B& C &  D \\
+\cellcolor{fiverowscolA}&\cellcolor{fiverowscolA}&&&&&E & F  \\
+\cellcolor{fiverowscolA}&\cellcolor{fiverowscolA}&&&&& G & H  \\
+\multirow{-5}*{\cellcolor{fiverowscolA}3}&\multirow{-5}*{\cellcolor{fiverowscolA}Medicine}&&&&& I & J  \\ \hline
+\cellcolor{fiverowscolB}&\cellcolor{fiverowscolB}&Ridge&A&B&M&std& \\
+\cellcolor{fiverowscolB} &\cellcolor{fiverowscolB}&&&&B& C &  D \\
+\cellcolor{fiverowscolB}&\cellcolor{fiverowscolB}&&&&&E & F  \\
+\cellcolor{fiverowscolB}&\cellcolor{fiverowscolB}&&&&& G & H  \\
+\multirow{-5}*{\cellcolor{fiverowscolB}3}&\multirow{-5}*{\cellcolor{fiverowscolB}Psychologie}&&&&& I & J  \\ \hline
+\cellcolor{fiverowscolA}&\cellcolor{fiverowscolA}&Ridge&A&B&M&std& \\
+\cellcolor{fiverowscolA} &\cellcolor{fiverowscolA}&&&&B& C &  D \\
+\cellcolor{fiverowscolA}&\cellcolor{fiverowscolA}&&&&&E & F  \\
+\cellcolor{fiverowscolA}&\cellcolor{fiverowscolA}&&&&& G & H  \\
+\multirow{-5}*{\cellcolor{fiverowscolA}3}&\multirow{-5}*{\cellcolor{fiverowscolA}Medicine}&&&&& I & J  \\ \hline
+\cellcolor{fiverowscolB}&\cellcolor{fiverowscolB}&Ridge&A&B&M&std& \\
+\cellcolor{fiverowscolB} &\cellcolor{fiverowscolB}&&&&B& C &  D \\
+\cellcolor{fiverowscolB}&\cellcolor{fiverowscolB}&&&&&E & F  \\
+\cellcolor{fiverowscolB}&\cellcolor{fiverowscolB}&&&&& G & H  \\
+\multirow{-5}*{\cellcolor{fiverowscolB}3}&\multirow{-5}*{\cellcolor{fiverowscolB}Medicine}&&&&& I & J  \\ \hline
+\end{tabu}
+}}
+\end{table}
+
+\end{document}

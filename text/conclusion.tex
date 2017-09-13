@@ -1,0 +1,20 @@
+\begin{center}
+	 {\LARGE  \textbf CONCLUSION}	
+	\end{center}
+Tous au long de ce travail nous avons pu démontrer comment utiliser le DataMining sur le données issues du système d'information \ac{UAT} pour aider les nouveaux étudiant à l'université à s'orienter.\\
+Nous nous sommes posés 3 questions au départ : \\
+- \emph{Comment utiliser les techniques  du DataMining pour doter les universités des outils d'aide à la décision les permettant de bien orienter les étudiants dès leur entrée à l'université ?  }\\
+- \emph{Comment peut-on aider les élèves finalistes du secondaires  à pouvoir faire le choix de leur filières à l'université ? }\\
+- \emph{Les techniques du DataMining peuvent - elles apporter leur contribution dans ce domaine ? }
+\paragraph{}
+Nous avions utilisé les diverses techniques du DataMining ainsi que les statistiques inférentielle pour analyser  et nettoyer les données mise à notre disposition par les autorités de l'\ac{ULPGL} et nous avions pu découvrir qu'actuellement les étudiants se basent sur leur age , le sexe, l'école de provenance ainsi que l'option suivie à l'école secondaire pour s'orienter à l'université .
+Sur base des résultats qu'un étudiant a obtenu lors de son cursus académique nous avions pu créer une variable appelé le \ac{CGPA}  qui  n'est rien d'autre que la moyenne des points obtenu durant son cursus. 
+En effectuant les test statistiques nous avions constater que cette variable ne dépend  que de 2 acteurs au sein de chaque faculté entre autre l'école de provenance , et l'option suive à l'école secondaire , et qu'il ne dépend ni du sexe, de l'age , et difficilement du pourcentage obtenu à l'\ac{EXETAT}.
+\paragraph{}
+Ainsi nous avions élaborer un modèle de prédiction   qui se base sur le 3 facteurs dont dépend le CGPA pour essayer de prédire celui - ci pour un nouveau étudiant à la faculté, pour s'y faire nous avions utilisé 5 techniques du Machine Learning dont 3 modèles de régression (Lasso, Ridge, ElasticNet) et 2 technique de \ac{SVR} (Lineaire et avec kernel RBF)  et à la fin nous avions combiné ces 5 modèle par la technique de stacking pour avoir une bonne prédiction.
+
+Nous avions évaluer le modèle en se basant sur l'erreur moyen quadratique \ac{RMSE} et une validation croisée et avions obtenu un score de moins de 10\% pour presque toutes les facultés.\\
+Pour aider les finalistes à s'orienter nous avions mis à leur disposition une petite application web  qui prédit leur \ac{CGPA} au sein de chaque faculté et leur permet de choisir une faculté dans laquelle ils ont plus de chance de réussir .\\
+Au final nous avions pu remarquer que les techniques du DataMining on pu apporter leur contribution tant soi peux dans ce domaine. 
+\paragraph{}
+Quand au limites du travail soulignons qu'il n'est pas encore terminé , il nous manque certaines données pour automatiser toutes les taches et de débarrasser de l'expertiser humaine , ente autres diverses données liées au cursus secondaire comme soulignée au chapitre 2 ,  mais aussi d'une boucle de feedback pour permettre à notre modèle de s'entrainer avec des nouvelles variables et nouvelles données , c'est pourquoi le travail a été conçu selon la norme open-source pour permettre à tous chercheur d'y contribuer .
