@@ -14,25 +14,24 @@
 \begin{abstract}
 	\addcontentsline{toc}{chapter}{Résumé}
 	\thispagestyle{plain} 
-Aujourd'hui toutes les entreprises collectent et stockent de grandes quantités de données. Ces méga-bases de données, qui ne cessent d'augmenter jour après jour, sont peu exploitées, alors qu'elles cachent de connaissances décisives c'est ainsi qu'est   née : le DataMining   (qu'on appellerait en français fouille des données ).
+Aujourd'hui toutes les entreprises collectent et stockent de grandes quantités de données. Ces méga-bases de données, qui ne cessent d'augmenter jour après jour, sont peu exploitées, alors qu'elles cachent de connaissances décisives c'est ainsi qu'est né : le data mining   (qu'on appellerait en français fouille des données ).
 \paragraph{}
-Des nombreux recherches ont été menés  sur l'application du DataMining dans différents domaines entre autre : les banques (detection de la fraude), telecom(calculs du chrum client) , assurance, etc
-Mais peu des recherches sont menées sur l'application du DataMining à l'éducation c'est pourquoi nous avions décider 
-de nous pencher sur le sujet ayant pour thème \textit{ \textbf Sujet : DataMining appliqué à la prédiction de l'\textbf{}orientation des élèves finalistes du secondaire à l'université } 
+Des nombreuses recherches ont été menées sur l'application du data mining dans différents domaines,  entre autre : les banques , telecom , assurances, etc
+Mais peu des recherches de ce genre sont menées sur l'application du data mining à l'éducation. c'est ainsi que nous avions décider 
+de nous pencher sur le sujet ayant pour thème \textit{ \textbf Sujet : data mining appliqué à la prédiction de l'orientation des élèves finalistes du secondaire à l'université } .
 \paragraph{}
-Pour mener ce travail nous nous sommes posé la question de savoir \emph{Comment utiliser les techniques  du DataMining pour doter les universités des outils d'aide à la décision les permettant de bien orienter les étudiants dès leur entrée à l'université ?  } et pour y répondre nous avions utilisé la méthodologie \ac{CRISP-DM} qui est la méthodologie la plus utilisé en industrie pour les projet DataMining car elle permet de rendre les projets de DataMining à grande échelle plus rapides, moins coûteux, plus fiables et surtout améliorer leur gestion.
+Pour mener a bien ce travail nous nous sommes posé la question de savoir \emph{Comment utiliser les techniques  du data mining pour doter les universités des outils d'aide à la décision les permettant de bien orienter les étudiants dès leur entrée à l'université ?  } et pour y répondre nous avions utilisé la méthodologie "\ac{CRISP-DM}"celle ci est la méthodologie la plus utilisé en industrie pour les projet data mining.
 \paragraph{}
-Nous avions travaillé sur un ensemble d'apprentissage issue du système d'information UAT de dimensions 9606 X 22 qui représentait les données pour chaque étudiant de l'ULPGL de l'année 2012-2016 , sur base de ces donnés nous avions découvert la répartition des étudiant de l'ULPGL selon différents critères L'age de l'étudiant ,le pourcentage à l'exetat ,le sexe, l'école de provenance , l'option suivie, la nature de l'école  (nos inputs).\\
-En effectuant les statistiques inférentielle (Test CHi2 et Test ANOVA) nous avions remarqué que les étudiant choisissent leur faculté 
-en se basant sur ces inputs.
+Nous avions travaillé sur un ensemble d'apprentissage issue du système d'information UAT de dimensions 9606 X 22 qui représentait les données pour chaque étudiant de l'ULPGL de l'année 2012-2016;sur base de ces donnés nous avions découvert la répartition des étudiants de l'ULPGL selon différents critères:  L'age de l'étudiant ,le pourcentage à l'exetat ,le sexe, l'école de provenance , l'option suivie, la nature de l'école  (nos inputs). 
+En effectuant les statistiques inférentielle (Test khi-Carrée et Test ANOVA) nous avions remarqué que les étudiants choisissent leur faculté  en se basant sur ces inputs.
+\paragraph{}
 Ensuite nous avions crée une variable : le CGPA que nous avions utilisé pour évaluer la réussite d'un étudiant à l'université 
-elle n'est rien d'autre que la moyenne des points obtenu par un étudiant tous au long de son cursus académique.
+elle n'est rien d'autre que la moyenne des points obtenus par celui ci tous au long de son cursus académique.
+Nous avions analyser la relation existant entre nos inputs et cette variable de sortie le CGPA au sein de chaque faculté  par la corrélation de Pearson , et le test ANOVA  et nous avions remarqué que le CGPA ne dépend pas de l'age , ni du sexe , et encore moins du pourcentage obtenu à l'exetat (coefficient de Pearson de 0.45) mais uniquement de l'école de provenance et de l'option suivie par l'étudiant à l'école secondaire.
 \paragraph{}
-Nous avions analyser la relation existant entre nos inputs et cette variable de sortie le CGPA au sein de chaque faculté  par la corrélation de Pearson , et le test ANOVA  et nous avions remarqué que le CGPA ne dépend pas de l'age , du sexe , et difficilement du pourcentage obtenu à l'exetat (coefficient de Pearson de 0.45) mais uniquement de l'école de provenance et de l'option suivie par l'élève à l'école secondaire.
-\paragraph{}
-Enfin nous avions  décidé de prédire le CGPA au sein de chaque faculté pour un nouveau étudiant en se basant sur son pourcentage obtenu à l'exetat, l'école de provenance, et l'option suivie à l'école en utilisant  5 techniques du Machine Learning dont 3 modèles de régression et 2 technique de \ac{SVR} .
-Nous avions évaluer le modèle en se basant sur l'erreur moyen quadratique \ac{RMSE} et une validation croisée et avions obtenu un score de moins de 10\% pour presque toutes les facultés.\\
-Notons que nous avions utilisé les librairies et frameworks  suivantes implémentées en python pour réaliser ce travail:  pandas, matplotlib,seaborn, flask  numpy et  scikit-learn .	
+Enfin nous avions  décidé de prédire le CGPA au sein de chaque faculté pour un nouveau étudiant en se basant sur son pourcentage obtenu à l'exetat, l'école de provenance, et l'option suivie à l'école en utilisant  5 techniques du Machine Learning dont trois modèles de régression et deux techniques de \ac{SVM} .
+Nous avions évaluer le modèle final en se basant sur l'erreur moyen quadratique \ac{RMSE} et une validation croisée et avions obtenu un score de moins de 10\% pour presque toutes les facultés.\\
+Notons que nous avions utilisé les librairies et frameworks  suivantes implémentées en python pour réaliser ce travail:  \textit {pandas, matplotlib,seaborn, flask  numpy et  scikit-learn }
 \end{abstract}
 \providecommand{\keywords}[1]{\textbf{\textit{Keywords  : }} #1}
 \keywords{\textbf{\textit{
