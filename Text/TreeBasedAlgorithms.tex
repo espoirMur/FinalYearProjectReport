@@ -59,7 +59,7 @@ De la même façon que l'entropie on calcul le gain d'information avec l'indice 
 En général, on décide qu’un nœud est terminal lorsque tous les exemples associés à ce nœud, ou du moins la plupart d’entre eux sont dans la même classe, ou encore, s’il n’y a plus d’attributs non utilisés dans la branche correspondante.
 \paragraph{}
 En général, on attribue au nœud la classe majoritaire (éventuellement calculée à l’aide d’une fonction de coût lorsque les erreurs de prédiction ne sont pas équivalentes). Lorsque plusieurs classes sont en concurrence, on peut choisir la classe la plus représentée dans l’ensemble de l’échantillon, ou en choisir une au hasard.
-\subsection{Élagage de l'arbre ou \emph{Prunning}}
+\subsubsection{Élagage de l'arbre ou \emph{Prunning}}
 L'objectif de cette étape est de supprimer les parties de l'arbre qui ne semblent pas performantes pour
 prédire la classe de nouveaux cas et les remplacées par un nœud terminal (associé à la classe majoritaire).\\
 Le processus est remplacées par un nœud terminal (associé à la classe majoritaire).\\
@@ -67,17 +67,14 @@ il existe différentes façons d'estimer le taux d'erreur entre autre: \\
 – sur base de nouveaux exemples disponibles;\\
 – via une validation croisée ;\\
 – sur base d'une estimation statistique, ex: borne supérieure d'un intervalle de confiance construit sur un modèle binomial .
-\subsection{Avantages et inconvénients des arbres de décisions}
-\subsubsection{Avantages}
+\subsubsection{Avantages et inconvénients des arbres de décisions}
+\paragraph{Avantages}
 - Interprétabilité: chaque élément du modèle est facile à comprendre et à analyser pour un humain, et peut donner de l'information sur les données. Ceci est surtout vrai pour les petits arbres. À cause de l'instabilité des arbres (par exemple si on varie le choix des variables ou des données), il faut utiliser des techniques spécialisées pour determiner quelles variables sont réellement importantes. On peut faire correspondre un arbre de décision à un ensemble de règles SI-ALORS (en introduisant des nouvelles classes correspondant aux noeuds cachés de l'arbre).\\
 - Flexibilité: peut être utilisé sur des données de n'importe quel type (dont évidemment les variables continues et discrètes) pour lesquelles un ensemble fini (pas trop grand) de questions possibles pour la partition peut être défini (en principe cela peut être appliqué à n'importe quel type de structures de données). \\
-\subsubsection{Inconvénients }
+\paragraph{Inconvénients }
 
 Un des inconvénients principaux des méthodes d'apprentissage par arbres de décision
 est leur instabilité. Sur des données réelles, il s’en faut souvent de peu qu'un attribut soit
 choisi plutôt qu'un autre et le choix d’un attribut-test, surtout s’il est près de la racine,
 influence grandement le reste de la construction. La conséquence de cette instabilité
 est que les algorithmes d'apprentissage par arbres de décision ont une variance importante, qui nuit à la qualité de l'apprentissage. Des méthodes comme le Bagging(pour Bootstrap Aggregating) ou les Random Forests(qui consiste à utiliser plusieurs arbres et utiliser le vote classe faite par chaque arbre pour classer une instance ) \cite{RandomForrest1} permettent dans une certaine mesure de remédier à ce problème.
-
-\subsubsection{Random Forrest }
-

@@ -1,6 +1,6 @@
 \documentclass[a4paper,12pt]{report}
 \usepackage[utf8]{inputenc}
-\usepackage[french]{babel}
+\usepackage[french,english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{sectsty}
 \usepackage{subfig}
@@ -19,7 +19,7 @@ sorting=none]{biblatex}
 \usepackage{acronym} 
 \usepackage{enumitem}
 \usepackage{graphicx}
-\usepackage{caption}
+\usepackage[list-entry=heading]{caption}
 \usepackage{booktabs}
 \usepackage{multicol}
 \usepackage{makecell}
@@ -27,6 +27,8 @@ sorting=none]{biblatex}
 \usepackage{microtype}
 % for making the table looks goods
 \usepackage{lscape}
+% for dedications
+\usepackage{calligra}
 \usepackage[table]{xcolor}
 \definecolor{skyblue}{RGB}{175,200,255}
 \definecolor{darkblue}{RGB}{2,40,94}
@@ -37,6 +39,10 @@ top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{colortbl}
+\usepackage{epigraph}
+%set the epigraph style 
+\setlength\epigraphwidth{.8\textwidth}
+\setlength\epigraphrule{0pt}
 \allsectionsfont{\color{skyblue}}
 \newcolumntype{R}{>{\leavevmode\ignorespaces\rmfamily\bfseries}p{2cm}}%
 \newcolumntype{H}{>{\leavevmode\ignorespaces\raggedright\arraybackslash\rmfamily}X}%
@@ -46,7 +52,15 @@ top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
 \bibliography{bib/litterature.bib}{}
 \addbibresource{bib/litterature.bib}\newpage\cleardoublepage
 \begin{document}
+\pagenumbering{roman}
+\input{text/epigraph.tex}\cleardoublepage
+\input{text/In_memoriam.tex}\cleardoublepage
+\input{text/dedicaces.tex}\cleardoublepage
+\input{text/remerciements.tex}\cleardoublepage
+\input{text/resume.tex}\cleardoublepage
+\input{text/abstract.tex}\cleardoublepage
 \input{text/abreviation}\newpage\cleardoublepage
+\pagenumbering{arabic}
 \input{text/introduction}\newpage\cleardoublepage
 \input{text/firstChapiter}\newpage\cleardoublepage
 \input{text/RegressionLineaire.tex}\newpage\cleardoublepage	
@@ -54,7 +68,7 @@ top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
 \input{text/NeuralNetwork.tex}\newpage\cleardoublepage
 \input{text/SupporVectorMachine.tex}\cleardoublepage
 \input{text/TreeBasedAlgorithms.tex}\cleardoublepage
-\input{text/clustering.tex}\cleardoublepage
+%\input{text/clustering.tex}\cleardoublepage
 \input{text/Methodologie_CRISP.tex}\cleardoublepage
 \input{text/secondChapiter.tex}\cleardoublepage
 \input{text/chapter3.tex}\cleardoublepage

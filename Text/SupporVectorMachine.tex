@@ -26,7 +26,7 @@ ${\theta }^{T}{x} + b = 1$  et ${\theta }^{T}{x} + b=- 1$ .
  \begin{figure}[ht]
  	\centering
  	\includegraphics[width=0.5\textwidth]{fig/SVN2D.png}
- 	\caption[Short caption]{Problème de SVM en 2 dimesions  }
+ 	\caption{Problème de SVM en 2 dimesions  }
  	\label{fig:image14}
  \end{figure}\\
 Ainsi le but de SVM serait de trouver l'hyperplan qui maximise la marge ou la distance  entre ces 2  hyperplans, et d'après la géométrie analytique cette distance se calcule de la manière suivante $d =\frac{2}{||\theta||}$
@@ -79,14 +79,14 @@ Dans la plupart des cas surtout dans la pratique les données ne peuvent pas tou
  \begin{figure}[ht]
  	\centering
  	\includegraphics[width=0.5\textwidth]{fig/NonLinearDecisionBoudary.png}
- 	\caption[Short caption]{Données non séparable linéairement  }
+ 	\caption{Données non séparable linéairement  }
  	\label{fig:image15}
  \end{figure}\\
  Une propriété stipule que les données qui ne sont pas linéairement séparable dans un espace de dimension n le seront dans un espace de dimension m avec $m \ge n$ \cite{8}. il suffit juste de faire un mapping des tuples ${x}_{i}$  dans ${R}^{n}$ vers ${R}^{m}$ en utilisant une fonction $\phi(x)$. Voyons un exemple à la \figurename{16}\\
   \begin{figure}[ht]
   	\centering
   	\includegraphics[width=0.5\textwidth]{fig/NonLinearDecisionBoudary2.png}
-  	\caption[Short caption]{Données non séparable linéairement dans ${R}^{2}$ mais qui le devient dans ${R}^{3}$ avec $\phi({x}_{1},{x}_{2} ) = ({x}_{1},{x}_{2},{x}^{2}_{1}+{x}^{2}_{2})$ }
+  	\caption{Données non séparable linéairement dans ${R}^{2}$ mais qui le devient dans ${R}^{3}$ avec $\phi({x}_{1},{x}_{2} ) = ({x}_{1},{x}_{2},{x}^{2}_{1}+{x}^{2}_{2})$ }
   	\label{fig:image16}
   \end{figure}\\
  \emph{\textbf{Définition  : Kernel}}
