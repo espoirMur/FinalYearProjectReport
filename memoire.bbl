@@ -832,5 +832,28 @@
     \field{type}{phdthesis}
     \field{year}{2009}
   \endentry
+
+  \entry{TDD}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BK}{%
+         family={Beck},
+         familyi={B\bibinitperiod},
+         given={Kent},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Addison-Wesley Professional}%
+    }
+    \strng{namehash}{BK1}
+    \strng{fullhash}{BK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Test Driven Development: By Example}
+    \list{location}{1}{%
+      {New York}%
+    }
+    \field{year}{2002}
+  \endentry
 \endsortlist
 \endinput

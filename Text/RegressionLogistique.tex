@@ -130,7 +130,7 @@ Par contre sur la troisième cas l'hypothèse c'est un polynôme du quatrième d
 
 On remarque ce même phénomène avec la régression logistique .
 
-\begin{figure}[ht]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{fig/OverfiittingLogistic.png}
 	\caption{Overfitting et Underfitting avec la régression logistique }
@@ -141,7 +141,7 @@ Signalons qu'une des cause de ce phénomène c'est le fait d'avoir peut des donn
 
 Dans ce cas la première de solution consisterait à réduire le nombre des attribues , choisir celle qu'on doit retenir et laisser les autres,mais cette approche possède un inconvénient car on risquerait de perdre l'information apportée par ces attributs et cela pénaliserait notre modèle .
 
-La seconde solution est celle qu'on appelle la \emph{La régularisation } elle consiste à garde tous les attribues mais réduire l'ampleur des paramètres  $\theta$ dans le calcul de l'erreur . On remarque que cette technique fonctionne très bien lorsqu'on dispose de plusieurs attribues qui contribue à la prédiction de la valeur y.
+La seconde solution est celle qu'on appelle la \emph{La régularisation } elle consiste à garde tous les attributs mais réduire l'ampleur des paramètres  $\theta$ dans le calcul de l'erreur . On remarque que cette technique fonctionne très bien lorsqu'on dispose de plusieurs attributs qui contribue à la prédiction de la valeur y.
 Ainsi notre fonction de cout pour le calcul de l'erreur de la régression linéaire sera :
 
 \begin{center}

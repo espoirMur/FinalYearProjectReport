@@ -104,7 +104,7 @@ On note :
  - L nombre des couche de notre réseau . Pour notre cas L=4
  
  -${s}_{l}$ nombre des unités dans la couche l\\
- Donc en se référant à la \figurename{ 11} On remarque que :
+ Donc en se référant à la \ref{fig:image11} On remarque que :
  
  - L= 4
  
@@ -116,9 +116,9 @@ On note :
  
  - ${s}_{4} = 4$
  
- Avec le réseaux des neurones on peut faire aussi bien des classification binaires que des classifications avec plusieurs classe.\\
+ Avec le réseaux des neurones , on peut faire aussi bien des classification binaires que des classifications avec plusieurs classe.\\
  Pour la classification binaire la couche de sortie ne comprend qu'une seule unité k = 1 avec k le nombre des unités de la couche  de sortie.\\
- Pour une classification multi-classe k prend des valeurs supérieurs à 3,\\ la sortie  $y \in {\LARGE R}^{K} $  Pour 3 classes ${y}^{1} = [1,0,0]$ , ${y}^{2} = [0,1,0]$ , ${y}^{3} = [0,0,1]$; 
+ Pour une classification multi-classe k prend des valeurs supérieures à 3,\\ la sortie  $y \in {\LARGE R}^{K} $  Pour 3 classes ${y}^{1} = [1,0,0]$ , ${y}^{2} = [0,1,0]$ , ${y}^{3} = [0,0,1]$; 
  \subsubsection{Fonction Cout}
  
  Rappelons que pour la régression logistique la fonction cout régularisée est la suivante :
@@ -170,12 +170,12 @@ Pour la troisième couche écrit :   ${z}^{(3)} = {\theta}^{(2)}{a}^{2}$ et ${a}
 D'une façon générale on écrit : ${z}^{(l)} = {\theta}^{(l-1)}{a}^{l-1}$ et ${a}^{(l)}=g({z}^{(l)})$ pour toutes les couches du réseau .
 
 \subsubsection{Minimisation de la fonction de cout : back propagation }
-Pour minimiser la fonction cout on doit calculer ses dérivées partielle par rapport aux éléments ${\theta}_{ji}^{(l)}$ ce qui n'est pas une tache facile .
+Pour minimiser la fonction cout,  nous devons calculer ses dérivées partielle par rapport aux éléments ${\theta}_{ji}^{(l)}$ ce qui n'est pas une tache facile .
 Le but est de trouver les ${\theta}_{ji}^{(l)}$ qui minimisent la fonction cout.
 On veut calculer $\frac{\partial }{\partial {\theta}_{ji}^{(l)} }J\left({\theta }\right)$ \\
-Pour calculer les dérivées partielles on utilise la technique qu'on appelle \emph{back propagation } ou \emph{rétro-propagation du gradient  } ,c'est une méthode qui permet de calculer le gradient de l'erreur pour chaque neurone d'un réseau de neurones, de la dernière couche vers la première.\\
+Pour calculer les dérivées partielles , nous utilisons la technique qu'on appelle \emph{back propagation } ou \emph{rétro-propagation du gradient  } ,c'est une méthode qui permet de calculer le gradient de l'erreur pour chaque neurone d'un réseau de neurones, de la dernière couche vers la première.\\
 Notons ${\delta}_{j}^{l}$ : l'erreur à l'unité j de la couche l. \\
-- Pour la 4eme couche  cette erreur n'est que la différence entre la valeur exacte et la valeur calculé par notre réseau des neurones.
+- Pour la 4eme couche,  cette erreur n'est que la différence entre la valeur exacte et la valeur calculé par notre réseau des neurones.
 
 D'ou :  ${\delta}_{j}^{4} = {a}_{j}^{4} - y_j$ \\
 \begin{comment}
@@ -224,8 +224,10 @@ Avec ${\delta}_{j}^{4}$ on calcul l'erreur pour l'unité j  de la 3ème couche q
  Pour calculer l'erreur de la couche l on utilise la couche suivante l+1 d'ou le  non de \emph{rétro-propagation du gradient  }
  Ainsi l'algorithme d'entrainement de notre algorithme sera le suivant :
  \ref{Algo2}
+ 
 \begin{algorithm}
 	\caption{Algorithme de la rétro-propagation du gradient }
+	\label{Algo2}
 \begin{algorithmic}
 \Require $({x}^{1},{y}^{1}),({x}^{2},{y}^{2}),....({x}^{n},{y}^{m})$
 \For{$ i=1,2 ....,{s}_{l+1},j=1,2,....{s}_{l};l=1,2,....L$ }  

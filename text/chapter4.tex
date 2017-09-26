@@ -1,6 +1,6 @@
 \chapter{Élaboration  et évaluation du modèle de prédiction }
-Tous au long de ce chapitre nous allons entrainer nos algorithmes de prédiction avec des données provenant de chaque faculté et essayerons de prédire le CGPA, nous  avons utiliser des algorithmes présenté au chapitre premier pour entrainer nos modèles de prédiction.
-Pour choisir l'algorithme à utiliser nous somme basée sur la documentation officielle de la librairie scikit-learn \cite{pedregosa2011scikit} qui nous a fourni l'infographie sur la figure \ref{fig:skLearn1} pour le choix des algorithmes. \\
+Tous au long de ce chapitre nous allons entrainer nos algorithmes de prédiction avec des données provenant de chaque faculté et essayerons de prédire le CGPA, nous  avons utiliser des algorithmes présentés au chapitre premier pour entrainer nos modèles de prédiction.
+Pour choisir l'algorithme à utiliser nous sommes basés sur la documentation officielle de la librairie scikit-learn \cite{pedregosa2011scikit} qui nous a fourni l'infographie sur la figure \ref{fig:skLearn1} pour le choix des algorithmes. \\
 
 \begin{figure}[ht]
 	\centering
@@ -9,7 +9,7 @@ Pour choisir l'algorithme à utiliser nous somme basée sur la documentation off
 	\label{fig:skLearn1}
 \end{figure}  
 
-Vu que nous disposons de moins de 100000 instances pour nos ensemble d'apprentissage et vu que notre tache était celui de prédire une variable continue (Une régression )  nous avions décidé d'entrainer les algorithmes  suivantes :
+Vu que nous disposons de moins de 100000 instances pour nos ensemble d'apprentissage et vu que notre tache était celui de prédire une variable continue (Une régression )  nous avons décidé d'entrainer les algorithmes  suivantes :
 \begin{enumerate}
 	\item Ridge Régression
 	\item Elastic Net Régression
@@ -19,7 +19,7 @@ Vu que nous disposons de moins de 100000 instances pour nos ensemble d'apprentis
 \end{enumerate}
 Les 3 premiers modèles sont des versions issues de la régularisation de la régression linéaire vu au chapitre 1  et qui conviennent bien pour des ensembles d'apprentissages relativement petits , le 2 derniers sont une adaptation du \ac{SVM} pour la régression.\\
 Notons que toutes ses librairies sont bien implémentées et optimisées dans scikit-learn.
-Tous au long de ce chapitre nous avions suivie les étapes suivantes  sur la figure \ref{fig:predictiveModelBuilding}:
+Tous au long de ce chapitre nous avons suivie les étapes suivantes  sur la figure \ref{fig:predictiveModelBuilding}:
  \begin{enumerate}
  \item Préparation des données :
  \begin{itemize}
@@ -44,14 +44,14 @@ Tous au long de ce chapitre nous avions suivie les étapes suivantes  sur la fig
 	\label{fig:predictiveModelBuilding}
 \end{figure} 
 \section {Préparation des données pour l'exécution des algorithmes } 
-Dans cette partie nous expliquerons comment s'est passé la préparation des nos données , rappelons que notre ensemble d'apprentissage finale dispose de 4 attribues et notre valeur à prédire :
+Dans cette partie nous expliquerons comment s'est passé la préparation des nos données , rappelons que notre ensemble d'apprentissage finale dispose de 4 attributs et notre valeur à prédire :
 \begin{enumerate}
 	\item  SCHOOLNAME : de nature catégorielle (string)
 	\item  OPTION : de nature catégorielle (string)
 	\item  DIPPERC : de nature continue (float)
 	\item  CGPA : de nature continue (float)
 \end{enumerate}
-Comme l'a souligné \cite{OneHotEncoding} la librairie scikit learn ne travaille qu'avec les variables numériques , c'est pourquoi nous avions décider de transformer nos variables catégorielles les chaines de caractères en variables numériques en utilisant la technique du \emph{\textbf{One Hot encoding}} 
+Comme l'a souligné \cite{OneHotEncoding} la librairie scikit learn ne travaille qu'avec les variables numériques , c'est pourquoi nous avons décider de transformer nos variables catégorielles les chaines de caractères en variables numériques en utilisant la technique du \emph{\textbf{One Hot encoding}} 
 \subsection{Encodage des Variables One Hot }
 Un encodage one-hot consiste à représenter des états en utilisant pour chacun une valeur dont la représentation binaire n'a qu'un seul chiffre 1.
 
@@ -61,16 +61,16 @@ L'avantage principal de cet encodage est que pour passer d'un état à un autre,
 Pour notre ensemble , après notre encodage nous pouvons aisément remarquer que notre ensemble d'apprentissage vient de passer de (4715, 4 )à (4715 , 647)  dimensions.
 Mais ces dimension restent raisonnables pour un projet de machine Learning. 
 \subsection{Normalisation  } 
-Nous avions ensuite normaliser nos données pour les variables numérique en divisant le pourcentage du diplôme d'état par 100 et celui du CGPA,ceci pour permettre une exécution rapide de nos algorithmes. 
+Nous avons ensuite normalisé nos données pour les variables numériques en divisant le pourcentage du diplôme d'état par 100 et celui du CGPA,ceci pour permettre une exécution rapide de nos algorithmes. 
 \subsection{Échantillonnage  \cite{statBook1} } 
-Pour commencer notre entrainement nous avions échantillonner nos donnes pour constituer un ensemble d'apprentissage (Training set), et un ensemble d'évaluation du modèle (test set). Notre Training set était constituer de 80 \% de nos données et les 20 autres pour cent ont constitué notre ensemble d'évaluation.
-Pour ce faire nous avions utilisé un échantillonnage stratifié.
-Lorsqu'on utilise l'échantillonnage stratifié, on divise la population en groupes homogènes (appelés strates), qui sont mutuellement exclusifs, puis on sélectionne à partir de chaque strate des échantillons indépendants. On peut utiliser n'importe quelle des méthodes d'échantillonnage  pour sélectionner l'échantillon à l'intérieur de chaque strate. La méthode d'échantillonnage peut varier d'une strate à une autre. Lorsqu'on utilise l'échantillonnage aléatoire simple pour sélectionner l'échantillon à l'intérieur de chaque strate, on appelle le plan d'échantillonnage un plan d'échantillonnage aléatoire simple stratifié. On peut stratifier avant l'échantillonnage une population au moyen de toute variable dont on dispose pour la totalité des unités , pour notre étude nous avions utilisé la variable \textbf{EchecRatio}.
+Pour commencer notre entrainement nous avons échantillonné nos donnes pour constituer un ensemble d'apprentissage (Training set), et un ensemble d'évaluation du modèle (test set). Notre Training set était constituer de 80 \% de nos données et les 20 autres pour cent ont constitué notre ensemble d'évaluation.
+Pour ce faire nous avons utilisé un échantillonnage stratifié.
+Lorsqu'on utilise l'échantillonnage stratifié, on divise la population en groupes homogènes (appelés strates), qui sont mutuellement exclusifs, puis on sélectionne à partir de chaque strate des échantillons indépendants. On peut utiliser n'importe quelle des méthodes d'échantillonnage  pour sélectionner l'échantillon à l'intérieur de chaque strate. La méthode d'échantillonnage peut varier d'une strate à une autre. Lorsqu'on utilise l'échantillonnage aléatoire simple pour sélectionner l'échantillon à l'intérieur de chaque strate, on appelle le plan d'échantillonnage un plan d'échantillonnage aléatoire simple stratifié. On peut stratifier avant l'échantillonnage une population au moyen de toute variable dont on dispose pour la totalité des unités , pour notre étude nous avons utilisé la variable \textbf{EchecRatio}.
 
-A la fin de cette phase nous avions pu obtenir un ensemble d'apprentissage (Training Set) et Un ensemble d'évaluation (Test Set )
+A la fin de cette phase nous avons pu obtenir un ensemble d'apprentissage (Training Set) et Un ensemble d'évaluation (Test Set )
 
 \section {Élaboration et Évaluation du Modèle de Prédiction au sein de Chaque faculté} 
-Dans cette section nous allons entrainer les différents algorithmes de prédictions avec les données de issue de chaque faculté et ensuite nous évaluerons le modèles sur les 2 ensemble.
+Dans cette section nous allons entrainer les différents algorithmes de prédictions avec les données de issue de chaque faculté et ensuite nous évaluerons le modèles sur les 2 ensembles.
 
 Mais avant d'attaquer l'entrainement de nos modèle nous expliquerons nos métriques d'évaluations.
 \subsection{Techniques D'évaluation} 
@@ -89,11 +89,11 @@ La validation croisée (« cross-validation ») est une méthode d’estimation 
 	\item La troisième méthode est un cas particulier de la deuxième méthode où k=n, c'est-à-dire que l'on apprend sur (n-1) observations puis on valide le modèle sur la énième observation et l'on répète cette opération n fois . 
 \end{itemize}
 
-Tous au long de ce chapitre nous avions utilisé les 2 premières techniques , nous n'avions pas utiliser le 3 ème car elle est trop gourmande  en terme de ressource(temps et mémoire) 
+Tous au long de ce chapitre nous avons utilisé les 2 premières techniques , nous n'avons pas utiliser la 3 ème technique car elle est trop gourmande  en termes des ressources(temps et mémoire) 
 
 Nous pouvons maintenant attaquer l'entrainement des modèles au sein de chaque faculté  :
 \subsection{Résultat des différents algorithmes par faculté}
-Le tableau qui va suivre décrira les différentes algorithmes que nous avions entrainer pour les données de chaque faculté , chaque modèles dispose des paramètres ainsi que des différentes erreurs.
+Le tableau qui va suivre décrira les différentes algorithmes que nous avons entrainer pour les données de chaque faculté , chaque modèles dispose des paramètres ainsi que des différentes erreurs.
 \begin{table} 
 	\begingroup % make the next setting local
 	\captionsetup{type=table} % here we want to caption a table
@@ -202,22 +202,60 @@ Le tableau qui va suivre décrira les différentes algorithmes que nous avions e
 	\endgroup
 \end{table}
 \newpage
-Comme nous pouvons le remarquer dans ce tableau , après entrainement et évaluation de nos modèles sur nos 2 ensemble d'apprentissages et en validation croisée les 3 premiers modèles linéaire donnent presque les même résultats et sont plus performants comparé aux modèles \ac{SVM} dans la plus part de cas avec un score dans le 12\% sur nos ensembles d'évaluation, mais avons pu le remarquer la prédiction du \ac{CGPA} est beaucoup plus influencer par le pourcentage du diplôme d'état car ils sont dans la même échelle, les valeur de l'école de provenance et de l'option ont une influence minime lors de cette prédiction !Nous allons maintenant essayer d'améliorer a précision de notre modèle en utilisant  une technique des méthodes d'ensemble appelée le stacking.
+Comme nous pouvons le remarquer dans ce tableau , après entrainement et évaluation de nos modèles sur nos 2 ensembles d'apprentissages et en validation croisée les 3 premiers modèles linéaires donnent presque les mêmes résultats et sont plus performants comparé aux modèles \ac{SVM} dans la plus part de cas avec un score dans le 12\% sur nos ensembles d'évaluation, mais avons pu le remarquer la prédiction du \ac{CGPA} est beaucoup plus influencer par le pourcentage du diplôme d'état car ils sont dans la même échelle, les valeur de l'école de provenance et de l'option ont une influence minime lors de cette prédiction !Nous allons maintenant essayer d'améliorer a précision de notre modèle en utilisant  une technique des méthodes d'ensemble appelée le stacking.
 \subsubsection{Méthodes d'ensembles}
-il a été souligné par différents auteur \cite{bookSckit-Learn} que combiner les résultat des plusieurs modèles de régressions donnent des meilleurs résultats qu'un seul modèle c'est pourquoi nous avions choisi de combiner nos 5 modèles pour obtenir un bon modèle finale ,.
-Nous avons donc décider de combiner ces résultats finales prédites par les  les 5 modèles par une régressions pour trouver le résultats finale de nos modèles .Et Notre erreur a peu être réduite à la fois sur le training et le test set dans toutes les facultés , voici au tableau \ref{tab:ensembleResults} les différentes erreurs au sein de chaque faculté .
-\subsection{Conclusion}
-Au chapitre précédent nous avions pu remarquer qu'il existait une forte corrélation entre le CGPA et l'option suivie par l'étudiant à l'école secondaire ,et entre l'école de provenance et le CGPA , mais nous avions aussi souligné qu'il n'existait pas de corrélation entre le CGPA et Le DIPERC mais nous avions décider de l'utiliser dans la prédiction du CGPA pour améliorer l'exactitude ne notre modèle et le rendre plus subjectif  .
+il a été souligné par différents auteurs \cite{bookSckit-Learn} que combiner les résultat des plusieurs modèles de régressions donnent des meilleurs résultats qu'un seul modèle c'est pourquoi nous avons choisi de combiner nos 5 modèles pour obtenir un bon modèle finale .
+Nous avons donc décider de combiner ces résultats finales prédites par les  les 5 modèles par une régressions pour trouver le résultats finale de nos modèles .Et Notre erreur a peu être réduite à la fois sur le training et le test set dans toutes les facultés .
+\newpage
+\section{Réalisation de L'\ac{API}}
+Comme souligné dans la méthodologie \ac{CRISP-DM} la dernière étape d'un projet data mining c'est la mise en production du modèle d'apprentissage , cette mise en production on l'a fait sous forme d'un service web de type \ac{REST} dans une micro application construit avec le framework flask .
+\subsection{\ac{TDD} \cite{TDD}} 
+Nous avions utilisée le \ac{TDD} avec \ac{CI} pour concevoir notre application et le mettre en production .
+\subsubsection{Définition}
+Le test-driven development (TDD) ou en français développement piloté par les tests est une technique de développement de logiciel qui préconise d'écrire les tests unitaires avant d'écrire le code source d'un logiciel.
+\subsubsection{Cycle de TDD}
+Le cycle préconisé par TDD comporte cinq étapes comme nous pouvions le remarquer à la figure \ref{lfig:TDD}  :
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fig/Cycle-global-tdd.png}
+	\caption{Cycle Globale du Test Driven Développement  }
+	\label{fig:TDD}
+\end{figure}  
+\begin{enumerate}
+	\item écrire un premier test ;
+	\item vérifier qu'il échoue (car le code qu'il teste n'existe pas), afin de vérifier que le test est valide ;
+	\item écrire juste le code suffisant pour passer le test ;
+	\item vérifier que le test passe ;
+	\item puis réusiner le code, c'est-à-dire l'améliorer tout en gardant les mêmes fonctionnalités.
+\end{enumerate}
+\subsubsection{Avantages }
+Ces tests permettent aussi de préciser les spécifications du code, et donc son comportement ultérieur en fonction des situations auxquelles il sera exposé. Ce qui facilite la production d'un code valide en toutes circonstances. On obtient donc un code plus juste et plus fiable. En écrivant les tests d'abord, on utilise le programme avant même qu'il existe. On s'assure ainsi que le code produit est testable unitairement. Il est donc impératif d'avoir une vision précise de la manière dont on va utiliser le programme avant même d'envisager son implémentation. Cela évite souvent des erreurs de conception dues à une précipitation dans l'implémentation avant d'avoir défini les objectifs.
+\subsection{Fonctionnement de L'\ac{API}} 
+Notre \ac{API} fonctionne selon le diagramme suivant :
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fig/New-Predictive-Model.png}
+	\caption{Flow chart de L'API }
+	\label{fig:flowChart}
+\end{figure}  
+\begin{enumerate}
+	\item le client we(navigateur ) envoi une requête post avec les données au format \ac{JSON} (non de l'école , l'option et le pourcentage du diplôme) et un token d'authentification 
+	\item la requête est traité et authentifier et ensuite envoyer vers le contrôleur .
+	\item  pré-traitement des données : les données sont encodés et échelonner 
+	\item  prédiction : les calculs sont effectué par nos modèles de prédiction 
+	\item le contrôleur renvoie différentes prédictions sous forme d'objet \ac{JSON} et sont affiché au navigateur.  
+\end{enumerate}
+Notons que l'API fonctionne selon le modèle \ac{MVC} simplifié (sans base des données).
+\section{Conclusion Partielle }
+Au chapitre précédent nous avons pu remarquer qu'il existait une forte corrélation entre le CGPA et l'option suivie par l'étudiant à l'école secondaire ,et entre l'école de provenance et le CGPA , mais nous avons aussi souligné qu'il n'existait pas de corrélation entre le CGPA et Le DIPERC mais nous avons décider de l'utiliser dans la prédiction du CGPA pour améliorer l'exactitude ne notre modèle et le rendre plus subjectif  .
 
-Lors de l'entrainement de nos modèles nous avions pu remarquer qu'au sein de chaque faculté les modèles de régression linaire régularisée(Lasso,Elastic-Net et Ridge) disposent des meilleurs résultats avec une moyenne de \ac{RMSE}inférieur à 12\% tandis que les modèles SVM disposaient des résultats légèrement supérieur .
+Lors de l'entrainement de nos modèles nous avons pu remarquer qu'au sein de chaque faculté les modèles de régression linaire régularisée(Lasso,Elastic-Net et Ridge) disposent des meilleurs résultats avec une moyenne de \ac{RMSE}inférieur à 12\% tandis que les modèles SVM disposaient des résultats légèrement supérieur .
 Ces Erreurs élevées étaient dues au fait :
 
 \begin{itemize}
-	\item Nous n'avions pas pu disposer de plusieurs variables du même type que le DIPPERC  c'est pourquoi pour réduire cet erreur nous devrions obtenir diverses variable du même type que le CGPA entre autre les valeurs des pourcentages obtenus à l'école secondaire car notre modèle a tendance à avantager le diplôme pourcentage en lui donnant un grand coefficient (0.67) en faculté de technologie et 0.47 en faculté de médecine. 
+	\item Nous n'avons pas pu disposer de plusieurs variables du même type que le DIPPERC  c'est pourquoi pour réduire cet erreur nous devrions obtenir diverses variable du même type que le CGPA entre autre les valeurs des pourcentages obtenus à l'école secondaire car notre modèle a tendance à avantager le diplôme pourcentage en lui donnant un grand coefficient (0.67) en faculté de technologie et 0.47 en faculté de médecine. 
 	\item Que nous ne disposions pas d'assez des données(exemples) pour entrainer nos algorithmes notre grand ensemble d'apprentissage disposaient de 900 éléments (moins de 1000 ) ce qui reste relativement  moins élevé   .
 \end{itemize}
 
-Pour palier a ces problème et dans le souci de réduire notre \ac{RMSE} nous avions utiliser la technique de stacking qui consistait à combiner les différentes résultats des différents modèles et à partir de ceux -ci prédire un résultat finale à l'aide d'une régression linéaire, nous avons souligné que cette technique réduisait l'erreur de prédiction considérablement et nous avions ainsi une erreur inférieur à 10\% dans certaines faculté.
-Ceci n'est qu'une première itération dans la suite nous exécuterons une seconde itération et vérifierons comment se comportera l'erreur de prédiction.   
+Pour palier a ces problème et dans le souci de réduire notre \ac{RMSE} nous avons utiliser la technique de stacking qui consistait à combiner les différentes résultats des différents modèles et à partir de ceux -ci prédire un résultat finale à l'aide d'une régression linéaire, nous avons souligné que cette technique réduisait l'erreur de prédiction considérablement et nous avons ainsi une erreur inférieure à 10\% dans certaines faculté.
 
-s

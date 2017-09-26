@@ -21,6 +21,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated field_info (elt_size=4) to 10004 items from 5000.
 Database file #1: memoire-blx.bib
 Database file #2: bib/litterature.bib
 I was expecting a `,' or a `}'---line 367 of file bib/litterature.bib
@@ -32,45 +33,45 @@ Warning--I didn't find a database entry for "8"
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 34 entries,
+You've used 35 entries,
             6256 wiz_defined-function locations,
-            1381 strings with 13423 characters,
-and the built_in function-call counts, 163473 in all, are:
-= -- 10133
-> -- 5762
-< -- 1070
-+ -- 5511
-- -- 3341
-* -- 9284
-:= -- 15876
+            1388 strings with 13512 characters,
+and the built_in function-call counts, 167840 in all, are:
+= -- 10431
+> -- 5870
+< -- 1121
++ -- 5600
+- -- 3362
+* -- 9475
+:= -- 16170
 add.period$ -- 0
-call.type$ -- 34
-change.case$ -- 632
+call.type$ -- 35
+change.case$ -- 676
 chr.to.int$ -- 294
-cite$ -- 66
-duplicate$ -- 16615
-empty$ -- 15368
-format.name$ -- 1578
-if$ -- 32853
+cite$ -- 68
+duplicate$ -- 17121
+empty$ -- 15784
+format.name$ -- 1624
+if$ -- 33847
 int.to.chr$ -- 0
-int.to.str$ -- 98
+int.to.str$ -- 102
 missing$ -- 0
-newline$ -- 814
-num.names$ -- 1695
-pop$ -- 11078
+newline$ -- 837
+num.names$ -- 1774
+pop$ -- 11403
 preamble$ -- 1
-purify$ -- 751
+purify$ -- 798
 quote$ -- 0
-skip$ -- 5993
+skip$ -- 6241
 stack$ -- 0
-substring$ -- 16150
-swap$ -- 4163
-text.length$ -- 695
+substring$ -- 16485
+swap$ -- 4299
+text.length$ -- 712
 text.prefix$ -- 4
 top$ -- 1
-type$ -- 1141
+type$ -- 1175
 warning$ -- 0
-while$ -- 1691
+while$ -- 1727
 width$ -- 0
-write$ -- 781
+write$ -- 803
 (There were 2 error messages)

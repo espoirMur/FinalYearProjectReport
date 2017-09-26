@@ -1,12 +1,12 @@
 \chapter{Présentation et Exploitation des Données Obtenues}
 \paragraph{}
- Dans ce chapitre nous exploiterons  les données mise en notre
+ Dans ce chapitre nous exploiterons  les données mise à notre
 disposition par les autorités de l'\ac{ULPGL}. Celles-ci sont issues du
 système d'information \ac{UAT}  et pour des
-raisons de confidentialité nous n'avons pas eu accès a toute la base des
-données nous avons juste fais une requête des donnes dont nous avons
-besoin pour notre étude et l'administrateur a exécuté une requete vers
-sa base des données et nous a fourni les données dont nous avions besoin
+raisons de confidentialité nous n'avons pas eu accès à toute la base des
+données nous avons juste fais une requête des données dont nous avons
+besoin pour notre étude et l'administrateur a exécuté une requête vers
+sa base des données et nous a fourni les données dont nous avons besoin
 pour l'étude sous forme d'un fichier \ac {CSV}. Comme
 souligné dans le chapitre premier ce chapitre se basera sur la
 méthodologie \ac{CRISP-DM} elle sera subdivisé en différentes sections:
@@ -14,9 +14,7 @@ méthodologie \ac{CRISP-DM} elle sera subdivisé en différentes sections:
 	\item L'exploration 
 	\item la préparation des données \cite{bookSckit-Learn}
 \end{itemize}
-
-
-    \section{Introduction}
+\section{Introduction}
 \paragraph{}
 Les spécialités affirment que 70-80 \% du temps consacré à un projet
 DataMining est alloué à la phase de l'exploration et la préparation des
@@ -25,13 +23,13 @@ bien effectué nous risquons de nous retrouver entrain d'améliorer
 l'exactitude de notre algorithme mais en vain nous serons toujours
 obligées de retourner à cette phase et toutes ces techniques de
 l'exploration des données pourrons nous venir en aide .\\
-Les Étapes de la phase d'exploration et la préparation des donnes sont mentionnées sur la figure suivante :
+Les Étapes de la phase d'exploration et la préparation des donnes sont mentionnées sur la figure ci après :
 \paragraph{}
 En bref l'exploration des données consiste à se plonger dans le passée
 pour prédire l'avenir .Souvenons nous que la qualité de notre entré
 détermine la qualité de notre sortie, ces phases nous permettent
 d'améliorer la qualité de notre entré en vue d'avoir une bonne sortie.
-Voici les étapes de cette phases:
+Voici les étapes de cette phase:
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{fig/Exploration.png}
@@ -75,8 +73,6 @@ Chaque ligne comprend les informations d'un étudiant pour une année académiqu
 	
 	\item NAME : contient le sexe de chaque étudiant
 	
-
-	
 	\item DIPLOMTYPE : le type de diplôme
 	
 	\item DIPLOMMENTION : mention de diplôme
@@ -116,24 +112,24 @@ Chaque ligne comprend les informations d'un étudiant pour une année académiqu
 	\end{enumerate}
 \end{multicols}
 
- Comme nous pouvons le constater les colonnes 1-13 regorgent les informations que chaque étudiant donné à son inscription , ils constituerons nos variables d'entres les restes seront utilisées pour constituer notre variable de sortie.
+ Comme nous pouvons le constater les colonnes 1-13 regorgent les informations que chaque étudiant donne à son inscription , ils constitueront nos variables d'entrés let es restes seront utilisées pour constituer notre variable de sortie.
 
-Nous l'avons aussi signales que chaque ligne comprend les information
-d'un étudiant pour une année académique . Pour mener bien notre analyse nous grouperons  les information de chaque étudiant en une ligne nos données seront groupé selon les variables d'entrées ensuite les donnés de sorties seront groupes selon une fonction d'agrégation prédéfinie.
-Nous fairons premièrement faire une analyse uni-varié  sur les données en entrées !
+Nous l'avons aussi signalé que chaque ligne comprend les information
+d'un étudiant pour une année académique . Pour mener bien notre analyse nous grouperons  les informations de chaque étudiant en une ligne nos données seront groupés selon les variables d'entrées ensuite les données de sorties seront groupées selon une fonction d'agrégation prédéfinie.
+Nous fairons premièrement effectuer  une analyse uni-variée  sur les données en entrées !
 Soulignons que nous avons décidé de supprimer certaines colonnes n'ayant pas des informations importantes car contenant plus de 90 \% des valeurs manquantes il s'agit entre autres des colonnes suivantes :
 'DIPLOMDATE','DIPLOMMENTION','DIPLOMPLACE','SCHOOLCODE'.
 
-Après suppression les colonnes en entrée deviennent les 10 premiers colonnes.
+Après suppression les colonnes en entrée deviennent les 10 premières colonnes.
 
 Pour une première approche nous grouperons  notre ensemble en fonction des données en entré et ensuite écrire une fonction qui va grouper les donnes de sortie la fonction de qui regroupe les données en sortie ne fait que grouper les mention , et pourcentage pour une année académique d'un étudiant dans une liste.\\ 
 Après groupement en fonction des matricules nous venons de remarquer que
 notre ensemble comprend 4715 lignes et 18 colonnes et c'est sera notre ensemble pour notre étude ,cet ensemble est subdivisé en variables d'entré et variables de
 sortie!\\
-Voici un aperçu des nos données en entrée ainsi que les données en sorties  au tableau la figure\ref{tab:Dataset}
+Voici un aperçu des nos données en entrée ainsi que les données en sorties  dans  tableau \ref{tab:Dataset}
 \paragraph{}
-Nous venons de finir avec la présentation des nos données nous débutons avec la phase d'analyse promptement dite  des donnés que nous avons en entré et ensuite nous effectuerons  une analyse des données en
-sortie en enfin analyse les donnes des sortie combinées à celles des données  en entrée
+Nous venons de finir avec la présentation des nos données nous débutons avec la phase d'analyse promptement dite  des données que nous avons en entré et ensuite nous effectuerons  une analyse des données en
+sortie et enfin analyse les données des sortie combinées à celles des données  en entrée.
 \begin{sidewaystable}
 	\centering
 	\begingroup % make the next setting local
@@ -172,7 +168,7 @@ sortie en enfin analyse les donnes des sortie combinées à celles des données 
 \end{sidewaystable}
 \section{Préparation des Données}
  \subsection{Données en entré  : \emph{Inputs}}
-Cette phase consistera aux traitement des valeurs manquantes et valeurs aberrantes mais aussi au nettoyage des données mal orthographiées lors de la saisie des données pour certaines attribues. 
+Cette phase consistera aux traitement des valeurs manquantes et valeurs aberrantes mais aussi au nettoyage des données mal orthographiées lors de la saisie des données pour certaines attributs. 
 Commençons par  Expliquer les raisons de la présence des valeur manquantes , ainsi que les données aberrantes et la manière de les traiter
 \paragraph{}
 Malgré la quantité croissante de données, les problématiques de données
@@ -206,9 +202,9 @@ c'est le cas le plus courant et il est plus facile de le détecter.
 Dans ce cas la classification la plus couramment utilisée ayant été
 proposée par Little et Rubin \cite{MissinVal} : 
 \begin{itemize}
-	\item  Missing completely at random (MCAR) (complètement aléatoire)
-	\item Missing at random'' (MAR) (aléatoire)
-	\item Missing not at random'' (MNAR) (non aléatoire)
+	\item  \ac{MCAR} (complètement aléatoire)
+	\item \ac{MAR} (aléatoire)
+	\item \ac{MNAR} (non aléatoire)
 \end{itemize}
 \subparagraph{}
  Les DM sont MCAR lorsque la probabilité de non réponse pour une variable ne
@@ -228,11 +224,11 @@ Finalement, les DM sont de type MNAR lorsque la probabilité de
 non-réponse est liée aux valeurs prises par la variable ayant des
 DM.comme par exemple pour notre cas les étudiant n'ayant pas passé tous
 leurs examens à une session n'ont pas des pourcentage à cette session et
-on pour mention AA assimiléé aux ajournées .
+on pour mention \ac{AA} .
 
-\paragraph{Méthodes d'imputations} 
+\paragraph{Techniques  d'imputations} 
 
-Il existe 8 à 9 méthodes de traitement des données manquantes
+Il existe 8 à 9 techniques  de traitement des données manquantes
 largement répandues à l'heure actuelle, y compris des méthodes connues
 pour être peu performantes mais cependant toujours utilisées. 
 \begin{enumerate}
@@ -263,7 +259,7 @@ dans l'analyse des pourcentage du diplôme à l'EXETAT nous avons trouvé
 des diplôme qui ne sont pas dans l'intervalle 0 à 50 \% des étudiant
 avec des diplômes de 634\% ou des diplômes de 0\%
 
-Voici quelque remarques à considérer pour les valeurs aberrantes :
+Voici quelques remarques à considérer pour les valeurs aberrantes :
 \begin{enumerate}
 	\item Les valeurs aberrantes ne sont pas forcément erronées. Dans certains
 	cas, la valeur aberrante doit être acceptée comme une indication
@@ -308,13 +304,13 @@ suivantes :
 \paragraph{Traitement des valeurs aberrantes :}
 \begin{enumerate}
 	\item  Les valeurs aberrantes pouvant provenir d'erreurs de saisie, on le traite séparément
-	en étudiant cas par cas.c'est cette technique que nous utiliserons 
-	pour certaines valeur du pourcentage de diplôme.
+	en étudiant cas par cas.C'est cette technique que nous utiliserons 
+	pour certaines valeurs du pourcentage de diplôme.
 	\item On les rejette et on applique ensuite une des méthodes d’imputation (moyenne,médiane…) vues pour les valeurs manquantes.
 	\item  On adopte des méthodes qui diminuent leur impact au cours des analyses statistiques :la médiane
 \end{enumerate}
 Voici Un aperçu des nos colonnes avec données manquantes et données aberrantes
-ce tableau décrit.
+au tableau \ref{tab:MisisnV} .
 \begin{table}
 \centering
 \begingroup % make the next setting local
@@ -340,7 +336,7 @@ max  &    12360.000000  &  58.000000      & 6053.000000\\
 
 Ce tableau décrit toutes les informations possibles sur les données
 continues et de prime à bord nous sommes à mesure de constater certaines
-incohérences sur les diplôme pourcentage qui on un maximum de 6053 et un
+incohérences sur les pourcentages du  diplôme qui ont un maximum de 6053 et un
 minimum de 0 qui est vraiment impossible car le diplôme en RDC dois être
 compris entre 50 et 100 \% !Nous visualiserons ces incohérence de
 plus prêt avec des box-plots.
@@ -358,10 +354,10 @@ plus prêt avec des box-plots.
 	\caption{Box Plot Attribue  Age  }
 	\label{fig:PercBXPlot1}
 \end{figure} 
-Au vu de ces courbes nous remarquons que l'attribue diplôme pourcentage
+Au vu de ces courbes nous remarquons que l'attributs diplôme pourcentage
 dispose de beaucoup des déviations. Nous avons pu corriger au cas par cas en remplaçant les valeurs aberrantes par leurs valeurs exactes et d'autres par la moyenne comme il n'était pas nombreux
 \subsubsection{Données mal orthographiées }
-Dans notre première analyse nous avons remarqué que certaines  attribues ont des valeurs très désorganisées et vraiment dispersé et ce
+Dans notre première analyse nous avons remarqué que certaines  attributs ont des valeurs très désorganisées et vraiment dispersé et ce
 qui a une mauvaise influence sur le calcul de l'entropie et ainsi sur
 les algorithmes du Machine Learning . Nous pouvons aisément constater
 que ce problèmes est du à des fautes d'orthographes commise lors de la
@@ -373,40 +369,40 @@ Par exemple pour la variable diplôme section on a pu voir les valeurs suivantes
 section 'techniques' mais avec différentes erreurs d'orthographe. \\
 Pour l'attribut SCHOOL nous avons obtenus les valeurs suivantes :
 'matanoia', 'metanoia', 'metonoina', '\%etanoia', 'meta' pour la seule école 'metanoia'
-Nous avons aussi remarqué ces genres d'incohérence pour les autres attribues catégorielles.  
-Après analyse nous avons pu détecter qu'il étaient  du à des erreurs d'orthographe.
+Nous avons aussi remarqué ces genres d'incohérence pour les autres attributs catégorielles.  
+Après analyse , nous avons pu détecter qu'il étaient  dus à des erreurs d'orthographe.
 Ces genres d'erreur de notation ont pour conséquence le fait qu'il font
 augmenter l'entropie de nos colonnes et ainsi pénalisent nos algorithmes
 surtout lorsqu'on travaille avec les arbres de décisions .Nous avons
 procédé à un nettoyage automatique qui a consisté en un groupement des
 valeurs proches en utilisant la distance de Leveinstein :\cite{LevStack}combinée au  clustering par l'algorithme d'affinity propagation,et
-ainsi qu'un nettoyage manuelle pour arranger les données à la fin de
+ainsi qu'un nettoyage manuel pour arranger les données à la fin de
 cette phase nous avons obtenus des données moyennement propres et bien
-nettoyer avec un entropie faible.
+nettoyées avec une entropie faible.
  \subsection{Données en sortie: \emph{Outputs}}
 
- Dans cette partie nous préparerons notre ensemble de sortie en
+ Dans cette partie , nous préparerons notre ensemble de sortie en
  construisant nos variables de sortie , celles-ci seront constituées à
- l'aide des divers fonction qui nous aiderons à déterminer pour une année
- si sur base des résultat que nous avons si un étudiant est passé en
+ l'aide des divers fonction qui nous aideront à déterminer pour une année
+ si sur base des résultats que nous avons si un étudiant est passé en
  première session, s'il a distingué ou bien s'il a échoué, nous
  déterminerons enfin le pourcentage obtenu.
  
- Notons que nous nous sommes butés à 2 grands problème concernant les
- données obtenus et qui risquent de biaiser nos calculs ils constituent en fait le limites de ce travail 
+ Notons que nous nous sommes butés à 2 grands problèmes concernant les
+ données obtenus et qui risquent de biaiser nos calculs,  ils constituent en fait les limites de ce travail . 
  \begin{enumerate}
  	\item Nous n'avons
- 	pas pu obtenir le pourcentage final de certains étudiants ayant échouer
- 	ou abandonner leurs études avant la fin de l'année académique , ces
+ 	pas pu obtenir le pourcentage final de certains étudiants ayant échoué
+ 	ou abandonné leurs études avant la fin de l'année académique , ces
  	étudiants qui après la seconde session sont AA (Assimilé aux Ajournées )
- 	n'ont pas de pourcentage final pour palier à ce problème nous avons
+ 	n'ont pas de pourcentage final pour palier à ce problème , nous avons
  	remplacer cette valeur manquante par une valeur aléatoire choisie entre
- 	40\% et 50\%   ce qui représente l'échec!
+ 	45\% et 53\%   ce qui représente l'échec!
  	\item  Pour nous étudiant le
  	nombre des années académiques pour lequel nous avons le résultat n'est
- 	pas le même pour certains étudiant nous avons des informations pour une 
+ 	pas le même pour certains étudiants nous avons des informations pour une 
  	année académique, d'autres pour 2 , etc. Pour palier à ce problème nous
- 	avons utiliser des ration pour nous valeur de sortie qui consister à
+ 	avons utilisé des ratios pour nous valeur de sortie qui consister à
  	diviser le nombre sur le nombre des année académiques que l'étudiant a
  	passée à la faculté.
  \end{enumerate}:
@@ -434,7 +430,7 @@ nettoyer avec un entropie faible.
 	\endgroup
 \end{table}
  Nous avons ensuite constituer notre ensemble d'apprentissage finale en groupant ces données pour chaque année académique et en évaluant 
- la moyenne des pourcentage obtenu à la fin de chaque année académique  et nous l'appellerons \textbf{\ac{CGPA} }par analogie avec le système anglophone, \emph{elle constituera notre variable de sortie principale}  nous l'accompagnerons de 3 autres variables entre autre :
+ la moyenne des pourcentages obtenus à la fin de chaque année académique  et nous l'appellerons \textbf{\ac{CGPA} }par analogie avec le système anglophone, \emph{elle constituera notre variable de sortie principale}  nous l'accompagnerons de 3 autres variables entre autre :
  \begin{itemize}
  	\item
  	DistinctionRatio : Le nombre de fois que l'étudiant a distingué
@@ -552,7 +548,7 @@ Voici un bref aperçu des statistiques descriptives de ses variables  à la figu
 \end{table}
 \subparagraph{AGE}
 
-Nous avons calculer l'age en se basant sur la date de naissance et la date d'aujourd'hui.signalons que cet attribue disposait des valeurs manquantes au début et on était imputer par la moyenne , comme nous pouvons le voir à la figure\ref{tab:DescribeData}  nos étudiant disposent en moyenne d'un age de 24 ans avec une variance de 4,5 le moins âgé a 18 ans et le plus âgé a 59 ans.
+Nous avons calculer l'age en se basant sur la date de naissance et la date d'aujourd'hui.signalons que cet attributs disposait des valeurs manquantes au début et on était imputer par la moyenne , comme nous pouvons le voir à la figure\ref{tab:DescribeData}  nos étudiant disposent en moyenne d'un age de 24 ans avec une variance de 4,5 le moins âgé a 18 ans et le plus âgé a 59 ans.
 On peut aisément que l'age suit une distribution normale . 
 \begin{figure}[!htbp]
 	\centering
@@ -560,18 +556,18 @@ On peut aisément que l'age suit une distribution normale .
 	\hfill
 	\subfloat[distribution de l'age ]{\includegraphics[width=0.4\textwidth]{fig/AGEDist.png}\label{fig:Ageb}}
 	\hfill
-	\caption{Graphiques de l'attribue age}
+	\caption{Graphiques de l'attributs age}
 \end{figure}
 \subparagraph{Pourcentage du diplôme}
 Après nettoyage et contrairement à la figure\ref{tab:MisisnV} on a constater qu'après nettoyage la moyenne est de 56,8 \% avec unn écart type de 5,7 le minimum de 50 \% et un maximum de 86\% .
-les graphiques représentent les informations sur l'age  son à la figure\ref{fig:Pourcentagea} et la figure\ref{fig:Pourcentageb}
+les graphiques représentent les informations sur l'age  son à la figure\ref{fig:Pourcentagea} et la figure\ref{fig:Pourcentagea}
 \begin{figure}[!htbp]
 	\centering
 	\subfloat[Box-Plot du Pourcentage du diplome ]{\includegraphics[width=0.4\textwidth]{fig/dipomePourcentage.png}\label{fig:Pourcentagea}}
 	\hfill
 	\subfloat[distribution du Pourcentage ]{\includegraphics[width=0.4\textwidth]{fig/diplomePercentageDis.png}\label{fig:Pourcenategb}}
 	\hfill
-	\caption{Graphiques de l'attribue du Pourcentage à l'examen d'état }
+	\caption{Graphiques de l'attributs du Pourcentage à l'examen d'état }
 \end{figure}
 \subparagraph{Le Sexe des étudiants}
 	\begin{figure}[!htbp]
@@ -580,7 +576,7 @@ les graphiques représentent les informations sur l'age  son à la figure\ref{fi
 	\caption{Distribution du sexe des étudiants }
 	\label{fig:SEXE}
 \end{figure}
-La  la figure\ref{fig:SEXE} nous donne la  répartition de sexes dans notre ensemble d'apprentissage on peut aisément constater qu'il n'est pas si déséquilibre que ça!, le
+La  figure\ref{fig:SEXE} nous donne la  répartition de sexes dans notre ensemble d'apprentissage on peut aisément constater qu'il n'est pas si déséquilibre que ça!, le
 genre est vraiment respecté avec 41\% dés nouveaux étudiant étant de
 sexe féminin.
 \subparagraph{le type d'école}
@@ -596,7 +592,7 @@ catholiques , 11\% des écoles privé , 15 des écoles publiques mais aussi
 il ya des étudiants venant des autodidactes , ceux provenant des écoles
 musulmanes et kibanguistes mais en proportion vraiment négligeable.
 \subparagraph{l'Option de provenance}
-Nos étudiant Proviennent des 33 écoles différentes:
+Nos étudiants proviennent des 33 options différentes:
 
 \begin{figure}[!htbp]
 	\centering
@@ -604,15 +600,15 @@ Nos étudiant Proviennent des 33 écoles différentes:
 	\caption{l'option suivie à l'école secondaire }
 	\label{fig:Option_right}
 \end{figure}
-Sur la figure\ref{fig:Option_right} nous pouvons remarquer que la majeure partie des
-étudiants de notre études proviennent de la section pédagogique avec
+Sur la figure \ref{fig:Option_right} nous pouvons remarquer que la majeure partie des
+étudiants de notre étude proviennent de la section pédagogique avec
 environ 28\% ensuite vienne la section commerciale et administrative
-avec 19\% , suivent sociale avec 13\%, scientifique bio-chimie avec 14
-\% ensuite viennent autres différentes options avec des valeurs
+avec 19\% , ensuite  sociale avec 13\%, scientifique bio-chimie avec 14
+\% ensuite viennent les  autres différentes options avec des valeurs
 inférieurs à 5\%.
 \subparagraph{Attribut School}\label{attribut-school}
-cette attribue comprend les valeurs de l'école de provenance des nos
-finaliste combiné avec l'attribue SCHOOLSTATUS  il joue un rôle
+cette attributs comprend les valeurs de l'école de provenance des nos
+finaliste combiné avec l'attributs SCHOOLSTATUS  il joue un rôle
 important dans notre étude.
 nous pouvons aisément remarquer que les élèves proviennent de 594 écoles
 différentes sur la figure \ref{fig:SCHOOL} nous visualiserons les écoles
@@ -623,10 +619,10 @@ les plus représentées.
 	\caption{les écoles de provenances  }
 	\label{fig:SCHOOL}
 \end{figure}
-Nous pouvons remarquer aisément que le top 10 des école de provenance
+Nous pouvons remarquer aisément que le top 10 des écoles de provenance
 est constituer de grandes écoles de la ville de Goma avec l'institut
 metanoia et le collège mwanga en tête de liste avec l'institut mwanga et
-metanoia en tete de liste avec 15\% chacun ensuite vienne l'institut
+metanoia en tête de liste avec 15\% chacun ensuite vienne l'institut
 bakanja avec 6\% ensuite vienne maendelo, le lycée sainte ursule et
 l'institut de Goma avec 6\%, 5\% et 5 \% respectivement et d'autres
 école se partagent le reste de 50\%.
@@ -639,9 +635,9 @@ l'institut de Goma avec 6\%, 5\% et 5 \% respectivement et d'autres
 \end{figure}
 A la figure \ref{fig:SCHOOLProvince} nous pouvons aisément constater que 75 \% des étudiants
 de l'\ac{ULPGL} proviennent de la province du nord kivu mais il ya une autre
-catégorie provenant  du Sud Kivu soit 15\% l'autre partie provient des autres provinces de la \ac{RDC}.
+catégorie provenant  du Sud Kivu soit 15\% le reste des étudiants  provient des autres provinces de la \ac{RDC}.
 \subparagraph{Attribue Faculté}
-Pour finaliser l'analyser uni-varié des nos données en entrée nous jetterons un coup d'œil sur la colonne Fac qui contient la faculté choisie par l'étudiant.
+Pour finaliser l'analyse uni-variée de nos données en entrée nous jetterons un coup d'œil sur la colonne Fac qui contient la faculté choisie par l'étudiant.
 Voici comment elle se présente a la figure \ref{fig:FAC}:
 \begin{figure}[!htbp]
 	\centering
@@ -650,7 +646,7 @@ Voici comment elle se présente a la figure \ref{fig:FAC}:
 	\label{fig:FAC}
 \end{figure}
  Nous remarquons la distribution des valeurs pour
-l'attribue faculté des étudiants: - FSGEG: 32,8\% , FSTA : 19,153\% , FD
+l'attributs faculté des étudiants: - FSGEG: 32,8\% , FSTA : 19,153\% , FD
 :19\% -,FSDC :16\% ,FM : 5\% ,FPSE : 4\% ,FT :3\%
 \subsection{Analyse Bi-variée}
 C'est une technique d'analyse statistique des données, consistant à
@@ -684,9 +680,9 @@ Nous effectuerons cette analyse à 3 niveau :
 	\paragraph{}
 	Pour cette analyse l'hypothèse nulle est du type:
 	H0 : les moyennes sont égales dans toutes les catégories. 
-	et son hypothèse alternatif est 
+	et son hypothèse alternative est
 	H1 : au moins une moyenne est différente des autres..
-	\item \emph{\textbf{Variable catégorielle ou catégorielle  :}} 
+	\item \emph{\textbf{Variable catégorielle   :}} 
 	Pour ces types des données nous effectuerons le test de chi-carré: Le chi-carré est un test statistique conçu pour déterminer si la différence
 	entre deux distributions de fréquences est attribuable à l'erreur
 	d'échantillonnage (le hasard) ou est suffisamment grande pour être
@@ -711,9 +707,9 @@ non-linéaires et non-monotones.
 Signalons que python dispose des multiples librairies pour effectuer ces
 genres d'analyse et nous les utiliserons dans la suite
 \end{enumerate}
-Passons maintenant à l'analyser des proprement dite 
+Passons maintenant à l'analyse  des données proprement dite 
  Dans cette partie nous effectuerons une analyse bi-variée
- entre les attribues en entrée et les attribues en sortie , pour une
+ entre les attributs en entrée et les attributs en sortie , pour une
  première approche nous effectuerons une analyse entre la faculté choisie
  et les différentes variables d'entres de notre ensemble d'apprentissage
  dans la seconde approche nous essayerons de le faire la même chose pour
@@ -760,7 +756,7 @@ Passons maintenant à l'analyser des proprement dite
  \end{table}
  comme la valeur de PR est inférieur à 0.05 on peut conclure que la
  moyenne de l'age n'est pas la même au sein de chaque faculté
-\begin{table}[!htbp]
+\begin{table}[]
 	\centering
 	\begingroup % make the next setting local
 	\captionsetup{type=table} % here we want to caption a table
@@ -785,7 +781,7 @@ Passons maintenant à l'analyser des proprement dite
  facultés de Médecine et celui de technologie on une moyenne d'age de 21
  et 23 respectivement et les facultés de psychologie et celui de
  théologie on une moyenne d'age respective de 28 et 31 ans.
- Pour plus de détails on peut visualiser les détails sur la figure \ref{label}
+ Pour plus de détails on peut visualiser les détails sur la figure \ref{lfig:ANOVAb}
  	\begin{figure}[!htbp]
  	\centering
  	\includegraphics[width=0.8\textwidth]{fig/AGE-FAC.png}\label{fig:ANOVAb}
@@ -794,8 +790,8 @@ Passons maintenant à l'analyser des proprement dite
 \subparagraph{Pourcentage}
   Également ici on rejette aussi notre hypothèse nulle qui stipulait que la
 moyenne du pourcentage du diplôme est la même au sein de chaque faculté
-. Pour prouver le rejet de notre hypothèse nulle on peut remarquer que
-les facultés de Médecine et celui de technologie on une moyenne de
+. Pour prouver le rejet de notre hypothèse nulle , nous  pouvons remarquer que
+les facultés de Médecine et celui de technologie ont une moyenne de
 pourcentage de 59\% chacun et celui de théologie à une moyenne de 53\%.
 \begin{table}[!htbp]
 	\centering
@@ -820,13 +816,13 @@ Pour Plus des détails sur les distributions statistique
 	\caption{distribution des pourcentage au sein des différentes facultés } 
 \end{figure}
  \paragraph{Variables Catégorielles et Catégorielles}
- Pour ces genres de relation nous avons effectuer le test chi-carré , Dans le tableau \ref{tab:chi-Carrée} nous pouvons visualiser les  différentes valeurs et effectuer nos conclusions sur base de celle ci.\\
- Notre hypothèse nulle H0 est du type : Il n'ya pas de relation entre la variable considéré et la faculté. 
+ Pour ces genres de relations nous avons effectué le test chi-carré , Dans le tableau \ref{tab:chi-Carrée} nous pouvons visualiser les  différentes valeurs et effectuer nos conclusions sur base de celle ci.\\
+ Notre hypothèse nulle H0 est du type : Il n'ya pas de relation entre la variable considérée et la faculté. 
  \begin{table}
  	\centering
  	\begingroup % make the next setting local
  	\captionsetup{type=table} % here we want to caption a table
- 	\caption{test chi carrée entre  nos  différentes variables et la faculté }
+ 	\caption{Test chi carré entre  nos  différentes variables et la faculté }
  	\label{tab:chi-Carrée}
  	\begin{tabular}{lllllr}
  		\toprule
@@ -841,21 +837,21 @@ Pour Plus des détails sur les distributions statistique
  	\end{tabular}
  	\endgroup
  \end{table}
- Voici Les conclusion que nous prenons sur base de notre test statistique:
+ Voici les conclusions que nous prenons sur base de notre test statistique:
  \begin{enumerate}
  	\item FAC-PROVINCE :
- 	lorsque nous comparons ces 2 valeurs nous remarquons que notre valeur de chi2 est supérieur à notre valeur critique et tombe dans la région de rejet de notre hypothèse nulle et ainsi celle est rejetée et ainsi nous concluons avec 95\% de certitude que notre hypothèse alternative est vrai: il ya une relation entre la province et la faculté en d'autre terme ayant un nombre des étudiant venant d'une province nous pouvons prédire la faculté choisie.
+ 	lorsque nous comparons ces 2 valeurs , nous remarquons que notre valeur de chi2 est supérieure à notre valeur critique et tombe dans la région de rejet de notre hypothèse nulle et ainsi celle-ci est rejetée et ainsi nous concluons avec 95\% de certitude que notre hypothèse alternative est vrai: il ya une relation entre la province et la faculté en d'autre terme ayant un nombre des étudiant venant d'une province nous pouvons prédire la faculté choisie.
  	\item FAC-SEXE :
- 	l ya une relation de dépendance entre le sexe et la faculté ce qui est logique car par exemple en faculté de technologie et théologie on trouve moins des hommes que des femmes.
+ il existe  une relation de dépendance entre le sexe et la faculté , ce qui est logique car par exemple en faculté de technologie et théologie on trouve moins des hommes que des femmes.
  	\item FAC-OPTION :
  	sur base de ce fait on fait la même conclusion que pour la province : il ya une relation de dépendance entre la section du diplôme et la faculté ce qui est logique car les étudiant en général se base sur leur option pour choisir leur faculté
  	\item FAC-SCHOOLSTATUS :
- 	il ya une relation de dépendance entre la section du diplôme et la faculté ce qui est logique car les étudiant en général se base sur leur option pour choisir leur option
+ 	il existe  une relation de dépendance entre la section du diplôme et la faculté ce qui est logique car les étudiants en général se basent sur leur option pour choisir leur faculté
  \end{enumerate}
-\paragraph{Analyse des données en entré Vs le CGPA}:\\
-Analysons Enfin les relations existants entre nos données en entré et notre variable principale de sortie le \ac{CGPA}: 
-comme à la partie précédente nous allons faire l'analyse Bi-varié à
-8 niveau mais au sein de chaque faculté et à la fin nous essayerons de voir l'analyse bi-varié entre nos 4 données de sorties
+\paragraph{Analyse des données en entrée Vs le CGPA}:\\
+Analysons enfin les relations existants entre nos données en entré et notre variable principale de sortie le \ac{CGPA}: 
+comme à la partie précédente nous allons faire l'analyse Bi-variée  à
+8 niveau mais au sein de chaque faculté et à la fin nous essayerons de voir l'analyse bi-varié entre nos 4 données de sortie 
 \begin{enumerate}
 	\item CGPA-Diplôme Province : Pour voir la relation entre le CGPA
 	et la province d'origine de l'étudiant
@@ -872,7 +868,7 @@ comme à la partie précédente nous allons faire l'analyse Bi-varié à
 	\item FAC-CGPA
 \end{enumerate}
 
-Nos allons représenter les résultats su des divers tableaux dans les pages qui suivent.
+Nos représenterons  les résultats su des divers tableaux dans les pages qui suivent.
 \begin{table}
 	\begingroup % make the next setting local
 	\captionsetup{type=table} % here we want to caption a table
@@ -1087,13 +1083,13 @@ Nos allons représenter les résultats su des divers tableaux dans les pages qui
 		\endgroup
 	\end{table}
 \newpage 
-\section{Conclusion}
-Nous avons à présent notre ensemble d'apprentissage avec nos variables en entrée et les variables en sortie bien nettoyées, nous avions d'analysé 
-les corrélations existantes entre les variables d'entrées le choix de la faculté , ensuite celles existantes avec le CGPA notre variable principale !
+\section{Conclusion partielle}
+Nous avons à présent notre ensemble d'apprentissage avec nos variables en entrée et les variables en sortie bien nettoyées, nous avons d'analysé 
+les corrélations existantes entre les variables d'entrées et le choix de la faculté , ensuite celles existantes avec le CGPA notre variable principale !
 \paragraph{}
 Dans la première phase de l'analyse bi-varié nous avons pu conclure que tous nos variables avaient une influence  sur le choix de la Faculté;
-par exemple les femmes ne choisissent pas les facultés de Technologie et Théologie plus fréquemment, les étudiant issus des sections scientifiques et techniques s'orientent plus en faculté de technologie ,les étudiant les plus agés sont en faculté de théologie, le moins agés sont en faculté de médecine, ceux avec un grand pourcentage à l'\ac{EXETAT} sont en faculté de Médecine et technologie.
+par exemple les femmes ne choisissent pas les facultés de Technologie et Théologie plus fréquemment, les étudiants issus des sections scientifiques et techniques s'orientent plus en faculté de technologie ,les étudiants les plus agés sont en faculté de théologie, le moins agés sont en faculté de médecine, ceux avec un grand pourcentage à l'\ac{EXETAT} sont en faculté de Médecine et technologie.
 \paragraph{}
-Mais après l'analyse des ces données face à notre variable de sortie le CGPA celle qui symbolise le réussite d'un étudiant au sein d'une faculté nous avons pu remarque avec certitude que certaines variables n'influent à rien sur le CGPA comme le pourcentage obtenu à l'\ac{EXETAT}  ,l'age ainsi que le sexe des étudiant!
-c'est pourquoi lors de l'élaboration de  notre modèle d'apprentissage ses variables ne seront pas considérés lors de la constitution de notre ensemble d'apprentissage surtout pour la prédiction du CGPA. \\
+Mais après l'analyse de ces données face à notre variable de sortie le CGPA celle qui symbolise le réussite d'un étudiant au sein d'une faculté nous avons pu remarque avec certitude que certaines variables n'influent à rien sur le CGPA comme le pourcentage obtenu à l'\ac{EXETAT}  ,l'age ainsi que le sexe des étudiant!
+C'est pourquoi lors de l'élaboration de  notre modèle d'apprentissage ses variables ne seront pas considérés lors de la constitution de notre ensemble d'apprentissage surtout pour la prédiction du CGPA. \\
 Nous passons maintenant au prochain chapitre consistant à l'élaboration de notre ensemble d'apprentissage et notre modèle de prédiction  pour chaque faculté.

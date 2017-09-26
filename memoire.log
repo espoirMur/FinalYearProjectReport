@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  14 SEP 2017 21:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  26 SEP 2017 13:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1231,9 +1231,9 @@ although it is yet undefined on input line 13.
 ) [7
 
 ]
-(./text/abreviation.tex) [8
+(./text/abreviation.tex [8
 
-] (./text/introduction.tex [1
+]) [9] (./text/introduction.tex [1
 
 ] [2
 
@@ -1248,7 +1248,7 @@ Chapitre 1.
 
 
 ] [6]) [7] (./text/RegressionLineaire.tex
-<fig/regressionLineaire1var.png, id=62, 219.06844pt x 121.20282pt>
+<fig/regressionLineaire1var.png, id=65, 219.06844pt x 121.20282pt>
 File: fig/regressionLineaire1var.png Graphic file (type png)
 
 <use fig/regressionLineaire1var.png>
@@ -1259,7 +1259,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--37
 
  []
 
-<fig/regressionPlokynome.png, id=64, 91.84312pt x 115.18031pt>
+<fig/regressionPlokynome.png, id=67, 91.84312pt x 115.18031pt>
 File: fig/regressionPlokynome.png Graphic file (type png)
 
 <use fig/regressionPlokynome.png>
@@ -1275,7 +1275,7 @@ Package pdftex.def Info: fig/regressionPlokynome.png used on input line 87.
 (pdftex.def)             Requested size: 227.62206pt x 285.50533pt.
  [9 <./fig/regressionPlokynome.png>]) [10]
 (./text/RegressionLogistique.tex
-<fig/FonctionSigm.png, id=84, 273.27094pt x 159.59625pt>
+<fig/FonctionSigm.png, id=88, 273.27094pt x 159.59625pt>
 File: fig/FonctionSigm.png Graphic file (type png)
 
 <use fig/FonctionSigm.png>
@@ -1284,14 +1284,14 @@ Package pdftex.def Info: fig/FonctionSigm.png used on input line 31.
  [11
 
  <./fig/FonctionSigm.png>]
-<fig/DecisionBoudary.png, id=91, 219.06844pt x 180.675pt>
+<fig/DecisionBoudary.png, id=94, 219.06844pt x 180.675pt>
 File: fig/DecisionBoudary.png Graphic file (type png)
 
 <use fig/DecisionBoudary.png>
 Package pdftex.def Info: fig/DecisionBoudary.png used on input line 67.
 (pdftex.def)             Requested size: 227.62206pt x 187.73213pt.
 
-<fig/ErreurRegressionLogistique.png, id=92, 240.9pt x 192.72pt>
+<fig/ErreurRegressionLogistique.png, id=95, 240.9pt x 192.72pt>
 File: fig/ErreurRegressionLogistique.png Graphic file (type png)
 
 <use fig/ErreurRegressionLogistique.png>
@@ -1299,7 +1299,7 @@ Package pdftex.def Info: fig/ErreurRegressionLogistique.png used on input line
 96.
 (pdftex.def)             Requested size: 182.09486pt x 145.6806pt.
 
-<fig/ErreurRegressionLogistique2.png, id=93, 240.9pt x 196.48407pt>
+<fig/ErreurRegressionLogistique2.png, id=96, 240.9pt x 196.48407pt>
 File: fig/ErreurRegressionLogistique2.png Graphic file (type png)
 
 <use fig/ErreurRegressionLogistique2.png>
@@ -1307,48 +1307,48 @@ Package pdftex.def Info: fig/ErreurRegressionLogistique2.png used on input line
  98.
 (pdftex.def)             Requested size: 182.09486pt x 148.52594pt.
 
-<fig/Overfiitting1.png, id=94, 199.49532pt x 164.11313pt>
+<fig/Overfiitting1.png, id=97, 199.49532pt x 164.11313pt>
 File: fig/Overfiitting1.png Graphic file (type png)
 
 <use fig/Overfiitting1.png>
 Package pdftex.def Info: fig/Overfiitting1.png used on input line 120.
 (pdftex.def)             Requested size: 182.09486pt x 149.80644pt.
 
-<fig/Overfiitting2.png, id=95, 202.50656pt x 167.12437pt>
+<fig/Overfiitting2.png, id=98, 202.50656pt x 167.12437pt>
 File: fig/Overfiitting2.png Graphic file (type png)
 
 <use fig/Overfiitting2.png>
 Package pdftex.def Info: fig/Overfiitting2.png used on input line 122.
 (pdftex.def)             Requested size: 182.09486pt x 150.28302pt.
 
-<fig/Overfiitting3.png, id=96, 200.24812pt x 172.39406pt>
+<fig/Overfiitting3.png, id=99, 200.24812pt x 172.39406pt>
 File: fig/Overfiitting3.png Graphic file (type png)
 
 <use fig/Overfiitting3.png>
 Package pdftex.def Info: fig/Overfiitting3.png used on input line 124.
 (pdftex.def)             Requested size: 182.09486pt x 156.77625pt.
  [12 <./fig/DecisionBoudary.png>]
-<fig/OverfiittingLogistic.png, id=100, 420.06938pt x 167.12437pt>
+<fig/OverfiittingLogistic.png, id=103, 420.06938pt x 167.12437pt>
 File: fig/OverfiittingLogistic.png Graphic file (type png)
 
 <use fig/OverfiittingLogistic.png>
 Package pdftex.def Info: fig/OverfiittingLogistic.png used on input line 135.
 (pdftex.def)             Requested size: 227.62206pt x 90.55946pt.
-)
+ [13 <./fig/ErreurRegressionLogistique.png> <./fig/ErreurRegressionLogistique2.
+png> <./fig/OverfiittingLogistic.png>])
 Underfull \hbox (badness 10000) in paragraph at lines 156--67
 
  []
 
-[13 <./fig/ErreurRegressionLogistique.png> <./fig/ErreurRegressionLogistique2.p
-ng>] [14 <./fig/Overfiitting1.png> <./fig/Overfiitting2.png> <./fig/Overfiittin
-g3.png>] [15 <./fig/OverfiittingLogistic.png>] (./text/NeuralNetwork.tex
+[14 <./fig/Overfiitting1.png> <./fig/Overfiitting2.png> <./fig/Overfiitting3.pn
+g>] (./text/NeuralNetwork.tex
 <fig/Neurone.png, id=118, 330.63525pt x 162.6075pt>
 File: fig/Neurone.png Graphic file (type png)
  <use fig/Neurone.png>
 Package pdftex.def Info: fig/Neurone.png used on input line 24.
 (pdftex.def)             Requested size: 227.62206pt x 111.94621pt.
 
-[16
+[15
 
  <./fig/Neurone.png>] <fig/SimpleANN.png, id=122, 215.6055pt x 121.6545pt>
 File: fig/SimpleANN.png Graphic file (type png)
@@ -1374,7 +1374,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--95
 
  []
 
-[17 <./fig/SimpleANN.png> <./fig/FullNeural.png>]
+[16 <./fig/SimpleANN.png> <./fig/FullNeural.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
@@ -1382,7 +1382,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
 LaTeX Font Warning: Command \LARGE invalid in math mode on input line 121.
 
-[18 <./fig/NeuralNtwork2.png>]
+[17 <./fig/NeuralNtwork2.png>]
 
 LaTeX Font Warning: Command \LARGE invalid in math mode on input line 131.
 
@@ -1401,11 +1401,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
-Excluding 'comment' comment.
-
-LaTeX Warning: Reference `Algo2' on page 19 undefined on input line 226.
-
-) [19] [20] (./text/SupporVectorMachine.tex
+Excluding 'comment' comment. [18]) [19] (./text/SupporVectorMachine.tex
 <fig/SVNDecisionBoundary1.png, id=141, 273.27094pt x 265.74281pt>
 File: fig/SVNDecisionBoundary1.png Graphic file (type png)
 
@@ -1432,7 +1428,7 @@ File: fig/SVN2D.png Graphic file (type png)
  <use fig/SVN2D.png>
 Package pdftex.def Info: fig/SVN2D.png used on input line 28.
 (pdftex.def)             Requested size: 227.62206pt x 145.41652pt.
- [21
+ [20
 
  <./fig/SVNDecisionBoundary1.png> <./fig/SVNDecisionBoundary2.png> <./fig/SVNDe
 cisionBoundary3.png>]
@@ -1447,7 +1443,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--66
 
  []
 
-[22 <./fig/SVN2D.png>]
+[21 <./fig/SVN2D.png>]
 <fig/NonLinearDecisionBoudary.png, id=151, 602.25pt x 451.6875pt>
 File: fig/NonLinearDecisionBoudary.png Graphic file (type png)
 
@@ -1457,7 +1453,7 @@ Package pdftex.def Info: fig/NonLinearDecisionBoudary.png used on input line 81
 (pdftex.def)             Requested size: 227.62206pt x 170.71947pt.
 
 
-LaTeX Warning: Citation '8' on page 23 undefined on input line 85.
+LaTeX Warning: Citation '8' on page 22 undefined on input line 85.
 
 <fig/NonLinearDecisionBoudary2.png, id=152, 1198.4775pt x 560.0925pt>
 File: fig/NonLinearDecisionBoudary2.png Graphic file (type png)
@@ -1491,14 +1487,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--103
 
  []
 
-[23 <./fig/NonLinearDecisionBoudary.png> <./fig/NonLinearDecisionBoudary2.png>]
+[22 <./fig/NonLinearDecisionBoudary.png> <./fig/NonLinearDecisionBoudary2.png>]
 
 LaTeX Font Warning: Command \large invalid in math mode on input line 117.
 
 
 LaTeX Font Warning: Command \large invalid in math mode on input line 123.
 
-) [24] (./text/TreeBasedAlgorithms.tex
+) [23] (./text/TreeBasedAlgorithms.tex
 Package acronym Info: Label `acro:CHAID' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 14.
@@ -1507,28 +1503,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--23
 
  []
 
-[25
+[24
 
-] [26]
+] [25]
 Underfull \hbox (badness 10000) in paragraph at lines 72--74
 
  []
 
-) [27] (./text/Methodologie_CRISP.tex
+) [26] (./text/Methodologie_CRISP.tex
 <fig/CRISP_tb.png, id=171, 210.7875pt x 206.27063pt>
 File: fig/CRISP_tb.png Graphic file (type png)
  <use fig/CRISP_tb.png>
 Package pdftex.def Info: fig/CRISP_tb.png used on input line 5.
 (pdftex.def)             Requested size: 227.62206pt x 222.75006pt.
 
-[28
+[27
 
- <./fig/CRISP_tb.png>]) [29] (./text/secondChapiter.tex
+ <./fig/CRISP_tb.png>]) [28] (./text/secondChapiter.tex
 Chapitre 2.
 Package acronym Info: Label `acro:UNAF' newly defined as it shall be overridden
 
 although it is yet undefined on input line 4.
-[30
+[29
 
 
 ]
@@ -1539,7 +1535,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
-[31] [32]
+[30] [31]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 46.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -1553,7 +1549,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
 Package acronym Info: Label `acro:RIP' newly defined as it shall be overridden
 although it is yet undefined on input line 57.
-[33]
+[32]
 Underfull \hbox (badness 10000) in paragraph at lines 74--76
 
  []
@@ -1568,11 +1564,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--102
 
  []
 
-[34]
+[33]
 Package acronym Info: Label `acro:INAPS' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 123.
-) [35] (./text/chapter3.tex
+) [34] (./text/chapter3.tex
 Chapitre 3.
 Package acronym Info: Label `acro:CSV' newly defined as it shall be overridden
 although it is yet undefined on input line 10.
@@ -1580,24 +1576,35 @@ although it is yet undefined on input line 10.
 File: fig/Exploration.png Graphic file (type png)
 
 <use fig/Exploration.png>
-Package pdftex.def Info: fig/Exploration.png used on input line 37.
+Package pdftex.def Info: fig/Exploration.png used on input line 35.
 (pdftex.def)             Requested size: 227.62206pt x 180.46544pt.
- [36
+ [35
 
 
 ]
 Package acronym Info: Label `acro:SQL' newly defined as it shall be overridden
-although it is yet undefined on input line 66.
+although it is yet undefined on input line 64.
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--70
+Underfull \hbox (badness 10000) in paragraph at lines 59--68
 
  []
 
-[37 <./fig/Exploration.png>] [38] [39]
+[36 <./fig/Exploration.png>] [37] [38]
 Package acronym Info: Label `acro:DM' newly defined as it shall be overridden
-although it is yet undefined on input line 187.
- [40] [41]
-Overfull \hbox (21.39357pt too wide) in paragraph at lines 313--314
+although it is yet undefined on input line 183.
+Package acronym Info: Label `acro:MCAR' newly defined as it shall be overridden
+
+although it is yet undefined on input line 205.
+Package acronym Info: Label `acro:MAR' newly defined as it shall be overridden
+although it is yet undefined on input line 206.
+Package acronym Info: Label `acro:MNAR' newly defined as it shall be overridden
+
+although it is yet undefined on input line 207.
+ [39]
+Package acronym Info: Label `acro:AA' newly defined as it shall be overridden
+although it is yet undefined on input line 227.
+ [40]
+Overfull \hbox (21.39357pt too wide) in paragraph at lines 309--310
 []\T1/cmr/m/n/12 (-20) On les re-jette et on ap-plique en-suite une des mé-thod
 es d'im-pu-ta-tion (moyenne,médiane...)
  []
@@ -1605,667 +1612,667 @@ es d'im-pu-ta-tion (moyenne,médiane...)
 <fig/AGEPlot1.png, id=220, 350.30875pt x 262.9825pt>
 File: fig/AGEPlot1.png Graphic file (type png)
  <use fig/AGEPlot1.png>
-Package pdftex.def Info: fig/AGEPlot1.png used on input line 350.
+Package pdftex.def Info: fig/AGEPlot1.png used on input line 346.
 (pdftex.def)             Requested size: 227.62206pt x 170.88441pt.
 
 <fig/PercetagePlot.png, id=221, 350.30875pt x 262.9825pt>
 File: fig/PercetagePlot.png Graphic file (type png)
 
 <use fig/PercetagePlot.png>
-Package pdftex.def Info: fig/PercetagePlot.png used on input line 357.
+Package pdftex.def Info: fig/PercetagePlot.png used on input line 353.
 (pdftex.def)             Requested size: 227.62206pt x 170.88441pt.
- [42] [43 <./fig/AGEPlot1.png> <./fig/PercetagePlot.png>]
-Overfull \hbox (240.92097pt too wide) in paragraph at lines 420--435
+ [41] [42 <./fig/AGEPlot1.png> <./fig/PercetagePlot.png>]
+Overfull \hbox (240.92097pt too wide) in paragraph at lines 416--431
  [][] 
  []
 
-[44]
-Overfull \hbox (8.77252pt too wide) in paragraph at lines 455--470
+[43]
+Overfull \hbox (8.77252pt too wide) in paragraph at lines 451--466
  [][] 
  []
 
-[45] <fig/DataExploration.png, id=237, 426.59375pt x 155.58125pt>
+[44] <fig/DataExploration.png, id=237, 426.59375pt x 155.58125pt>
 File: fig/DataExploration.png Graphic file (type png)
 
 <use fig/DataExploration.png>
-Package pdftex.def Info: fig/DataExploration.png used on input line 514.
+Package pdftex.def Info: fig/DataExploration.png used on input line 510.
 (pdftex.def)             Requested size: 227.62206pt x 83.01791pt.
 Package acronym Info: Label `acro:EXETAT' newly defined as it shall be overridd
 en
-although it is yet undefined on input line 528.
+although it is yet undefined on input line 524.
  <fig/AGE.png, id=238, 433.62pt x 289.08pt>
 File: fig/AGE.png Graphic file (type png)
 
 <use fig/AGE.png>
-Package pdftex.def Info: fig/AGE.png used on input line 559.
+Package pdftex.def Info: fig/AGE.png used on input line 555.
 (pdftex.def)             Requested size: 182.09486pt x 121.39511pt.
  <fig/AGEDist.png, id=239, 433.62pt x 289.08pt>
 File: fig/AGEDist.png Graphic file (type png)
 
 <use fig/AGEDist.png>
-Package pdftex.def Info: fig/AGEDist.png used on input line 561.
+Package pdftex.def Info: fig/AGEDist.png used on input line 557.
 (pdftex.def)             Requested size: 182.09486pt x 121.39511pt.
- [46 <./fig/DataExploration.png>]
-
-LaTeX Warning: Reference `fig:Pourcentageb' on page 47 undefined on input line 
-567.
-
+ [45 <./fig/DataExploration.png>]
 <fig/dipomePourcentage.png, id=243, 433.62pt x 289.08pt>
 File: fig/dipomePourcentage.png Graphic file (type png)
 
 <use fig/dipomePourcentage.png>
-Package pdftex.def Info: fig/dipomePourcentage.png used on input line 570.
+Package pdftex.def Info: fig/dipomePourcentage.png used on input line 566.
 (pdftex.def)             Requested size: 182.09486pt x 121.39511pt.
 
 <fig/diplomePercentageDis.png, id=244, 433.62pt x 289.08pt>
 File: fig/diplomePercentageDis.png Graphic file (type png)
 
 <use fig/diplomePercentageDis.png>
-Package pdftex.def Info: fig/diplomePercentageDis.png used on input line 572.
+Package pdftex.def Info: fig/diplomePercentageDis.png used on input line 568.
 (pdftex.def)             Requested size: 182.09486pt x 121.39511pt.
  <fig/NAME.png, id=245, 433.62pt x 289.08pt>
 File: fig/NAME.png Graphic file (type png)
 
 <use fig/NAME.png>
-Package pdftex.def Info: fig/NAME.png used on input line 579.
+Package pdftex.def Info: fig/NAME.png used on input line 575.
 (pdftex.def)             Requested size: 227.62206pt x 151.74721pt.
  <fig/SCHOOLSTATUS.png, id=246, 1445.4pt x 433.62pt>
 File: fig/SCHOOLSTATUS.png Graphic file (type png)
 
 <use fig/SCHOOLSTATUS.png>
-Package pdftex.def Info: fig/SCHOOLSTATUS.png used on input line 589.
+Package pdftex.def Info: fig/SCHOOLSTATUS.png used on input line 585.
 (pdftex.def)             Requested size: 597.50787pt x 179.25421pt.
  <fig/OPTION_RIGHT.png, id=247, 2168.1pt x 722.7pt>
 File: fig/OPTION_RIGHT.png Graphic file (type png)
 
 <use fig/OPTION_RIGHT.png>
-Package pdftex.def Info: fig/OPTION_RIGHT.png used on input line 603.
+Package pdftex.def Info: fig/OPTION_RIGHT.png used on input line 599.
 (pdftex.def)             Requested size: 597.50787pt x 199.16766pt.
- [47 <./fig/AGE.png> <./fig/AGEDist.png>] [48 <./fig/dipomePourcentage.png> <./
+ [46 <./fig/AGE.png> <./fig/AGEDist.png>] [47 <./fig/dipomePourcentage.png> <./
 fig/diplomePercentageDis.png> <./fig/NAME.png> <./fig/SCHOOLSTATUS.png>] <fig/S
 CHOOL_RIGHT.png, id=261, 2168.1pt x 361.35pt>
 File: fig/SCHOOL_RIGHT.png Graphic file (type png)
 
 <use fig/SCHOOL_RIGHT.png>
-Package pdftex.def Info: fig/SCHOOL_RIGHT.png used on input line 622.
+Package pdftex.def Info: fig/SCHOOL_RIGHT.png used on input line 618.
 (pdftex.def)             Requested size: 597.50787pt x 99.58383pt.
 
 <fig/SCHOOLPROVINCE.png, id=262, 2168.1pt x 578.16pt>
 File: fig/SCHOOLPROVINCE.png Graphic file (type png)
 
 <use fig/SCHOOLPROVINCE.png>
-Package pdftex.def Info: fig/SCHOOLPROVINCE.png used on input line 636.
+Package pdftex.def Info: fig/SCHOOLPROVINCE.png used on input line 632.
 (pdftex.def)             Requested size: 597.50787pt x 159.33414pt.
  <fig/FAC.png, id=263, 2168.1pt x 361.35pt>
 File: fig/FAC.png Graphic file (type png)
 
 <use fig/FAC.png>
-Package pdftex.def Info: fig/FAC.png used on input line 648.
+Package pdftex.def Info: fig/FAC.png used on input line 644.
 (pdftex.def)             Requested size: 597.50787pt x 99.58383pt.
- [49 <./fig/OPTION_RIGHT.png> <./fig/SCHOOL_RIGHT.png>]
-[50 <./fig/SCHOOLPROVINCE.png> <./fig/FAC.png>] [51]
+ [48 <./fig/OPTION_RIGHT.png> <./fig/SCHOOL_RIGHT.png>]
+[49 <./fig/SCHOOLPROVINCE.png> <./fig/FAC.png>] [50]
 
-LaTeX Warning: Reference `label' on page 52 undefined on input line 788.
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 759.
+
+
+LaTeX Warning: Reference `lfig:ANOVAb' on page 51 undefined on input line 784.
 
 <fig/AGE-FAC.png, id=277, 867.24pt x 433.62pt>
 File: fig/AGE-FAC.png Graphic file (type png)
  <use fig/AGE-FAC.png>
-Package pdftex.def Info: fig/AGE-FAC.png used on input line 791.
+Package pdftex.def Info: fig/AGE-FAC.png used on input line 787.
 (pdftex.def)             Requested size: 364.19667pt x 182.0993pt.
 
 <fig/AGE-POURC.png, id=278, 867.24pt x 433.62pt>
 File: fig/AGE-POURC.png Graphic file (type png)
  <use fig/AGE-POURC.png>
-Package pdftex.def Info: fig/AGE-POURC.png used on input line 819.
+Package pdftex.def Info: fig/AGE-POURC.png used on input line 815.
 (pdftex.def)             Requested size: 364.19667pt x 182.0993pt.
 
-[52] [53 <./fig/AGE-FAC.png> <./fig/AGE-POURC.png>] [54]
-Underfull \hbox (badness 10000) in paragraph at lines 896--896
+[51] [52 <./fig/AGE-FAC.png> <./fig/AGE-POURC.png>] [53]
+Underfull \hbox (badness 10000) in paragraph at lines 892--892
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 896--896
+Underfull \hbox (badness 6204) in paragraph at lines 892--892
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 896--896
+Underfull \hbox (badness 10000) in paragraph at lines 892--892
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 896--896
+Underfull \hbox (badness 6204) in paragraph at lines 892--892
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 896--896
+Underfull \hbox (badness 10000) in paragraph at lines 892--892
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 896--896
+Underfull \hbox (badness 10000) in paragraph at lines 892--892
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 7944) in paragraph at lines 896--896
+Underfull \hbox (badness 7944) in paragraph at lines 892--892
 \T1/cmr/m/n/12 (+20) même Pour les
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 896--896
+Underfull \hbox (badness 10000) in paragraph at lines 892--892
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 896--896
+Underfull \hbox (badness 5622) in paragraph at lines 892--892
 \T1/cmr/m/n/12 (+20) les moyenne ne
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 896--896
+Underfull \hbox (badness 10000) in paragraph at lines 892--892
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 896--896
+Underfull \hbox (badness 10000) in paragraph at lines 892--892
 \T1/cmr/m/n/12 (+20) pas l'hy-po-thèse
  []
 
 
-Underfull \hbox (badness 7631) in paragraph at lines 896--896
+Underfull \hbox (badness 7631) in paragraph at lines 892--892
 \T1/cmr/m/n/12 (+20) nulle im-mé-dia-te-
  []
 
 
-LaTeX Warning: Float too large for page by 39.00859pt on input line 898.
+LaTeX Warning: Float too large for page by 39.00859pt on input line 894.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--928
+Underfull \hbox (badness 10000) in paragraph at lines 924--924
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 928--928
+Underfull \hbox (badness 6204) in paragraph at lines 924--924
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--928
+Underfull \hbox (badness 10000) in paragraph at lines 924--924
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 928--928
+Underfull \hbox (badness 6204) in paragraph at lines 924--924
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--928
+Underfull \hbox (badness 10000) in paragraph at lines 924--924
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 7944) in paragraph at lines 928--928
+Underfull \hbox (badness 7944) in paragraph at lines 924--924
 \T1/cmr/m/n/12 (+20) même Pour les
  []
 
 
-Underfull \hbox (badness 5189) in paragraph at lines 928--928
+Underfull \hbox (badness 5189) in paragraph at lines 924--924
 \T1/cmr/m/n/12 (+20) des Hommes et
  []
 
 
-Overfull \hbox (16.14606pt too wide) in paragraph at lines 928--928
+Overfull \hbox (16.14606pt too wide) in paragraph at lines 924--924
 []|\T1/cmr/bx/n/12 PROVINCE| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--928
+Underfull \hbox (badness 10000) in paragraph at lines 924--924
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--928
+Underfull \hbox (badness 10000) in paragraph at lines 924--924
 []|\T1/cmr/m/n/12 (+20) > à 0.05 On
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--928
+Underfull \hbox (badness 10000) in paragraph at lines 924--924
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--928
+Underfull \hbox (badness 10000) in paragraph at lines 924--924
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 928--928
+Underfull \hbox (badness 5622) in paragraph at lines 924--924
 \T1/cmr/m/n/12 (+20) les moyenne ne
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--928
+Underfull \hbox (badness 10000) in paragraph at lines 924--924
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 928--928
+Underfull \hbox (badness 5622) in paragraph at lines 924--924
 \T1/cmr/m/n/12 (+20) les moyenne ne
  []
 
 
-LaTeX Warning: Float too large for page by 39.00291pt on input line 930.
+LaTeX Warning: Float too large for page by 39.00291pt on input line 926.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 959--959
+Underfull \hbox (badness 10000) in paragraph at lines 955--955
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 959--959
+Underfull \hbox (badness 6204) in paragraph at lines 955--955
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 959--959
+Underfull \hbox (badness 10000) in paragraph at lines 955--955
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 959--959
+Underfull \hbox (badness 6204) in paragraph at lines 955--955
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 959--959
+Underfull \hbox (badness 10000) in paragraph at lines 955--955
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 7944) in paragraph at lines 959--959
+Underfull \hbox (badness 7944) in paragraph at lines 955--955
 \T1/cmr/m/n/12 (+20) même Pour les
  []
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 959--959
+Underfull \hbox (badness 1436) in paragraph at lines 955--955
 \T1/cmr/m/n/12 (+20) Hommes et 46%
  []
 
 
-Overfull \hbox (16.14606pt too wide) in paragraph at lines 959--959
+Overfull \hbox (16.14606pt too wide) in paragraph at lines 955--955
 []|\T1/cmr/bx/n/12 PROVINCE| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 959--959
+Underfull \hbox (badness 10000) in paragraph at lines 955--955
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 959--959
+Underfull \hbox (badness 10000) in paragraph at lines 955--955
 []|\T1/cmr/m/n/12 (+20) > à 0.05 On
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 959--959
+Underfull \hbox (badness 10000) in paragraph at lines 955--955
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 959--959
+Underfull \hbox (badness 10000) in paragraph at lines 955--955
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 959--959
+Underfull \hbox (badness 5622) in paragraph at lines 955--955
 \T1/cmr/m/n/12 (+20) les moyenne ne
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 959--959
+Underfull \hbox (badness 10000) in paragraph at lines 955--955
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 959--959
+Underfull \hbox (badness 5622) in paragraph at lines 955--955
 \T1/cmr/m/n/12 (+20) les moyenne ne
  []
 
 
-LaTeX Warning: Float too large for page by 38.99821pt on input line 961.
+LaTeX Warning: Float too large for page by 38.99821pt on input line 957.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 990--990
+Underfull \hbox (badness 10000) in paragraph at lines 986--986
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 990--990
+Underfull \hbox (badness 6204) in paragraph at lines 986--986
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 990--990
+Underfull \hbox (badness 10000) in paragraph at lines 986--986
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 990--990
+Underfull \hbox (badness 6204) in paragraph at lines 986--986
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 990--990
+Underfull \hbox (badness 10000) in paragraph at lines 986--986
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 7944) in paragraph at lines 990--990
+Underfull \hbox (badness 7944) in paragraph at lines 986--986
 \T1/cmr/m/n/12 (+20) même Pour les
  []
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 990--990
+Underfull \hbox (badness 1436) in paragraph at lines 986--986
 \T1/cmr/m/n/12 (+20) Hommes et 40%
  []
 
 
-Overfull \hbox (16.14606pt too wide) in paragraph at lines 990--990
+Overfull \hbox (16.14606pt too wide) in paragraph at lines 986--986
 []|\T1/cmr/bx/n/12 PROVINCE| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 990--990
+Underfull \hbox (badness 10000) in paragraph at lines 986--986
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 1584) in paragraph at lines 990--990
+Underfull \hbox (badness 1584) in paragraph at lines 986--986
 \T1/cmr/m/n/12 (+20) pas au-to-ma-ti-que-
  []
 
 
-Underfull \hbox (badness 1199) in paragraph at lines 990--990
+Underfull \hbox (badness 1199) in paragraph at lines 986--986
 \T1/cmr/m/n/12 (+20) ment H0 on ob-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 990--990
+Underfull \hbox (badness 10000) in paragraph at lines 986--986
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 990--990
+Underfull \hbox (badness 10000) in paragraph at lines 986--986
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 990--990
+Underfull \hbox (badness 10000) in paragraph at lines 986--986
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-LaTeX Warning: Float too large for page by 39.01346pt on input line 992.
+LaTeX Warning: Float too large for page by 39.01346pt on input line 988.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1022
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 1022--1022
+Underfull \hbox (badness 6204) in paragraph at lines 1018--1018
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1022
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 1022--1022
+Underfull \hbox (badness 6204) in paragraph at lines 1018--1018
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1022
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 7944) in paragraph at lines 1022--1022
+Underfull \hbox (badness 7944) in paragraph at lines 1018--1018
 \T1/cmr/m/n/12 (+20) même Pour les
  []
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 1022--1022
+Underfull \hbox (badness 1436) in paragraph at lines 1018--1018
 \T1/cmr/m/n/12 (+20) Hommes et 60%
  []
 
 
-Overfull \hbox (16.14606pt too wide) in paragraph at lines 1022--1022
+Overfull \hbox (16.14606pt too wide) in paragraph at lines 1018--1018
 []|\T1/cmr/bx/n/12 PROVINCE| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1022
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1022
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
 []|\T1/cmr/m/n/12 (+20) > à 0.05 On
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1022
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1022
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 1022--1022
+Underfull \hbox (badness 5622) in paragraph at lines 1018--1018
 \T1/cmr/m/n/12 (+20) les moyenne ne
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1022
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1018
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 1022--1022
+Underfull \hbox (badness 5622) in paragraph at lines 1018--1018
 \T1/cmr/m/n/12 (+20) les moyenne ne
  []
 
 
-LaTeX Warning: Float too large for page by 39.00342pt on input line 1024.
+LaTeX Warning: Float too large for page by 39.00342pt on input line 1020.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1054--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1050
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 1054--1054
+Underfull \hbox (badness 6204) in paragraph at lines 1050--1050
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1054--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1050
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 1054--1054
+Underfull \hbox (badness 6204) in paragraph at lines 1050--1050
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1054--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1050
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 7944) in paragraph at lines 1054--1054
+Underfull \hbox (badness 7944) in paragraph at lines 1050--1050
 \T1/cmr/m/n/12 (+20) même Pour les
  []
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 1054--1054
+Underfull \hbox (badness 1436) in paragraph at lines 1050--1050
 \T1/cmr/m/n/12 (+20) Hommes et 52%
  []
 
 
-Overfull \hbox (16.14606pt too wide) in paragraph at lines 1054--1054
+Overfull \hbox (16.14606pt too wide) in paragraph at lines 1050--1050
 []|\T1/cmr/bx/n/12 PROVINCE| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1054--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1050
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1054--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1050
 []|\T1/cmr/m/n/12 (+20) > à 0.05 On
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1054--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1050
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1054--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1050
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 1054--1054
+Underfull \hbox (badness 5622) in paragraph at lines 1050--1050
 \T1/cmr/m/n/12 (+20) les moyenne ne
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1054--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1050
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 1054--1054
+Underfull \hbox (badness 5622) in paragraph at lines 1050--1050
 \T1/cmr/m/n/12 (+20) les moyenne ne
  []
 
 
-LaTeX Warning: Float too large for page by 39.01097pt on input line 1056.
+LaTeX Warning: Float too large for page by 39.01097pt on input line 1052.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1086--1086
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1082
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 1086--1086
+Underfull \hbox (badness 6204) in paragraph at lines 1082--1082
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1086--1086
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1082
 []|\T1/cmr/bx/n/12 Pearson-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 1086--1086
+Underfull \hbox (badness 6204) in paragraph at lines 1082--1082
 []|\T1/cmr/m/n/12 (+20) Pas de re-la-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1086--1086
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1082
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 7944) in paragraph at lines 1086--1086
+Underfull \hbox (badness 7944) in paragraph at lines 1082--1082
 \T1/cmr/m/n/12 (+20) même Pour les
  []
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 1086--1086
+Underfull \hbox (badness 1436) in paragraph at lines 1082--1082
 \T1/cmr/m/n/12 (+20) Hommes et 20%
  []
 
 
-Overfull \hbox (16.14606pt too wide) in paragraph at lines 1086--1086
+Overfull \hbox (16.14606pt too wide) in paragraph at lines 1082--1082
 []|\T1/cmr/bx/n/12 PROVINCE| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1086--1086
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1082
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1086--1086
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1082
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 1584) in paragraph at lines 1086--1086
+Underfull \hbox (badness 1584) in paragraph at lines 1082--1082
 \T1/cmr/m/n/12 (+20) pas au-to-ma-ti-que-
  []
 
 
-Underfull \hbox (badness 1199) in paragraph at lines 1086--1086
+Underfull \hbox (badness 1199) in paragraph at lines 1082--1082
 \T1/cmr/m/n/12 (+20) ment H0 on ob-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1086--1086
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1082
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 1584) in paragraph at lines 1086--1086
+Underfull \hbox (badness 1584) in paragraph at lines 1082--1082
 \T1/cmr/m/n/12 (+20) pas au-to-ma-ti-que-
  []
 
 
-Underfull \hbox (badness 1199) in paragraph at lines 1086--1086
+Underfull \hbox (badness 1199) in paragraph at lines 1082--1082
 \T1/cmr/m/n/12 (+20) ment H0 on ob-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1086--1086
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1082
 []|\T1/cmr/bx/n/12 ANOVA
  []
 
 
-Underfull \hbox (badness 6910) in paragraph at lines 1086--1086
+Underfull \hbox (badness 6910) in paragraph at lines 1082--1082
 []|\T1/cmr/m/n/12 (+20) .05 On ac-cepte
  []
 
 
-Underfull \hbox (badness 1584) in paragraph at lines 1086--1086
+Underfull \hbox (badness 1584) in paragraph at lines 1082--1082
 \T1/cmr/m/n/12 (+20) pas au-to-ma-ti-que-
  []
 
 
-Underfull \hbox (badness 1199) in paragraph at lines 1086--1086
+Underfull \hbox (badness 1199) in paragraph at lines 1082--1082
 \T1/cmr/m/n/12 (+20) ment H0 on ob-
  []
 
 
-LaTeX Warning: Float too large for page by 39.0055pt on input line 1088.
+LaTeX Warning: Float too large for page by 39.0055pt on input line 1084.
 
-[55] [56] [57] [58] [59] [60] [61] [62]) [63] (./text/chapter4.tex
+[54] [55] [56] [57] [58] [59] [60] [61]) [62] (./text/chapter4.tex
 Chapitre 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--4
@@ -2280,7 +2287,7 @@ Package pdftex.def Info: fig/sckikLearnCheatSheet.png used on input line 7.
 (pdftex.def)             Requested size: 227.62206pt x 141.89911pt.
 Package acronym Info: Label `acro:SVR' newly defined as it shall be overridden
 although it is yet undefined on input line 17.
- [64
+ [63
 
 
  <./fig/sckikLearnCheatSheet.png>]
@@ -2290,44 +2297,69 @@ File: fig/ModelBuilding.png Graphic file (type png)
 <use fig/ModelBuilding.png>
 Package pdftex.def Info: fig/ModelBuilding.png used on input line 42.
 (pdftex.def)             Requested size: 227.62206pt x 127.25272pt.
- [65 <./fig/ModelBuilding.png>] [66]
+ [64 <./fig/ModelBuilding.png>] [65]
 Package acronym Info: Label `acro:LOOCV' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 85.
- [67]
+ [66]
 
 LaTeX Warning: Float too large for page by 24.51715pt on input line 148.
 
-[68] [69]
+[67] [68]
 
 LaTeX Warning: Float too large for page by 24.49855pt on input line 203.
 
+[69] [70]
+Package acronym Info: Label `acro:API' newly defined as it shall be overridden
+although it is yet undefined on input line 210.
+Package acronym Info: Label `acro:TDD' newly defined as it shall be overridden
+although it is yet undefined on input line 212.
+Package acronym Info: Label `acro:CI' newly defined as it shall be overridden
+although it is yet undefined on input line 213.
 
-LaTeX Warning: Reference `tab:ensembleResults' on page 70 undefined on input li
-ne 208.
 
-[70] [71]) [72] (./text/conclusion.tex) [73
+LaTeX Warning: Reference `lfig:TDD' on page 71 undefined on input line 217.
+
+<fig/Cycle-global-tdd.png, id=350, 1426.32875pt x 843.15pt>
+File: fig/Cycle-global-tdd.png Graphic file (type png)
+
+<use fig/Cycle-global-tdd.png>
+Package pdftex.def Info: fig/Cycle-global-tdd.png used on input line 220.
+(pdftex.def)             Requested size: 227.62206pt x 134.54652pt.
+ [71 <./fig/Cycle-global-tdd.png>]
+<fig/New-Predictive-Model.png, id=355, 697.60625pt x 515.9275pt>
+File: fig/New-Predictive-Model.png Graphic file (type png)
+
+<use fig/New-Predictive-Model.png>
+Package pdftex.def Info: fig/New-Predictive-Model.png used on input line 237.
+(pdftex.def)             Requested size: 227.62206pt x 168.3436pt.
+Package acronym Info: Label `acro:JSON' newly defined as it shall be overridden
+
+although it is yet undefined on input line 242.
+Package acronym Info: Label `acro:MVC' newly defined as it shall be overridden
+although it is yet undefined on input line 248.
+ [72 <./fig/New-Predictive-Model.png>])
+[73] (./text/conclusion.tex) [74
 
 
-] [74] (./memoire.toc [75
+] [75] (./memoire.toc [76
 
 
 ])
 \tf@toc=\write6
 \openout6 = `memoire.toc'.
 
- [76]
-(./memoire.lof)
+ [77] (./memoire.lof)
 \tf@lof=\write7
 \openout7 = `memoire.lof'.
 
- [77
+ [78
 
 ] (./memoire.lot)
 \tf@lot=\write8
 \openout8 = `memoire.lot'.
 
- [78
+ [79
 
 ]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 80.
@@ -2352,7 +2384,7 @@ Overfull \hbox (25.444pt too wide) in paragraph at lines 81--81
  ?utm _ content =
  []
 
-[79
+[80
 
 ]
 Overfull \hbox (7.29774pt too wide) in paragraph at lines 81--81
@@ -2362,7 +2394,7 @@ Overfull \hbox (7.29774pt too wide) in paragraph at lines 81--81
  . analyticsvidhya .
  []
 
-[80] (./memoire.aux)
+[81] (./memoire.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -2376,13 +2408,13 @@ Package logreq Info: Writing requests to 'memoire.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16632 strings out of 492995
- 272361 string characters out of 6132704
- 643615 words of memory out of 5000000
- 19622 multiletter control sequences out of 15000+600000
- 31209 words of font info for 152 fonts, out of 8000000 for 9000
+ 16697 strings out of 492995
+ 273164 string characters out of 6132704
+ 642615 words of memory out of 5000000
+ 19683 multiletter control sequences out of 15000+600000
+ 31288 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,14n,51p,1298b,2876s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,14n,51p,1298b,2875s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pf
@@ -2415,10 +2447,10 @@ public/cm-super/sfti1095.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
 blic/cm-super/sfti1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
 ic/cm-super/sfti1728.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
 /cm-super/sftt1200.pfb>
-Output written on memoire.pdf (88 pages, 2732872 bytes).
+Output written on memoire.pdf (90 pages, 2869478 bytes).
 PDF statistics:
- 480 PDF objects out of 1000 (max. 8388607)
- 291 compressed objects within 3 object streams
+ 490 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 29892 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 29902 words of extra memory for PDF output out of 35830 (max. 10000000)
 

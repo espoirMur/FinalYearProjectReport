@@ -26,7 +26,7 @@ ${\theta }^{T}{x} + b = 1$  et ${\theta }^{T}{x} + b=- 1$ .
  \begin{figure}[ht]
  	\centering
  	\includegraphics[width=0.5\textwidth]{fig/SVN2D.png}
- 	\caption{Problème de SVM en 2 dimesions  }
+ 	\caption{Problème de SVM en 2 dimensions  }
  	\label{fig:image14}
  \end{figure}\\
 Ainsi le but de SVM serait de trouver l'hyperplan qui maximise la marge ou la distance  entre ces 2  hyperplans, et d'après la géométrie analytique cette distance se calcule de la manière suivante $d =\frac{2}{||\theta||}$
@@ -55,14 +55,14 @@ le lagrangien est donné par :
  , car  $|| {\theta}||^{2} = {\theta}^{T} \theta $ 
 \end{center} 
 et ${\nabla }{L}=0$ \\
-Ce qui nous donnent : \\
+Ce qui nous donne : \\
 $\frac{\partial L}{\partial {\theta}} =  \theta -  \sum _{i=1}^{m}{\alpha}_{i}{y}_{i}{x}_{i} =0$   ce qui donne  $\theta =  \sum _{i=1}^{m}{\alpha}_{i}{y}_{i}{x}_{i}$\\
 $\frac{\partial L}{\partial {b }} =0 $ nous donne $\sum _{i=1}^{m}{\alpha}_{i}{y}_{i}=0 $ \\
 En mettant ces 2 expressions des L on obtient : \\
 ${\Large L} =\frac{-1}{2} \sum _{i=1}^{m} \sum _{i=j}^{m} {\alpha}_{i}{\alpha}_{j}{y}_{i}{y}_{j} {X}_{i}^{T} . {{X}_{j}}+ \sum _{i=1}^{m} {\alpha}{i} $ \\
   ,qui n'est qu'une fonction de ${\alpha}_{i}$ \\
 Il est connu sous le nom d'un problème de dualité car si on connait ${\alpha}_{i}$ on connait ${\theta}$  
-L doit être maximiser maintenant , ainsi notre problème de dualité s'écrira :\\
+L doit être maximise maintenant , ainsi notre problème de dualité s'écrira :\\
 \begin{center}
 	$ \left\{\begin{array}{ll}
 	max \sum _{i=1}^{m} {\alpha}{i} -  \frac{1}{2} \sum _{i=1}^{m} \sum _{i=j}^{m} {\alpha}_{i}{\alpha}_{j}{y}_{i}{y}_{j} {X}_{i}^{T} . {{X}_{j}},&  \\
@@ -72,7 +72,7 @@ L doit être maximiser maintenant , ainsi notre problème de dualité s'écrira 
 \end{center}
 Avant de s'attaquer à la résolution de ce problème remarquons quelque éléments intéressants qu'il présente :\\
 -  la grande partie des valeurs de ${\alpha}_{i}$ sont nulles et  aux    valeurs non nulles correspondent des ${x}_{i}$ qu'on appelle support Vector.\\
--  Pour prédire la classe d'un  nouveaux élément z nous avons qu'a verifer s'il se place au dessus ou en dessous de notre frontière de décision qui est donnée par ${\theta }^{T}{z} + b =  \sum _{i=1}^{m}{\alpha}_{i}{y}_{i}({X}^{T}_{i}.Z) $. \\
+-  Pour prédire la classe d'un  nouveaux élément z nous avons qu'a vérifier s'il se place au dessus ou en dessous de notre frontière de décision qui est donnée par ${\theta }^{T}{z} + b =  \sum _{i=1}^{m}{\alpha}_{i}{y}_{i}({X}^{T}_{i}.Z) $. \\
 - Mais aussi il présente l'avantage que l'algorithme comprend le produit scalaire des tuples d'entrés , cet avantage sera utilisé lorsqu'on va traiter des frontières de  décisions non linéairement séparable.
 \subsubsection{Données non Séparables linéairement : Notion de Kernel  \cite{SVm2}}
 Dans la plupart des cas surtout dans la pratique les données ne peuvent pas toujours être classer avec une droite ou un hyperplan comme on peut le voir à la \figurename{15} :
@@ -97,7 +97,7 @@ Dans la plupart des cas surtout dans la pratique les données ne peuvent pas tou
  \end{center} 
  Mais on n'est pas obligé de connaitre ${\phi}(x)$ pour calculer ${\large K }(x,z ) $ il existe des Kernel bien définie qui permettent de calculer le produit scalaire sans pour autant connaitre $\phi$ et ainsi faciliter les calcul .\\
  En voici quelque uns les plus utilisé: \\
- - Le Kernel Polynomiale de degré d : ${\large K }(x,z ) =({x}^{T}z+1)^{d}$\\
+ - Le Kernel Polynomial de degré d : ${\large K }(x,z ) =({x}^{T}z+1)^{d}$\\
  - Le Kernel Gaussien :  ${\large K }(x,z ) = \exp( \frac{-{||x-z||}^{2}}{2{\sigma}^{2}})$ \\
  - Le Kernel sigmoïde :${\large K }(x,z ) = \tanh (k{x}^{T}y + \theta)$ \\
  
@@ -121,5 +121,5 @@ Dans la plupart des cas surtout dans la pratique les données ne peuvent pas tou
   \end{center}
   Et ainsi notre frontière de décision sera :
   ${\theta }^{T}{z} + b =  \sum _{i=1}^{m}{\alpha}_{i}{y}_{i}{{\large K }(x,y )} + b $ . \\
-  Pour résoudre ce problème on utilise la méthode de SMO ou Sequential Minimal Optimization qui est la technique la plus utilisée pour la résolution de ces genres des problèmes , il est implémenté dans la plupart des package d'apprentissage automatique .
+  Pour résoudre ce problème on utilise la méthode de ac{SMO} qui est la technique la plus utilisée pour la résolution de ces genres des problèmes , il est implémenté dans la plupart des package d'apprentissage automatique .
   

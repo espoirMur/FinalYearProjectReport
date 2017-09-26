@@ -13,7 +13,7 @@ Le but  de la régression c'est de trouver la fonction qui permet de prédire la
 Cette fonction on l'appelle hypothèse qui sera une droite ou un polynôme selon qu'on utilise la régression linéaire ou polynomiale. \\
 L'hypothèse se présente de la manière suivante :
 
-\textbf{\emph{1 ère cas régression avec un seule variable: }} 
+\textbf{\emph{1 ère cas régression à une seule variable: }} 
 
 Par exemple on tente de prédire le prix d'une maison en fonction de sa superficie : 
 
@@ -30,14 +30,14 @@ on peut le remarque sur la figure suivante ou notre hypothèse est une droite :
 
 \textbf{\emph{2 ème cas régression avec plusieurs variables :}}
 
-Pr exemple prédire le prix d'une maison cette fois en fonction de la superficie, du nombre des chambres ,et de l'année de construction
+ Prédire par exemple le prix d'une maison cette fois en fonction de la superficie, du nombre des chambres ,et de l'année de construction
 
 ${h}_{\theta}\left(x\right)={\theta }_{0}{x}_{0}+{\theta }_{1}{x}_{1}+{\theta }_{2}{x}_{2}+{\theta }_{3}{x}_{3}+....{\theta }_{n}{x}_{n}$
-Dans ce cas notre hypothèse sera en fonction des variables en entré un plan ou un hyperplan.\\
+Dans ce cas notre hypothèse sera en fonction des variables en entrée un plan ou un hyperplan.\\
 
 \textbf{\emph{3 eme cas la regression polynomiale:}}
 
-Dans ce cas au lieu d'utiliser une droite on utilise un polynôme à n degree qui es donnée par:
+Dans ce cas au lieu d'utiliser une droite on utilise un polynôme à n dégrée qui es donnée par:
 
 ${h}_{\theta}\left(x\right)={\theta }_{0}{x}_{0}+{\theta }_{1}{x}_{1}+{\theta }_{2}{x}_{2}^{2}+{\theta }_{3}{x}_{3}^{3}+....{\theta }_{n}{x}_{n}^{n}$
 \begin{figure}[ht]
@@ -96,7 +96,7 @@ On appelle l'erreur de prédiction , la valeur définie par   :
   
   par ex: on cherche à prédire le prix d'une maison en fonction de la surface ${x}_{1}$ : compris entre 30 -- 400 ${m}^2$, le nombres des chambres ${x}_{2}$ : 1-10,\\
     Nous remarquons que nos 2 variables ne sont pas dans la même intervalle et  cela peut présenter un problème de convergence et ainsi empêcher les ${\theta }_{i}$ de converger rapidement .
-   pour limiter ce problème on effectue un normalisation elle consister à remplacer les ${x}_{i}$ pour chaque tuple par :
+   Pour limiter ce problème on effectue une normalisation .Elle consiste à remplacer les ${x}_{i}$ pour chaque tuple par :
    
         ${x}_{j}^{i} =  \frac{{x}_{j}^{i}- {\mu({x}_{j})}}{{\sigma({x}_{j})}}$
         avec : \\
