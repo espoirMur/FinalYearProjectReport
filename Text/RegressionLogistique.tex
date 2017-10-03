@@ -64,7 +64,7 @@ Cette droite ou hyperplan  s'appelle \emph{\textbf{la frontière de décision }}
 Voici comment elle se présente si on n'a que 2 attributs ${x}_{1}$ et ${x}_{2}$ :
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.5\textwidth]{fig/DecisionBoudary.png}
+	\includegraphics[width=0.6\textwidth]{fig/DecisionBoudary.png}
 	\caption{Frontière de décision pour la Régression Logistique à 2 variables}
 	\label{fig:image5}
 \end{figure}
@@ -108,34 +108,23 @@ Et Donc notre Fonction cout pour les $\theta$ sera :
 $J\left({\theta }\right)=\frac{1}{2m}[\sum _{=1}^{m}-{y}^{(i)}\log [{h}_{\theta}\left({x}^{(i)}\right)] -(1-{y}^{(i)})\log [1-{h}_{\theta}\left({x}^{(i)}\right)]]$
 \end{center}
 
-
 Avec ${h}_{\theta}\left(x\right) =\frac{1}{1+{e}^{-{\theta }^{T}{x}}}$
 
  Pour le minimiser,on recours aux mêmes techniques que pour la régression linéaire et c'est le même algorithme de la descente du gradient qu'on utilise  dans ce cas aussi.
 \subsubsection{Régulation : Phénomène de sur-apprentissage}
 Nous venons de passer en revue quelques modèles pour  effectuer la régression linéaire ainsi que la classification avec la régression logistique.
-Jetons un coup d'œil aux 3 images de la `\figurename{ 7 }  \\
-\begin{figure}[ht]
-	\centering
-	\subfloat[${h}_{\theta}\left(x\right)={\theta }_{0}+{\theta }_{1}x$]{\includegraphics[width=0.4\textwidth]{fig/Overfiitting1.png}\label{fig:Image7a}}
-	\hfill
-	\subfloat[${h}_{\theta}\left(x\right)={\theta }_{0}+{\theta }_{1}x+{\theta }_{2}{x}^{2}$]{\includegraphics[width=0.4\textwidth]{fig/Overfiitting2.png}\label{fig:Image7b}}
-	\hfill
-	\subfloat[${h}_{\theta}\left(x\right)={\theta }_{0}+{\theta }_{1}x+{\theta }_{2}{x}^{2}+{\theta }_{3}{x}^{3}+{\theta }_{4}{x}^{4}$]{\includegraphics[width=0.4\textwidth]{fig/Overfiitting3.png}\label{fig:Image7c}}
-	\caption{a: Sous-apprentissage et c : Sur-apprentissage avec la régression linéaire}
-\end{figure}
-A la première figure (a) : avons la régression linéaire comme hypothèse  mais on remarque que cela n'est pas un bon modèle de prédiction car dans ce cas l'erreur est trop grande.on parle de \emph{sous-apprentissage ou Underfitting}.
-A la deuxième figure notre hypothèse c'est un polynôme du second dégrée le modèle convient bien à notre ensemble d'apprentissage et dans ce cas l'erreur est moins élevée.
-Par contre sur la troisième cas l'hypothèse c'est un polynôme du quatrième dégrée qui convient parfaitement à notre ensemble d'apprentissage et l'erreur est nulle, mais c'est modèle n'est pas bon  car il  convient parfaitement sur notre ensemble d'apprentissage et n'est pas adaptable aux nouvelles données, elle n'est pas une solution générale.Dans ce cas on parle de \emph{Sur-Apprentissage ou Overfitting } .
-
-On remarque ce même phénomène avec la régression logistique .
-
+Jetons un coup d'œil aux 3 images de la figure \ref{fig:image8}  \\
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{fig/OverfiittingLogistic.png}
-	\caption{Overfitting et Underfitting avec la régression logistique }
+	\includegraphics[width=0.9\textwidth]{fig/underfitting2.png}
+	\caption{Overfitting et Underfitting  }
 	\label{fig:image8}
 \end{figure}
+A la première figure (a) : avons la régression linéaire comme hypothèse  mais on remarque que cela n'est pas un bon modèle de prédiction car dans ce cas l'erreur est trop grande.on parle de \emph{sous-apprentissage ou Underfitting}.
+A la deuxième figure notre hypothèse c'est un polynôme du quatrième  dégrée le modèle convient bien à notre ensemble d'apprentissage et dans ce cas l'erreur est moins élevée.
+Par contre sur la troisième cas l'hypothèse c'est un polynôme du quinzième  dégrée qui convient parfaitement à notre ensemble d'apprentissage et l'erreur est nulle, mais c'est modèle n'est pas bon  car il  convient parfaitement sur notre ensemble d'apprentissage et n'est pas adaptable aux nouvelles données, elle n'est pas une solution générale.Dans ce cas on parle de \emph{Sur-Apprentissage ou Overfitting } .
+
+On remarque ce même phénomène avec la régression logistique .
 \subsubsection{Solutions aux problèmes de sur apprentissage }
 Signalons qu'une des cause de ce phénomène c'est le fait d'avoir peut des données avec plusieurs attributs .
 
@@ -155,3 +144,4 @@ Et Pour la régression logistique elle sera :
 
 Avec $\lambda$ le facteur de régularisation. 
 C'est cette nouvelle fonction cout qu'on utilise pour l'algorithme de la descente du gradient régularisé.\\ 
+Dans la pratique il existe plus de 5 modèles de régression régularisé entre autres : Ridge, Lasso, ElasticNet

@@ -1,0 +1,45 @@
+\documentclass[11pt,x11names]{report}
+\usepackage[left=2.5cm,right=1cm,top=2.5cm,bottom=0cm]{geometry}
+\usepackage[dutch]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{tikz}
+
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[scaled=0.92]{helvet}
+
+\begin{document}
+
+\definecolor{blueXIIdark}{cmyk}{1,.8,.30,.05}
+\definecolor{blueXIIlight}{cmyk}{.0,.30,1,.00}
+
+%\vspace{5cm}
+
+\begin{tikzpicture}[remember picture,overlay]
+\textsl{}\draw ([yshift=-1.8in]current page.north) node[inner sep=0] (a) {\includegraphics[width=\paperwidth]{fig/ulpgl_logo.jpg}};
+\node[anchor=east,xshift=-8mm] (example-tabular) at (a.east)   {
+\begin{tabular}{rr}
+\LARGE\color{white}\bfseries Faculteit Geneeskunde en \\
+\LARGE\color{white}\bfseries Gezondheidswetenschappen \\
+\end{tabular}
+};
+\end{tikzpicture}
+
+\vspace{8cm}
+
+\Huge\color{blueXIIdark} Here comes the title of the dissertation
+
+\vspace{8.5cm}
+
+\large\color{black}
+\begin{tabularx}{\textwidth}{Xr}
+& \textbf{\Large Author Name}\vspace{0.8cm}\\
+  Promotor: & Profefschrift ingediend ter verkrijgen \\
+Prof. dr. ir. B. Leader & van de graad van Master of Science\\
+& in de geneeskunde\\[2cm]
+& Academiejaar 2014--2015
+\end{tabularx}
+
+\vspace{1.5cm}
+\noindent\makebox[\linewidth]{\color{blueXIIlight}\rule{30cm}{8pt}}
+\end{document}

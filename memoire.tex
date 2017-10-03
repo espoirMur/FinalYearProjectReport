@@ -30,7 +30,7 @@ sorting=none]{biblatex}
 % for dedications
 \usepackage{calligra}
 \usepackage[table]{xcolor}
-\definecolor{skyblue}{RGB}{175,200,255}
+\definecolor{skyblue}{RGB}{19,142,182}
 \definecolor{darkblue}{RGB}{2,40,94}
 \newcommand\litem[1]{\item{\bfseries #1,\enspace}}
 \usepackage[margin=2.5cm,left=2.5cm,
@@ -40,6 +40,7 @@ top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
 \usepackage{multirow}
 \usepackage{colortbl}
 \usepackage{epigraph}
+\usepackage{pdfpages} %for df cover 
 %set the epigraph style 
 \setlength\epigraphwidth{.8\textwidth}
 \setlength\epigraphrule{0pt}
@@ -51,7 +52,8 @@ top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
 %\rowcolors{2}{blue!05}{skyblue!05}
 \bibliography{bib/litterature.bib}{}
 \addbibresource{bib/litterature.bib}\newpage\cleardoublepage
-\begin{document}
+\begin{document}	
+\includepdf[pages=-]{cover_page.pdf}
 \pagenumbering{roman}
 \input{text/epigraph.tex}\cleardoublepage
 \input{text/In_memoriam.tex}\cleardoublepage

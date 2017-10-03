@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  26 SEP 2017 13:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  3 OCT 2017 23:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1023,6 +1023,40 @@ Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
 \epigraphwidth=\skip86
 \epigraphrule=\skip87
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2017/01/14 v0.5h Insert pages of external PDF documents (AM)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count336
+\calc@Bcount=\count337
+\calc@Adimen=\dimen166
+\calc@Bdimen=\dimen167
+\calc@Askip=\skip88
+\calc@Bskip=\skip89
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count338
+\calc@Cskip=\skip90
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+))
+\AM@pagewidth=\dimen168
+\AM@pageheight=\dimen169
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2017/01/14 v0.5h Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box58
+\AM@global@opts=\toks38
+\AM@toc@title=\toks39
+\c@AM@survey=\count339
+\AM@templatesizebox=\box59
+)
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -1039,26 +1073,26 @@ File: french.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count336
-\@quotereset=\count337
+\@quotelevel=\count340
+\@quotereset=\count341
 (./memoire.aux)
 \openout1 = `memoire.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Info: Redefining \degres on input line 54.
-LaTeX Info: Redefining \dots on input line 54.
-LaTeX Info: Redefining \up on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Info: Redefining \degres on input line 55.
+LaTeX Info: Redefining \dots on input line 55.
+LaTeX Info: Redefining \up on input line 55.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
@@ -1100,21 +1134,21 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Invalid format of field 'date'.
 
 )
-Package biblatex Info: Reference section=0 on input line 54.
-Package biblatex Info: Reference segment=0 on input line 54.
+Package biblatex Info: Reference section=0 on input line 55.
+Package biblatex Info: Reference segment=0 on input line 55.
  (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count338
-\scratchdimen=\dimen166
-\scratchbox=\box58
-\nofMPsegments=\count339
-\nofMParguments=\count340
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count341
-\MPscratchDim=\dimen167
-\MPnumerator=\count342
-\makeMPintoPDFobject=\count343
-\everyMPtoPDFconversion=\toks39
+\scratchcounter=\count342
+\scratchdimen=\dimen170
+\scratchbox=\box60
+\nofMPsegments=\count343
+\nofMParguments=\count344
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count345
+\MPscratchDim=\dimen171
+\MPnumerator=\count346
+\makeMPintoPDFobject=\count347
+\everyMPtoPDFconversion=\toks41
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1135,7 +1169,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 54.
+LaTeX Info: Redefining \microtypecontext on input line 55.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1184,11 +1218,51 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(./text/epigraph.tex) [1
+\AtBeginShipoutBox=\box61
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+<cover_page.pdf, id=1, 614.295pt x 794.97pt>
+File: cover_page.pdf Graphic file (type pdf)
+ <use cover_page.pdf>
+Package pdftex.def Info: cover_page.pdf used on input line 56.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: cover_page.pdf Graphic file (type pdf)
+
+<use cover_page.pdf>
+Package pdftex.def Info: cover_page.pdf used on input line 56.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+ <cover_page.pdf, id=4, page=1, 614.295pt x 794.97pt>
+File: cover_page.pdf Graphic file (type pdf)
+
+<use cover_page.pdf, page 1>
+Package pdftex.def Info: cover_page.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: cover_page.pdf Graphic file (type pdf)
+ <use cover_page.pdf, page 1>
+Package pdftex.def Info: cover_page.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: cover_page.pdf Graphic file (type pdf)
+
+<use cover_page.pdf, page 1>
+Package pdftex.def Info: cover_page.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: cover_page.pdf Graphic file (type pdf)
+ <use cover_page.pdf, page 1>
+Package pdftex.def Info: cover_page.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: cover_page.pdf Graphic file (type pdf)
+
+<use cover_page.pdf, page 1>
+Package pdftex.def Info: cover_page.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [1
 
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./text
-/In_memoriam.tex) [2
+ <./cover_page.pdf>] (./text/epigraph.tex)
+[1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./text/In_memoriam.tex) [2
 
 ] (./text/dedicaces.tex) [3
 
@@ -1199,7 +1273,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 22--59
+Underfull \hbox (badness 10000) in paragraph at lines 22--61
 
  []
 
@@ -1248,34 +1322,35 @@ Chapitre 1.
 
 
 ] [6]) [7] (./text/RegressionLineaire.tex
-<fig/regressionLineaire1var.png, id=65, 219.06844pt x 121.20282pt>
-File: fig/regressionLineaire1var.png Graphic file (type png)
+<fig/linear_regression_1.png, id=121, 433.62pt x 289.08pt>
+File: fig/linear_regression_1.png Graphic file (type png)
 
-<use fig/regressionLineaire1var.png>
-Package pdftex.def Info: fig/regressionLineaire1var.png used on input line 26.
-(pdftex.def)             Requested size: 227.62206pt x 125.93698pt.
+<use fig/linear_regression_1.png>
+Package pdftex.def Info: fig/linear_regression_1.png used on input line 26.
+(pdftex.def)             Requested size: 227.62206pt x 151.74721pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 35--37
 
  []
 
-<fig/regressionPlokynome.png, id=67, 91.84312pt x 115.18031pt>
-File: fig/regressionPlokynome.png Graphic file (type png)
+<fig/poly_regression.png, id=123, 2168.1pt x 1084.05pt>
+File: fig/poly_regression.png Graphic file (type png)
 
-<use fig/regressionPlokynome.png>
-Package pdftex.def Info: fig/regressionPlokynome.png used on input line 45.
-(pdftex.def)             Requested size: 227.62206pt x 285.50533pt.
+<use fig/poly_regression.png>
+Package pdftex.def Info: fig/poly_regression.png used on input line 45.
+(pdftex.def)             Requested size: 227.62206pt x 113.80379pt.
  [8
 
- <./fig/regressionLineaire1var.png>]
-File: fig/regressionPlokynome.png Graphic file (type png)
+ <./fig/linear_regression_1.png>]
+<fig/Cost_vs_iterations.png, id=133, 722.7pt x 361.35pt>
+File: fig/Cost_vs_iterations.png Graphic file (type png)
 
-<use fig/regressionPlokynome.png>
-Package pdftex.def Info: fig/regressionPlokynome.png used on input line 87.
-(pdftex.def)             Requested size: 227.62206pt x 285.50533pt.
- [9 <./fig/regressionPlokynome.png>]) [10]
-(./text/RegressionLogistique.tex
-<fig/FonctionSigm.png, id=88, 273.27094pt x 159.59625pt>
+<use fig/Cost_vs_iterations.png>
+Package pdftex.def Info: fig/Cost_vs_iterations.png used on input line 87.
+(pdftex.def)             Requested size: 227.62206pt x 113.80931pt.
+ [9 <./fig/poly_regression.png> <./fig/Cost_vs_iterations.png>]) [10] (./text/R
+egressionLogistique.tex
+<fig/FonctionSigm.png, id=147, 273.27094pt x 159.59625pt>
 File: fig/FonctionSigm.png Graphic file (type png)
 
 <use fig/FonctionSigm.png>
@@ -1284,86 +1359,64 @@ Package pdftex.def Info: fig/FonctionSigm.png used on input line 31.
  [11
 
  <./fig/FonctionSigm.png>]
-<fig/DecisionBoudary.png, id=94, 219.06844pt x 180.675pt>
+<fig/DecisionBoudary.png, id=153, 578.16pt x 433.62pt>
 File: fig/DecisionBoudary.png Graphic file (type png)
 
 <use fig/DecisionBoudary.png>
 Package pdftex.def Info: fig/DecisionBoudary.png used on input line 67.
-(pdftex.def)             Requested size: 227.62206pt x 187.73213pt.
+(pdftex.def)             Requested size: 273.14923pt x 204.86006pt.
 
-<fig/ErreurRegressionLogistique.png, id=95, 240.9pt x 192.72pt>
+<fig/ErreurRegressionLogistique.png, id=154, 578.16pt x 433.62pt>
 File: fig/ErreurRegressionLogistique.png Graphic file (type png)
 
 <use fig/ErreurRegressionLogistique.png>
 Package pdftex.def Info: fig/ErreurRegressionLogistique.png used on input line 
 96.
-(pdftex.def)             Requested size: 182.09486pt x 145.6806pt.
+(pdftex.def)             Requested size: 182.09486pt x 136.57117pt.
 
-<fig/ErreurRegressionLogistique2.png, id=96, 240.9pt x 196.48407pt>
+<fig/ErreurRegressionLogistique2.png, id=155, 578.16pt x 433.62pt>
 File: fig/ErreurRegressionLogistique2.png Graphic file (type png)
 
 <use fig/ErreurRegressionLogistique2.png>
 Package pdftex.def Info: fig/ErreurRegressionLogistique2.png used on input line
  98.
-(pdftex.def)             Requested size: 182.09486pt x 148.52594pt.
+(pdftex.def)             Requested size: 182.09486pt x 136.57117pt.
 
-<fig/Overfiitting1.png, id=97, 199.49532pt x 164.11313pt>
-File: fig/Overfiitting1.png Graphic file (type png)
+<fig/underfitting2.png, id=156, 1011.78pt x 361.35pt>
+File: fig/underfitting2.png Graphic file (type png)
 
-<use fig/Overfiitting1.png>
-Package pdftex.def Info: fig/Overfiitting1.png used on input line 120.
-(pdftex.def)             Requested size: 182.09486pt x 149.80644pt.
+<use fig/underfitting2.png>
+Package pdftex.def Info: fig/underfitting2.png used on input line 119.
+(pdftex.def)             Requested size: 409.71692pt x 146.3294pt.
 
-<fig/Overfiitting2.png, id=98, 202.50656pt x 167.12437pt>
-File: fig/Overfiitting2.png Graphic file (type png)
-
-<use fig/Overfiitting2.png>
-Package pdftex.def Info: fig/Overfiitting2.png used on input line 122.
-(pdftex.def)             Requested size: 182.09486pt x 150.28302pt.
-
-<fig/Overfiitting3.png, id=99, 200.24812pt x 172.39406pt>
-File: fig/Overfiitting3.png Graphic file (type png)
-
-<use fig/Overfiitting3.png>
-Package pdftex.def Info: fig/Overfiitting3.png used on input line 124.
-(pdftex.def)             Requested size: 182.09486pt x 156.77625pt.
- [12 <./fig/DecisionBoudary.png>]
-<fig/OverfiittingLogistic.png, id=103, 420.06938pt x 167.12437pt>
-File: fig/OverfiittingLogistic.png Graphic file (type png)
-
-<use fig/OverfiittingLogistic.png>
-Package pdftex.def Info: fig/OverfiittingLogistic.png used on input line 135.
-(pdftex.def)             Requested size: 227.62206pt x 90.55946pt.
- [13 <./fig/ErreurRegressionLogistique.png> <./fig/ErreurRegressionLogistique2.
-png> <./fig/OverfiittingLogistic.png>])
-Underfull \hbox (badness 10000) in paragraph at lines 156--67
+Underfull \hbox (badness 10000) in paragraph at lines 115--122
 
  []
 
-[14 <./fig/Overfiitting1.png> <./fig/Overfiitting2.png> <./fig/Overfiitting3.pn
-g>] (./text/NeuralNetwork.tex
-<fig/Neurone.png, id=118, 330.63525pt x 162.6075pt>
+[12 <./fig/DecisionBoudary.png>] [13 <./fig/ErreurRegressionLogistique.png> <./
+fig/ErreurRegressionLogistique2.png> <./fig/underfitting2.png>]) [14]
+(./text/NeuralNetwork.tex <fig/Neurone.png, id=171, 330.63525pt x 162.6075pt>
 File: fig/Neurone.png Graphic file (type png)
- <use fig/Neurone.png>
+
+<use fig/Neurone.png>
 Package pdftex.def Info: fig/Neurone.png used on input line 24.
 (pdftex.def)             Requested size: 227.62206pt x 111.94621pt.
+ [15
 
-[15
-
- <./fig/Neurone.png>] <fig/SimpleANN.png, id=122, 215.6055pt x 121.6545pt>
+ <./fig/Neurone.png>]
+<fig/SimpleANN.png, id=176, 215.6055pt x 121.6545pt>
 File: fig/SimpleANN.png Graphic file (type png)
-
-<use fig/SimpleANN.png>
+ <use fig/SimpleANN.png>
 Package pdftex.def Info: fig/SimpleANN.png used on input line 50.
 (pdftex.def)             Requested size: 227.62206pt x 128.4408pt.
- <fig/FullNeural.png, id=123, 173.448pt x 86.724pt>
-File: fig/FullNeural.png Graphic file (type png)
 
-<use fig/FullNeural.png>
+<fig/FullNeural.png, id=177, 173.448pt x 86.724pt>
+File: fig/FullNeural.png Graphic file (type png)
+ <use fig/FullNeural.png>
 Package pdftex.def Info: fig/FullNeural.png used on input line 65.
 (pdftex.def)             Requested size: 227.62206pt x 113.817pt.
 
-<fig/NeuralNtwork2.png, id=124, 252.19218pt x 162.6075pt>
+<fig/NeuralNtwork2.png, id=178, 252.19218pt x 162.6075pt>
 File: fig/NeuralNtwork2.png Graphic file (type png)
 
 <use fig/NeuralNtwork2.png>
@@ -1402,28 +1455,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--136
  []
 
 Excluding 'comment' comment. [18]) [19] (./text/SupporVectorMachine.tex
-<fig/SVNDecisionBoundary1.png, id=141, 273.27094pt x 265.74281pt>
+<fig/SVNDecisionBoundary1.png, id=194, 273.27094pt x 265.74281pt>
 File: fig/SVNDecisionBoundary1.png Graphic file (type png)
 
 <use fig/SVNDecisionBoundary1.png>
 Package pdftex.def Info: fig/SVNDecisionBoundary1.png used on input line 7.
 (pdftex.def)             Requested size: 136.57462pt x 132.8143pt.
 
-<fig/SVNDecisionBoundary2.png, id=142, 264.23718pt x 241.65282pt>
+<fig/SVNDecisionBoundary2.png, id=195, 264.23718pt x 241.65282pt>
 File: fig/SVNDecisionBoundary2.png Graphic file (type png)
 
 <use fig/SVNDecisionBoundary2.png>
 Package pdftex.def Info: fig/SVNDecisionBoundary2.png used on input line 9.
 (pdftex.def)             Requested size: 136.57462pt x 124.90059pt.
 
-<fig/SVNDecisionBoundary3.png, id=143, 269.50688pt x 245.41687pt>
+<fig/SVNDecisionBoundary3.png, id=196, 269.50688pt x 245.41687pt>
 File: fig/SVNDecisionBoundary3.png Graphic file (type png)
 
 <use fig/SVNDecisionBoundary3.png>
 Package pdftex.def Info: fig/SVNDecisionBoundary3.png used on input line 11.
 (pdftex.def)             Requested size: 136.57462pt x 124.36705pt.
 
-<fig/SVN2D.png, id=144, 441.90094pt x 282.30469pt>
+<fig/SVN2D.png, id=197, 441.90094pt x 282.30469pt>
 File: fig/SVN2D.png Graphic file (type png)
  <use fig/SVN2D.png>
 Package pdftex.def Info: fig/SVN2D.png used on input line 28.
@@ -1444,7 +1497,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--66
  []
 
 [21 <./fig/SVN2D.png>]
-<fig/NonLinearDecisionBoudary.png, id=151, 602.25pt x 451.6875pt>
+<fig/NonLinearDecisionBoudary.png, id=205, 602.25pt x 451.6875pt>
 File: fig/NonLinearDecisionBoudary.png Graphic file (type png)
 
 <use fig/NonLinearDecisionBoudary.png>
@@ -1455,7 +1508,7 @@ Package pdftex.def Info: fig/NonLinearDecisionBoudary.png used on input line 81
 
 LaTeX Warning: Citation '8' on page 22 undefined on input line 85.
 
-<fig/NonLinearDecisionBoudary2.png, id=152, 1198.4775pt x 560.0925pt>
+<fig/NonLinearDecisionBoudary2.png, id=206, 1198.4775pt x 560.0925pt>
 File: fig/NonLinearDecisionBoudary2.png Graphic file (type png)
 
 <use fig/NonLinearDecisionBoudary2.png>
@@ -1511,7 +1564,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--74
  []
 
 ) [26] (./text/Methodologie_CRISP.tex
-<fig/CRISP_tb.png, id=171, 210.7875pt x 206.27063pt>
+<fig/CRISP_tb.png, id=225, 210.7875pt x 206.27063pt>
 File: fig/CRISP_tb.png Graphic file (type png)
  <use fig/CRISP_tb.png>
 Package pdftex.def Info: fig/CRISP_tb.png used on input line 5.
@@ -1572,7 +1625,7 @@ although it is yet undefined on input line 123.
 Chapitre 3.
 Package acronym Info: Label `acro:CSV' newly defined as it shall be overridden
 although it is yet undefined on input line 10.
-<fig/Exploration.png, id=199, 461.47406pt x 365.86688pt>
+<fig/Exploration.png, id=253, 461.47406pt x 365.86688pt>
 File: fig/Exploration.png Graphic file (type png)
 
 <use fig/Exploration.png>
@@ -1609,13 +1662,13 @@ Overfull \hbox (21.39357pt too wide) in paragraph at lines 309--310
 es d'im-pu-ta-tion (moyenne,médiane...)
  []
 
-<fig/AGEPlot1.png, id=220, 350.30875pt x 262.9825pt>
+<fig/AGEPlot1.png, id=274, 350.30875pt x 262.9825pt>
 File: fig/AGEPlot1.png Graphic file (type png)
  <use fig/AGEPlot1.png>
 Package pdftex.def Info: fig/AGEPlot1.png used on input line 346.
 (pdftex.def)             Requested size: 227.62206pt x 170.88441pt.
 
-<fig/PercetagePlot.png, id=221, 350.30875pt x 262.9825pt>
+<fig/PercetagePlot.png, id=275, 350.30875pt x 262.9825pt>
 File: fig/PercetagePlot.png Graphic file (type png)
 
 <use fig/PercetagePlot.png>
@@ -1631,7 +1684,7 @@ Overfull \hbox (8.77252pt too wide) in paragraph at lines 451--466
  [][] 
  []
 
-[44] <fig/DataExploration.png, id=237, 426.59375pt x 155.58125pt>
+[44] <fig/DataExploration.png, id=290, 426.59375pt x 155.58125pt>
 File: fig/DataExploration.png Graphic file (type png)
 
 <use fig/DataExploration.png>
@@ -1640,45 +1693,45 @@ Package pdftex.def Info: fig/DataExploration.png used on input line 510.
 Package acronym Info: Label `acro:EXETAT' newly defined as it shall be overridd
 en
 although it is yet undefined on input line 524.
- <fig/AGE.png, id=238, 433.62pt x 289.08pt>
+ <fig/AGE.png, id=291, 433.62pt x 289.08pt>
 File: fig/AGE.png Graphic file (type png)
 
 <use fig/AGE.png>
 Package pdftex.def Info: fig/AGE.png used on input line 555.
 (pdftex.def)             Requested size: 182.09486pt x 121.39511pt.
- <fig/AGEDist.png, id=239, 433.62pt x 289.08pt>
+ <fig/AGEDist.png, id=292, 433.62pt x 289.08pt>
 File: fig/AGEDist.png Graphic file (type png)
 
 <use fig/AGEDist.png>
 Package pdftex.def Info: fig/AGEDist.png used on input line 557.
 (pdftex.def)             Requested size: 182.09486pt x 121.39511pt.
  [45 <./fig/DataExploration.png>]
-<fig/dipomePourcentage.png, id=243, 433.62pt x 289.08pt>
+<fig/dipomePourcentage.png, id=297, 433.62pt x 289.08pt>
 File: fig/dipomePourcentage.png Graphic file (type png)
 
 <use fig/dipomePourcentage.png>
 Package pdftex.def Info: fig/dipomePourcentage.png used on input line 566.
 (pdftex.def)             Requested size: 182.09486pt x 121.39511pt.
 
-<fig/diplomePercentageDis.png, id=244, 433.62pt x 289.08pt>
+<fig/diplomePercentageDis.png, id=298, 433.62pt x 289.08pt>
 File: fig/diplomePercentageDis.png Graphic file (type png)
 
 <use fig/diplomePercentageDis.png>
 Package pdftex.def Info: fig/diplomePercentageDis.png used on input line 568.
 (pdftex.def)             Requested size: 182.09486pt x 121.39511pt.
- <fig/NAME.png, id=245, 433.62pt x 289.08pt>
+ <fig/NAME.png, id=299, 433.62pt x 289.08pt>
 File: fig/NAME.png Graphic file (type png)
 
 <use fig/NAME.png>
 Package pdftex.def Info: fig/NAME.png used on input line 575.
 (pdftex.def)             Requested size: 227.62206pt x 151.74721pt.
- <fig/SCHOOLSTATUS.png, id=246, 1445.4pt x 433.62pt>
+ <fig/SCHOOLSTATUS.png, id=300, 1445.4pt x 433.62pt>
 File: fig/SCHOOLSTATUS.png Graphic file (type png)
 
 <use fig/SCHOOLSTATUS.png>
 Package pdftex.def Info: fig/SCHOOLSTATUS.png used on input line 585.
 (pdftex.def)             Requested size: 597.50787pt x 179.25421pt.
- <fig/OPTION_RIGHT.png, id=247, 2168.1pt x 722.7pt>
+ <fig/OPTION_RIGHT.png, id=301, 2168.1pt x 722.7pt>
 File: fig/OPTION_RIGHT.png Graphic file (type png)
 
 <use fig/OPTION_RIGHT.png>
@@ -1686,20 +1739,20 @@ Package pdftex.def Info: fig/OPTION_RIGHT.png used on input line 599.
 (pdftex.def)             Requested size: 597.50787pt x 199.16766pt.
  [46 <./fig/AGE.png> <./fig/AGEDist.png>] [47 <./fig/dipomePourcentage.png> <./
 fig/diplomePercentageDis.png> <./fig/NAME.png> <./fig/SCHOOLSTATUS.png>] <fig/S
-CHOOL_RIGHT.png, id=261, 2168.1pt x 361.35pt>
+CHOOL_RIGHT.png, id=314, 2168.1pt x 361.35pt>
 File: fig/SCHOOL_RIGHT.png Graphic file (type png)
 
 <use fig/SCHOOL_RIGHT.png>
 Package pdftex.def Info: fig/SCHOOL_RIGHT.png used on input line 618.
 (pdftex.def)             Requested size: 597.50787pt x 99.58383pt.
 
-<fig/SCHOOLPROVINCE.png, id=262, 2168.1pt x 578.16pt>
+<fig/SCHOOLPROVINCE.png, id=315, 2168.1pt x 578.16pt>
 File: fig/SCHOOLPROVINCE.png Graphic file (type png)
 
 <use fig/SCHOOLPROVINCE.png>
 Package pdftex.def Info: fig/SCHOOLPROVINCE.png used on input line 632.
 (pdftex.def)             Requested size: 597.50787pt x 159.33414pt.
- <fig/FAC.png, id=263, 2168.1pt x 361.35pt>
+ <fig/FAC.png, id=316, 2168.1pt x 361.35pt>
 File: fig/FAC.png Graphic file (type png)
 
 <use fig/FAC.png>
@@ -1714,13 +1767,13 @@ LaTeX Warning: No positions in optional float specifier.
 
 LaTeX Warning: Reference `lfig:ANOVAb' on page 51 undefined on input line 784.
 
-<fig/AGE-FAC.png, id=277, 867.24pt x 433.62pt>
+<fig/AGE-FAC.png, id=330, 867.24pt x 433.62pt>
 File: fig/AGE-FAC.png Graphic file (type png)
  <use fig/AGE-FAC.png>
 Package pdftex.def Info: fig/AGE-FAC.png used on input line 787.
 (pdftex.def)             Requested size: 364.19667pt x 182.0993pt.
 
-<fig/AGE-POURC.png, id=278, 867.24pt x 433.62pt>
+<fig/AGE-POURC.png, id=331, 867.24pt x 433.62pt>
 File: fig/AGE-POURC.png Graphic file (type png)
  <use fig/AGE-POURC.png>
 Package pdftex.def Info: fig/AGE-POURC.png used on input line 815.
@@ -2279,7 +2332,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
  []
 
-<fig/sckikLearnCheatSheet.png, id=319, 3651.35571pt x 2276.505pt>
+<fig/sckikLearnCheatSheet.png, id=372, 3651.35571pt x 2276.505pt>
 File: fig/sckikLearnCheatSheet.png Graphic file (type png)
 
 <use fig/sckikLearnCheatSheet.png>
@@ -2291,7 +2344,7 @@ although it is yet undefined on input line 17.
 
 
  <./fig/sckikLearnCheatSheet.png>]
-<fig/ModelBuilding.png, id=324, 730.73pt x 408.52625pt>
+<fig/ModelBuilding.png, id=378, 730.73pt x 408.52625pt>
 File: fig/ModelBuilding.png Graphic file (type png)
 
 <use fig/ModelBuilding.png>
@@ -2320,14 +2373,14 @@ although it is yet undefined on input line 213.
 
 LaTeX Warning: Reference `lfig:TDD' on page 71 undefined on input line 217.
 
-<fig/Cycle-global-tdd.png, id=350, 1426.32875pt x 843.15pt>
+<fig/Cycle-global-tdd.png, id=403, 1426.32875pt x 843.15pt>
 File: fig/Cycle-global-tdd.png Graphic file (type png)
 
 <use fig/Cycle-global-tdd.png>
 Package pdftex.def Info: fig/Cycle-global-tdd.png used on input line 220.
 (pdftex.def)             Requested size: 227.62206pt x 134.54652pt.
  [71 <./fig/Cycle-global-tdd.png>]
-<fig/New-Predictive-Model.png, id=355, 697.60625pt x 515.9275pt>
+<fig/New-Predictive-Model.png, id=408, 697.60625pt x 515.9275pt>
 File: fig/New-Predictive-Model.png Graphic file (type png)
 
 <use fig/New-Predictive-Model.png>
@@ -2337,34 +2390,53 @@ Package acronym Info: Label `acro:JSON' newly defined as it shall be overridden
 
 although it is yet undefined on input line 242.
 Package acronym Info: Label `acro:MVC' newly defined as it shall be overridden
-although it is yet undefined on input line 248.
- [72 <./fig/New-Predictive-Model.png>])
-[73] (./text/conclusion.tex) [74
+although it is yet undefined on input line 250.
+
+<fig/form.png, id=409, 889.3225pt x 512.91624pt>
+File: fig/form.png Graphic file (type png)
+ <use fig/form.png>
+Package pdftex.def Info: fig/form.png used on input line 254.
+(pdftex.def)             Requested size: 227.62206pt x 131.28107pt.
+ [72 <./fig/New-Predictive-Model.png>] <fig/results.png, id=415, 726.715pt x 48
+7.8225pt>
+File: fig/results.png Graphic file (type png)
+
+<use fig/results.png>
+Package pdftex.def Info: fig/results.png used on input line 261.
+(pdftex.def)             Requested size: 227.62206pt x 152.79399pt.
+
+Overfull \hbox (14.0774pt too wide) in paragraph at lines 265--266
+[]\T1/cmr/m/n/12 (-20) Notons que l'ap-pli-ca-tion est hé-ber-gée et peut être 
+tes-ter à l'adresse sui-vante : https ://grade-
+ []
+
+[73 <./fig/form.png> <./fig/results.png>]) [74] (./text/conclusion.tex)
+[75
 
 
-] [75] (./memoire.toc [76
+] [76] (./memoire.toc [77
 
 
 ])
 \tf@toc=\write6
 \openout6 = `memoire.toc'.
 
- [77] (./memoire.lof)
+ [78] (./memoire.lof)
 \tf@lof=\write7
 \openout7 = `memoire.lof'.
 
- [78
+ [79
 
 ] (./memoire.lot)
 \tf@lot=\write8
 \openout8 = `memoire.lot'.
 
- [79
+
+[80
 
 ]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 80.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 82.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 Package microtype Info: Loading generic settings for font family
@@ -2372,29 +2444,29 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (0.19543pt too wide) in paragraph at lines 81--81
+Overfull \hbox (0.19543pt too wide) in paragraph at lines 83--83
 []\T1/cmr/m/n/12 (-20) SHARP SIGHT \T1/cmr/m/sc/12 (-20) LABS\T1/cmr/m/n/12 (-2
 0) . \T1/cmr/m/it/12 (-20) What is the dif-fe-rence bet-ween ma-chine lear-ning
 ,statistics,and
  []
 
 
-Overfull \hbox (25.444pt too wide) in paragraph at lines 81--81
+Overfull \hbox (25.444pt too wide) in paragraph at lines 83--83
 \T1/cmtt/m/n/12 com / differenceÂ­machineÂ­learningÂ­statisticsÂ­dataÂ­mining /
  ?utm _ content =
  []
 
-[80
+[81
 
 ]
-Overfull \hbox (7.29774pt too wide) in paragraph at lines 81--81
+Overfull \hbox (7.29774pt too wide) in paragraph at lines 83--83
 []\T1/cmr/m/n/12 (-20) SUNIL \T1/cmr/m/sc/12 (-20) RAY\T1/cmr/m/n/12 (-20) . \T
 1/cmr/m/it/12 (-20) Guide to Data Ex-plo-ra-tion\T1/cmr/m/n/12 (-20) . 2016. \T
 1/cmr/m/sc/12 (-20) url \T1/cmr/m/n/12 (-20) : $\T1/cmtt/m/n/12 https : / / www
  . analyticsvidhya .
  []
 
-[81] (./memoire.aux)
+[82] (./memoire.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -2408,49 +2480,45 @@ Package logreq Info: Writing requests to 'memoire.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16697 strings out of 492995
- 273164 string characters out of 6132704
- 642615 words of memory out of 5000000
- 19683 multiletter control sequences out of 15000+600000
- 31288 words of font info for 153 fonts, out of 8000000 for 9000
+ 17443 strings out of 492995
+ 285279 string characters out of 6132704
+ 658502 words of memory out of 5000000
+ 20408 multiletter control sequences out of 15000+600000
+ 30849 words of font info for 150 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,14n,51p,1298b,2875s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,18n,49p,1298b,2881s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pf
-b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
-r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/cm-super/sfbi1440.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/public/cm-super/sfbi1728.pfb></usr/local/texlive/2017/texmf
--dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2017/texmf-d
-ist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2017/texmf-dis
-t/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2017/texmf-dist/
-fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2017/texmf-dist/fo
-nts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2017/texmf-dist/font
-s/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/
-type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
-pe1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
-1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
-public/cm-super/sfti1095.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
-blic/cm-super/sfti1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/cm-super/sfti1728.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
-/cm-super/sftt1200.pfb>
-Output written on memoire.pdf (90 pages, 2869478 bytes).
+b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texliv
+e/2017/texmf-dist/fonts/type1/public/cm-super/sfbi1440.pfb></usr/local/texlive/
+2017/texmf-dist/fonts/type1/public/cm-super/sfbi1728.pfb></usr/local/texlive/20
+17/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2017/t
+exmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2017/texmf
+-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2017/texmf-d
+ist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2017/texmf-dis
+t/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2017/texmf-dist/
+fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2017/texmf-dist/fo
+nts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf-dist/font
+s/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2017/texmf-dist/fonts/
+type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
+pe1/public/cm-super/sfti1728.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
+1/public/cm-super/sftt1200.pfb>
+Output written on memoire.pdf (92 pages, 3190745 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 295 compressed objects within 3 object streams
+ 540 PDF objects out of 1000 (max. 8388607)
+ 324 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 29902 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 26850 words of extra memory for PDF output out of 29859 (max. 10000000)
 
