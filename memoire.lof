@@ -10,98 +10,98 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.1}{\ignorespaces R\IeC {\'e}gression Lin\IeC {\'e}aire avec une variable\relax }}{8}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces R\IeC {\'e}gression Lin\IeC {\'e}aire avec une variable\relax }}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.2}{\ignorespaces diff\IeC {\'e}rents types de R\IeC {\'e}gression Polynomiale \relax }}{9}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces diff\IeC {\'e}rents types de R\IeC {\'e}gression Polynomiale \relax }}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Variation de J en fonction du nombre des it\IeC {\'e}rations\relax }}{9}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Variation de J en fonction du nombre des it\IeC {\'e}rations\relax }}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Fonction Sigmo\IeC {\"\i }de\relax }}{11}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Fonction Sigmo\IeC {\"\i }de\relax }}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Fronti\IeC {\`e}re de d\IeC {\'e}cision pour la R\IeC {\'e}gression Logistique \IeC {\`a} 2 variables\relax }}{12}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Fronti\IeC {\`e}re de d\IeC {\'e}cision pour la R\IeC {\'e}gression Logistique \IeC {\`a} 2 variables\relax }}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Erreur pour la r\IeC {\'e}gression logistique\relax }}{13}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Erreur pour la r\IeC {\'e}gression logistique\relax }}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {cas ou Y =1}}}{13}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {cas ou Y =1}}}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Y = 0}}}{13}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Y = 0}}}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.7}{\ignorespaces Overfitting et Underfitting \relax }}{13}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Overfitting et Underfitting \relax }}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Un Neurone Naturel\relax }}{15}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Un Neurone Naturel\relax }}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.9}{\ignorespaces un Perceptron ou Unit\IeC {\'e} de traitement\relax }}{16}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces un Perceptron ou Unit\IeC {\'e} de traitement\relax }}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.10}{\ignorespaces un r\IeC {\'e}seau des neurones complets avec 2 hidden layers \relax }}{16}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces un r\IeC {\'e}seau des neurones complets avec 2 hidden layers \relax }}{15}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.11}{\ignorespaces R\IeC {\'e}seaux des neurones avec des unit\IeC {\'e}s d'activation \relax }}{17}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces R\IeC {\'e}seaux des neurones avec des unit\IeC {\'e}s d'activation \relax }}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.12}{\ignorespaces Diff\IeC {\'e}rentes fronti\IeC {\`e}res de d\IeC {\'e}cision possibles \relax }}{20}
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Diff\IeC {\'e}rentes fronti\IeC {\`e}res de d\IeC {\'e}cision possibles \relax }}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{20}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{20}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{20}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.13}{\ignorespaces Probl\IeC {\`e}me de SVM en 2 dimensions \relax }}{21}
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Probl\IeC {\`e}me de SVM en 2 dimensions \relax }}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.14}{\ignorespaces Donn\IeC {\'e}es non s\IeC {\'e}parable lin\IeC {\'e}airement \relax }}{22}
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Donn\IeC {\'e}es non s\IeC {\'e}parable lin\IeC {\'e}airement \relax }}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.15}{\ignorespaces Donn\IeC {\'e}es non s\IeC {\'e}parable lin\IeC {\'e}airement dans ${R}^{2}$ mais qui le devient dans ${R}^{3}$ avec $\phi ({x}_{1},{x}_{2} ) = ({x}_{1},{x}_{2},{x}^{2}_{1}+{x}^{2}_{2})$ \relax }}{22}
+\contentsline {figure}{\numberline {1.15}{\ignorespaces Donn\IeC {\'e}es non s\IeC {\'e}parable lin\IeC {\'e}airement dans ${R}^{2}$ mais qui le devient dans ${R}^{3}$ avec $\phi ({x}_{1},{x}_{2} ) = ({x}_{1},{x}_{2},{x}^{2}_{1}+{x}^{2}_{2})$ \relax }}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.16}{\ignorespaces Data mining process model\relax }}{27}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Data mining process model\relax }}{26}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces \IeC {\'E}tapes de la phase d'exploration des donn\IeC {\'e}es \relax }}{36}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Box Plot Attribue Dipl\IeC {\^o}me Pourcentage \relax }}{42}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \IeC {\'E}tapes de la phase d'exploration des donn\IeC {\'e}es \relax }}{35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Box Plot Attribue Age \relax }}{42}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Box Plot Attribue Dipl\IeC {\^o}me Pourcentage \relax }}{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Techniques d'exploration des donn\IeC {\'e}es en entr\IeC {\'e} \relax }}{45}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Box Plot Attribue Age \relax }}{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Graphiques de l'attributs age\relax }}{46}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Techniques d'exploration des donn\IeC {\'e}es en entr\IeC {\'e} \relax }}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Box-Plo det l'age }}}{46}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Graphiques de l'attributs age\relax }}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {distribution de l'age }}}{46}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Box-Plo det l'age }}}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Graphiques de l'attributs du Pourcentage \IeC {\`a} l'examen d'\IeC {\'e}tat \relax }}{47}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {distribution de l'age }}}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Box-Plot du Pourcentage du diplome }}}{47}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Graphiques de l'attributs du Pourcentage \IeC {\`a} l'examen d'\IeC {\'e}tat \relax }}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {distribution du Pourcentage }}}{47}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Box-Plot du Pourcentage du diplome }}}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Distribution du sexe des \IeC {\'e}tudiants \relax }}{47}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {distribution du Pourcentage }}}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Diff\IeC {\'e}rente statut de l'\IeC {\'e}cole de provenance \relax }}{47}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Distribution du sexe des \IeC {\'e}tudiants \relax }}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.9}{\ignorespaces l'option suivie \IeC {\`a} l'\IeC {\'e}cole secondaire \relax }}{48}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Diff\IeC {\'e}rente statut de l'\IeC {\'e}cole de provenance \relax }}{46}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.10}{\ignorespaces les \IeC {\'e}coles de provenances \relax }}{48}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces l'option suivie \IeC {\`a} l'\IeC {\'e}cole secondaire \relax }}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.11}{\ignorespaces les provinces de provenances des \IeC {\'e}tudiants \relax }}{49}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces les \IeC {\'e}coles de provenances \relax }}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.12}{\ignorespaces les Facult\IeC {\'e}s \relax }}{49}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces les provinces de provenances des \IeC {\'e}tudiants \relax }}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.13}{\ignorespaces distribution des ages au sein des diff\IeC {\'e}rentes facult\IeC {\'e}s \relax }}{52}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces les Facult\IeC {\'e}s \relax }}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.14}{\ignorespaces distribution des pourcentage au sein des diff\IeC {\'e}rentes facult\IeC {\'e}s \relax }}{52}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces distribution des ages au sein des diff\IeC {\'e}rentes facult\IeC {\'e}s \relax }}{51}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.14}{\ignorespaces distribution des pourcentage au sein des diff\IeC {\'e}rentes facult\IeC {\'e}s \relax }}{51}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces sckit-Learn Algorithm cheat sheet \relax }}{63}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces sckit-Learn Algorithm cheat sheet \relax }}{62}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces \IeC {\'e}tapes \IeC {\`a} suivre pour l'\IeC {\'e}laboration du mod\IeC {\`e}le d'apprentissage \relax }}{64}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \IeC {\'e}tapes \IeC {\`a} suivre pour l'\IeC {\'e}laboration du mod\IeC {\`e}le d'apprentissage \relax }}{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Cycle Globale du Test Driven D\IeC {\'e}veloppement \relax }}{71}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Cycle Globale du Test Driven D\IeC {\'e}veloppement \relax }}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Flow chart de L'API \relax }}{72}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Flow chart de L'API \relax }}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Formulaire pour la saisie des donn\IeC {\'e}es \relax }}{73}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Formulaire pour la saisie des donn\IeC {\'e}es \relax }}{72}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Formulaire de l'affichage des r\IeC {\'e}sultats\relax }}{73}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Formulaire de l'affichage des r\IeC {\'e}sultats\relax }}{72}

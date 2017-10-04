@@ -19,16 +19,15 @@
 \sortlist[entry]{none/global/}
   \entry{Articl1Mr}{article}{}
     \name{author}{1}{}{%
-      {{hash=SIEBO}{%
-         family={S.\bibnamedelima IMANE},
-         familyi={S\bibinitperiod\bibinitdelim I\bibinitperiod},
-         given={E.\bibnamedelima B.\bibnamedelima OMAR},
-         giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim
-  O\bibinitperiod},
+      {{hash=ISOE}{%
+         family={IMANE\bibnamedelima S},
+         familyi={I\bibinitperiod\bibinitdelim S\bibinitperiod},
+         given={OMAR\bibnamedelima E.B},
+         giveni={O\bibinitperiod\bibinitdelim E\bibinitperiod},
       }}%
     }
-    \strng{namehash}{SIEBO1}
-    \strng{fullhash}{SIEBO1}
+    \strng{namehash}{ISOE1}
+    \strng{fullhash}{ISOE1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{pages}{108}
@@ -56,6 +55,7 @@
     \strng{fullhash}{RRTIP1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
+    \field{pages}{19}
     \field{title}{Savoir plus : outils et méthodes de travail intellectuel}
     \field{year}{2006}
   \endentry
@@ -85,15 +85,15 @@
 
   \entry{coursKasoro}{unpublished}{}
     \name{author}{1}{}{%
-      {{hash=MK}{%
-         family={Mulenda},
-         familyi={M\bibinitperiod},
-         given={K.},
-         giveni={K\bibinitperiod},
+      {{hash=KM}{%
+         family={K.},
+         familyi={K\bibinitperiod},
+         given={MULENDA},
+         giveni={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{MK1}
-    \strng{fullhash}{MK1}
+    \strng{namehash}{KM1}
+    \strng{fullhash}{KM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{inédit FSTA ULPGL}
@@ -103,22 +103,21 @@
 
   \entry{DMandMLBook}{book}{}
     \name{author}{1}{}{%
-      {{hash=IHWMAHEF}{%
-         family={Ian H.\bibnamedelima Witten},
-         familyi={I\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim
-  W\bibinitperiod},
-         suffix={Eibe\bibnamedelima Frank},
-         suffixi={E\bibinitperiod\bibinitdelim F\bibinitperiod},
-         given={Mark A.\bibnamedelima Hall},
-         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+      {{hash=IWHMHEF}{%
+         family={Ian WITTEN\bibnamedelima H.},
+         familyi={I\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim
   H\bibinitperiod},
+         suffix={Eibe\bibnamedelima FRANK},
+         suffixi={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+         given={Mark\bibnamedelima HALL},
+         giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
       {Morgan Kaufmann Publishers}%
     }
-    \strng{namehash}{IHWEFMAH1}
-    \strng{fullhash}{IHWEFMAH1}
+    \strng{namehash}{IWHEFMH1}
+    \strng{fullhash}{IWHEFMH1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{pages}{1}
@@ -132,8 +131,8 @@
   \entry{differenceMLDM2}{online}{}
     \name{author}{1}{}{%
       {{hash=ND}{%
-         family={N},
-         familyi={N},
+         family={N.},
+         familyi={N\bibinitperiod},
          given={DHAKSHAYANI},
          giveni={D\bibinitperiod},
       }}%
@@ -161,18 +160,18 @@
 
   \entry{MBaterBook}{book}{}
     \name{author}{1}{}{%
-      {{hash=BM}{%
-         family={BATER},
-         familyi={B\bibinitperiod},
-         given={M.},
-         giveni={M\bibinitperiod},
+      {{hash=MB}{%
+         family={M.},
+         familyi={M\bibinitperiod},
+         given={BATER},
+         giveni={B\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
       {Pack publish}%
     }
-    \strng{namehash}{BM1}
-    \strng{fullhash}{BM1}
+    \strng{namehash}{MB1}
+    \strng{fullhash}{MB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{pages}{10}
@@ -238,7 +237,7 @@
       {{hash=LG}{%
          family={L.},
          familyi={L\bibinitperiod},
-         given={Gongsun},
+         given={GONGSUN},
          giveni={G\bibinitperiod},
       }}%
     }
@@ -266,9 +265,9 @@
   \entry{AndNgCourse}{misc}{}
     \name{author}{1}{}{%
       {{hash=NA}{%
-         family={Ng},
+         family={Ng.},
          familyi={N\bibinitperiod},
-         given={Andrew},
+         given={ANDREW},
          giveni={A\bibinitperiod},
       }}%
     }
@@ -285,9 +284,9 @@
   \entry{NNBook}{book}{}
     \name{author}{1}{}{%
       {{hash=CB}{%
-         family={C},
-         familyi={C},
-         given={Bishop},
+         family={C.},
+         familyi={C\bibinitperiod},
+         given={BISHOP},
          giveni={B\bibinitperiod},
       }}%
     }
@@ -327,7 +326,7 @@
   \entry{SVm2}{misc}{}
     \name{author}{1}{}{%
       {{hash=KE}{%
-         family={Kim},
+         family={KIM},
          familyi={K\bibinitperiod},
          given={Eric},
          giveni={E\bibinitperiod},
@@ -345,21 +344,21 @@
 
   \entry{TreeBk1}{book}{}
     \name{author}{1}{}{%
-      {{hash=CDM}{%
-         family={C.\bibnamedelima Decaestecker},
-         familyi={C\bibinitperiod\bibinitdelim D\bibinitperiod},
-         given={M.Saerens},
-         giveni={M\bibinitperiod},
+      {{hash=DCSM}{%
+         family={DECAESTECKER\bibnamedelima C.},
+         familyi={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+         given={SAERENS\bibnamedelima M.},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
       {inédit ULB}%
     }
-    \strng{namehash}{CDM1}
-    \strng{fullhash}{CDM1}
+    \strng{namehash}{DCSM1}
+    \strng{fullhash}{DCSM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{1}
+    \field{pages}{10}
     \field{title}{Les arbres de décision (decision trees)}
     \list{location}{1}{%
       {Belgique}%
@@ -396,7 +395,7 @@
   \entry{RandomForrest1}{incollection}{}
     \name{author}{1}{}{%
       {{hash=BL}{%
-         family={Breiman},
+         family={BREIMAN},
          familyi={B\bibinitperiod},
          given={Leo},
          giveni={L\bibinitperiod},
@@ -422,7 +421,7 @@
       {{hash=JL}{%
          family={J.},
          familyi={J\bibinitperiod},
-         given={Laure},
+         given={LAURE},
          giveni={L\bibinitperiod},
       }}%
     }
@@ -445,7 +444,7 @@
          prefixi={e\bibinitperiod\bibinitdelim a\bibinitperiod},
          family={s},
          familyi={s},
-         given={Bruno\bibnamedelima Racine.},
+         given={Bruno\bibnamedelima RACINE.},
          giveni={B\bibinitperiod\bibinitdelim R\bibinitperiod},
       }}%
     }
@@ -468,7 +467,7 @@
       {{hash=TA}{%
          family={TARDIF},
          familyi={T\bibinitperiod},
-         given={ANNIE},
+         given={Annie},
          giveni={A\bibinitperiod},
       }}%
     }
@@ -489,20 +488,19 @@
 
   \entry{OrBk4}{book}{}
     \name{author}{1}{}{%
-      {{hash=eMHJG}{%
-         prefix={et},
-         prefixi={e\bibinitperiod},
-         family={M.\bibnamedelima Huteau},
-         familyi={M\bibinitperiod\bibinitdelim H\bibinitperiod},
-         given={J.\bibnamedelima Guichard},
-         giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod},
+      {{hash=PGJH}{%
+         family={P.},
+         familyi={P\bibinitperiod},
+         given={GUIiCHARD J.et\bibnamedelima HUTEAU},
+         giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
+  H\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
       {Dunod}%
     }
-    \strng{namehash}{MHJGe1}
-    \strng{fullhash}{MHJGe1}
+    \strng{namehash}{PGJH1}
+    \strng{fullhash}{PGJH1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Psychologie de l’orientation}
@@ -567,7 +565,7 @@
   \entry{bookSckit-Learn}{book}{}
     \name{author}{1}{}{%
       {{hash=GA}{%
-         family={Géron},
+         family={GERON},
          familyi={G\bibinitperiod},
          given={Aurélien},
          giveni={A\bibinitperiod},
@@ -685,9 +683,9 @@
   \entry{MissinVal}{book}{}
     \name{author}{1}{}{%
       {{hash=LRRD}{%
-         family={Little\bibnamedelima R.J.A.},
+         family={LITTLE\bibnamedelima R.J.A.},
          familyi={L\bibinitperiod\bibinitdelim R\bibinitperiod},
-         given={Rubin\bibnamedelima D.B.},
+         given={RUBIN\bibnamedelima D.B.},
          giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod},
       }}%
     }
@@ -707,7 +705,7 @@
       {{hash=SN}{%
          family={Sh.},
          familyi={S\bibinitperiod},
-         given={NIlesh},
+         given={NILLESH},
          giveni={N\bibinitperiod},
       }}%
     }
@@ -735,15 +733,15 @@
 
   \entry{becker2011uncertainty}{thesis}{}
     \name{author}{1}{}{%
-      {{hash=BW}{%
-         family={Becker},
-         familyi={B\bibinitperiod},
-         given={William},
-         giveni={W\bibinitperiod},
+      {{hash=WB}{%
+         family={WILLIAM},
+         familyi={W\bibinitperiod},
+         given={Becker},
+         giveni={B\bibinitperiod},
       }}%
     }
-    \strng{namehash}{BW1}
-    \strng{fullhash}{BW1}
+    \strng{namehash}{WB1}
+    \strng{fullhash}{WB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Uncertainty propagation through large nonlinear models}
@@ -759,7 +757,7 @@
       {{hash=PR}{%
          family={P.},
          familyi={P\bibinitperiod},
-         given={Rapaio},
+         given={RAPAIO},
          giveni={R\bibinitperiod},
       }}%
     }
@@ -785,6 +783,27 @@
   \endentry
 
   \entry{statBook1}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=HRFTT}{%
+         family={Hastie},
+         familyi={H\bibinitperiod},
+         suffix={Trevor\bibnamedelima TIBSHIRANI},
+         suffixi={T\bibinitperiod\bibinitdelim T\bibinitperiod},
+         given={Robert\bibnamedelima FRIEDMAN},
+         giveni={R\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{HTTRF1}
+    \strng{fullhash}{HTTRF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{The elements of statistical learning}
+    \field{pages}{485\bibrangedash 585}
+    \field{title}{Unsupervised learning}
+    \field{year}{2009}
   \endentry
 
   \entry{ProbaStat}{book}{}
@@ -792,7 +811,7 @@
       {{hash=SP}{%
          family={S.},
          familyi={S\bibinitperiod},
-         given={Prasanna},
+         given={PRASANNA},
          giveni={P\bibinitperiod},
       }}%
     }
@@ -812,15 +831,15 @@
 
   \entry{CrossValidation}{thesis}{}
     \name{author}{1}{}{%
-      {{hash=CM}{%
-         family={Cornec},
-         familyi={C\bibinitperiod},
-         given={Matthieu},
-         giveni={M\bibinitperiod},
+      {{hash=MC}{%
+         family={MATTHIEU},
+         familyi={M\bibinitperiod},
+         given={Cornec},
+         giveni={C\bibinitperiod},
       }}%
     }
-    \strng{namehash}{CM1}
-    \strng{fullhash}{CM1}
+    \strng{namehash}{MC1}
+    \strng{fullhash}{MC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Probability bounds for the cross-validation estimate in the
@@ -836,7 +855,7 @@
   \entry{TDD}{book}{}
     \name{author}{1}{}{%
       {{hash=BK}{%
-         family={Beck},
+         family={BECK},
          familyi={B\bibinitperiod},
          given={Kent},
          giveni={K\bibinitperiod},

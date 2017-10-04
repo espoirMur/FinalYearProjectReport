@@ -54,280 +54,280 @@
 \defcounter {refsection}{0}\relax 
 \select@language {french}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Sigles et Abr\IeC {\'e}viations}{viii}
+\contentsline {chapter}{Sigles et Abr\IeC {\'e}viations}{xii}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Introduction}{2}
+\contentsline {chapter}{Introduction}{1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {0.1}Probl\IeC {\'e}matique}{2}
+\contentsline {section}{\numberline {0.1}Probl\IeC {\'e}matique}{1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {0.2}Int\IeC {\'e}r\IeC {\^e}ts et Motivations du Sujet}{2}
+\contentsline {section}{\numberline {0.2}Int\IeC {\'e}r\IeC {\^e}ts et Motivations du Sujet}{1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {0.3}Hypoth\IeC {\`e}ses de Travail}{3}
+\contentsline {section}{\numberline {0.3}Hypoth\IeC {\`e}ses de Travail}{2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {0.4}Objectifs du travail}{3}
+\contentsline {section}{\numberline {0.4}Objectifs du travail}{2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {0.5}M\IeC {\'e}thodes et Techniques de Recherche}{3}
+\contentsline {section}{\numberline {0.5}M\IeC {\'e}thodes et Techniques de Recherche}{2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {0.6}Subdivision du travail}{3}
+\contentsline {section}{\numberline {0.6}Subdivision du travail}{2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s sur le DataMining }{5}
+\contentsline {chapter}{\numberline {1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s sur le DataMining }{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}D\IeC {\'e}finitions}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.1}L'intelligence Artificielle}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.2}Le Machine Learning}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.3}Le DataMining}{5}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}D\IeC {\'e}finitions}{5}
+\contentsline {paragraph}{}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.1}L'intelligence Artificielle}{5}
+\contentsline {subsection}{\numberline {1.1.4} Diff\IeC {\'e}rence entre le DataMining , le Machine Learning, ainsi que les statistiques .}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.2}Le Machine Learning}{6}
+\contentsline {paragraph}{}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.3}Le DataMining}{6}
+\contentsline {paragraph}{}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{6}
+\contentsline {section}{\numberline {1.2}{ Diff\IeC {\'e}rentes Techniques du Machine Learning \cite {AndNgCourse} } }{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{6}
+\contentsline {subsection}{\numberline {1.2.1}R\IeC {\'e}gression Lin\IeC {\'e}aire }{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.4} Diff\IeC {\'e}rence entre le DataMining , le Machine Learning, ainsi que les statistiques .}{6}
+\contentsline {subsubsection}{Fonction Cout et calcul de L'erreur }{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{6}
+\contentsline {subsection}{\numberline {1.2.2}R\IeC {\'e}gression Logistique }{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{6}
+\contentsline {subsubsection}{Repr\IeC {\'e}sentation de l'hypoth\IeC {\`e}se}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}{ Diff\IeC {\'e}rentes Techniques du Machine Learning \cite {AndNgCourse} } }{7}
+\contentsline {subsubsection}{Fronti\IeC {\`e}re de D\IeC {\'e}cision }{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.1}R\IeC {\'e}gression Lin\IeC {\'e}aire }{8}
+\contentsline {subsubsection}{La Fonction Co\IeC {\^u}t : Calcul De L'erreur }{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Fonction Cout et calcul de L'erreur }{9}
+\contentsline {subsubsection}{R\IeC {\'e}gulation : Ph\IeC {\'e}nom\IeC {\`e}ne de sur-apprentissage}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.2}R\IeC {\'e}gression Logistique }{11}
+\contentsline {subsubsection}{Solutions aux probl\IeC {\`e}mes de sur apprentissage }{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Repr\IeC {\'e}sentation de l'hypoth\IeC {\`e}se}{11}
+\contentsline {subsection}{\numberline {1.2.3}Le R\IeC {\'e}seaux des Neurones }{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Fronti\IeC {\`e}re de D\IeC {\'e}cision }{12}
+\contentsline {subsubsection}{Les Neurones et le cerveau\cite {NNBook}}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{La Fonction Co\IeC {\^u}t : Calcul De L'erreur }{12}
+\contentsline {subsubsection}{Repr\IeC {\'e}sentation d'un Neurone Artificiel }{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{R\IeC {\'e}gulation : Ph\IeC {\'e}nom\IeC {\`e}ne de sur-apprentissage}{13}
+\contentsline {subsubsection}{Apprentissage par R\IeC {\'e}seau des neurones }{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Solutions aux probl\IeC {\`e}mes de sur apprentissage }{13}
+\contentsline {subsubsection}{Fonction Cout}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.3}Le R\IeC {\'e}seaux des Neurones }{15}
+\contentsline {subsubsection}{Calcul des Valeurs des unit\IeC {\'e}s d'activation \emph {Forward propagation}}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Les Neurones et le cerveau\cite {NNBook}}{15}
+\contentsline {subsubsection}{Minimisation de la fonction de cout : back propagation }{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Repr\IeC {\'e}sentation d'un Neurone Artificiel }{15}
+\contentsline {subsection}{\numberline {1.2.4}Support Vector Machine - SVM \cite {SVm1} }{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Apprentissage par R\IeC {\'e}seau des neurones }{17}
+\contentsline {subsubsection}{Donn\IeC {\'e}es S\IeC {\'e}parables lin\IeC {\'e}airement }{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Fonction Cout}{17}
+\contentsline {paragraph}{Repr\IeC {\'e}sentation de l'hypoth\IeC {\`e}se }{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Calcul des Valeurs des unit\IeC {\'e}s d'activation \emph {Forward propagation}}{18}
+\contentsline {subsubsection}{Donn\IeC {\'e}es non S\IeC {\'e}parables lin\IeC {\'e}airement : Notion de Kernel \cite {SVm2}}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Minimisation de la fonction de cout : back propagation }{18}
+\contentsline {subsection}{\numberline {1.2.5}Arbres des Decisons \cite {TreeBk1} \cite {TreeAV}}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.4}Support Vector Machine - SVM \cite {SVm1} }{20}
+\contentsline {subsubsection}{D\IeC {\'e}finitions}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Donn\IeC {\'e}es S\IeC {\'e}parables lin\IeC {\'e}airement }{20}
+\contentsline {subsubsection}{Construction de l'arbre et Algorithme}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Repr\IeC {\'e}sentation de l'hypoth\IeC {\`e}se }{20}
+\contentsline {paragraph}{Mesure de la puret\IeC {\'e} des feuilles}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Donn\IeC {\'e}es non S\IeC {\'e}parables lin\IeC {\'e}airement : Notion de Kernel \cite {SVm2}}{22}
+\contentsline {subsubsection}{Entropie}{23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.5}Arbres des Decisons \cite {TreeBk1} \cite {TreeAV}}{24}
+\contentsline {subsubsection}{L'indice de Gini}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{D\IeC {\'e}finitions}{24}
+\contentsline {subsubsection}{Algorithme}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Construction de l'arbre et Algorithme}{24}
+\contentsline {paragraph}{}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Mesure de la puret\IeC {\'e} des feuilles}{24}
+\contentsline {paragraph}{}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Entropie}{24}
+\contentsline {subsubsection}{\IeC {\'E}lagage de l'arbre ou \emph {Prunning}}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{L'indice de Gini}{25}
+\contentsline {subsubsection}{Avantages et inconv\IeC {\'e}nients des arbres de d\IeC {\'e}cisions}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Algorithme}{25}
+\contentsline {paragraph}{Avantages}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{25}
+\contentsline {paragraph}{Inconv\IeC {\'e}nients }{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{25}
+\contentsline {section}{\numberline {1.3}M\IeC {\'e}thodologie de mise en place du processus de data mining\cite {DMProces}}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\IeC {\'E}lagage de l'arbre ou \emph {Prunning}}{25}
+\contentsline {chapter}{\numberline {2}Analyse du domaine de l'orientation \cite {OrBk1} \cite {OrBk2} \cite {OrBk3} \cite {OrBk4} \cite {OrBk5}}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Avantages et inconv\IeC {\'e}nients des arbres de d\IeC {\'e}cisions}{26}
+\contentsline {section}{\numberline {2.1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s sur l\IeC {\textquoteright }orientation des \IeC {\'e}tudiants}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Avantages}{26}
+\contentsline {paragraph}{}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Inconv\IeC {\'e}nients }{26}
+\contentsline {paragraph}{}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}M\IeC {\'e}thodologie de mise en place du processus de data mining\cite {DMProces}}{27}
+\contentsline {paragraph}{}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Analyse du domaine de l'orientation \cite {OrBk1} \cite {OrBk2} \cite {OrBk3} \cite {OrBk4} \cite {OrBk5}}{29}
+\contentsline {paragraph}{}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s sur l\IeC {\textquoteright }orientation des \IeC {\'e}tudiants}{29}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{29}
+\contentsline {paragraph}{}{28}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{29}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{29}
+\contentsline {section}{\numberline {2.2}Pr\IeC {\'e}sentation du service de l\IeC {\textquoteright }orientation des \IeC {\'e}tudiants}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{29}
+\contentsline {section}{\numberline {2.3}Etude des proc\IeC {\'e}dures d\IeC {\textquoteright }orientation }{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{30}
+\contentsline {section}{\numberline {2.4}Etudes des documents utilis\IeC {\'e}es}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{30}
+\contentsline {paragraph}{}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Pr\IeC {\'e}sentation du service de l\IeC {\textquoteright }orientation des \IeC {\'e}tudiants}{30}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Etude des proc\IeC {\'e}dures d\IeC {\textquoteright }orientation }{31}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Etudes des documents utilis\IeC {\'e}es}{32}
+\contentsline {section}{\numberline {2.5}L'orientation \IeC {\`a} l' \ac {ULPGL} /GOMA \cite {OrBk6} }{33}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}L'orientation \IeC {\`a} l' \ac {ULPGL} /GOMA \cite {OrBk6} }{34}
+\contentsline {paragraph}{}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Pr\IeC {\'e}sentation et Exploitation des Donn\IeC {\'e}es Obtenues}{34}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{34}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Introduction}{34}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{34}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Pr\IeC {\'e}sentation et Exploitation des Donn\IeC {\'e}es Obtenues}{35}
+\contentsline {section}{\numberline {3.2}Identification des Donn\IeC {\'e}es et des Variables}{35}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{35}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Introduction}{35}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{35}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{35}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Identification des Donn\IeC {\'e}es et des Variables}{36}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{36}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{37}
+\contentsline {section}{\numberline {3.3}Pr\IeC {\'e}paration des Donn\IeC {\'e}es}{36}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Pr\IeC {\'e}paration des Donn\IeC {\'e}es}{37}
+\contentsline {subsection}{\numberline {3.3.1}Donn\IeC {\'e}es en entr\IeC {\'e} : \emph {Inputs}}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Donn\IeC {\'e}es en entr\IeC {\'e} : \emph {Inputs}}{39}
+\contentsline {paragraph}{}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{39}
+\contentsline {subsubsection}{Valeurs Manquantes}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Valeurs Manquantes}{39}
+\contentsline {paragraph}{Cause et types des Donn\IeC {\'e}es Manquantes}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Cause et types des Donn\IeC {\'e}es Manquantes}{39}
+\contentsline {subparagraph}{}{38}
 \defcounter {refsection}{0}\relax 
 \contentsline {subparagraph}{}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{}{40}
+\contentsline {subparagraph}{}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{}{40}
+\contentsline {paragraph}{Techniques d'imputations}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Techniques d'imputations}{40}
+\contentsline {subsubsection}{Valeurs aberrantes ou extr\IeC {\^e}mes ou outliers}{39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Valeurs aberrantes ou extr\IeC {\^e}mes ou outliers}{40}
+\contentsline {paragraph}{Traitement des valeurs aberrantes :}{40}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Traitement des valeurs aberrantes :}{41}
+\contentsline {subsubsection}{Donn\IeC {\'e}es mal orthographi\IeC {\'e}es }{41}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Donn\IeC {\'e}es mal orthographi\IeC {\'e}es }{42}
+\contentsline {subsection}{\numberline {3.3.2}Donn\IeC {\'e}es en sortie: \emph {Outputs}}{42}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Donn\IeC {\'e}es en sortie: \emph {Outputs}}{43}
+\contentsline {section}{\numberline {3.4}Analyse des donn\IeC {\'e}es}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Analyse des donn\IeC {\'e}es}{45}
+\contentsline {paragraph}{}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{45}
+\contentsline {subsection}{\numberline {3.4.1}Analyse Uni-Vari\IeC {\'e}}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.1}Analyse Uni-Vari\IeC {\'e}}{45}
+\contentsline {paragraph}{L'AGE et Le Dipl\IeC {\^o}me Pourcentage}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{L'AGE et Le Dipl\IeC {\^o}me Pourcentage}{45}
+\contentsline {subparagraph}{AGE}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{AGE}{46}
+\contentsline {subparagraph}{Pourcentage du dipl\IeC {\^o}me}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Pourcentage du dipl\IeC {\^o}me}{46}
+\contentsline {subparagraph}{Le Sexe des \IeC {\'e}tudiants}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Le Sexe des \IeC {\'e}tudiants}{46}
+\contentsline {subparagraph}{le type d'\IeC {\'e}cole}{45}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{le type d'\IeC {\'e}cole}{46}
+\contentsline {subparagraph}{l'Option de provenance}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{l'Option de provenance}{48}
+\contentsline {subparagraph}{Attribut School}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Attribut School}{48}
+\contentsline {subparagraph}{Attribue SCHOOL Province}{47}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Attribue SCHOOL Province}{48}
+\contentsline {subparagraph}{Attribue Facult\IeC {\'e}}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Attribue Facult\IeC {\'e}}{49}
+\contentsline {subsection}{\numberline {3.4.2}Analyse Bi-vari\IeC {\'e}e}{48}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.2}Analyse Bi-vari\IeC {\'e}e}{49}
+\contentsline {paragraph}{}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{50}
+\contentsline {paragraph}{}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{50}
+\contentsline {paragraph}{}{49}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{50}
+\contentsline {paragraph}{Analyse des Variables continues Vs Variables Num\IeC {\'e}riques}{50}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Analyse des Variables continues Vs Variables Num\IeC {\'e}riques}{51}
+\contentsline {subparagraph}{AGE}{50}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{AGE}{51}
+\contentsline {subparagraph}{Pourcentage}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{Pourcentage}{52}
+\contentsline {paragraph}{Variables Cat\IeC {\'e}gorielles et Cat\IeC {\'e}gorielles}{51}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Variables Cat\IeC {\'e}gorielles et Cat\IeC {\'e}gorielles}{52}
+\contentsline {paragraph}{Analyse des donn\IeC {\'e}es en entr\IeC {\'e}e Vs le CGPA}{52}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Analyse des donn\IeC {\'e}es en entr\IeC {\'e}e Vs le CGPA}{53}
+\contentsline {section}{\numberline {3.5}Conclusion partielle}{61}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Conclusion partielle}{62}
+\contentsline {paragraph}{}{61}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{62}
+\contentsline {paragraph}{}{61}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{62}
+\contentsline {chapter}{\numberline {4}\IeC {\'E}laboration et \IeC {\'e}valuation du mod\IeC {\`e}le de pr\IeC {\'e}diction }{62}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}\IeC {\'E}laboration et \IeC {\'e}valuation du mod\IeC {\`e}le de pr\IeC {\'e}diction }{63}
+\contentsline {section}{\numberline {4.1}Pr\IeC {\'e}paration des donn\IeC {\'e}es pour l'ex\IeC {\'e}cution des algorithmes }{63}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Pr\IeC {\'e}paration des donn\IeC {\'e}es pour l'ex\IeC {\'e}cution des algorithmes }{64}
+\contentsline {subsection}{\numberline {4.1.1}Encodage des Variables One Hot }{64}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Encodage des Variables One Hot }{65}
+\contentsline {subsection}{\numberline {4.1.2}Normalisation }{64}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Normalisation }{65}
+\contentsline {subsection}{\numberline {4.1.3}\IeC {\'E}chantillonnage \cite {statBook1} }{64}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}\IeC {\'E}chantillonnage \cite {statBook1} }{65}
+\contentsline {section}{\numberline {4.2}\IeC {\'E}laboration et \IeC {\'E}valuation du Mod\IeC {\`e}le de Pr\IeC {\'e}diction au sein de Chaque facult\IeC {\'e}}{65}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}\IeC {\'E}laboration et \IeC {\'E}valuation du Mod\IeC {\`e}le de Pr\IeC {\'e}diction au sein de Chaque facult\IeC {\'e}}{66}
+\contentsline {subsection}{\numberline {4.2.1}Techniques D'\IeC {\'e}valuation}{65}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Techniques D'\IeC {\'e}valuation}{66}
+\contentsline {subsubsection}{\ac {RMSE} \cite {ProbaStat} }{65}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\ac {RMSE} \cite {ProbaStat} }{66}
+\contentsline {subsubsection}{Validation Crois\IeC {\'e} \cite {CrossValidation}}{65}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Validation Crois\IeC {\'e} \cite {CrossValidation}}{66}
+\contentsline {subsection}{\numberline {4.2.2}R\IeC {\'e}sultat des diff\IeC {\'e}rents algorithmes par facult\IeC {\'e}}{66}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}R\IeC {\'e}sultat des diff\IeC {\'e}rents algorithmes par facult\IeC {\'e}}{67}
+\contentsline {subsubsection}{M\IeC {\'e}thodes d'ensembles}{68}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{M\IeC {\'e}thodes d'ensembles}{69}
+\contentsline {section}{\numberline {4.3}R\IeC {\'e}alisation de L'\ac {API}}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}R\IeC {\'e}alisation de L'\ac {API}}{71}
+\contentsline {subsection}{\numberline {4.3.1}\ac {TDD} \cite {TDD}}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}\ac {TDD} \cite {TDD}}{71}
+\contentsline {subsubsection}{D\IeC {\'e}finition}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{D\IeC {\'e}finition}{71}
+\contentsline {subsubsection}{Cycle de TDD}{70}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Cycle de TDD}{71}
+\contentsline {subsubsection}{Avantages }{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Avantages }{72}
+\contentsline {subsection}{\numberline {4.3.2}Fonctionnement de L'\ac {API}}{71}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Fonctionnement de L'\ac {API}}{72}
+\contentsline {section}{\numberline {4.4}Conclusion Partielle }{72}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Conclusion Partielle }{73}
+\contentsline {chapter}{Conclusion}{74}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Conclusion}{75}
+\contentsline {paragraph}{}{74}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{75}
+\contentsline {paragraph}{}{74}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{75}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{75}
+\contentsline {paragraph}{}{74}
