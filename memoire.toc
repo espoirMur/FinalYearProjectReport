@@ -54,7 +54,7 @@
 \defcounter {refsection}{0}\relax 
 \select@language {french}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Sigles et Abr\IeC {\'e}viations}{xii}
+\contentsline {chapter}{Sigles et Abr\IeC {\'e}viations}{viii}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Introduction}{1}
 \defcounter {refsection}{0}\relax 
@@ -92,7 +92,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.4} Diff\IeC {\'e}rence entre le DataMining , le Machine Learning, ainsi que les statistiques .}{5}
+\contentsline {subsection}{\numberline {1.1.4} Diff\IeC {\'e}rence entre le DataMining , le Machine Learning, ainsi que les statistiques . {\cite {differenceMLDM2} \cite {differenceMLDM} \cite {differenceMLDMStack}}}{5}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{5}
 \defcounter {refsection}{0}\relax 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  4 OCT 2017 11:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.10)  4 OCT 2017 14:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1304,48 +1304,24 @@ Package acronym Info: Label `acro:CGPA' newly defined as it shall be overridden
 although it is yet undefined on input line 13.
 ) [7
 
-] (./memoire.toc
-[8
-
-
 ]
-Package acronym Info: Label `acro:API' newly defined as it shall be overridden
-although it is yet undefined on input line 313.
-Package acronym Info: Label `acro:TDD' newly defined as it shall be overridden
-although it is yet undefined on input line 315.
-)
-\tf@toc=\write6
-\openout6 = `memoire.toc'.
+(./text/abreviation.tex [8
 
- [9] (./memoire.lof)
-\tf@lof=\write7
-\openout7 = `memoire.lof'.
-
- [10
-
-] (./memoire.lot)
-\tf@lot=\write8
-\openout8 = `memoire.lot'.
-
- [11
-
-] (./text/abreviation.tex
-[12
-
-]) [13] (./text/introduction.tex [1
+]) [9] (./text/introduction.tex [1
 
 
 ]
 Package acronym Info: Label `acro:REST' newly defined as it shall be overridden
 
 although it is yet undefined on input line 29.
- [2]) [3] (./text/firstChapiter.tex
+ [2]) [3]
+(./text/firstChapiter.tex
 Chapitre 1.
 [4
 
 
 ] [5]) [6] (./text/RegressionLineaire.tex
-<fig/linear_regression_1.png, id=134, 433.62pt x 289.08pt>
+<fig/linear_regression_1.png, id=118, 433.62pt x 289.08pt>
 File: fig/linear_regression_1.png Graphic file (type png)
 
 <use fig/linear_regression_1.png>
@@ -1356,7 +1332,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--37
 
  []
 
-<fig/poly_regression.png, id=136, 2168.1pt x 1084.05pt>
+<fig/poly_regression.png, id=120, 1445.4pt x 722.7pt>
 File: fig/poly_regression.png Graphic file (type png)
 
 <use fig/poly_regression.png>
@@ -1365,7 +1341,7 @@ Package pdftex.def Info: fig/poly_regression.png used on input line 45.
  [7
 
  <./fig/linear_regression_1.png>]
-<fig/Cost_vs_iterations.png, id=143, 722.7pt x 361.35pt>
+<fig/Cost_vs_iterations.png, id=130, 722.7pt x 361.35pt>
 File: fig/Cost_vs_iterations.png Graphic file (type png)
 
 <use fig/Cost_vs_iterations.png>
@@ -1373,7 +1349,7 @@ Package pdftex.def Info: fig/Cost_vs_iterations.png used on input line 87.
 (pdftex.def)             Requested size: 227.62206pt x 113.80931pt.
  [8 <./fig/poly_regression.png> <./fig/Cost_vs_iterations.png>]) [9] (./text/Re
 gressionLogistique.tex
-<fig/FonctionSigm.png, id=156, 273.27094pt x 159.59625pt>
+<fig/FonctionSigm.png, id=144, 273.27094pt x 159.59625pt>
 File: fig/FonctionSigm.png Graphic file (type png)
 
 <use fig/FonctionSigm.png>
@@ -1382,14 +1358,14 @@ Package pdftex.def Info: fig/FonctionSigm.png used on input line 31.
  [10
 
  <./fig/FonctionSigm.png>]
-<fig/DecisionBoudary.png, id=162, 578.16pt x 433.62pt>
+<fig/DecisionBoudary.png, id=150, 578.16pt x 433.62pt>
 File: fig/DecisionBoudary.png Graphic file (type png)
 
 <use fig/DecisionBoudary.png>
 Package pdftex.def Info: fig/DecisionBoudary.png used on input line 67.
 (pdftex.def)             Requested size: 273.14923pt x 204.86006pt.
 
-<fig/ErreurRegressionLogistique.png, id=163, 578.16pt x 433.62pt>
+<fig/ErreurRegressionLogistique.png, id=151, 578.16pt x 433.62pt>
 File: fig/ErreurRegressionLogistique.png Graphic file (type png)
 
 <use fig/ErreurRegressionLogistique.png>
@@ -1397,7 +1373,7 @@ Package pdftex.def Info: fig/ErreurRegressionLogistique.png used on input line
 96.
 (pdftex.def)             Requested size: 182.09486pt x 136.57117pt.
 
-<fig/ErreurRegressionLogistique2.png, id=164, 578.16pt x 433.62pt>
+<fig/ErreurRegressionLogistique2.png, id=152, 578.16pt x 433.62pt>
 File: fig/ErreurRegressionLogistique2.png Graphic file (type png)
 
 <use fig/ErreurRegressionLogistique2.png>
@@ -1405,7 +1381,7 @@ Package pdftex.def Info: fig/ErreurRegressionLogistique2.png used on input line
  98.
 (pdftex.def)             Requested size: 182.09486pt x 136.57117pt.
 
-<fig/underfitting2.png, id=165, 1011.78pt x 361.35pt>
+<fig/underfitting2.png, id=153, 1011.78pt x 361.35pt>
 File: fig/underfitting2.png Graphic file (type png)
 
 <use fig/underfitting2.png>
@@ -1418,7 +1394,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--122
 
 [11 <./fig/DecisionBoudary.png>] [12 <./fig/ErreurRegressionLogistique.png> <./
 fig/ErreurRegressionLogistique2.png> <./fig/underfitting2.png>]) [13]
-(./text/NeuralNetwork.tex <fig/Neurone.png, id=181, 330.63525pt x 162.6075pt>
+(./text/NeuralNetwork.tex <fig/Neurone.png, id=168, 330.63525pt x 162.6075pt>
 File: fig/Neurone.png Graphic file (type png)
 
 <use fig/Neurone.png>
@@ -1427,19 +1403,19 @@ Package pdftex.def Info: fig/Neurone.png used on input line 24.
  [14
 
  <./fig/Neurone.png>]
-<fig/SimpleANN.png, id=185, 215.6055pt x 121.6545pt>
+<fig/SimpleANN.png, id=172, 215.6055pt x 121.6545pt>
 File: fig/SimpleANN.png Graphic file (type png)
  <use fig/SimpleANN.png>
 Package pdftex.def Info: fig/SimpleANN.png used on input line 50.
 (pdftex.def)             Requested size: 227.62206pt x 128.4408pt.
 
-<fig/FullNeural.png, id=186, 173.448pt x 86.724pt>
+<fig/FullNeural.png, id=173, 173.448pt x 86.724pt>
 File: fig/FullNeural.png Graphic file (type png)
  <use fig/FullNeural.png>
 Package pdftex.def Info: fig/FullNeural.png used on input line 65.
 (pdftex.def)             Requested size: 227.62206pt x 113.817pt.
 
-<fig/NeuralNtwork2.png, id=187, 252.19218pt x 162.6075pt>
+<fig/NeuralNtwork2.png, id=174, 252.19218pt x 162.6075pt>
 File: fig/NeuralNtwork2.png Graphic file (type png)
 
 <use fig/NeuralNtwork2.png>
@@ -1478,28 +1454,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--136
  []
 
 Excluding 'comment' comment. [17]) [18] (./text/SupporVectorMachine.tex
-<fig/SVNDecisionBoundary1.png, id=205, 273.27094pt x 265.74281pt>
+<fig/SVNDecisionBoundary1.png, id=191, 273.27094pt x 265.74281pt>
 File: fig/SVNDecisionBoundary1.png Graphic file (type png)
 
 <use fig/SVNDecisionBoundary1.png>
 Package pdftex.def Info: fig/SVNDecisionBoundary1.png used on input line 7.
 (pdftex.def)             Requested size: 136.57462pt x 132.8143pt.
 
-<fig/SVNDecisionBoundary2.png, id=206, 264.23718pt x 241.65282pt>
+<fig/SVNDecisionBoundary2.png, id=192, 264.23718pt x 241.65282pt>
 File: fig/SVNDecisionBoundary2.png Graphic file (type png)
 
 <use fig/SVNDecisionBoundary2.png>
 Package pdftex.def Info: fig/SVNDecisionBoundary2.png used on input line 9.
 (pdftex.def)             Requested size: 136.57462pt x 124.90059pt.
 
-<fig/SVNDecisionBoundary3.png, id=207, 269.50688pt x 245.41687pt>
+<fig/SVNDecisionBoundary3.png, id=193, 269.50688pt x 245.41687pt>
 File: fig/SVNDecisionBoundary3.png Graphic file (type png)
 
 <use fig/SVNDecisionBoundary3.png>
 Package pdftex.def Info: fig/SVNDecisionBoundary3.png used on input line 11.
 (pdftex.def)             Requested size: 136.57462pt x 124.36705pt.
 
-<fig/SVN2D.png, id=208, 441.90094pt x 282.30469pt>
+<fig/SVN2D.png, id=194, 441.90094pt x 282.30469pt>
 File: fig/SVN2D.png Graphic file (type png)
  <use fig/SVN2D.png>
 Package pdftex.def Info: fig/SVN2D.png used on input line 28.
@@ -1520,7 +1496,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--66
  []
 
 [20 <./fig/SVN2D.png>]
-<fig/NonLinearDecisionBoudary.png, id=215, 602.25pt x 451.6875pt>
+<fig/NonLinearDecisionBoudary.png, id=201, 602.25pt x 451.6875pt>
 File: fig/NonLinearDecisionBoudary.png Graphic file (type png)
 
 <use fig/NonLinearDecisionBoudary.png>
@@ -1531,7 +1507,7 @@ Package pdftex.def Info: fig/NonLinearDecisionBoudary.png used on input line 81
 
 LaTeX Warning: Citation '8' on page 21 undefined on input line 85.
 
-<fig/NonLinearDecisionBoudary2.png, id=216, 1198.4775pt x 560.0925pt>
+<fig/NonLinearDecisionBoudary2.png, id=202, 1198.4775pt x 560.0925pt>
 File: fig/NonLinearDecisionBoudary2.png Graphic file (type png)
 
 <use fig/NonLinearDecisionBoudary2.png>
@@ -1587,7 +1563,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--74
  []
 
 ) [25] (./text/Methodologie_CRISP.tex
-<fig/CRISP_tb.png, id=235, 210.7875pt x 206.27063pt>
+<fig/CRISP_tb.png, id=222, 210.7875pt x 206.27063pt>
 File: fig/CRISP_tb.png Graphic file (type png)
  <use fig/CRISP_tb.png>
 Package pdftex.def Info: fig/CRISP_tb.png used on input line 5.
@@ -1648,7 +1624,7 @@ although it is yet undefined on input line 123.
 Chapitre 3.
 Package acronym Info: Label `acro:CSV' newly defined as it shall be overridden
 although it is yet undefined on input line 10.
-<fig/Exploration.png, id=262, 461.47406pt x 365.86688pt>
+<fig/Exploration.png, id=250, 461.47406pt x 365.86688pt>
 File: fig/Exploration.png Graphic file (type png)
 
 <use fig/Exploration.png>
@@ -1685,13 +1661,13 @@ Overfull \hbox (21.39357pt too wide) in paragraph at lines 309--310
 es d'im-pu-ta-tion (moyenne,m�diane...)
  []
 
-<fig/AGEPlot1.png, id=283, 350.30875pt x 262.9825pt>
+<fig/AGEPlot1.png, id=271, 350.30875pt x 262.9825pt>
 File: fig/AGEPlot1.png Graphic file (type png)
  <use fig/AGEPlot1.png>
 Package pdftex.def Info: fig/AGEPlot1.png used on input line 346.
 (pdftex.def)             Requested size: 227.62206pt x 170.88441pt.
 
-<fig/PercetagePlot.png, id=284, 350.30875pt x 262.9825pt>
+<fig/PercetagePlot.png, id=272, 350.30875pt x 262.9825pt>
 File: fig/PercetagePlot.png Graphic file (type png)
 
 <use fig/PercetagePlot.png>
@@ -1707,7 +1683,7 @@ Overfull \hbox (8.77252pt too wide) in paragraph at lines 451--466
  [][] 
  []
 
-[43] <fig/DataExploration.png, id=300, 426.59375pt x 155.58125pt>
+[43] <fig/DataExploration.png, id=287, 426.59375pt x 155.58125pt>
 File: fig/DataExploration.png Graphic file (type png)
 
 <use fig/DataExploration.png>
@@ -1716,45 +1692,45 @@ Package pdftex.def Info: fig/DataExploration.png used on input line 510.
 Package acronym Info: Label `acro:EXETAT' newly defined as it shall be overridd
 en
 although it is yet undefined on input line 524.
- <fig/AGE.png, id=301, 433.62pt x 289.08pt>
+ <fig/AGE.png, id=288, 433.62pt x 289.08pt>
 File: fig/AGE.png Graphic file (type png)
 
 <use fig/AGE.png>
 Package pdftex.def Info: fig/AGE.png used on input line 555.
 (pdftex.def)             Requested size: 182.09486pt x 121.39511pt.
- <fig/AGEDist.png, id=302, 433.62pt x 289.08pt>
+ <fig/AGEDist.png, id=289, 433.62pt x 289.08pt>
 File: fig/AGEDist.png Graphic file (type png)
 
 <use fig/AGEDist.png>
 Package pdftex.def Info: fig/AGEDist.png used on input line 557.
 (pdftex.def)             Requested size: 182.09486pt x 121.39511pt.
  [44 <./fig/DataExploration.png>]
-<fig/dipomePourcentage.png, id=306, 433.62pt x 289.08pt>
+<fig/dipomePourcentage.png, id=293, 433.62pt x 289.08pt>
 File: fig/dipomePourcentage.png Graphic file (type png)
 
 <use fig/dipomePourcentage.png>
 Package pdftex.def Info: fig/dipomePourcentage.png used on input line 566.
 (pdftex.def)             Requested size: 182.09486pt x 121.39511pt.
 
-<fig/diplomePercentageDis.png, id=307, 433.62pt x 289.08pt>
+<fig/diplomePercentageDis.png, id=294, 433.62pt x 289.08pt>
 File: fig/diplomePercentageDis.png Graphic file (type png)
 
 <use fig/diplomePercentageDis.png>
 Package pdftex.def Info: fig/diplomePercentageDis.png used on input line 568.
 (pdftex.def)             Requested size: 182.09486pt x 121.39511pt.
- <fig/NAME.png, id=308, 433.62pt x 289.08pt>
+ <fig/NAME.png, id=295, 433.62pt x 289.08pt>
 File: fig/NAME.png Graphic file (type png)
 
 <use fig/NAME.png>
 Package pdftex.def Info: fig/NAME.png used on input line 575.
 (pdftex.def)             Requested size: 227.62206pt x 151.74721pt.
- <fig/SCHOOLSTATUS.png, id=309, 1445.4pt x 433.62pt>
+ <fig/SCHOOLSTATUS.png, id=296, 1445.4pt x 433.62pt>
 File: fig/SCHOOLSTATUS.png Graphic file (type png)
 
 <use fig/SCHOOLSTATUS.png>
 Package pdftex.def Info: fig/SCHOOLSTATUS.png used on input line 585.
 (pdftex.def)             Requested size: 597.50787pt x 179.25421pt.
- <fig/OPTION_RIGHT.png, id=310, 2168.1pt x 722.7pt>
+ <fig/OPTION_RIGHT.png, id=297, 2168.1pt x 722.7pt>
 File: fig/OPTION_RIGHT.png Graphic file (type png)
 
 <use fig/OPTION_RIGHT.png>
@@ -1762,20 +1738,20 @@ Package pdftex.def Info: fig/OPTION_RIGHT.png used on input line 599.
 (pdftex.def)             Requested size: 597.50787pt x 199.16766pt.
  [45 <./fig/AGE.png> <./fig/AGEDist.png>] [46 <./fig/dipomePourcentage.png> <./
 fig/diplomePercentageDis.png> <./fig/NAME.png> <./fig/SCHOOLSTATUS.png>] <fig/S
-CHOOL_RIGHT.png, id=323, 2168.1pt x 361.35pt>
+CHOOL_RIGHT.png, id=311, 2168.1pt x 361.35pt>
 File: fig/SCHOOL_RIGHT.png Graphic file (type png)
 
 <use fig/SCHOOL_RIGHT.png>
 Package pdftex.def Info: fig/SCHOOL_RIGHT.png used on input line 618.
 (pdftex.def)             Requested size: 597.50787pt x 99.58383pt.
 
-<fig/SCHOOLPROVINCE.png, id=324, 2168.1pt x 578.16pt>
+<fig/SCHOOLPROVINCE.png, id=312, 2168.1pt x 578.16pt>
 File: fig/SCHOOLPROVINCE.png Graphic file (type png)
 
 <use fig/SCHOOLPROVINCE.png>
 Package pdftex.def Info: fig/SCHOOLPROVINCE.png used on input line 632.
 (pdftex.def)             Requested size: 597.50787pt x 159.33414pt.
- <fig/FAC.png, id=325, 2168.1pt x 361.35pt>
+ <fig/FAC.png, id=313, 2168.1pt x 361.35pt>
 File: fig/FAC.png Graphic file (type png)
 
 <use fig/FAC.png>
@@ -1790,13 +1766,13 @@ LaTeX Warning: No positions in optional float specifier.
 
 LaTeX Warning: Reference `lfig:ANOVAb' on page 50 undefined on input line 784.
 
-<fig/AGE-FAC.png, id=340, 867.24pt x 433.62pt>
+<fig/AGE-FAC.png, id=327, 867.24pt x 433.62pt>
 File: fig/AGE-FAC.png Graphic file (type png)
  <use fig/AGE-FAC.png>
 Package pdftex.def Info: fig/AGE-FAC.png used on input line 787.
 (pdftex.def)             Requested size: 364.19667pt x 182.0993pt.
 
-<fig/AGE-POURC.png, id=341, 867.24pt x 433.62pt>
+<fig/AGE-POURC.png, id=328, 867.24pt x 433.62pt>
 File: fig/AGE-POURC.png Graphic file (type png)
  <use fig/AGE-POURC.png>
 Package pdftex.def Info: fig/AGE-POURC.png used on input line 815.
@@ -2355,7 +2331,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
  []
 
-<fig/sckikLearnCheatSheet.png, id=382, 3651.35571pt x 2276.505pt>
+<fig/sckikLearnCheatSheet.png, id=369, 3651.35571pt x 2276.505pt>
 File: fig/sckikLearnCheatSheet.png Graphic file (type png)
 
 <use fig/sckikLearnCheatSheet.png>
@@ -2367,7 +2343,7 @@ although it is yet undefined on input line 17.
 
 
  <./fig/sckikLearnCheatSheet.png>]
-<fig/ModelBuilding.png, id=387, 730.73pt x 408.52625pt>
+<fig/ModelBuilding.png, id=374, 730.73pt x 408.52625pt>
 File: fig/ModelBuilding.png Graphic file (type png)
 
 <use fig/ModelBuilding.png>
@@ -2386,20 +2362,24 @@ LaTeX Warning: Float too large for page by 24.51715pt on input line 148.
 LaTeX Warning: Float too large for page by 24.49855pt on input line 203.
 
 [68] [69]
+Package acronym Info: Label `acro:API' newly defined as it shall be overridden
+although it is yet undefined on input line 210.
+Package acronym Info: Label `acro:TDD' newly defined as it shall be overridden
+although it is yet undefined on input line 212.
 Package acronym Info: Label `acro:CI' newly defined as it shall be overridden
 although it is yet undefined on input line 213.
 
 
 LaTeX Warning: Reference `lfig:TDD' on page 70 undefined on input line 217.
 
-<fig/Cycle-global-tdd.png, id=413, 1426.32875pt x 843.15pt>
+<fig/Cycle-global-tdd.png, id=400, 1426.32875pt x 843.15pt>
 File: fig/Cycle-global-tdd.png Graphic file (type png)
 
 <use fig/Cycle-global-tdd.png>
 Package pdftex.def Info: fig/Cycle-global-tdd.png used on input line 220.
 (pdftex.def)             Requested size: 227.62206pt x 134.54652pt.
  [70 <./fig/Cycle-global-tdd.png>]
-<fig/New-Predictive-Model.png, id=418, 697.60625pt x 515.9275pt>
+<fig/New-Predictive-Model.png, id=405, 697.60625pt x 515.9275pt>
 File: fig/New-Predictive-Model.png Graphic file (type png)
 
 <use fig/New-Predictive-Model.png>
@@ -2411,12 +2391,12 @@ although it is yet undefined on input line 242.
 Package acronym Info: Label `acro:MVC' newly defined as it shall be overridden
 although it is yet undefined on input line 250.
 
-<fig/form.png, id=419, 889.3225pt x 512.91624pt>
+<fig/form.png, id=406, 889.3225pt x 512.91624pt>
 File: fig/form.png Graphic file (type png)
  <use fig/form.png>
 Package pdftex.def Info: fig/form.png used on input line 254.
 (pdftex.def)             Requested size: 227.62206pt x 131.28107pt.
- [71 <./fig/New-Predictive-Model.png>] <fig/results.png, id=425, 726.715pt x 48
+ [71 <./fig/New-Predictive-Model.png>] <fig/results.png, id=411, 726.715pt x 48
 7.8225pt>
 File: fig/results.png Graphic file (type png)
 
@@ -2434,7 +2414,7 @@ tes-ter � l'adresse sui-vante : https ://grade-
 
 
 ] [75]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 82.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 79.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
@@ -2443,14 +2423,14 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (0.19543pt too wide) in paragraph at lines 83--83
+Overfull \hbox (0.19543pt too wide) in paragraph at lines 80--80
 []\T1/cmr/m/n/12 (-20) SHARP SIGHT \T1/cmr/m/sc/12 (-20) LABS\T1/cmr/m/n/12 (-2
 0) . \T1/cmr/m/it/12 (-20) What is the dif-fe-rence bet-ween ma-chine lear-ning
 ,statistics,and
  []
 
 
-Overfull \hbox (25.444pt too wide) in paragraph at lines 83--83
+Overfull \hbox (25.444pt too wide) in paragraph at lines 80--80
 \T1/cmtt/m/n/12 com / difference­machine­learning­statistics­data­mining /
  ?utm _ content =
  []
@@ -2459,14 +2439,33 @@ Overfull \hbox (25.444pt too wide) in paragraph at lines 83--83
 
 
 ]
-Overfull \hbox (7.29774pt too wide) in paragraph at lines 83--83
+Overfull \hbox (7.29774pt too wide) in paragraph at lines 80--80
 []\T1/cmr/m/n/12 (-20) SUNIL \T1/cmr/m/sc/12 (-20) RAY\T1/cmr/m/n/12 (-20) . \T
 1/cmr/m/it/12 (-20) Guide to Data Ex-plo-ra-tion\T1/cmr/m/n/12 (-20) . 2016. \T
 1/cmr/m/sc/12 (-20) url \T1/cmr/m/n/12 (-20) : $\T1/cmtt/m/n/12 https : / / www
  . analyticsvidhya .
  []
 
-[77] (./memoire.aux)
+[77] (./memoire.toc [78
+
+])
+\tf@toc=\write6
+\openout6 = `memoire.toc'.
+
+ [79] (./memoire.lof)
+\tf@lof=\write7
+\openout7 = `memoire.lof'.
+
+ [80
+
+] (./memoire.lot)
+\tf@lot=\write8
+\openout8 = `memoire.lot'.
+
+ [81
+
+]
+(./memoire.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -2482,11 +2481,11 @@ Package logreq Info: Writing requests to 'memoire.run.xml'.
 Here is how much of TeX's memory you used:
  17433 strings out of 492995
  285167 string characters out of 6132704
- 658502 words of memory out of 5000000
+ 657502 words of memory out of 5000000
  20408 multiletter control sequences out of 15000+600000
  30378 words of font info for 145 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,18n,49p,1298b,2886s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,18n,49p,1298b,2884s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pf
@@ -2515,7 +2514,7 @@ s/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2017/texmf-dist/fonts/
 type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
 pe1/public/cm-super/sfti1728.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
 1/public/cm-super/sftt1200.pfb>
-Output written on memoire.pdf (91 pages, 3188772 bytes).
+Output written on memoire.pdf (91 pages, 3239590 bytes).
 PDF statistics:
  537 PDF objects out of 1000 (max. 8388607)
  322 compressed objects within 4 object streams
